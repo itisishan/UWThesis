@@ -441,8 +441,8 @@
 \renewcommand\subsubsection{%
   \@startsection{subsubsection}{3}{\z@}%
        {-3.25ex\@plus -1ex \@minus -.2ex}%
-       {1.5ex \@plus .2ex}%
-       {\reset@font\normalsize\mdseries\itshape}}
+       {-1.5ex \@plus -.2ex}% Modified to allow for in-line subsubsectio headers
+       {\reset@font\normalsize\bfseries\itshape}}
 
 % part
 \renewcommand\l@part[2]{%
@@ -646,7 +646,7 @@
 \def\School#1{\gdef\@School{#1}} \School{University of Washington}
 \def\GSchool#1{\gdef\@GSchool{#1}} \GSchool{Graduate School}
 \def\Degreetext#1{\gdef\@Degreetext{#1}} 
-  \Degreetext{A dissertation\\ submitted in partial fulfillment of the\\requirements for the degree of}
+  \Degreetext{A proposal\\ submitted in partial fulfillment of the\\requirements for the degree of}
 \def\Programtext#1{\gdef\@Programtext{#1}}  
        \Programtext{Program Authorized to Offer Degree: }
 
@@ -766,7 +766,7 @@
 %    \def\@@blankpage{A}
 %    \output=\expandafter{\expandafter\@blankpage\the\output}
 %   \fi
-   #1
+   {\uwsinglespace #1 \par} % modified Abstract to be single-spaced - Ishan
    \vfill\clearpage
 %   \if@twoside\endgroup\fi
    \let\abstract\relax}

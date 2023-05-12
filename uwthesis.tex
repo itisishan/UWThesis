@@ -88,21 +88,20 @@
 %
 % ----- copyright and title pages
 %
-\Title{The Suitability of the \LaTeX\ Text Formatter\\
-  for Thesis Preparation by Technical and\\
-  Non-technical Degree Candidates}
-\Author{Jim Fox}
-\Year{1995}
-\Program{IT Infrastructure}
+\Title{In-Context, Spatial Computing}
+\Author{Ishan Chatterjee}
+\Year{2023}
+\Program{Computer Science and Engineering}
 
-\Chair{Name of Chairperson}{Title of Chair}{Department of Chair}
-\Signature{First committee member}
-\Signature{Next committee member}
-\Signature{etc}
+\Chair{Shwetak Patel}{Professor}{Computer Science \& Engineering}
+\Signature{Vikram Iyer}
+\Signature{Steve Seitz}
+\Signature{Jacob Wobbrock}
 
-\copyrightpage
 
 \titlepage  
+
+\copyrightpage
 
  
 %
@@ -116,23 +115,9 @@
 
 \setcounter{page}{-1}
 \abstract{%
-This sample dissertation is an aid to students who are attempting
-to format their theses with \LaTeX, a sophisticated
-text formatter widely used by mathematicians and scientists everywhere.
- 
-\begin{itemize}
-\item It describes the use of a specialized
-macro package developed specifically for thesis production
-at the University.
-The macros customize \LaTeX\ for the correct thesis style,
-allowing the student to concentrate on the substance of
-his or her text.%
-\footnote{See Appendix A to obtain the source to this
- thesis and the class file.}
-\item It demonstrates the solutions to a variety of
-formatting challenges found in thesis production.
-\item It serves as a template for a real dissertation.
-\end{itemize}
+The desktop computing paradigm has revolutionized the way we live, work, and communicate, but is limited by the physical boundaries of the devices themselves. More recently, mobile computing has allowed us to take these capabilities on-the-go, but input and output mechanisms remain tied to the device surface, without interplay with the physicality of the surrounding environment. Spatial computing, however, seeks to define a new generation of computing, where users can receive digital guidance, communication, and contextual references based on and embedded within the environment around them. This means spatial computing will be used \textit{in-context}, where the users are performing another task — one in which computing can either actively or passively provide support. This provides the new challenge in which the interaction and input of these systems must function within an ongoing situation, but also provides an opportunity where systems can leverage the spatial dimension for additional information to drive natural interaction. I approach this area on three fronts: \textit{spatial computing interaction}, \textit{spatial computing sensing}, and \textit{spatial computing control}.
+
+From the perspective of spatial computing interaction, we investigate how electrical engineers can benefit from spatial computing while debugging printed circuit boards and develop an AR system that supports them in-context. For spatial computing sensing, we design earbuds that filter out the noises in the users’ noisy environment by leveraging the spatial information of interfering audio sources. Finally, for spatial computing control, we develop thumb-to-index finger microgesture interfaces which can allow for control of an augmented reality headset while maintaining the subtlety and precision needed for on-the-go and public scenarios.
 }
  
 %
@@ -145,74 +130,74 @@ formatting challenges found in thesis production.
 %
 % ----- glossary 
 %
-\chapter*{Glossary}      % starred form omits the `chapter x'
-\addcontentsline{toc}{chapter}{Glossary}
-\thispagestyle{plain}
-%
-\begin{glossary}
-\item[argument] replacement text which customizes a \LaTeX\ macro for
-each particular usage.
-\item[back-up] a copy of a file to be used when catastrophe strikes
-the original.  People who make no back-ups deserve
-no sympathy.
-\item[control sequence] the normal form of a command to \LaTeX.
-\item[delimiter] something, often a character, that indicates
-the beginning and ending of an argument.
-More generally, a delimiter is a field separator.
-\item[document class] a file of macros that tailors \LaTeX\ for
-a particular document.  The macros described by this thesis
-constitute a document class.
-\item[document option] a macro or file of macros
-that further modifies \LaTeX\ for
-a particular document.  The option {\tt[chapternotes]}
-constitutes a document option.
-\item[figure] illustrated material, including graphs,
-diagrams, drawings and photographs.
-\item[font] a character set (the alphabet plus digits
-and special symbols) of a particular size and style.  A couple of fonts
-used in this thesis are twelve point roman and {\sl twelve point roman
-slanted}.
-\item[footnote] a note placed at the bottom of a page, end of a chapter,
-or end of a thesis that comments on or cites a reference
-for a designated part of the text.
-\item[formatter] (as opposed to a word-processor) arranges printed
-material according to instructions embedded in the text.
-A word-processor, on the other hand, is normally controlled
-by keyboard strokes that move text about on a display.
-\item[\LaTeX] simply the ultimate in computerized typesetting.
-\item[macro]  a complex control sequence composed of 
-other control sequences.
-\item[pica] an archaic unit of length.  One pica is twelve points and
-six picas is about an inch.
-\item[point] a unit of length.  72.27 points equals one inch.
-\item[roman]  a conventional printing typestyle using serifs.
-the decorations on the ends of letter strokes.
-This thesis is set in roman type.
-\item[rule] a straight printed line; e.g., \hrulefill.
-\item[serif] the decoration at the ends of letter strokes.
-\item[table] information placed in a columnar arrangement.
-\item[thesis] either a master's thesis or a doctoral dissertation.
-This document also refers to itself as a thesis, although it
-really is not one.
+% \chapter*{Glossary}      % starred form omits the `chapter x'
+% \addcontentsline{toc}{chapter}{Glossary}
+% \thispagestyle{plain}
+% %
+% \begin{glossary}
+% \item[argument] replacement text which customizes a \LaTeX\ macro for
+% each particular usage.
+% \item[back-up] a copy of a file to be used when catastrophe strikes
+% the original.  People who make no back-ups deserve
+% no sympathy.
+% \item[control sequence] the normal form of a command to \LaTeX.
+% \item[delimiter] something, often a character, that indicates
+% the beginning and ending of an argument.
+% More generally, a delimiter is a field separator.
+% \item[document class] a file of macros that tailors \LaTeX\ for
+% a particular document.  The macros described by this thesis
+% constitute a document class.
+% \item[document option] a macro or file of macros
+% that further modifies \LaTeX\ for
+% a particular document.  The option {\tt[chapternotes]}
+% constitutes a document option.
+% \item[figure] illustrated material, including graphs,
+% diagrams, drawings and photographs.
+% \item[font] a character set (the alphabet plus digits
+% and special symbols) of a particular size and style.  A couple of fonts
+% used in this thesis are twelve point roman and {\sl twelve point roman
+% slanted}.
+% \item[footnote] a note placed at the bottom of a page, end of a chapter,
+% or end of a thesis that comments on or cites a reference
+% for a designated part of the text.
+% \item[formatter] (as opposed to a word-processor) arranges printed
+% material according to instructions embedded in the text.
+% A word-processor, on the other hand, is normally controlled
+% by keyboard strokes that move text about on a display.
+% \item[\LaTeX] simply the ultimate in computerized typesetting.
+% \item[macro]  a complex control sequence composed of 
+% other control sequences.
+% \item[pica] an archaic unit of length.  One pica is twelve points and
+% six picas is about an inch.
+% \item[point] a unit of length.  72.27 points equals one inch.
+% \item[roman]  a conventional printing typestyle using serifs.
+% the decorations on the ends of letter strokes.
+% This thesis is set in roman type.
+% \item[rule] a straight printed line; e.g., \hrulefill.
+% \item[serif] the decoration at the ends of letter strokes.
+% \item[table] information placed in a columnar arrangement.
+% \item[thesis] either a master's thesis or a doctoral dissertation.
+% This document also refers to itself as a thesis, although it
+% really is not one.
  
-\end{glossary}
+% \end{glossary}
  
 %
 % ----- acknowledgments
 %
-\acknowledgments{% \vskip2pc
-  % {\narrower\noindent
-  The author wishes to express sincere appreciation to
-  University of Washington, where he has had the opportunity
-  to work with the \TeX\ formatting system,
-  and to the author of \TeX, Donald Knuth, {\it il miglior fabbro}.
-  % \par}
-}
+% \acknowledgments{% \vskip2pc
+%   % {\narrower\noindent
+%   The author wishes to express sincere appreciation to
+%   University of Washington, where he has had the opportunity
+%   to work with the \TeX\ formatting system,
+%   and to the author of \TeX, Donald Knuth, {\it il miglior fabbro}.
+%   % \par}
+% }
 
 %
 % ----- dedication
 %
-\dedication{\begin{center}to my dear wife, Joanna\end{center}}
+%\dedication{\begin{center}to my dear wife, Joanna\end{center}}
 
 %
 % end of the preliminary pages
@@ -228,621 +213,270 @@ really is not one.
 % ========== Chapter 1
  
 \chapter {Introduction}
- 
-The utility of a clean, professionally prepared thesis is well
-documented%
-\footnote{See, for example,
-  W.~Shakespeare\cite{Hamlet} for a recent discussion.}
-and, even if you never intend to actually print your thesis,
-you still ought to format it as if that were your intention.
- 
-\TeX\ facilitates that. It is a flexible,
-complete and professional typesetting system.
-It will produce {\bf pdf} output as required by the Graduate School.
 
-\section{The Purpose of This Sample Thesis}
+\section{Spatial Computing}
  
-This sample is both a demonstration of the quality and
-propriety of a \LaTeX formatted thesis and  
-documentation for its preparation.
-It has made extensive use of a custom class file
-developed specifically for this purpose
-at the University of Washington.  Chapter~II discusses
-\TeX\ and \LaTeX.
-Chapter III describes the additional macros and functions
-provided by the custom thesis class file.  Finally, Chapter IV hopes to tie things up.
- 
-It is 
-impossible to predict all the formatting problems one will encounter
-and there will be problems that are best handled
-by a specialist.  
-The Graduate School may be able to help you find help.
-Some departments may also be able to provide \LaTeX\ assistance.
+Computing as we know it today is a physically confined experience, most commonly expressed as a box on one's desk or a brick within one's pocket. Interaction with these devices is tied to the device themselves without reference to the user’s environment. The spatial computing paradigm seeks to enable aspects of input and output that move beyond the borders of the physical device, sensing or augmenting aspects of the surrounding physical world. In this proposal I adopt Greenwold’s original definition of \textit{spatial computing} as a “as human interaction with a machine in which the machine retains and manipulates referents to real objects and spaces.” (This definition also subsumes the more recent uses of spatial computing in marketing material as anything to do with AR/VR/MR.) This aspect of being rooted in the real-world lends spatial computing toward tasks that occur beyond the office desk. For example, the second-generation of Microsoft HoloLens and Magic Leap augmented reality (AR) devices were largely marketed toward industrial applications such as manufacturing line guidance, surgical operations or in-field visualizations. These types of tasks require spatial computing technologies to work \textit{in-context} – as an extension of the user’s current workflow or situation. 
  
  
-\section{Conventions and Notations}
+\section{In-Context Computing}
  
-In this thesis the typist
-refers to the user of \LaTeX---the one who
-makes formatting decisions and chooses the appropriate
-formatting commands.
-He or she will most often be the degree candidate.
- 
-This document deals with \LaTeX\ typesetting commands and their
-functions.  Wherever possible the conventions used to display
-text entered by the typist and the resulting formatted output
-are the same as those used by the \TeX books.
-Therefore, {\tt typewriter type} is used to indicate text
-as typed by the computer
-or entered by the typist.
-It is quite the opposite of {\it italics,} which indicates
-a category rather than exact text.  For example,
-{\tt alpha} and {\tt beta} might each be an example of a {\it label}.
+Dey and Abowd use \textit{context} to refer to “any information that can be used to characterize the situation of an entity. An entity is a person, place, or object that is considered relevant to the interaction between a user and an application, including the user and applications themselves.” While this definition is then leveraged for defining \textit{context-aware} computing, applications that are actively responsive to changes in context, in this proposal I instead focus in on what I call \textit{in-context} computing. In-context computing is used to assist the user in an application that exists beyond the computer itself, such as while they performing another task or in a particular environment. For example, in-context computing could be an in-flight computer display meant to relay information to a pilot while flying or a conversational voice assistant for navigation queries as the user is walking. (This would be in contrast to word processing on a laptop computer or a mobile game on a smartphone where the application and user task are one and the same, and the application has no relation to the user’s situation or environment.) In-context computing can offer assistive extensions of the human’s capability to allow for multi-tasking or greater efficiency in the task at hand. 
  
  
-\section{Nota bene}
+\section{Putting It Together}
  
-This sample thesis was produced by the \LaTeX\ document class it describes
-and its format is consonant with the Graduate School's electronic dissertation guidelines,
-as of November, 2014, at least.
-However, use of this package does not guarantee acceptability
-of a particular thesis.
- 
- 
+As they are both tied to the environment and task-at-hand, spatial and in-context computing are two sides of the same coin. I posit that by implicitly leveraging the \textit{spatial} context of a user’s environment, technologies can better serve users as they operate within a situation, for example, while participating in another task or operating while mobile. Through system building, I explore design constraints and considerations that follow from making spatial computing operate within a given situation, environment, or task. For instance, the latency, precision of interaction, form factor, robustness, power, social acceptability, comfort, and intrusiveness are a handful of key constraints that arise when designing an in-context computing system. For a holistic perspective, I approach this issue from three angles: \textit{spatial computing interaction}, \textit{spatial computing sensing}, and \textit{spatial computing control}.
+
+\subsubsection{Spatial computing interaction:} Beginning with spatial computing interaction, the focus is on co-designing spatial input and output mechanisms that align with the user's workflow, enabling seamless support within their work context. Specifically, in Augmented Reality Debugging Workbench (Chapter 3), we ask: can augmented reality assist electrical engineers in their printed circuit board debugging workflows and how can it best support them? (\textbf{RQ1}) To answer this question, we design and develop an augmented reality workbench for electrical engineers. To facilitate in-context computing, we co-design the interactions around their existing workflows leveraging their workbench surface as a spatial canvas for projection and input.
+
+\subsubsection{Spatial computing sensing:} Moving on to spatial computing sensing, the emphasis lies in understanding and utilizing the spatial characteristics of a given situation to enhance computing performance. Specifically, I focus on spatial audio sensing in noisy, real-world environments. In ClearBuds (Chapter 4), we ask: How we can leverage spatial information, in addition to frequency information, about competing environmental sound sources to remove them and allow for clear calls? (\textbf{RQ2}). We develop a pair of wireless earbuds that uses multiple, time-synchronized audio channels and a time-domain network to utilize the spatial distribution of the target speech source and interfering noise sources for speech enhancement.
+
+\subsubsection{Spatial computing control (proposed):} Lastly, attention is given to the control of future spatial computing devices, particularly in mobile scenarios. A challenge lies in designing input modalities for smartglasses that are ergonomic, socially acceptable, and precise, without relying on an external surface. In ToFRing and Placeholder (Chapter 5), we propose to develop two systems to investigate: how can thumb-to-finger microgesture inputs be sensed from a wearable ring and wristband respectively? (\textbf{RQ3}) In ToF Ring, we plan to develop a system that can gather thumb-to-index swipe and thumb motion information in two axes using miniaturized time-of-flight and bio-acoustic sensors. In Placeholder, we plan to leverage electrical sensing to be able to sense thumb-to-index gestures from a wrist-based system, allowing for users who prefer bracelets or watches to similarly be able to control smartglasses. In both systems, the design constraints applied by on-the-go usage influences the interactions and form factors we can consider.
+
 % ========== Chapter 2
  
-\chapter{A Brief \\ Description of \protect\TeX}
- 
-The \TeX\ formatting program is the creation of
-Donald Knuth of Stanford University.
-It has been implemented on nearly every general purpose computer and
-produces exactly the same copy on all machines.
- 
-\section{What is it; why is it spelled that way; 
-and what do
-really long section titles look like in the text and in the
-Table of Contents?}
- 
-\TeX\ is a formatter.  A document's format is controlled
-by commands embedded in the text.  
-\LaTeX\ is a special version of \TeX---preloaded
-with a voluminous set of macros that simplify most
-formatting tasks.
- 
-\TeX\ uses {\it control sequences} to control
-the formatting of a document.  These control sequences are usually
-words or groups of letters prefaced with the backslash character
-({\tt\char'134}).
-For example,
-Figure \ref{start-2} shows the text that printed the beginning
-of this chapter.  Note the control sequence \verb"\chapter" that
-instructed \TeX\ to start a new chapter, print the title, and
-make an entry in the table of contents.  It is an example
-of a macro defined by the \LaTeX\ macro package.
-The control sequence \verb"\TeX", which prints the word \TeX,
-is a standard macro from the {\it\TeX book}.
-The short control sequence \verb"\\" in the title instructed \TeX\ to
-break the title line at that point.
-This capability is an example of an extension to \LaTeX\
-provided by the uwthesis document class.
- 
-\begin{figure}
-\begin{demo}
-\uwsinglespace
-\\chapter\{A Brief\\\\Description of \\TeX\}
+\chapter{Related Work}
+\label{sec:related}
 
-The \\TeX\\ formatting program is the creation of
-Donald Knuth of Stanford University.
-\end{demo}
-\label{start-2}
-\caption{The beginning of the Chapter II text}
-\end{figure}
- 
-Most of the time \TeX\ is simply building paragraphs from
-text in your source files.  No control sequences are involved.
-New paragraphs are indicated by a blank line in the
-input file.
-Hyphenation is performed automatically.
- 
-\section{\TeX books}
- 
-The primary reference for \LaTeX\ is Lamport's second edition
-of the \textit{\LaTeX\ User's Guide}\cite{Lbook}.
-It is easily read and should be sufficient for thesis formatting.
-See also the \textsl{\LaTeX\ Companion}\cite{companion} for descriptions
-of many add-on macro packages.
+Human exist as beings in space. Therefore it is intuitive.
+We move through space. Our own senses our mediated by space  -- what we see, what we hear, and what we touch. Therefore tapping into these natural faculties can better lend itself to what Mark Weiser calls computing as "an extention of the unconcious"
 
-Although unnecessary for thesis writers, the \textsl{\TeX book}
-is the primary reference for \TeX sperts worldwide.
- 
-\section{Mathematics}
- 
-The thesis class does not expand on \TeX's
-or \LaTeX's
-comprehensive treatment of mathematical equation printing.%
-\label{c2note}\footnote{%
-% a long footnote indeed.
- Although many \TeX-formatted documents contain no
- mathematics except the page numbers, it seems appropriate
- that this paper, which is in some sense about \TeX,
- ought to demonstrate an equation or two.  Here then, is a statement 
- of the {\it Nonsense Theorem}.
- 
- \smallskip
- \def\RR{{\cal R\kern-.15em R}}
- {\narrower\hangindent\parindent Assume a universe $E$ and a symmetric function
-  $\$$ defined on $E$, such that for each $\$^{yy}$ there exists a
-  $\$^{\overline{yy}}$, where $\$^{yy} = \$^{\overline{yy}}$.
-  For each element $i$ of $E$ define
-  ${\cal S}(i)=\sum_i \$^{yy}+\$^{\overline{yy}}+0$.
-  Then if $\RR$ is that subset of $E$ where $1+1=3$,
-  for each $i$
-  $$\lim_{\$\to\infty}\int {\cal S}di =
-      \cases{0,&if $i\not\in\RR$;\cr
-             \infty,&if $i\in\RR$.\cr}$$
-  \par}} % end of the footnote
-%
-The {\it\TeX book}\cite{book}, {\it \LaTeX\ User's Guide}\cite{Lbook},
-and {\it The \LaTeX\ Companion}\cite{companion}
-thoroughly cover this topic.
- 
- 
-\section{Languages other than English}
- 
-Most \LaTeX\ implementations at the University are tailored
-for the English language.  However, \LaTeX\ will format many
-other languages.  Unfortunately, this author has never been successful in 
-learning more than a smattering of anything other than English.
-Consult your department or the Tex Users Group.
-\smallskip
-\begin{center}
-{\tt http://tug.org/},
-\end{center}
-\smallskip
-for assistance with non-English formatting.
+\section{Spatial Computing Interaction: Augmented Task Guidance}
 
-Unusual characters can be defined via the
-font maker \hbox{\mffont METAFONT} (documented by Knuth\cite{Metafont}).
-The definitions are not trivial.
-Students who attempt to print a thesis with
-custom fonts may soon proclaim,
- 
-% Note.  This is not the ideal way to print Greek
-\medskip
-\begin{center}
-``$\mathaccent"7027\alpha\pi o\kern1pt\theta\alpha\nu\epsilon\hat\iota\nu$
-\ $\theta\acute\epsilon\lambda\omega$.''
- 
-\end{center}
+\subsection{Augmented Reality}%\subsection{Augmented Visualization and Interaction for Spatially-Associated Information Access}
+\label{subsec: Augmented Reality}%\label{subsec: Augmented Visualization and Interaction for Spatially-Associated Information Access}
+Augmented reality (AR) has long been seen as a paradigm that can decrease the barrier between virtual and physical information transfer.
+% above is the big claim about AR, below is breaking that claim down
+This transfer process can consist of two components: the presentation of the information to the user, generally in the form of visualizations; and the ability for the user to interact with the visualization, perhaps enabling the user to query for additional information.
+% give examples of the first part of the claim
+Prior work has shown that AR systems presenting spatially-tracked information, even with no interaction component, can be effective not only in reducing error rate and mental effort across industrial tasks such as order picking \cite{Schwerdtfeger2008SupportingReality} and object assembly \cite{Caudell1992AugmentedProcesses, Tang2003ComparativeAssembly}, but also as a medium for understanding abstract concepts such as how electrons flow through a circuit \cite{Conradi2011FlowElectrons, Chan2013LightUp}.
+% then give examples of making them interactive
+Extending AR experiences to enable interaction makes them even more powerful.
+Such interactions might enable actions such as the selection of elements in the physical world to be used as part of a virtual tool operation.
+Digitaldesk \cite{Wellner1993InteractingDigitaldesk} demonstrated such interactions with examples such as allowing the user to move a number from a physical price list into a virtual calculator.
+% we work on both of these aspects of AR and we will talk about how previous people have used both of these aspects of AR wrt PCBs
+Our work explores the design space of both of these aspects of AR -- visualization and interaction -- and how they might enhance how electrical engineers work with PCBs.
+% In the following section, we discuss how prior work has used these aspects of AR toward working with PCBs.
+
+
+% separating line hereeeeeeeeeeee
+
+
+
+% Digitaldesk \cite{Wellner1993InteractingDigitaldesk} sought to drive productivity workflows by generating virtual proxies for physical objects by augmenting a desk surface with an overhead camera-projector system. Central to the work’s goal is the movement of data or information between the real and virtual environments, such as transferring a number off a physical price list into a virtual calculator.
+% % Ishii \cite{Leithinger2011DirectDisplay} work here?
+% In particular, AR has been of great interest for information access that carries a spatial correspondence to objects in reality \cite{Azuma1997AReality, Feiner1993Knowledge-basedReality}, such as order picking \cite{Schwerdtfeger2008SupportingReality} and object assembly \cite{Caudell2003AugmentedProcesses}. Tang et al. \cite{Tang2003ComparativeAssembly} found a decrease in error rate and perceived mental effort in assembly tasks with spatially-tracked AR compared to head up display and instruction manual, however noted that calibration, display, and tracking techniques can have a significant effect on assembly task completion time. The design paradigm of rendering abstract information with corresponding spatially-situated objects has been explored for a long time. Feiner et al.’s KARMA system \cite{Feiner1993Knowledge-basedReality} sought to provide augmented instruction in support of complex 3D tasks, for example guiding the user through laser printer maintenance with overlaid leader lines, callouts and arrows bound to different components of the machine. Instructional augmented overlay has been applied to electronics in a number of instances. Projectron Mapping \cite{Akiyama2014ProjectronMapping} seeks to provide a delightful, tangible feedback using projective AR to light components when a virtual circuit is correctly completed by students. Flow of Electrons \cite{Conradi2011FlowExperientially} helps novices learn about circuit topology and function by allowing physical electronics to be virtually connected with projected augmented overlays on a surface, allowing for experimentation, animated feedback (electron flow through connections), and educational nudges from the tutorial mascot. The study revealed augmentation helped to instruct novice users to build circuits, but the linear arrangement of the tutorial did not allow for a transition to autonomous learning. LightUp \cite{Chan2013LightUp:Electronics}, a block-based teaching tool for children, also utilized mobile AR to help show the movement of electrons through the system. Each of these projects indicate augmented reality can be an enriching tool to bridge the gap between abstract concepts/metadata and real-world circuits. Our work seeks to leverage the design paradigm of providing just-in-time, spatially-situated augmented instruction to lower workload, errors, and workload for PCB debugging.
+
+% \subsection{Augmented Reality}
+% \label{subsec: Augmented Reality}
+
+% Augmented reality (AR) involves creating an experience in which a user's sense of reality is altered by superimposing a synthetic image onto the user's view of the real-world environment.
+% AR is most commonly implemented using head-mounted displays (HMDs) in order to enable mobility, which allows for always-available functionality.
+% As a result, HMD-based AR has primarily found applications in industrial settings, such as order picking and part assembly.
+% However, HMD-based AR also introduces many technical complexities, such as making the hardware compact enough to be worn on the head, and designing and calibrating a display that effectively renders the composite image.
+
+% For applications that do not require mobility, AR can alternatively be achieved using a static projector.
+% Such a setup is not as constrained in terms of physical space, and simplifies the requirements of the display, since the superimposition of the image occurs physically.
+% A common use-case for projected-based AR is the desk or workbench.
+% DigitalDesk ..., perceptive workbench...
+
+% Our work describes a hypothetical projected-based AR system for augmenting PCBs... explore the design space for faster interactions and information retrieval.
+
+% \subsection{Visualization Tools for Breadboard Designs}
+% \label{subsec: Visualization Tools for Breadboard Designs}
+
+
+
+% \subsection{Augmenting Breadboards}
+% \label{subsec: Augmenting Breadboards}
+% \subsubsection{Visualization tools}
+% Because of their easy solderless reconfigurability, breadboards are commonly used amongst hobbyists, students, designers, and engineers for prototyping simple, one-off circuits.
+% Fritzing \cite{Knorig2009FritzingDesigners} was designed to support designers and artists in capturing breadboard designs virtually as well as translating breadboard designs into layouts.
+% Important to the tool is the “breadboard view” which seeks to emulate the tangible experience of physically building circuits by having draggable wires and drop-in, semi-realistic components.
+% Similar to how the layout file is a virtual spatial capture of a PCB, the Fritzing diagram serves as a “digital twin” to a real breadboard circuit, providing a virtual copy on which future tools add augmentation.
+
+% % \subsection{Visualization Tools for Breadboard Designs Incorporating Interactivity and Measurement}
+% % \label{subsec: Visualization Tools for Breadboard Designs Incorporating Interactivity and Measurement}
+% \subsubsection{Adding interactivity and measurement}
+% A number of systems have extended the virtual breadboard visualizations to allow for augmented interaction or measurement capability.
+% Proxino \cite{Wu2019Proxino:Proxies} extends Fritzing by allowing for physically maniputable sensor proxies that can drive values in a virtual components within a  Fritzing circuit.
+% Visible Breadboard \cite{Ochiai2014VisibleElectricity} allows for wiring to be performed with swipes directly on the board, and the connected nodes are highlighted in the same LED color.
+% Toastboard \cite{Drew2016TheCircuits} and CurrentViz \cite{Wu2017CurrentViz:Circuits} collect real-time state information of prototyped breadboard circuits on custom instrumented breadboard hardware, specifically voltage and current information respectively.
+% Toastboard pushes voltage information into a virtual diagram, and also provides row-associated status LEDs which were cited by all participants as being useful for debugging feedback. In the CurrentViz, current information from an instrumented breadboard is visualized atop a corresponding Fritzing diagram.
+
+% While measurement points can be arbitrarily accessed in breadboarded setups, access points to pull current information must be designed into PCBs a priori, usually in the form of external sense resistors or internal sense resistors within PMICs (power management integrated circuits) or other ICs.
+% RwmLAB \cite{Asumadu2003AInstrument}, Scanalog \cite{Strasnick2017Scanalog:Hardware}, VISIR \cite{Tawfik2013VirtualBreadboard} and VirtualComponent \cite{Kim2019VirtualComponent:Circuits} leverage this arbitrary circuit node access allowed by breadboarding to perform component insertion.
+% Each tool has an associated breadboard GUI where users can design a virtual circuit and an instrumented breadboard is re-wired to match this digital twin. 
+% Measurements can be taken on the physical circuits via the GUI.
+% Scanalog and VirtualComponent both allow access to mix physical and virtual components, and VirtualComponent provides a mobile AR based overlay of the virtual components on a video feed of a physical breadboard.
+% Each of these tools, while supporting the maker, student, or DIY hobbyist may not support the needs experience in the electronics industry.
+% Breadboards are a quick and easy platform to iterate on the topology and values of simple analog and low-speed digital circuits.
+% However in industry, circuits are rarely prototyped on breadboards as the circuits are too complex to hand-assemble into a breadboard format, many ICs are not available in DIP packages compatible with breadboarding, and parasitic capacitance in breadboard construction can affect sensitive or high speed signals. 
+
+% \subsection{Visualization Tools for PCB Designs}
+% \label{subsec: Visualization Tools for PCB Designs}
+\subsection{Augmented Reality for PCBs}
+
+
+While PCBs are often considered the staple of industry level electronics, breadboards are often used by students and hobbyists for their solderless reconfigurability that enables rapid iteration, and are rarely used as part of the hardware development process in industry.
+While recent work in the HCI community aimed at the student population has demonstrated a number of breadboard augmentation techniques \cite{Ochiai2014VisibleElectricity, Drew2016TheToastboard, Wu2017CurrentViz, Kim2019VirtualComponent}, PCBs are substantially more intricate, requiring much more careful augmentation.
+We motivate our work as a means toward this end.
+In this section, we discuss more directly comparable related work in the realm of specifically augmenting PCBs.
+
+
+\subsubsection{Visualization Tools}
+A few tools support visualizing certain component metadata, such as location, directly on the PCB.
+InspectAR \cite{InspectARTools} is a recently released tool that uses mobile AR to overlay elements of the layout and associated metadata onto a camera view of the PCB displayed on a mobile tablet or PC.
+It is targeted toward supporting industry professionals, with couplings to industry standard ECAD tools.
+The tool does not seem to support direct interaction with the PCB itself, measurement interactions, or a topological schematic view.
+The sales webpage offers strong testimonials speaking to the increased assembly and debugging efficiency from decreased context-switching, claiming “an average 30\% reduction in lab-time.”
+While these indications speak strongly to the hypothesis that mixed reality visualization of layout metadata on PCB can increase efficiency, a systematic study is yet to be published.
+The Mascot \cite{MascotRobotas}, a robotic workbench from Robotas, helps to support operators performing hand assembly of through hole components
+by steering a projected laser spot to the installation location on an anchored PCB.
+%The tool allows for preloading of assembly steps, which controls automated picking carousels and a projected laser spot showing assembly position on an anchored PCB.
+Similarly, Hahn et al. \cite{Hahn2015AugmentedProcess} generated an AR tool with textual and graphical cues delivered through a smartglass for assisting workers performing PCB assembly, indicating that the tool allowed for errorless part picking and assembly.
+Hahn et al.’s tool, InspectAR and Mascot all provide board-locked augmented instruction for PCB workflow, driving information from the virtual design files to the user’s view of the PCB. Our work broadens the design space seeking to also incorporate augmented interaction and measurement to pass data in the opposite direction, that is, interactive capture in the PCB view can be passed to the virtual design files.
+
+% \subsection{Visualization Tools for PCB Designs Incorporating Interactivity and Measurement}
+% \label{subsec: Visualization Tools for PCB Designs Incorporating Interactivity and Measurement}
+\subsubsection{Adding Interactivity and Measurement}
+Pinpoint \cite{Strasnick2019Pinpoint} is a tool designed to assist in PCB debugging by allowing users to modify and measure the circuit \textit{in situ} after the PCB is fabricated. The tool modifies the layout of a PCB by inserting breakable connections on some traces. While not using augmented reality per se, the tool connects the virtual and the physical by using GUI-controlled relays to make and break these connections. For form factor designs and mass-produced PCBs, modifying the layout for test is typically restrained to adding test points on critical nets for bed-of-nails, on-line testing or manual access for workbench debugging. Our work seeks to support existing debugging workflows that do not modify the PCB design, and instead ease access to measurement points by guiding users with augmentations.
+%Pinpoint \cite{Strasnick2019Pinpoint:Instrumentation} extends the concept in Scanalog, VISIR, and Virtual Component to PCB designs. The tool adds up to 16 jumper pads into a PCB design before fabrication, generates a bed-of-nails jig to interface with the jumper pads, and modifies connections through a GUI-controlled relay board. While the tool adds a unique layer of debugging capability akin to breadboarding -- the ability to access and isolate parts of a circuit for easy measurement or modification -- it necessitates amending the original design routing. For form factor designs and mass-produced PCBs, a high level of control in layout is maintained by the designer with board size, manufacturing, cost, and signal integrity concerns often precluding the use of an auto routing mechanism. The modifications to layout in production designs in support of test is therefore typically restrained to adding test points on critical nets for bed-of-nails, on-line testing or manual access for workbench debugging. Our work seeks to support existing debugging workflows that do not modify the PCB design, and instead ease access to measurement points by guiding users with augmentations.
+More relevant to our work, BoardLab presents a magnetically tracked stylus that enables interactions from board to schematic, such as selecting and identifying components on the schematic by touching the components on the board as well as taking voltage measurements and having the measurement annotated on the schematic \cite{Goyal2013BoardLab}.
+Although the system looks promising, no formal evaluation was reported.
+Our work studies whether the interactions afforded by such a stylus would be helpful to electrical engineers, as well as exploring interactions that are synergistically enabled as augmented interaction and measurement is paired with simultaneous augmented visualization.
+
+\subsection{Current Tools}
+
+Electrical engineers use a diverse set of inspection tools across various stages of the design process. In the early engineering validation test phase, manual tools such as oscilloscopes, logic analyzers, and multimeters are used to provide measurements of signal properties on the physical board. For high volume production, select functions maybe be tested via automated in-circuit testing (ICT) equipment, a test machine that accesses a set of PCB test points via a custom spring-loaded pogo pin fixture, making ICT expensive and time-consuming to set up. While allowing for high-throughput testing, the test suite  only has access to the limited set of test points for diagnostic checks and is therefore used as an end-of-line functional check, rather than allowing for root causing and free-form debugging. In this paper, we focus on tools to enable better debugging for the early stages of development and validation. In this section, we first cover related work on enabling better debugging workflow on breadboards and later cover work related to extending the capabilities of PCBs.   
+
+%Augmented Reality (AR) have the potential to be highly adaptable and customizable to individual users and specific use cases, while minimizing physical barriers between virtual and physical information transfer. %Recent work have demonstrated the feasibility and effectiveness of using AR to display information on PCBs~\cite{Chatterjee2021AugmentedBoards}. Augmented Silkscreen presented a set of augmented reality interaction techniques to assist electrical engineers in PCB debugging. They found that combining augmented visualization and augmented interaction on printed circuit boards unlocks promising avenues to alleviate the frequent context switching~\cite{Chatterjee2021AugmentedBoards}. In the reset of this section, we will first focus on related work on enabling better debugging workflow on breadboards and later we provide literature related to extending the capabilities of PCBs.
+
+\subsection{Extending Breadboards}
+
+Breadboards offer a gridded construction base in which electronic components can be inserted or removed.
+Because of their easy solderless reconfigurability, breadboards are commonly used amongst hobbyists, students, designers, and engineers for prototyping simple, one-off circuits.
+% They are primarily used for educational purposes.
+Prior work has explored augmenting breadboards to extend their capabilities, primarily for enabling measurement and testing features.
+Toastboard \cite{Drew2016TheToastboard},  CurrentViz \cite{Wu2017CurrentViz:Circuits}, and Heimdall~\cite{Karchemsky2019Heimdall:Projects} make real-time measurements on a circuit prototyped on an instrumented breadboard, specifically voltage and current information respectively, and show this information on a computer screen.
+Toastboard additionally uses status LEDs on each row of the breadboard to provide localized feedback, a feature cited by all of their study participants as being useful during debugging.
+In addition to making measurements, previous work has also explored adding \textit{in situ} reconfiguration and test capabilities to breadboards.
+Visible Breadboard allows a user to create virtual wires by dragging a finger along the desired path on a breadboard \cite{Ochiai2014VisibleElectricity}.
+A layer of relays under the breadboard reconfigures itself to form the desired electronic connection.
+Proxino similarly enables reconfiguration of an underlying layer such that users can combine virtual and physical components \cite{Wu2019Proxino}.
+
+Due to their modular nature, breadboards are helpful for rapid prototyping and primarily used for educational purposes.
+However, they are often not practical in supporting the prototyping of circuits for commercial products, as the physical design of breadboards restricts the possible package choices and layouts of the electronic components and introduces contact resistance and parasitic capacitance that can affect sensitive or high speed analog signals.
+Furthermore, replicating breadboards for more than a handful of prototypes can be tedious.
+In our work, we seek to support engineers in academia and industry who generally develop PCBs for medium-volume development and mass production.
+
+\subsection{Extending Printed Circuit Boards}
+\subsubsection{Augmented Visualization on PCBs}
+%A number of systems have extended the virtual PCB visualizations to allow for augmented interaction without focusing on measurement capabilities.
+A number of systems incorporated virtual augmentations on PCBs in varying capacities.
+InspectAR is a startup that has developed a tool using mobile AR to overlay elements of a board layout and associated metadata onto the camera's view of a PCB displayed on a mobile tablet or PC \cite{InspectARTools}. While serving detailed visualizations and component datasheets, the tool does not support
+direct interaction with the PCB itself, measurement interactions,
+or a topological schematic view for debugging. 
+The Mascot, a robotic workbench from Robotas, helps to support operators performing hand assembly of through hole components \cite{MascotRobotas}.
+The tool allows for preloading of assembly steps, which controls automated picking carousels and a projected laser spot showing assembly position on a clamped PCB.
+Similarly, Hahn et al. \cite{Hahn2015AugmentedProcess} built an AR system that delivers textual and graphical cues through a head-mounted display for assisting workers performing PCB assembly, and indicates that the tool helped minimize error in part picking and assembly.
+HolOsci \cite{Javaheri2018HolOsci} is a tool that incorporates voice commands and grabs an oscilloscope screen and overlays it onto the handheld probe to prevent users from slipping off their probe point when interacting directly with the instrument panel.
+
+Hahn et al.’s tool, InspectAR, Mascot, and HolOsci all provide board-locked augmented instruction for PCB workflow, driving information from the virtual design files or instrument panel to the user’s view of the PCB.
+Our work seeks to also incorporate augmented interaction and measurement to pass data in the opposite direction, that is, interactive capture directly on the physical PCB can be passed to the virtual design files to assist engineers in debugging.
+
+\subsubsection{Augmented Interaction and Measurement on PCBs}
+Pinpoint \cite{Strasnick2019Pinpoint} is a tool designed to assist in PCB debugging by adding up to 16 jumper pads into a PCB design before fabrication, generates a bed-of-nails jig to interface with the jumper pads, and modifies connections through a GUI-controlled relay board. While not using augmented reality per se, the tool connects the virtual and the physical by using GUI-controlled relays to make and break these connections. However, modifications to layout in acceptable in production designs in support of test is typically restricted to adding test points only on critical, low-speed nets for bed-of-nails ICT or manual access for workbench debugging. Further work by Stransnick et al. has  explored the utility of tightly coupling simulated and physical versions of the same circuit to support interactive debugging by leveraging instrumentation and programmable test hardware~\cite{Strasnick2021CouplingDebugging}. Our work seeks to support existing debugging workflows that do not modify the PCB design or add new test hardware, and instead ease access to measurement points by guiding users with augmentations.
+
+Most relevant to our work is BoardLab which presents a magnetically tracked stylus that enables interactions from board to schematic, such as selecting and identifying components on the schematic by touching the components on the board as well as taking voltage measurements and having the measurement annotated on the schematic \cite{Goyal2013BoardLab}.
+{Although the system looks promising, BoardLab does not comment on system accuracy, implement board tracking, or conduct a usability study of their device.}
+{Our work fuses the augmented interaction demonstrated in BoardLab with augmented visualization on the PCB, and discusses the practical usability considerations of the system.} 
+
+\subsubsection{{Combining Augmented Visualization and Interaction on PCBs}}
+
+{In previous design work{\cite{Chatterjee2021AugmentedBoards}}, we presented a set of augmented reality \textit{interaction techniques}, called Augmented Silkscreen, to assist electrical engineers in PCB debugging. Through a set of remote design interviews, we found that \textit{combining} augmented visualization (as seen in works like InspectAR) and augmented interaction (as seen in works like BoardLab) on PCBs unlocks promising avenues to alleviate frequent context switching between schematic, layout, and physical PCB.
+By having information flow bi-directionally between virtual design files and physical PCB, compelling interactions can be realized; for example, providing on-board augmentations to guide a user toward a measurement and then logging that measurement and its location. In this work, we build an end-to-end system that implements the interaction techniques proposed in Augmented Silkscreen. We run a user study to explore the efficacy of the system in practical scenarios.}
+
+\section{Spatial Computing Sensing: Spatial Audio}
+
+Endfire beamforming configurations remain popular on  consumer mobile phones and earbuds \cite{samsungglobalnewsroom_2014, airpods, sennheiser_2020, beamforming-app-note}. While recent advances in neural networks have shown promising results, none of them are demonstrated with  wireless earbuds.  By creating a wireless   network between two earbuds, we demonstrate that our real-time, two-channel neural network can outperform  current real-time speech enhancement approaches for wireless earbuds. %Below, we briefly discuss beamforming, single channel speech enhancement, and binaural networks.
+
+%A common approach to enhancing speech is to design a beamforming microphone array to be more sensitive to sounds coming from the direction of the user's mouth \cite{van1988beamforming} or voice~\cite{dov-uist21}.
+
+\subsubsection{Beamforming techniques.}  Since signal-processing based beamforming is computationally lightweight, these techniques are deployed on  commercial devices such as smart speakers \cite{amazon}, mobile phones \cite{samsungglobalnewsroom_2014}, and earbud devices like Apple AirPods \cite{airpods}. However, the performance of beamforming is limited by the geometry of the microphones and the distance between them \cite{van1988beamforming, InvenSense}. The form factor of devices like AirPods restricts both the number of microphones on a single earbud and the available distance between them, limiting the gain of the beamformer. While beamforming  across two earbuds could provide better performance in principle, current wireless architectures are limited to streaming from a single earbud at a time \cite{bluetooth}. Furthermore, adaptive beamformers such as MVDR \cite{frost1972MVDR}, while showing promise with relatively few interfering sources,  are sensitive to sensor placement tolerance and steering \cite{zhang2017deep, brandstein2001microphone}. Finally, beamforming leverages spatial or spectral cues only and does not use acoustic cues (e.g., structure in human speech) and perceptual differences to discriminate sources, information that machine learning methods leverage successfully.
+
+% Don H. Johnson and Dan E. Dudgeon. Array Signal Processing: Concepts and Techniques. Simon & Schuster, Inc., USA, 1992
+
+% Beamforming microphone arrays for speech enhancement, https://ieeexplore.ieee.org/abstract/document/225915
+
+% Rate-Constrained Beamforming in Binaural Hearing Aids
+% https://link.springer.com/content/pdf/10.1155/2009/257197.pdf
+
+% Dual-Channel Speech Enhancement by
+% Superdirective Beamforming
+% https://link.springer.com/content/pdf/10.1155/ASP/2006/63297.pdf
+
+
+%\vskip 0.05in\noindent{\bf Single-channel speech enhancement.} 
+\subsubsection{Single-channel deep speech enhancement.}
+Many deep learning techniques operate on spectrograms to separate the human voice from background noise \cite{realtimenoise, Mohammadiha_2013, online_nonnegative, nikzad2020deep, choi2019phaseaware, lstm_speechenhancement, fu2019metricgan, TFMasking}. However, recent works  instead operate directly on the time domain signals \cite{luo2019conv, germain2018speech, pascual2017segan, demucsreal, macartney2018improved}, yielding performance improvements over spectrogram approaches. Commercial noise suppression software like Krisp \cite{krisp} and Google Meet \cite{googlemeet} have successfully deployed single-channel models in real-time and are available for use on mobile phones and desktop computers, but {processing is performed on the cloud.}~\cite{tinylstm}  achieves low-power speech enhancement using
+long short-term memory (LSTM), but it is for a  single-channel network but not for multichannel source separation. Further, single-channel models cannot effectively capture  spatial information and fail to isolate the intended speaker when there are multiple speakers (see Fig.~\ref{fig:fig3}).
+
+% --> some recent work on increasing performance to real-time applications
+% Real Time Speech Enhancement in the Waveform Domain
+% https://arxiv.org/abs/2006.12847
+
+
+
+\subsubsection{Multi-channel source separation and speech enhancement.}
+%\subsection{Multi-channel source separation and speech enhancement}
+Multi-channel methods have been shown to perform better than their single-channel source separation counterparts \cite{yoshioka2018multi, chen2018multi, zhang2017deep, gu2020enhancing, tzirakis2021multichannel, jenrungrot2020cone}. Binaural methods have also been used for source separation \cite{binaural1, han2020realtime, li2011two, reindl2010speech} and localization \cite{van2008binaural, lyon1983computational, kock1950binaural}; \cite{han2020realtime} reduces the look-ahead time in the network to make it causal in behavior but has not been demonstrated to run on a mobile device.  Our method improves on existing binaural methods by combining time-domain neural network with spectrogram-based frequency masking networks as well as optimizing them to enable   real-time processing on a phone. Recent works such as ~\cite{binaural_osu, dual_phone,binauralphone} use multiple microphones on a smartphone for  speech-enhancement. However, neither of them demonstrates evaluation with real data, where artifacts because of network optimizations can affect user performance.
+In contrast, we demonstrate the first system that achieves real-time speech enhancement using microphones on the two wireless earbuds. Further, as the distance between the earbuds is larger than the distance between microphones on a typical mobile phone, we can  attain a better baseline than a mobile phone implementation, while also retaining the ability to speak hands-free. More recent  works tackle the problem of real-time directional hearing using eye trackers and wearable headsets. For example,  \cite{hybridbeam} uses a hybrid network that combines signal processing with neural networks, but shows that their technique performs poorly in binaural scenarios (i.e., two microphones) and requires four or more microphones. In contrast, we focus on the problem of speech enhancement and create the first real-time end-to-end hardware-software neural-network based system using wireless synchronized earbuds. 
+
+\subsubsection{Earbud  computing and platforms.}
+There has been recent interest in earbud computing~\cite{oesense21,esense-1,esense-2,plat-1,romit-1} to address  applications in health monitoring~\cite{infection,tam1,tymp}, activity tracking~\cite{mobisys21} and sensor fusion with EEG signals~\cite{eeg2}. The  eSense platform~\cite{esense-1,esense-2} has enabled research in   sensing applications with earables. OpenMHA~\cite{open-1,open-2} is an open signal processing {\it software} platform for hearing aid research. Neither of these  platforms   support time-synchronized audio transmission from two earbuds, which is a critical requirement for achieving  speech enhancement in binaural settings. In contrast, we created open-source wireless earbud hardware that can support synchronize wireless transmission from the two earbuds. 
+
+\section{Spatial Computing Control: Microgesture Interaction}
+
+
+Commercial hand gesture detection systems \cite{microsoft, MetaStore, TrackingUltraleap} often rely on optical methods, using cameras mounted on external devices such as AR/VR headsets or necklaces. However, these systems require a clear line of sight to the hand, complicating efforts to  detect gestures made outside the camera's field of view.
+% Therefore, a number of systems have explored sensors mounted on the wrist, hand, and/or fingers, spanning a wide range of modalities: \red{optical (Digits \cite{Kim2012Digits},
+% TouchPoint \cite{Chatterjee2016TouchPoint:Device},
+% SensIR \cite{McIntosh2017SensIR:Reflection}, CyclopsRing \cite{Chan2015Cyclopsring:Ring}, PinchWatch \cite{loclair2010pinchwatch}), thermal (Pyro \cite{Gong2017Pyro:Sensing}, ThermalRing \cite{thermalring}), bio-acoustic (Amento et al. \cite{10.1145/506443.506566}, 
+% Mujibiya et al. \cite{sot}, 
+% FingerPing \cite{fingerping}), 
+% ultrasonic (Beamband \cite{Iravantchi2019BeamBand:Beamforming}, SoundTrak \cite{Zhang2017SoundTrak}), mechanical (DataGlove \cite{Takada2019AFiber}, BackHand \cite{Lin2015BackHand:Hand}, 
+% Kuno et al. \cite{10.5555/3298830.3298870}), 
+% and inertial (Gu et al. \cite{Guy}, TapID \cite{Meier2021TaplD:Sensing}, FingeRing \cite{Fukumoto1994FingeRing:Interface}, DualRing \cite{Liang2021DualRing}).}
+Therefore, many systems have explored sensors mounted on the wrist, hand, and/or fingers, spanning a wide range of modalities: \red{optical (\cite{Chatterjee2016TouchPoint:Device}, \cite{Kim2012Digits},
+\cite{McIntosh2017SensIR:Reflection}, \cite{Chan2015Cyclopsring:Ring},  \cite{loclair2010pinchwatch}), (\cite{Gong2017Pyro:Sensing}, \cite{thermalring}), bio-acoustic (\cite{10.1145/506443.506566}, \cite{sot}, \cite{fingerping}), 
+ultrasonic (\cite{Iravantchi2019BeamBand:Beamforming}, \cite{Zhang2017SoundTrak}), mechanical (\cite{Takada2019AFiber}, \cite{Lin2015BackHand:Hand}, \cite{10.5555/3298830.3298870}), 
+and inertial (\cite{Guy}, \cite{Meier2021TaplD:Sensing}, \cite{Fukumoto1994FingeRing:Interface}, \cite{Liang2021DualRing}).}
+The capability of these devices ranges from detecting pinches to recognizing discrete gesture sets to driving full kinematic models.
+
+However, these approaches have several limitations: (1) passive IMUs and bio-acoustic techniques can detect when the fingers make contact  but not when they release, which is important for actions like dragging and dropping; (2) IMUs used for gesture sensing require multiple points of instrumentation, making the system awkward to use; (3) optical and ultrasonic techniques require a clear line of sight to each gesturing appendage, limiting possible mounting positions and making it difficult to detect pinches; and (4) mechanical and magnetic systems require instrumentation of the whole hand, back of the hand, or fingertips, making the system uncomfortable to use.
+%The limitations of these objects can be roughly categorized into a few areas: (1) passive IMU and bio-acoustic techniques can detect pinch touchdowns, however cannot detect when the fingers release, an important factor as a clutching mechanism, for example, drag-and-drop, (2) when used for gesture sensing, IMUs require multiple instrumentation points yielding an awkward system, (3) optical and ultrasonic techniques require line-of-sight to each of the gesturing appendages resulting non-ideal mounting positions to capture the full gesture set and are challenged to reliably detect pinches, (4) mechanical and magnetic systems require instrumenting the whole hand, back-of-the-hand, or fingertips, yielding an uncomfortable system.
+In contrast, Z-Ring instruments the body at only a single location, i.e., the base of the index finger, an ergonomic and socially acceptable area for worn systems. \red{By using the body as a transmission medium, Z-Ring does not require line-of-sight for microgesture sensing. In addition, it can robustly sense both touchdown and touch up events for one- and two-handed gestures even if touch velocity is low.}
+%This motivated other optical methods to  explore mounting on the arm or finger to detect gestures. Digits derives an articulated hand model leveraging a wirst-mounted IR camera and projector \cite{Kim2012Digits}. TouchPoint uses a pair of line sensors for continuous finger tracking on the back-of-the-hand \cite{Chatterjee2016TouchPoint:Device}. Back-Hand-See . CyclopsRing enables gesture sensing an \cite{}.
  
 % ========== Chapter 3
  
-\chapter{The Thesis Unformatted}
- 
-This chapter describes the uwthesis class (\texttt{uwthesis.cls},
-version dated 2014/11/13)
-in detail 
-and shows how it was used to format the thesis.
-A working knowledge of Lamport's \LaTeX\ manual\cite{Lbook} is assumed.
- 
-\section{The Control File}
- 
-The source to this sample thesis is a single file
-only because ease of distribution was a concern.
-You should not do this.  Your task will be much easier if you
-break your thesis into several files:  a file for the preliminary pages,
-a file for each chapter,  one for the glossary, and one for each
-appendix.  Then use a control file to tie them all together.
-This way you can edit and format parts of your thesis much more
-efficiently.
- 
-Figure~\ref{control-file} shows a control file that
-might have produced this thesis.
-It sets the document style, with options and parameters,
-and formats the various parts of the thesis---%
-but contains no text of its own.
- 
- 
-%  control file caption and figure
-%
-%
-\begin{figure}[p]
- \begin{fullpage}
-  \uwsinglespace
-  \begin{verbatim}
-    % LaTeX thesis control file
- 
-    \documentclass [11pt, proquest]{uwthesis}[2014/11/13]
- 
-    \begin{document}
- 
-    % preliminary pages
-    %
-    \prelimpages
-    \include{prelim}
- 
-    % text pages
-    %
-    \textpages
-    \include{chap1}
-    \include{chap2}
-    \include{chap3}
-    \include{chap4}
- 
-    % bibliography
-    %
-    \bibliographystyle{plain}
-    \bibliography{thesis}
- 
-    % appendices
-    %
-    \appendix
-    \include{appxa}
-    \include{appxb}
- 
-    \include{vita} 
-    \end{document}
-  \end{verbatim}
-  \caption[A thesis control file]%
-   {\narrower A thesis control file ({\tt thesis.tex}).
-   This file is the input to \LaTeX\ that will produce a
-   thesis.  It contains no text, only commands which
-   direct the formatting of the thesis.
-   }
-  \label{control-file}
- \end{fullpage}
-\end{figure}
- 
-The first section, from the \verb"\documentclass" to
-the \verb"\begin{document}", defines the document class and options.
-This sample thesis specifies the \texttt{proquest} style, which is now
-required by the Graduate School and is the default.  
-Two other, now dated, other styles are available:  \verb"twoside", which is similar but 
-produces a wider binding margin and is more suitable for paper printing; and
-\verb"oneside", which is really old fashoned.
-This sample also specified a font size
-of 11 points. 
-Possible font size options are: \verb"10pt", \verb"11pt", and \verb"12pt".
-Default is 12 points, which is the preference
-of the Graduate School. If you choose a smaller size be sure to
-check with the Graduate School for acceptability.  The smaller fonts
-can produce very small sub and superscripts.
-
-Include most additional formatting packages with \verb"\usepackage",
-as describe by Lamport\cite{Lbook}.  The one exception to this
-rule is the \verb"natbib" package.  Include it with the \verb"natbib"
-document option.
- 
-Use the \verb"\includeonly" command to format only a part of your
-thesis.  See Lamport\cite[sec. 4.4]{Lbook} for usage and limitations.
-
- 
-\section{The Text Pages}
- 
-A chapter is a major division of the thesis.  Each chapter begins
-on a new page and has a Table of Contents entry.
- 
-\subsection{Chapters, Sections, Subsections, and Appendices}
- 
- 
-Within the chapter title use a \verb"\\" control sequence to separate lines
-in the printed title (recall Figure \ref{start-2}.).
-The \verb"\\" does not affect the Table of Contents entry.
- 
-Format appendices just like chapters.
-The control sequence \verb"\appendix" instructs \LaTeX\ to
-begin using the term `Appendix' rather than `Chapter'.
- 
- 
-Specify sections and subsections of a chapter 
-with  \verb"\section" and \verb"\subsection", respectively.
-In this thesis chapter and section
-titles are written to the table of contents.
-Consult Lamport\cite[pg. 176]{Lbook} to see which
-subdivisions of the thesis can be written to the table of contents.
-The \verb"\\" control sequence is not permitted in section and
-subsection titles.
- 
- 
-\subsection{Footnotes}
- 
-\label{footnotes}
- Footnotes format as described in the \LaTeX\ book.  You can also
- ask for end-of-chapter or end-of-thesis notes.
- The thesis class will automatically set these up if
- you ask for the document class option \texttt{chapternotes}
- or \texttt{endnotes}.  
- 
-If selected, chapternotes will print automatically.  If you choose
-endnotes however you must explicitly indicate when to print the notes 
-with the command \verb"\printendnotes".  See the style guide for
-suitable endnote placement.  
-
-\subsection{Figures and Tables}
-Standard \LaTeX\ figures and tables, see Lamport\cite[sec.~C.9]{Lbook},
-normally provide the most convenient means to position the figure.
-Full page floats and facing captions are exceptions to this rule.
-
-If you want a figure or table to occupy a full page enclose the
-contents in a \texttt{fullpage} environment.  
-See figure~\ref{facing-caption}.
-
-\subsubsection{Facing pages}
-Facing page captions are an artifact of traditional, dead-tree printing,
-where a left-side (even) page faces a right-side (odd) page.
-
-In the \texttt{twoside} style, a facing caption
-is full page caption for a full page figure or table
-and should face the illustration to which it refers.
-You must explicitly format both pages. 
-The caption part appears on an even page
-(left side) and the figure or table
-comes on the following odd page (right side).
-Enclose the float contents for the caption 
-in a \texttt{leftfullpage} environment,
-and enclose the float contents for the figure or table 
-in a \texttt{fullpage} environment.
-The first page (left side) contains the caption. The second page
-(right side) could be left blank.  A picture or graph might be pasted onto
-this space. See figure~\ref{facing-caption}.
-
-
-\begin{figure}[t]
-\uwsinglespace
-\begin{verbatim}
-     \begin{figure}[p]% the left side caption
-       \begin{leftfullpage}
-         \caption{ . . . }
-       \end{leftfullpage}
-     \end{figure}
-     \begin{figure}[p]% the right side space
-       \begin{fullpage}
-          . . .
-          ( note.. no caption here )
-       \end{fullpage}
-     \end{figure}
-\end{verbatim}
-\caption[Generating a facing caption page]{This text would create a
-  double page figure in the two-side styles. }
-\label{facing-caption}
-\end{figure}
- 
-You can use these commands with the \texttt{proquest} style, but they have little
-effect on online viewing.
- 
- 
-\subsection{Horizontal Figures and Tables}
-Figures and tables may be formatted horizontally
-(a.k.a.\ landscape) as long as their captions appear
-horizontal also.  \LaTeX\ will format landscape material for you.
-
-Include the \texttt{rotating} package 
-\begin{demo}
-\\usepackage[figuresright]\{rotating\}
-\end{demo}
-and read the documentation that comes with the package. 
-
-Figure~\ref{sideways} is an example of how a landscape
-table might be formatted. 
-
-\begin{figure}[t]
-\uwsinglespace
-\begin{verbatim}
-     \begin{sidewaystable}
-         ...
-         \caption{ . . . }
-     \end{sidewaystable}
-\end{verbatim}
-\caption[Generating a landscape table]{This text would create a
-  landscape table with caption.}
-\label{sideways}
-\end{figure}
- 
-
-
-\subsection{Figure and Table Captions}
-Most captions are formatted with the \verb"\caption" macro as described 
-by Lamport\cite[sec. C.9]{Lbook}. 
-The uwthesis class extends this macro to allow
-continued figures and tables, and to provide multiple figures and
-tables with the same number, e.g., 3.1a, 3.1b, etc.
- 
-To format the caption for the first part of
-a figure or table that cannot fit
-onto a single page use the standard form:
-\begin{demo}
-\\caption[\textit{toc}]\{\textit{text}\}
-\end{demo}
-To format the caption for the subsequent parts of 
-the figure or table 
-use this caption:
-\begin{demo}
-\\caption(-)\{(continued)\}
-\end{demo}
-It will keep the same number and the text of the caption will be 
-{\em(continued)}.
-
-To format the caption for the first part of
-a multi-part figure or table
-use the format:
-\begin{demo}
-\\caption(a)[\textit{toc}]\{\textit{text}\}
-\end{demo}
-The figure or table will be lettered (with `a') as well as numbered.
-To format the caption for the subsequent parts of 
-the multi-part figure or table
-use the format:
-\begin{demo}
-\\caption(\textit{x})\{\textit{text}\}
-\end{demo}
-where {\em x} is {\tt b}, {\tt c}, \ldots.
-The parts will be lettered (with `b', `c', \ldots).
-
-If you want a normal caption, but don't want a ToC entry:
-\begin{demo}
-\\caption()\{\textit{text}\}
-\end{demo}
-Note that the caption number will increment.  You would normally use this 
-only to leave an entire chapter's captions off the ToC.
-
-
-\subsection{Line spacing}
-
-Normally line spacing will come out like it should. However, the 
-ProQuest style allows single spacing in certain situations:
-figure content, some lists, and etc.
-Use \verb"\uwsinglespace" to switch to single spacing within
-a \verb"\begin{}" and \verb"\end{}" block.
-The code examples in this document does this. 
-
-\section{The Preliminary Pages}
- 
-These are easy to format only because they are relatively invariant
-among theses.  Therefore the difficulties have already been encountered
-and overcome by \LaTeX\ and the thesis document classes.
-
-Start with the definitions that describe your thesis.
-This sample thesis was printed with the parameters:
-
-\begin{demo}
-\\Title\{The Suitability of the \\LaTeX\\ Text Formatter\\\\
-   for Thesis Preparation by Technical and\\\\
-   Non-technical Degree Candidates\}
-\\Author\{Jim Fox\}
-\\Program\{IT Infrastructure\}
-\\Year\{2012\}
-
-\\Chair\{Name of Chairperson\}\{title\}\{Chair's department\}
-\\Signature\{First committee member\}
-\\Signature\{Next committee member\}
-\\Signature\{etc\}
-
-\end{demo}
- 
-Use two or more \verb"\Chair" lines if you have co-chairs.
- 
-\subsection{Copyright page}
-Print the copyright page with \verb"\copyrightpage".
-
-\subsection{Title page}
-Print the title page with \verb"\titlepage".
-The title page of this thesis was printed with%
- 
-\begin{demo}
-\\titlepage
-\end{demo}
- 
-You may change default text on the title page with these
-macros.  You will have to redefine \verb"\Degreetext", for instance,
-if you're writing a Master's thesis instead of a dissertation.\footnote{If you use these they can
-be included with the other information before \\copyrightpage".}
-
-\begin{list}{}{\itemindent\parindent\itemsep0pt
-   \def\makelabel#1{\texttt{\char`\\#1}\hfill}\uwsinglespace}
-\item[Degree\char`\{{\it degree name}\char`\}]
-   defaults to ``Doctor of Philosophy''
-\item[School\char`\{{\it school name}\char`\}] defaults to
-``University of Washington''
-\item[Degreetext\char`\{{\it degree text}\char`\}] defaults to
-``A dissertation submitted \ldots''
-\item[textofCommittee\char`\{{\it committee label}\char`\}] defaults to
-``Reading Committee:''
-\item[textofChair\char`\{{\it chair label}\char`\}] defaults to
-``Chair of the Supervisory Committee:''
-\end{list}
-
-These definitions must appear \underline{before} the \verb"\titlepage" command.
-
- 
-\subsection{Abstract}
-Print the
-abstract with \verb"\abstract".
-It has one argument, which is the text of the abstract.
-All the names have already been defined.
-The abstract of this thesis was printed with
- 
-\begin{demo}
-\\abstract\{This sample . . . `real' dissertation.\}
-\end{demo}
- 
- 
-\subsection{Tables of contents}
-Use the standard \LaTeX\ commands to format these items.
- 
- 
-\subsection{Acknowledgments}
-Use the \verb"\acknowledgments" macro to format the acknowledgments page.
-It has one argument, which is the text of the acknowledgment.
-The acknowledgments of this thesis was printed with
- 
-\begin{demo}
-\\acknowledgments\{The author wishes . . . \{\\it il miglior fabbro\}.\\par\}\}
-\end{demo}
- 
- 
-\subsection{Dedication}
-Use the \verb"\dedication" macro to format the dedication page.
-It has one argument, which is the text of the dedication.
- 
-\subsection{Vita}
-Use the \verb"\vita" macro to format the curriculum vitae.
-It has one argument, which chronicles your life's accomplishments.
-
-Note that the Vita is not really a preliminary page.
-It appears at the end of your thesis, just after the appendices.
- 
- 
-%%  
-%% \section{Customization of the Macros}
-%%  
-%% Simple customization, including 
-%% alteration of default parameters,  changes to dimensions,
-%% paragraph indentation, and margins, are not too difficult.
-%% You have the choice of modifying the class file ({\tt uwthesis.cls})
-%% or loading
-%% one or more personal style files to customize your thesis.
-%% The latter is usually most convenient, since you do not need
-%% to edit the large and complicated class file.
-%% 
- 
-
+\chapter{Augmented Task Guidance: AR Debugging Workbench}
 
 % ========== Chapter 4
- 
-\chapter{Running \LaTeX\\
-  ({\it and printing if you must})}
- 
- 
-From a given source \TeX\ will produce exactly the same document
-on all computers and, if needed, on all printers.  {\it Exactly the same}
-means that the various spacings, line and page breaks, and
-even hyphenations will occur at the same places.
 
-How you edit your text files and run \LaTeX\ varies
-from system to system and depends on your personal preference.
+\chapter{Spatial Audio: ClearBuds}
 
-\section{Running}
+% ========== Chapter 5
 
-The author is woefully out of his depth where 
-\TeX\ on Windows is concerned.  Google would be his resource.
-On a linux system he types
+\chapter{Microgesture Interaction: ToFRing and Placeholder}
 
-\begin{demo}
-\$\ pdflatex uwthesis
-\end{demo}
 
-and it generally works.
 
- 
-\section{Printing}
- 
-All implementations of \TeX\ provide the option of {\bf pdf} output,
-which is all the Graduate School requires.  Even if you intend to
-print a copy of your thesis create a 
-{\tt pdf}.  It will print most anywhere.
 
-\printendnotes
 
+%\printendnotes
 %
 % ==========   Bibliography
 %
@@ -859,37 +493,6 @@ print a copy of your thesis create a
  
 \chapter{Where to find the files}
  
-The uwthesis class file, {\tt uwthesis.cls}, contains the parameter settings,
-macro definitions, and other \TeX nical commands which
-allow \LaTeX\ to format a thesis.  
-The source to
-the document you are reading, {\tt uwthesis.tex},
-contains many formatting examples
-which you may find useful.
-The bibliography database, {\tt uwthesis.bib}, contains instructions
-to BibTeX to create and format the bibliography.
-You can find the latest of these files on:
-
-\begin{itemize}
-\item My page.
-\begin{description}
-\item[] \verb%https://staff.washington.edu/fox/tex/thesis.shtml%
-\end{description}
-
-\item CTAN
-\begin{description}
-\item[]  \verb%http://tug.ctan.org/tex-archive/macros/latex/contrib/uwthesis/%
-\item[]  (not always as up-to-date as my site)
-\end{description}
-
-\end{itemize}
-
-\vita{Jim Fox is a Software Engineer with IT Infrastructure Division at the University of Washington.
-His duties do not include maintaining this package.  That is rather
-an avocation which he enjoys as time and circumstance allow.
-
-He welcomes your comments to {\tt fox@uw.edu}.
-}
 
 
 \end{document}
