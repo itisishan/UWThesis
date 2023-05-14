@@ -88,7 +88,7 @@
 %
 % ----- copyright and title pages
 %
-\Title{In-Context, Spatial Computing}
+\Title{Spatial Computing in Context}
 \Author{Ishan Chatterjee}
 \Year{2023}
 \Program{Computer Science and Engineering}
@@ -115,9 +115,9 @@
 
 \setcounter{page}{-1}
 \abstract{%
-The desktop computing paradigm has revolutionized the way we live, work, and communicate, but is limited by the physical boundaries of the devices themselves. More recently, mobile computing has allowed us to take these capabilities on-the-go, but input and output mechanisms remain tied to the device surface, without interplay with the physicality of the surrounding environment. Spatial computing, however, seeks to define a new generation of computing, where users can receive digital guidance, communication, and contextual references based on and embedded within the environment around them. This means spatial computing will be used \textit{in-context}, where the users are performing another task — one in which computing can either actively or passively provide support. This provides the new challenge in which the interaction and input of these systems must function within an ongoing situation, but also provides an opportunity where systems can leverage the spatial dimension for additional information to drive natural interaction. I approach this area on three fronts: \textit{spatial computing interaction}, \textit{spatial computing sensing}, and \textit{spatial computing control}.
+The desktop computing paradigm has revolutionized the way we live, work, and communicate, but is limited by the physical boundaries of the devices themselves. More recently, mobile computing has allowed us to take these capabilities on-the-go, but input and output mechanisms remain tied to the device surface, without interplay with the physicality of the surrounding environment. Spatial computing, however, seeks to define a new generation of computing, where users can receive digital guidance, communication, and contextual references based on -- and embedded within -- the environment around them. This means spatial computing will be used \textit{in-context}, where the users are performing another task -- one in which computing can either actively or passively provide support. This provides the new challenge in which the interaction and input of these systems must function within an ongoing situation, but also provides an opportunity where systems can leverage the spatial dimension for additional information to drive natural interaction. I approach this area on three fronts: \textit{spatial computing interaction}, \textit{spatial computing sensing}, and \textit{spatial computing control}.
 
-From the perspective of spatial computing interaction, we investigate how electrical engineers can benefit from spatial computing while debugging printed circuit boards and develop an AR system that supports them in-context. For spatial computing sensing, we design earbuds that filter out the noises in the users’ noisy environment by leveraging the spatial information of interfering audio sources. Finally, for spatial computing control, we develop thumb-to-index finger microgesture interfaces which can allow for control of an augmented reality headset while maintaining the subtlety and precision needed for on-the-go and public scenarios.
+From the perspective of spatial computing interaction, we investigate how electrical engineers can benefit from spatial augmentations while debugging printed circuit boards and develop an AR workbench that supports them as they work. For spatial computing sensing, we design earbuds that filter out the unwanted commotion in the users’ noisy environment by leveraging the spatial information of interfering audio sources. Finally, for spatial computing control, we develop thumb-to-index finger microgesture interfaces which can allow for control of an augmented reality headset while maintaining the subtlety and precision needed for on-the-go, public scenarios.
 }
  
 %
@@ -216,7 +216,7 @@ From the perspective of spatial computing interaction, we investigate how electr
 
 \section{Spatial Computing}
  
-Computing as we know it today is a physically confined experience, most commonly expressed as a box on one's desk or a brick within one's pocket. Interaction with these devices is tied to the device themselves without reference to the user’s environment. The spatial computing paradigm seeks to enable aspects of input and output that move beyond the borders of the physical device, sensing or augmenting aspects of the surrounding physical world. In this proposal I adopt Greenwold’s original definition of \textit{spatial computing} as a “as human interaction with a machine in which the machine retains and manipulates referents to real objects and spaces.” (This definition also subsumes the more recent uses of spatial computing in marketing material as anything to do with AR/VR/MR.) This aspect of being rooted in the real-world lends spatial computing toward tasks that occur beyond the office desk. For example, the second-generation of Microsoft HoloLens and Magic Leap augmented reality (AR) devices were largely marketed toward industrial applications such as manufacturing line guidance, surgical operations or in-field visualizations. These types of tasks require spatial computing technologies to work \textit{in-context} – as an extension of the user’s current workflow or situation. 
+Computing as we know it today is a physically confined experience, most commonly expressed as a box on one's desk or a slab within one's pocket. Interaction with these devices is tied to the device themselves without reference to the user’s environment. The spatial computing paradigm seeks to enable input and output that move beyond the borders of the physical device, sensing and/or augmenting aspects of the surrounding physical world. In this proposal I adopt Greenwold’s original definition of \textit{spatial computing} as "human interaction with a machine in which the machine retains and manipulates referents to real objects and spaces." (This definition also subsumes the more recent uses of spatial computing in marketing material as anything to do with AR/VR/MR.) This aspect of being rooted in the real-world lends spatial computing toward tasks that occur beyond the office desk. For example, the second-generation of Microsoft HoloLens and Magic Leap augmented reality (AR) devices were largely marketed toward industrial applications such as manufacturing line guidance, surgical operations or in-field visualizations. These types of tasks require spatial computing technologies to work \textit{in-context} -- honoring the user’s current workflow or situation. 
  
  
 \section{In-Context Computing}
@@ -230,7 +230,7 @@ As they are both tied to the environment and task-at-hand, spatial and in-contex
 
 \subsubsection{Spatial computing interaction:} Beginning with spatial computing interaction, the focus is on co-designing spatial input and output mechanisms that align with the user's workflow, enabling seamless support within their work context. Specifically, in Augmented Reality Debugging Workbench (Chapter 3), we ask: can augmented reality assist electrical engineers in their printed circuit board debugging workflows and how can it best support them? (\textbf{RQ1}) To answer this question, we design and develop an augmented reality workbench for electrical engineers. To facilitate in-context computing, we co-design the interactions around their existing workflows leveraging their workbench surface as a spatial canvas for projection and input.
 
-\subsubsection{Spatial computing sensing:} Moving on to spatial computing sensing, the emphasis lies in understanding and utilizing the spatial characteristics of a given situation to enhance computing performance. Specifically, I focus on spatial audio sensing in noisy, real-world environments. In ClearBuds (Chapter 4), we ask: How we can leverage spatial information, in addition to frequency information, about competing environmental sound sources to remove them and allow for clear calls? (\textbf{RQ2}). We develop a pair of wireless earbuds that uses multiple, time-synchronized audio channels and a time-domain network to utilize the spatial distribution of the target speech source and interfering noise sources for speech enhancement.
+\subsubsection{Spatial computing sensing:} Moving on to spatial computing sensing, the emphasis lies in understanding and utilizing the spatial characteristics of a given situation to enhance computing performance. Specifically, I focus on spatial audio capture sensing in noisy, real-world environments. In ClearBuds (Chapter 4), we ask: How we can leverage spatial information, in addition to frequency information, about competing environmental sound sources to remove them and allow for clear calls? (\textbf{RQ2}). We develop a pair of wireless earbuds that uses multiple, time-synchronized audio channels and a time-domain network to utilize the spatial distribution of the target speech source and interfering noise sources for speech enhancement.
 
 \subsubsection{Spatial computing control (proposed):} Lastly, attention is given to the control of future spatial computing devices, particularly in mobile scenarios. A challenge lies in designing input modalities for smartglasses that are ergonomic, socially acceptable, and precise, without relying on an external surface. In ToFRing and Placeholder (Chapter 5), we propose to develop two systems to investigate: how can thumb-to-finger microgesture inputs be sensed from a wearable ring and wristband respectively? (\textbf{RQ3}) In ToF Ring, we plan to develop a system that can gather thumb-to-index swipe and thumb motion information in two axes using miniaturized time-of-flight and bio-acoustic sensors. In Placeholder, we plan to leverage electrical sensing to be able to sense thumb-to-index gestures from a wrist-based system, allowing for users who prefer bracelets or watches to similarly be able to control smartglasses. In both systems, the design constraints applied by on-the-go usage influences the interactions and form factors we can consider.
 
@@ -239,24 +239,30 @@ As they are both tied to the environment and task-at-hand, spatial and in-contex
 \chapter{Related Work}
 \label{sec:related}
 
-Human exist as beings in space. Therefore it is intuitive.
-We move through space. Our own senses our mediated by space  -- what we see, what we hear, and what we touch. Therefore tapping into these natural faculties can better lend itself to what Mark Weiser calls computing as "an extention of the unconcious"
+In this section, we review related work for each of the areas of focus: spatial computing interaction (section \ref{sec: Spatial Computing Interaction: Augmented Task Guidance}, sensing, and control. We contextualize the work within the general thesis and then narrow to the specific contributions of the individual works that realize that hypothesis.
 
 \section{Spatial Computing Interaction: Augmented Task Guidance}
+\label{sec: Spatial Computing Interaction: Augmented Task Guidance}
 
-\subsection{Augmented Reality}%\subsection{Augmented Visualization and Interaction for Spatially-Associated Information Access}
-\label{subsec: Augmented Reality}%\label{subsec: Augmented Visualization and Interaction for Spatially-Associated Information Access}
-Augmented reality (AR) has long been seen as a paradigm that can decrease the barrier between virtual and physical information transfer.
+\subsection{Augmenting Reality}
+\label{subsec: Augmented Reality}
+
+Our own senses are mediated by space -- how we see, how we hear, and how we touch. Through our development, we generate natural intuitions about our body's relation to space [Piaget, J. (1954)]. Therefore tapping into these natural faculties can better lend itself to what Weiser envisioned of computing as "an extension of our unconscious." 
+%\subsection{Augmented Visualization and Interaction for Spatially-Associated Information Access}
+%\label{subsec: Augmented Visualization and Interaction for Spatially-Associated Information Access}
+Augmented reality (AR) has long been seen as a paradigm that can decrease the barrier between virtual and physical information transfer [cite Grasping Reality Through Illusion- Interactive Graphics Serving Science, Annotating the real world with knowledge-based graphics on a see-through head-mounted display.].
 % above is the big claim about AR, below is breaking that claim down
 This transfer process can consist of two components: the presentation of the information to the user, generally in the form of visualizations; and the ability for the user to interact with the visualization, perhaps enabling the user to query for additional information.
 % give examples of the first part of the claim
 Prior work has shown that AR systems presenting spatially-tracked information, even with no interaction component, can be effective not only in reducing error rate and mental effort across industrial tasks such as order picking \cite{Schwerdtfeger2008SupportingReality} and object assembly \cite{Caudell1992AugmentedProcesses, Tang2003ComparativeAssembly}, but also as a medium for understanding abstract concepts such as how electrons flow through a circuit \cite{Conradi2011FlowElectrons, Chan2013LightUp}.
+Feiner et al.’s seminal KARMA system \cite{Feiner1993Knowledge-basedReality} sought to provide augmented instruction in support of complex 3D tasks, for example guiding the user through laser printer maintenance with overlaid leader lines, callouts and arrows bound to different components of the machine. 
+
 % then give examples of making them interactive
 Extending AR experiences to enable interaction makes them even more powerful.
 Such interactions might enable actions such as the selection of elements in the physical world to be used as part of a virtual tool operation.
 Digitaldesk \cite{Wellner1993InteractingDigitaldesk} demonstrated such interactions with examples such as allowing the user to move a number from a physical price list into a virtual calculator.
 % we work on both of these aspects of AR and we will talk about how previous people have used both of these aspects of AR wrt PCBs
-Our work explores the design space of both of these aspects of AR -- visualization and interaction -- and how they might enhance how electrical engineers work with PCBs.
+In this first section on spatial computing interaction, our work explores the design space of both of these aspects of AR -- visualization and interaction -- and how they might enhance how electrical engineers work with PCBs. We focus on this group as we observe their workflow to require frequent context switching between various virual design files and spatial navigation on their physical design.
 % In the following section, we discuss how prior work has used these aspects of AR toward working with PCBs.
 
 
@@ -316,12 +322,23 @@ Our work explores the design space of both of these aspects of AR -- visualizati
 
 % \subsection{Visualization Tools for PCB Designs}
 % \label{subsec: Visualization Tools for PCB Designs}
+\subsection{Limitations of Current Tools}
+
+During the process of debugging a new PCB design, engineers must constantly move between their schematic, layout, and physical representations in order to validate their design or understand the nature of a design failure\footnote{Some helpful technical background and terminology: The electrical engineering design process typically starts with designing a circuit to meet a set of functional requirements.
+Using an electronic computer-aided design (ECAD) tool, the logic of the circuit is formalized via schematic capture into a \textit{schematic diagram}, which visualizes the circuit's components as symbols and the circuit's interconnections (\textit{nets}) as topological lines between the components' pins.
+This logic is then transferred to a \textit{layout diagram}, where components and connections are placed in a physical coordinate space.
+Finally, the design is then physically fabricated and assembled into a functional PCB, where the components are soldered onto the surface of a fiberglass board with conductive pads, vias, and traces running buried within its layers. For images, see online tutorials on Sparkfun (\url{https://learn.sparkfun.com/tutorials/pcb-basics/all}) or Adafruit (\url{https://learn.adafruit.com/making-pcbs-with-oshpark-and-eagle}).}
+(Fig. \ref{fig:teaserfigure}).
+Through current ECAD tools, this can be a time-consuming and error-prone process which typically involves manually following correspondences and nomenclatures
+% demarcated by a component reference designator (such as ‘{\fontfamily{cmtt}\selectfont{R234}}’), net name (‘{\fontfamily{cmtt}\selectfont{PP\_VSYS\_5V}}’), or approximate location on the board,
+across different software applications, often using each application’s textual ``find'' command. To locate the corresponding area-of-interest on the board, the engineer must textually match the reference designator against the board’s silkscreen (if printed) or visually pattern match layout representation to the physical PCB, which can become more challenging with dense components or different orientations.
+As a debugging procedure typically involves tens to hundreds of these correspondences, this procedure can quickly become tedious with the ever-increasing complexity of board designs only exacerbating the challenge. 
+In our work, we interview electrical engineers on their workflow to get a better picture of pain points in their current processes. We design our spatial computing system with an eye towards relieving these pain points.
+
 \subsection{Augmented Reality for PCBs}
 
-
-While PCBs are often considered the staple of industry level electronics, breadboards are often used by students and hobbyists for their solderless reconfigurability that enables rapid iteration, and are rarely used as part of the hardware development process in industry.
+While PCBs are often considered the staple of industry level electronics, breadboards are often used by students and hobbyists for their solderless reconfigurability that enables rapid iteration. However, they are rarely used as part of the hardware development process in industry.
 While recent work in the HCI community aimed at the student population has demonstrated a number of breadboard augmentation techniques \cite{Ochiai2014VisibleElectricity, Drew2016TheToastboard, Wu2017CurrentViz, Kim2019VirtualComponent}, PCBs are substantially more intricate, requiring much more careful augmentation.
-We motivate our work as a means toward this end.
 In this section, we discuss more directly comparable related work in the realm of specifically augmenting PCBs.
 
 
@@ -342,69 +359,41 @@ Hahn et al.’s tool, InspectAR and Mascot all provide board-locked augmented in
 % \label{subsec: Visualization Tools for PCB Designs Incorporating Interactivity and Measurement}
 \subsubsection{Adding Interactivity and Measurement}
 Pinpoint \cite{Strasnick2019Pinpoint} is a tool designed to assist in PCB debugging by allowing users to modify and measure the circuit \textit{in situ} after the PCB is fabricated. The tool modifies the layout of a PCB by inserting breakable connections on some traces. While not using augmented reality per se, the tool connects the virtual and the physical by using GUI-controlled relays to make and break these connections. For form factor designs and mass-produced PCBs, modifying the layout for test is typically restrained to adding test points on critical nets for bed-of-nails, on-line testing or manual access for workbench debugging. Our work seeks to support existing debugging workflows that do not modify the PCB design, and instead ease access to measurement points by guiding users with augmentations.
+
 %Pinpoint \cite{Strasnick2019Pinpoint:Instrumentation} extends the concept in Scanalog, VISIR, and Virtual Component to PCB designs. The tool adds up to 16 jumper pads into a PCB design before fabrication, generates a bed-of-nails jig to interface with the jumper pads, and modifies connections through a GUI-controlled relay board. While the tool adds a unique layer of debugging capability akin to breadboarding -- the ability to access and isolate parts of a circuit for easy measurement or modification -- it necessitates amending the original design routing. For form factor designs and mass-produced PCBs, a high level of control in layout is maintained by the designer with board size, manufacturing, cost, and signal integrity concerns often precluding the use of an auto routing mechanism. The modifications to layout in production designs in support of test is therefore typically restrained to adding test points on critical nets for bed-of-nails, on-line testing or manual access for workbench debugging. Our work seeks to support existing debugging workflows that do not modify the PCB design, and instead ease access to measurement points by guiding users with augmentations.
 More relevant to our work, BoardLab presents a magnetically tracked stylus that enables interactions from board to schematic, such as selecting and identifying components on the schematic by touching the components on the board as well as taking voltage measurements and having the measurement annotated on the schematic \cite{Goyal2013BoardLab}.
 Although the system looks promising, no formal evaluation was reported.
-Our work studies whether the interactions afforded by such a stylus would be helpful to electrical engineers, as well as exploring interactions that are synergistically enabled as augmented interaction and measurement is paired with simultaneous augmented visualization.
+Our work studies whether the interactions afforded by such a stylus would be helpful to electrical engineers as they actively debug, as well as exploring interactions that are synergistically enabled as augmented interaction and measurement is paired with simultaneous augmented visualization.
 
-\subsection{Current Tools}
-
-Electrical engineers use a diverse set of inspection tools across various stages of the design process. In the early engineering validation test phase, manual tools such as oscilloscopes, logic analyzers, and multimeters are used to provide measurements of signal properties on the physical board. For high volume production, select functions maybe be tested via automated in-circuit testing (ICT) equipment, a test machine that accesses a set of PCB test points via a custom spring-loaded pogo pin fixture, making ICT expensive and time-consuming to set up. While allowing for high-throughput testing, the test suite  only has access to the limited set of test points for diagnostic checks and is therefore used as an end-of-line functional check, rather than allowing for root causing and free-form debugging. In this paper, we focus on tools to enable better debugging for the early stages of development and validation. In this section, we first cover related work on enabling better debugging workflow on breadboards and later cover work related to extending the capabilities of PCBs.   
 
 %Augmented Reality (AR) have the potential to be highly adaptable and customizable to individual users and specific use cases, while minimizing physical barriers between virtual and physical information transfer. %Recent work have demonstrated the feasibility and effectiveness of using AR to display information on PCBs~\cite{Chatterjee2021AugmentedBoards}. Augmented Silkscreen presented a set of augmented reality interaction techniques to assist electrical engineers in PCB debugging. They found that combining augmented visualization and augmented interaction on printed circuit boards unlocks promising avenues to alleviate the frequent context switching~\cite{Chatterjee2021AugmentedBoards}. In the reset of this section, we will first focus on related work on enabling better debugging workflow on breadboards and later we provide literature related to extending the capabilities of PCBs.
 
-\subsection{Extending Breadboards}
 
-Breadboards offer a gridded construction base in which electronic components can be inserted or removed.
-Because of their easy solderless reconfigurability, breadboards are commonly used amongst hobbyists, students, designers, and engineers for prototyping simple, one-off circuits.
-% They are primarily used for educational purposes.
-Prior work has explored augmenting breadboards to extend their capabilities, primarily for enabling measurement and testing features.
-Toastboard \cite{Drew2016TheToastboard},  CurrentViz \cite{Wu2017CurrentViz:Circuits}, and Heimdall~\cite{Karchemsky2019Heimdall:Projects} make real-time measurements on a circuit prototyped on an instrumented breadboard, specifically voltage and current information respectively, and show this information on a computer screen.
-Toastboard additionally uses status LEDs on each row of the breadboard to provide localized feedback, a feature cited by all of their study participants as being useful during debugging.
-In addition to making measurements, previous work has also explored adding \textit{in situ} reconfiguration and test capabilities to breadboards.
-Visible Breadboard allows a user to create virtual wires by dragging a finger along the desired path on a breadboard \cite{Ochiai2014VisibleElectricity}.
-A layer of relays under the breadboard reconfigures itself to form the desired electronic connection.
-Proxino similarly enables reconfiguration of an underlying layer such that users can combine virtual and physical components \cite{Wu2019Proxino}.
 
-Due to their modular nature, breadboards are helpful for rapid prototyping and primarily used for educational purposes.
-However, they are often not practical in supporting the prototyping of circuits for commercial products, as the physical design of breadboards restricts the possible package choices and layouts of the electronic components and introduces contact resistance and parasitic capacitance that can affect sensitive or high speed analog signals.
-Furthermore, replicating breadboards for more than a handful of prototypes can be tedious.
-In our work, we seek to support engineers in academia and industry who generally develop PCBs for medium-volume development and mass production.
 
-\subsection{Extending Printed Circuit Boards}
-\subsubsection{Augmented Visualization on PCBs}
-%A number of systems have extended the virtual PCB visualizations to allow for augmented interaction without focusing on measurement capabilities.
-A number of systems incorporated virtual augmentations on PCBs in varying capacities.
-InspectAR is a startup that has developed a tool using mobile AR to overlay elements of a board layout and associated metadata onto the camera's view of a PCB displayed on a mobile tablet or PC \cite{InspectARTools}. While serving detailed visualizations and component datasheets, the tool does not support
-direct interaction with the PCB itself, measurement interactions,
-or a topological schematic view for debugging. 
-The Mascot, a robotic workbench from Robotas, helps to support operators performing hand assembly of through hole components \cite{MascotRobotas}.
-The tool allows for preloading of assembly steps, which controls automated picking carousels and a projected laser spot showing assembly position on a clamped PCB.
-Similarly, Hahn et al. \cite{Hahn2015AugmentedProcess} built an AR system that delivers textual and graphical cues through a head-mounted display for assisting workers performing PCB assembly, and indicates that the tool helped minimize error in part picking and assembly.
-HolOsci \cite{Javaheri2018HolOsci} is a tool that incorporates voice commands and grabs an oscilloscope screen and overlays it onto the handheld probe to prevent users from slipping off their probe point when interacting directly with the instrument panel.
 
-Hahn et al.’s tool, InspectAR, Mascot, and HolOsci all provide board-locked augmented instruction for PCB workflow, driving information from the virtual design files or instrument panel to the user’s view of the PCB.
-Our work seeks to also incorporate augmented interaction and measurement to pass data in the opposite direction, that is, interactive capture directly on the physical PCB can be passed to the virtual design files to assist engineers in debugging.
 
-\subsubsection{Augmented Interaction and Measurement on PCBs}
-Pinpoint \cite{Strasnick2019Pinpoint} is a tool designed to assist in PCB debugging by adding up to 16 jumper pads into a PCB design before fabrication, generates a bed-of-nails jig to interface with the jumper pads, and modifies connections through a GUI-controlled relay board. While not using augmented reality per se, the tool connects the virtual and the physical by using GUI-controlled relays to make and break these connections. However, modifications to layout in acceptable in production designs in support of test is typically restricted to adding test points only on critical, low-speed nets for bed-of-nails ICT or manual access for workbench debugging. Further work by Stransnick et al. has  explored the utility of tightly coupling simulated and physical versions of the same circuit to support interactive debugging by leveraging instrumentation and programmable test hardware~\cite{Strasnick2021CouplingDebugging}. Our work seeks to support existing debugging workflows that do not modify the PCB design or add new test hardware, and instead ease access to measurement points by guiding users with augmentations.
 
-Most relevant to our work is BoardLab which presents a magnetically tracked stylus that enables interactions from board to schematic, such as selecting and identifying components on the schematic by touching the components on the board as well as taking voltage measurements and having the measurement annotated on the schematic \cite{Goyal2013BoardLab}.
-{Although the system looks promising, BoardLab does not comment on system accuracy, implement board tracking, or conduct a usability study of their device.}
-{Our work fuses the augmented interaction demonstrated in BoardLab with augmented visualization on the PCB, and discusses the practical usability considerations of the system.} 
 
-\subsubsection{{Combining Augmented Visualization and Interaction on PCBs}}
 
-{In previous design work{\cite{Chatterjee2021AugmentedBoards}}, we presented a set of augmented reality \textit{interaction techniques}, called Augmented Silkscreen, to assist electrical engineers in PCB debugging. Through a set of remote design interviews, we found that \textit{combining} augmented visualization (as seen in works like InspectAR) and augmented interaction (as seen in works like BoardLab) on PCBs unlocks promising avenues to alleviate frequent context switching between schematic, layout, and physical PCB.
-By having information flow bi-directionally between virtual design files and physical PCB, compelling interactions can be realized; for example, providing on-board augmentations to guide a user toward a measurement and then logging that measurement and its location. In this work, we build an end-to-end system that implements the interaction techniques proposed in Augmented Silkscreen. We run a user study to explore the efficacy of the system in practical scenarios.}
 
-\section{Spatial Computing Sensing: Spatial Audio}
 
-Endfire beamforming configurations remain popular on  consumer mobile phones and earbuds \cite{samsungglobalnewsroom_2014, airpods, sennheiser_2020, beamforming-app-note}. While recent advances in neural networks have shown promising results, none of them are demonstrated with  wireless earbuds.  By creating a wireless   network between two earbuds, we demonstrate that our real-time, two-channel neural network can outperform  current real-time speech enhancement approaches for wireless earbuds. %Below, we briefly discuss beamforming, single channel speech enhancement, and binaural networks.
 
-%A common approach to enhancing speech is to design a beamforming microphone array to be more sensitive to sounds coming from the direction of the user's mouth \cite{van1988beamforming} or voice~\cite{dov-uist21}.
 
-\subsubsection{Beamforming techniques.}  Since signal-processing based beamforming is computationally lightweight, these techniques are deployed on  commercial devices such as smart speakers \cite{amazon}, mobile phones \cite{samsungglobalnewsroom_2014}, and earbud devices like Apple AirPods \cite{airpods}. However, the performance of beamforming is limited by the geometry of the microphones and the distance between them \cite{van1988beamforming, InvenSense}. The form factor of devices like AirPods restricts both the number of microphones on a single earbud and the available distance between them, limiting the gain of the beamformer. While beamforming  across two earbuds could provide better performance in principle, current wireless architectures are limited to streaming from a single earbud at a time \cite{bluetooth}. Furthermore, adaptive beamformers such as MVDR \cite{frost1972MVDR}, while showing promise with relatively few interfering sources,  are sensitive to sensor placement tolerance and steering \cite{zhang2017deep, brandstein2001microphone}. Finally, beamforming leverages spatial or spectral cues only and does not use acoustic cues (e.g., structure in human speech) and perceptual differences to discriminate sources, information that machine learning methods leverage successfully.
+
+\section{Spatial Computing Sensing: Spatial Audio Capture} 
+
+\subsection{Sensing Space and Distance}
+
+Historically, systems have used a wide variety of sensing methodologies to understand space. Radar, sonar, and, more recently, GPS were all initially developed for wartime applications with battlefield-scale positioning. Within the room-scale, Sutherland's pioneering augmented reality system explored the use of multi-frequency continuous-wave ultrasound, though the first system relied on a set of taut lines on reels sensed by positional encoders. The calculated device pose was used to update the see-through graphics in real-time. Modern AR and VR head-mounted devices utilize a passive method of 6DOF positioning, derived from simultaneous localization and mapping (SLAM) robotics. Images from multiple on-headset cameras are processed to generate a 3D visual map of world keypoints. Intermediate positions are calculated by integration of a calibrated inertial measurement unit (IMU) and are fused with vision via an Extended Kalman Filter. This technique has been key to allow for these HMDs to be mobile and used in-the-field without need for external tracking hardware. For dense mapping of the geometry of surrounding environment, a number of headsets employ a time-of-flight depth camera which can be leveraged for semantic understanding of the surrounding geometry, accurate interactive plane detection, and hand tracking. %do i need to add polhemus?
+
+With the exception of SLAM, each of these systems utilize precise timings of reflected or transmitted waves with a known velocity to calculate distance. This same technique is utilized in the audio domain to localize sound sources. Our ears are separated by a known baseline. Audio arriving to our ears from an off-center source arrive at slightly different times resulting in an interaural time difference (ITD) given the speed of sound [lord rayleigh duplex theory]. This phenomenon, along with interaural level differences (ILD) and frequency modulations resulting from the head-related transfer function, are the primary cues that allow humans and other animals to precisely localize sound sources.
+
+In noisy environments, like when on a busy street, multiple competing sound sources layer on top one another creating a noisy mixture. Dubbed the cocktail party effect, our brain's ability to focus auditory attention on a given sound source while filtering out other stimulus has been studied since at least the early 1950s. Interaural time differences [cite binaural unmasking] as well as the audio frequency content both play a part in source separation. Here we focus on a producing a system that can utilize both cues together to enhance a user's voice from amongst a noisy background. We apply this technique specifically to a set of wireless earbuds. Because of their portability, these systems are often used to take calls in noisy, dynamic environments. Real-time speech enhancement is a long standing problem in the signal processing and machine learning communities.  While recent advances in the machine learning community have shown promising results, none of them have been demonstrated on wireless earbuds. Further, the vast majority cannot run on mobile devices and meet these real-time constraints. As a result, endfire beamforming configurations remain popular on most consumer mobile phones and earbuds \cite{samsungglobalnewsroom_2014, airpods, sennheiser_2020, beamforming-app-note}. Below, we briefly discuss beamforming, single channel speech enhancement networks, and binaural networks. By creating a wireless acoustic  network between two earbuds and a novel light-weight hybrid  time-domain and spectrogram-based  neural network, we show for the first time that real-time two-channel neural networks can outperform  current real-time speech enhancement approaches for wireless earbuds.
+
+\subsection{Spatial Audio Capture}
+
+\subsubsection{Beamforming techniques.} A common approach to enhancing speech is to design a beamforming microphone array to be more sensitive to sounds coming from the direction of the user's mouth \cite{van1988beamforming} or voice~\cite{dov-uist21}. Since signal-processing based beamforming is computationally lightweight compared to other speech enhancement techniques, these techniques are deployed on many commercially available audio products today such as smart speakers \cite{amazon}, mobile phones \cite{samsungglobalnewsroom_2014}, and earbud devices like Apple AirPods \cite{airpods}. However, the performance of beamforming is limited by the geometry of the microphones and the distance between them \cite{van1988beamforming, InvenSense}. The form factor of devices like AirPods restricts both the number of microphones on a single earbud and the available distance between them, limiting the gain of the beamformer. While beamforming simultaneously across two earbuds could provide better performance in principle, current wireless architectures are limited to streaming from a single earbud at a time \cite{bluetooth}. Furthermore, adaptive beamformers such as MVDR \cite{frost1972MVDR}, while showing promise with relatively few interfering sources,  are sensitive to sensor placement tolerance and steering \cite{zhang2017deep, brandstein2001microphone}. Finally, beamforming leverages spatial cues only and does not use acoustic cues and perceptual differences to discriminate sources, information that machine learning methods leverage successfully.
 
 % Don H. Johnson and Dan E. Dudgeon. Array Signal Processing: Concepts and Techniques. Simon & Schuster, Inc., USA, 1992
 
@@ -419,25 +408,55 @@ Endfire beamforming configurations remain popular on  consumer mobile phones and
 
 
 %\vskip 0.05in\noindent{\bf Single-channel speech enhancement.} 
-\subsubsection{Single-channel deep speech enhancement.}
-Many deep learning techniques operate on spectrograms to separate the human voice from background noise \cite{realtimenoise, Mohammadiha_2013, online_nonnegative, nikzad2020deep, choi2019phaseaware, lstm_speechenhancement, fu2019metricgan, TFMasking}. However, recent works  instead operate directly on the time domain signals \cite{luo2019conv, germain2018speech, pascual2017segan, demucsreal, macartney2018improved}, yielding performance improvements over spectrogram approaches. Commercial noise suppression software like Krisp \cite{krisp} and Google Meet \cite{googlemeet} have successfully deployed single-channel models in real-time and are available for use on mobile phones and desktop computers, but {processing is performed on the cloud.}~\cite{tinylstm}  achieves low-power speech enhancement using
-long short-term memory (LSTM), but it is for a  single-channel network but not for multichannel source separation. Further, single-channel models cannot effectively capture  spatial information and fail to isolate the intended speaker when there are multiple speakers (see Fig.~\ref{fig:fig3}).
+\subsubsection{Single-channel speech enhancement}
+Recent deep learning techniques have led to significant progress in single channel speech enhancement methods. These models typically operate on spectrograms to separate the human voice from background noise \cite{realtimenoise, Mohammadiha_2013, online_nonnegative, nikzad2020deep, choi2019phaseaware, lstm_speechenhancement, fu2019metricgan, TFMasking}. However, recent trends have opted to operate directly on the time domain signals \cite{luo2019conv, germain2018speech, pascual2017segan, demucsreal, macartney2018improved}, yielding performance improvements over spectrogram approaches. Commercially available noise suppression software like Krisp \cite{krisp} and Google Meet \cite{googlemeet} have successfully deployed single-channel models in real-time and are available for use on mobile phones and desktop computers, processing is performed on the cloud. However, single-channel models can not effectively capture the spatial information and hence fail to isolate the intended speaker when there are multiple speakers present.
 
 % --> some recent work on increasing performance to real-time applications
 % Real Time Speech Enhancement in the Waveform Domain
 % https://arxiv.org/abs/2006.12847
 
-
-
-\subsubsection{Multi-channel source separation and speech enhancement.}
+\subsubsection{Multi-channel source separation and speech enhancement}
 %\subsection{Multi-channel source separation and speech enhancement}
-Multi-channel methods have been shown to perform better than their single-channel source separation counterparts \cite{yoshioka2018multi, chen2018multi, zhang2017deep, gu2020enhancing, tzirakis2021multichannel, jenrungrot2020cone}. Binaural methods have also been used for source separation \cite{binaural1, han2020realtime, li2011two, reindl2010speech} and localization \cite{van2008binaural, lyon1983computational, kock1950binaural}; \cite{han2020realtime} reduces the look-ahead time in the network to make it causal in behavior but has not been demonstrated to run on a mobile device.  Our method improves on existing binaural methods by combining time-domain neural network with spectrogram-based frequency masking networks as well as optimizing them to enable   real-time processing on a phone. Recent works such as ~\cite{binaural_osu, dual_phone,binauralphone} use multiple microphones on a smartphone for  speech-enhancement. However, neither of them demonstrates evaluation with real data, where artifacts because of network optimizations can affect user performance.
-In contrast, we demonstrate the first system that achieves real-time speech enhancement using microphones on the two wireless earbuds. Further, as the distance between the earbuds is larger than the distance between microphones on a typical mobile phone, we can  attain a better baseline than a mobile phone implementation, while also retaining the ability to speak hands-free. More recent  works tackle the problem of real-time directional hearing using eye trackers and wearable headsets. For example,  \cite{hybridbeam} uses a hybrid network that combines signal processing with neural networks, but shows that their technique performs poorly in binaural scenarios (i.e., two microphones) and requires four or more microphones. In contrast, we focus on the problem of speech enhancement and create the first real-time end-to-end hardware-software neural-network based system using wireless synchronized earbuds. 
+Multi-channel methods have been shown to perform better than their single-channel source separation counterparts \cite{yoshioka2018multi, chen2018multi, zhang2017deep, gu2020enhancing, tzirakis2021multichannel, jenrungrot2020cone}. Binaural methods have also been used for source separation \cite{binaural1, han2020realtime, li2011two, reindl2010speech} and localization \cite{van2008binaural, lyon1983computational, kock1950binaural}. Our method improves on existing binaural methods by combining time-domain neural network with spectrogram-based frequency masking networks as well as optimizing them to enable   real-time processing on a phone. Recent works~\cite{binaural_osu, dual_phone} use multiple microphones on a smartphone for  speech-enhancement however neither of them demonstrates real-time performance of a smartphone. In contrast, we demonstrate the first system that achieves real-time speech enhancement using microphones on the two wireless earbuds. Further, as the distance between the earbuds is larger than the distance between microphones on a typical mobile phone, we can  attain a better baseline than a mobile phone implementation, while also retaining the ability to speak hands-free.
 
-\subsubsection{Earbud  computing and platforms.}
-There has been recent interest in earbud computing~\cite{oesense21,esense-1,esense-2,plat-1,romit-1} to address  applications in health monitoring~\cite{infection,tam1,tymp}, activity tracking~\cite{mobisys21} and sensor fusion with EEG signals~\cite{eeg2}. The  eSense platform~\cite{esense-1,esense-2} has enabled research in   sensing applications with earables. OpenMHA~\cite{open-1,open-2} is an open signal processing {\it software} platform for hearing aid research. Neither of these  platforms   support time-synchronized audio transmission from two earbuds, which is a critical requirement for achieving  speech enhancement in binaural settings. In contrast, we created open-source wireless earbud hardware that can support synchronize wireless transmission from the two earbuds. 
+% \subsubsection{Earable computing and platforms}
+% There has been recent interest in earable computing and sensing~\cite{oesense21,esense-1,esense-2,plat-1,romit-1}. Earable platforms such as eSense~\cite{esense-1,esense-2} have enabled research in enabling various sensing applications using earable devices. eSense however does not support time-synchronized audio transmission from two earbuds to a mobile device. This is a critical requirement for achieving  speech enhancement using the  microphones on the two wireless earbuds.  OpenMHA~\cite{open-1,open-2} is a open signal processing {\it software} platform for hearing aid research. In contrast, we create wireless earbud hardware, which will be open-sourced at publication and can support synchronize wireless transmission from the two earbuds to achieve speech enhancement. 
+
+% --> multi-mic
+% Cone-of-silence
+
+%Some approaches, such as \cite{binaural_osu, dual_phone} have used the multiple microphones on a smartphone for real-time speech-enhancement. However, these networks would have to be retrained for every mobile phone as the position and distance between these microphones could change with future iterations. As our method is instead deployed on wireless earbuds, the geometry of the speaker in respect to the microphones will remain consistent. Further, as the distance between the earbuds is larger than the distance between microphones on a typical mobile phone, we attain a better baseline than a mobile phone implementation, while also retaining the ability to speak hands-free.
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 \section{Spatial Computing Control: Microgesture Interaction}
+
+As screens have shrunk from desktop computer to mobile phone to smartwatch, the friction to accessing screen content has decreased, but along with that the throughput of delivered content has also decreased. To overcome these limitations, there has a huge amount of investment towards consolidation of display and sensing to a head-mounted device (HMD). A variety of flavors of HMD exist to tackle both sides of the spectrum -- to decrease information friction as well as to deliver greater throughput. Barring engineering limitations, here the display space can one day be infinitely large as the user's field of view. Smartglasses can operate as a head-up display for timely and spatially relevant digital content. Higher-end mixed reality devices can maintain spatial coherence of the augmentations during movement, providing the illusion of world-locked content. Virtual reality devices can provide a sense immersion that transports the user to a new environment.
+
+To be able to control these immersive devices, 3DOF or 6DOF controllers are typically employed. These controllers use outside-in or inside-out camera-based tracking. The controllers offer compelling experiences for high-fidelity immersive gaming,  object position is needed. Augmented and mixed reality devices also offer articulated hand tracking using computer vision on depth or camera data to allow for direct manipulation of spatial content. The interaction technique manipulations are studied in 
+
+However,
+Gorilla arm.
+for productivity we 
+
+, or recognize elements in its surroundings and apply augmentations within your space.
+
+
+
+
+Direct manipulation
+Indirect manipulation (ray casting etc.)
+Decoupled 
 
 
 Commercial hand gesture detection systems \cite{microsoft, MetaStore, TrackingUltraleap} often rely on optical methods, using cameras mounted on external devices such as AR/VR headsets or necklaces. However, these systems require a clear line of sight to the hand, complicating efforts to  detect gestures made outside the camera's field of view.
@@ -457,7 +476,7 @@ The capability of these devices ranges from detecting pinches to recognizing dis
 
 However, these approaches have several limitations: (1) passive IMUs and bio-acoustic techniques can detect when the fingers make contact  but not when they release, which is important for actions like dragging and dropping; (2) IMUs used for gesture sensing require multiple points of instrumentation, making the system awkward to use; (3) optical and ultrasonic techniques require a clear line of sight to each gesturing appendage, limiting possible mounting positions and making it difficult to detect pinches; and (4) mechanical and magnetic systems require instrumentation of the whole hand, back of the hand, or fingertips, making the system uncomfortable to use.
 %The limitations of these objects can be roughly categorized into a few areas: (1) passive IMU and bio-acoustic techniques can detect pinch touchdowns, however cannot detect when the fingers release, an important factor as a clutching mechanism, for example, drag-and-drop, (2) when used for gesture sensing, IMUs require multiple instrumentation points yielding an awkward system, (3) optical and ultrasonic techniques require line-of-sight to each of the gesturing appendages resulting non-ideal mounting positions to capture the full gesture set and are challenged to reliably detect pinches, (4) mechanical and magnetic systems require instrumenting the whole hand, back-of-the-hand, or fingertips, yielding an uncomfortable system.
-In contrast, Z-Ring instruments the body at only a single location, i.e., the base of the index finger, an ergonomic and socially acceptable area for worn systems. \red{By using the body as a transmission medium, Z-Ring does not require line-of-sight for microgesture sensing. In addition, it can robustly sense both touchdown and touch up events for one- and two-handed gestures even if touch velocity is low.}
+In contrast, Z-Ring instruments the body at only a single location, i.e., the base of the index finger, an ergonomic and socially acceptable area for worn systems. {By using the body as a transmission medium, Z-Ring does not require line-of-sight for microgesture sensing. In addition, it can robustly sense both touchdown and touch up events for one- and two-handed gestures even if touch velocity is low.}
 %This motivated other optical methods to  explore mounting on the arm or finger to detect gestures. Digits derives an articulated hand model leveraging a wirst-mounted IR camera and projector \cite{Kim2012Digits}. TouchPoint uses a pair of line sensors for continuous finger tracking on the back-of-the-hand \cite{Chatterjee2016TouchPoint:Device}. Back-Hand-See . CyclopsRing enables gesture sensing an \cite{}.
  
 % ========== Chapter 3
@@ -466,7 +485,7 @@ In contrast, Z-Ring instruments the body at only a single location, i.e., the ba
 
 % ========== Chapter 4
 
-\chapter{Spatial Audio: ClearBuds}
+\chapter{Spatial Audio Capture: ClearBuds}
 
 % ========== Chapter 5
 
