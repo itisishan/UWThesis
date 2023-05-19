@@ -103,7 +103,7 @@
 \usepackage{balance}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage{xr}
+\usepackage{array}
 
 \DeclareCaptionFormat{custom}
 {%
@@ -438,7 +438,7 @@ In noisy environments, like when on a busy street, multiple competing sound sour
 
 \subsection{Spatial Audio Capture}
 
-\subsubsection{Beamforming techniques.} A common approach to enhancing speech is to design a beamforming microphone array to be more sensitive to sounds coming from the direction of the user's mouth \cite{van1988beamforming} or voice~\cite{dov-uist21}. Since signal-processing based beamforming is computationally lightweight compared to other speech enhancement techniques, these techniques are deployed on many commercially available audio products today such as smart speakers \cite{amazon}, mobile phones \cite{samsungglobalnewsroom_2014}, and earbud devices like Apple AirPods \cite{airpods}. However, the performance of beamforming is limited by the geometry of the microphones and the distance between them \cite{van1988beamforming, InvenSense}. The form factor of devices like AirPods restricts both the number of microphones on a single earbud and the available distance between them, limiting the gain of the beamformer. While beamforming simultaneously across two earbuds could provide better performance in principle, current wireless architectures are limited to streaming from a single earbud at a time \cite{bluetooth}. Furthermore, adaptive beamformers such as MVDR \cite{frost1972MVDR}, while showing promise with relatively few interfering sources,  are sensitive to sensor placement tolerance and steering \cite{zhang2017deep, brandstein2001microphone}. Finally, beamforming leverages spatial cues only and does not use acoustic cues and perceptual differences to discriminate sources, information that machine learning methods leverage successfully.
+\subsubsection{Beamforming techniques} A common approach to enhancing speech is to design a beamforming microphone array to be more sensitive to sounds coming from the direction of the user's mouth \cite{van1988beamforming} or voice~\cite{dov-uist21}. Since signal-processing based beamforming is computationally lightweight compared to other speech enhancement techniques, these techniques are deployed on many commercially available audio products today such as smart speakers \cite{amazon}, mobile phones \cite{samsungglobalnewsroom_2014}, and earbud devices like Apple AirPods \cite{airpods}. However, the performance of beamforming is limited by the geometry of the microphones and the distance between them \cite{van1988beamforming, InvenSense}. The form factor of devices like AirPods restricts both the number of microphones on a single earbud and the available distance between them, limiting the gain of the beamformer. While beamforming simultaneously across two earbuds could provide better performance in principle, current wireless architectures are limited to streaming from a single earbud at a time \cite{bluetooth}. Furthermore, adaptive beamformers such as MVDR \cite{frost1972MVDR}, while showing promise with relatively few interfering sources,  are sensitive to sensor placement tolerance and steering \cite{zhang2017deep, brandstein2001microphone}. Finally, beamforming leverages spatial cues only and does not use acoustic cues and perceptual differences to discriminate sources, information that machine learning methods leverage successfully.
 
 % Don H. Johnson and Dan E. Dudgeon. Array Signal Processing: Concepts and Techniques. Simon & Schuster, Inc., USA, 1992
 
@@ -1951,26 +1951,40 @@ Finally, we will need conduct an evaluation that demonstrates the ring's ability
 
 This final project is about 50\% completed. While the hardware is mostly complete and initial evaluations have been conducted, there is still work to be done:
 
-\subsubsection{May 2023:}
-Finalize \textit{x} and \textit{y} feature engineering. Finalize direction detection heuristic. IRB submitted.
+% \subsubsection{May 2023:}
+% Finalize \textit{x} and \textit{y} feature engineering. Finalize direction detection heuristic. IRB submitted.
 
-\subsubsection{June 2023:}
-Complete contact microphone processing and data pipeline. Collect microphone activity detection data and evaluate activity recognition performance. Consider progress and contribution to determine whether to submit in July 2023.
+% \subsubsection{June 2023:}
+% Complete contact microphone processing and data pipeline. Collect microphone activity detection data and evaluate activity recognition performance. Consider progress and contribution to determine whether to submit in July 2023.
 
-\subsubsection{July 2023:}
-Considering progress, determine whether to run the user study and submit. If submitting, prepare example applications. If not submitted, re-assess ToF sensor selection and consider optical flow sensor. If switching sensors, finalize new hardware. Much of the same pipeline can be re-used.
+% \subsubsection{July 2023:}
+% Considering progress, determine whether to run the user study and submit. If submitting, prepare example applications. If not submitted, re-assess ToF sensor selection and consider optical flow sensor. If switching sensors, finalize new hardware. Much of the same pipeline can be re-used.
 
-\subsubsection{August 2023:}
-Develop feature set with new sensor. Modify models as necessary. Re-train models.
+% \subsubsection{August 2023:}
+% Develop feature set with new sensor. Modify models as necessary. Re-train models.
 
-\subsubsection{September 2023:}
-Conduct user study. Submit.
+% \subsubsection{September 2023:}
+% Conduct user study. Submit.
 
-\subsubsection{October 2023:}
-Finalize dissertation.
+% \subsubsection{October 2023:}
+% Finalize dissertation.
 
-\subsubsection{November 2023:}
-Defend dissertation.
+% \subsubsection{November 2023:}
+% Defend dissertation.
+
+
+\vspace{2em}
+\begin{tabular}{@{}lp{0.7\linewidth}@{}}
+\textbf{May 2023} & Finalize \textit{x} and \textit{y} feature engineering. Finalize direction detection heuristic. IRB submitted. \\
+\textbf{June 2023} & Complete contact microphone processing and data pipeline. Collect microphone activity detection data and evaluate activity recognition performance. Consider progress and contribution to determine whether to submit in July 2023. \\
+\textbf{July 2023} & Considering progress, determine whether to run the user study and submit. If submitting, prepare example applications. If not submitted, re-assess ToF sensor selection and consider optical flow sensor. If switching sensors, finalize new hardware. Much of the same pipeline can be re-used. \\
+\textbf{August 2023} & Develop feature set with new sensor. Modify models as necessary. Re-train models. \\
+\textbf{September 2023} & Conduct user study. Submit. \\
+\textbf{October 2023} & Finalize dissertation. \\
+\textbf{November 2023} & Defend dissertation. \\
+\end{tabular}
+
+
 
 % ========== Chapter 7
 
