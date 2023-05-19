@@ -74,7 +74,45 @@
 % --- end-of-sample-stuff ---
  
 
+\newcommand{\ASname}{Augmented Silkscreen}
 
+\newcounter{sharc}
+% \setcounter{sharc}{2} % set initial value
+\newcommand{\sharcHere}[1]{Q\refstepcounter{sharc}\arabic{sharc}\label{#1}}
+% \renewcommand{\thesharc}{\roman{sharc}} % set references to \roman
+\newcommand{\sharcref}[1]{Q\ref{#1}} % reference in brackets
+\usepackage{float}
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{amsmath}
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{xcolor}         % colors
+\usepackage{graphicx}
+\usepackage{anyfontsize}
+\usepackage{siunitx}
+\usepackage{graphicx,subfigure}
+\usepackage{dblfloatfix}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{balance}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xr}
+
+\DeclareCaptionFormat{custom}
+{%
+    \textbf{\small #1#2}\textit{\small #3}
+}
+\captionsetup{format=custom, width=0.9\textwidth, font=singlespacing}
+
+\newcommand{\squishlist}{\begin{itemize}[itemsep=1pt,parsep=2pt,topsep=3pt,partopsep=0pt,leftmargin=0em, itemindent=1em,labelwidth=1em,labelsep=0.5em]}
+\newcommand{\squishend}{\end{itemize}}
 
 \begin{document}
  
@@ -124,7 +162,7 @@ From the perspective of spatial computing interaction, we investigate how electr
 % ----- contents & etc.
 %
 \tableofcontents
-\listoffigures
+%\listoffigures
 %\listoftables  % I have no tables
  
 %
@@ -472,10 +510,15 @@ The capability of these devices ranges from detecting pinches to recognizing dis
 
 \subsection{Thumb-to-Index Microgestures}
 
-Amongst these systems, we focus in on devices that enable single-handed, thumb-to-index microgestures.  Neurophysiological findings indicate that fingers have some of the largest representations in both the somatosenosry and motor cortexes as function of their size. The fingertips feature both a high spatial resolution of tactile sensing as well as highly dexterous control. Zhai demonstrated that leveraging small muscle groups like fingers demonstrated manipulation performance that exceeds input relying just on wrist, arm, and shoulder [influence of sucle group on perofrmanf oc mulitple degree of feedom input]. Amongst the fingers, user elicitation studies prompting users to suggest hand gestures for common digital functions resulted in most gestures being executed between the thumb and index fingers [chan user elicitation]. This tracks with  anatomical analyses indicating the greatest dexterity is between these two fingers [Taxonomy of microinteractions: defining microgestures based on ergonomic and scenario-dependent requirements]. Similary, DigitSpace compared comfort for thumb gestures across different fingerpad areas and found the tip of the index fingerpad to be the highest rated for both taps and swipe gestures. Finally, the propriocepiton between thumb and index finger allowed for a better understanding of the moment of touchdown betwwen the two fingers, enabling higher time doamin accuracy in selection that controller or non-pinch microgestures [Finger Contact in Gesture Interaction Improves Time-domain Input Accuracy in HMD-based Augmented Reality]. These aspects lend thumb-to-index microgestures well to smartglass control where the goal is for a subtle and precise input. Smartglasses differ from other mixed reality headsets, such as Microsoft HoloLens, Magic Leap One, or Meta Quest Pro, in that they are used for daily wear and generally only feature 2D user interfaces for features like notifications and navigation via a monocular display [north][tcl?][oppo?]. Therefore, the input solution must also be similarly appropriate for daily wear and be able to navigate a 2D UI even while on-the-go. In this project, we therefore set a few design goals for a realized system: (1) a sensing suite that is appropriately miniature enough for daily wear, (2) enables ergonomic thumb-to-index microgestures interaction in two dimensions, and (3) robust enough to work across situations and people with no or minimal calibration. 
+Amongst these systems, we focus in on devices that enable single-handed, thumb-to-index microgestures.  Neurophysiological findings indicate that fingers have some of the largest representations in both the somatosenosry and motor cortexes as function of their size. The fingertips feature both a high spatial resolution of tactile sensing as well as highly dexterous control. Zhai demonstrated that leveraging small muscle groups like fingers demonstrated manipulation performance that exceeds input relying just on wrist, arm, and shoulder [influence of sucle group on perofrmanf oc mulitple degree of feedom input]. Amongst the fingers, user elicitation studies prompting users to suggest hand gestures for common digital functions resulted in most gestures being executed between the thumb and index fingers [chan user elicitation]. This tracks with  anatomical analyses indicating the greatest dexterity is between these two fingers [Taxonomy of microinteractions: defining microgestures based on ergonomic and scenario-dependent requirements][Coordinationofthumbjointsduringopposition][Functional workspace for precision manipulation between thumb and fingers in normal hands]. Similary, DigitSpace compared comfort for thumb gestures across different fingerpad areas and found the tip of the index fingerpad to be the highest rated for both taps and swipe gestures. The propriocepiton between thumb and index finger allowed for a better understanding of the moment of touchdown betwwen the two fingers, enabling higher time doamin accuracy in selection that controller or non-pinch microgestures [Finger Contact in Gesture Interaction Improves Time-domain Input Accuracy in HMD-based Augmented Reality]. These aspects lend thumb-to-index microgestures well to smartglass control where the goal is for a subtle and precise input. Smartglasses differ from other mixed reality headsets, such as Microsoft HoloLens, Magic Leap One, or Meta Quest Pro, in that they are used for daily wear and generally only feature 2D user interfaces for features like notifications and navigation via a monocular display [north][tcl?][oppo?]. Therefore, the input solution must also be similarly appropriate for daily wear and be able to navigate a 2D UI even while on-the-go. In this project, we therefore set a few design goals for a realized system: (1) a sensing suite that is appropriately miniature enough for daily wear, (2) enables ergonomic thumb-to-index microgestures interaction in two dimensions, and (3) robust enough to work across situations and people with no or minimal calibration. 
 
+
+\subsection{Microgesture Wristbands and Rings}
+
+A number of wearables have been design to gather microgesture input. Using a ring with a capactive touchpad, Boldu et al ran a user study that compared swipes and taps on a ring to interaction on a wristband touchscreen while participants ran, finding users perceived thumb-to-index microgestures to be less complex, easier to use, and less cumbersome [Thumb-In-Motion:]. 
 
 FingerPad used magnets on the thumb and a Hall sensor grid on the back of the index finger to realize a touchpad on the index surface. However this system requires two components and instruments the fingernail, which is not socially acceptable. 
+
 
 %Commercial hand gesture detection systems \cite{microsoft, MetaStore, TrackingUltraleap} often rely on optical methods, using cameras mounted on external devices such as AR/VR headsets or necklaces. However, these systems require a clear line of sight to the hand, complicating efforts to  detect gestures made outside the camera's field of view.
 % Therefore, a number of systems have explored sensors mounted on the wrist, hand, and/or fingers, spanning a wide range of modalities: \red{optical (Digits \cite{Kim2012Digits},
@@ -500,13 +543,1374 @@ FingerPad used magnets on the thumb and a Hall sensor grid on the back of the in
  
 \chapter{Designing AR Debugging Workbench}
 
+\section{Introduction}
+
+By 2030, the number of smart devices in the world is projected to reach 50 billion ~\cite{Mercer2019InternetRevenue}.
+% By 2025, there will be a projected 38.6 billion smart devices gathering, analyzing, and transmitting data \cite{StrategyWire}.
+The proliferation of these devices can largely be attributed to the increasingly integrated nature of electronics and silicon, as per Moore's law.
+% Just as the silicon die packs an ever increasing number of transistors,
+Just as the number of transistors in an integrated circuit (IC) have increased exponentially, so too have printed circuit boards (PCBs) become increasingly dense with electronic components.
+%The pervasiveness of these devices can largely be attributed to the phenomenon that Moore's law observes, leading to printed circuit boards (PCBs) becoming increasingly dense with electronic components.
+% Shrinking ICs also enable the printed circuit boards (PCBs) they are mounted to become smaller and more integrated into the structures housing the electronics.
+%Howver
+% smaller and 
+These denser and more complex PCBs pose greater challenges for electrical engineers during the debugging process.
+However, the tools used to support these engineers in debugging faulty PCBs during design and development remain largely unchanged.
+%Indeed, while the human-computer interaction (HCI) community has focused on supporting makers, prototypers, hobbyists, and students with tools to help support the debugging of low-volume breadboard designs~\cite{Drew2016TheCircuits,Wu2017CurrentViz:Circuits, Strasnick2017Scanalog:Hardware, Kim2019VirtualComponent:Circuits}, there has been less work toward supporting the workflow of higher-volume circuit design and development moving towards production \cite{Khurana2020BeyondProduction}.
+% Over the course of designing, fabricating, and debugging a PCB, an electrical engineer repeatedly looks back and forth between the design of the circuit, the layout of the circuit, and the physically built circuit itself.
+During the process of debugging a new PCB design, electrical engineers must constantly move between circuit diagrams, board layout diagrams, and the physical circuit board itself in order to validate their design or understand the nature of a design failure.
+The design and the layout might be distributed across both physical (i.e. paper) and virtual (i.e. software tool) mediums as well.
+The constant context switching, as well as manually looking for corresponding components across the different representations of the circuit, lends this process to be extremely time-consuming and error-prone, such that the smallest optimizations to this process can have significant compounding benefits.
+
+% The human-computer interaction (HCI) community has recently to substantial interest in developing work for supporting makers and students.
+
+
+Augmented reality (AR) has been cited as an effective paradigm for reducing the overhead of tasks with repeated context switching, particularly those with spatial associations and affordances \cite{Azuma1997AReality, Feiner1993Knowledge-basedReality, Caudell1992AugmentedProcesses, Tang2003ComparativeAssembly, Muensterer2014GoogleStudy}.
+While there has been some amount of prior work exploring ways of using AR for debugging breadboards and PCBs, the primary focus has been on supporting hobbyist makers and students, in particular taking an educational perspective~\cite{Drew2016TheToastboard,Wu2017CurrentViz, Strasnick2017Scanalog:Hardware, Kim2019VirtualComponent}.
+In this work, we conduct a design exploration, investigating how this paradigm can be effectively applied to support the existing PCB debugging workflows of industry professionals through a series of needs finding and evaluative user studies. 
+We design a set of AR interactions to enhance workflow productivity, and evaluate their utility via feedback interviews, illustrative video sketches, and remote simulation of certain PCB tasks. The scope of our work does not include the complete implementation of an AR tool, instead focusing our exploration on understanding user needs and designing AR interactions agnostic to AR implementation (head mounted device, projective AR, camera pass-through AR, etc.).
+
+The goal of this work is to highlight and demonstrate to the HCI community the design considerations and research opportunities in this space.
+
+The main contributions of this work include:
+
+\begin{enumerate}
+    \item An initial, formative study identifying challenges in PCB assembly, bring-up, and debugging workflows to inform interaction design.
+    \item A set of augmented reality interaction techniques supporting workflows related to localization, annotation, and measurement operations of components, pins, and nets across the design files and the physical PCB.
+    \item A user feedback evaluation (n=6) for:
+    \begin{enumerate}
+        \item assessing the interaction techniques for user preference, usage, and likelihood of adoption, and
+        \item evaluating completion time and user confidence in component identification tasks.
+    \end{enumerate}
+\end{enumerate}
+
+
+\newcounter{quoteCounter}\stepcounter{quoteCounter}
+\newcommand{\quotelabel}{Q\arabic{quoteCounter}\stepcounter{quoteCounter}}
+
+\section{Study 1: Formative Needs Finding}
+\label{sec:prestudy}
+
+%\begin{changed}
+To gain an understanding of the needs of electrical engineers during their debugging workflows and characterize their existing workflows, tools and methods, we conducted a formative needs finding survey and semi-structured interviews.
+
+\subsection{Participants and Procedure}
+We recruited 8 participants who hold electrical engineering roles in academic labs and industry~(high technology, consumer electronics firms). While all of our participants regularly design and debug their own PCB designs, their experiences spanned one-off or low-volume designs for research or hobby purposes,  complex development boards with thousands of components, and mass-produced form factor logic boards shipping hundreds of thousands of units~(see Table ~\ref{tab:participants}).
+%Additionally, expanding on the above related works and our own engineering background, we offered a few speculative concepts of the potential solutions that would be integrated into a debugging process.
+
+\begin{table*}[h]
+    \centering
+    \caption{Recruited participant backgrounds.}
+    \resizebox{1\textwidth}{!}{%
+        \begin{tabularx}{900pt}{|l|l|X|X|X|c|c|}
+        %\begin{tabularx}{600pt}{|l|l|{\hsize=0.89\hsize}X|{\hsize=0.52\hsize}X|{\hsize=1.59\hsize}X|c|c|}  
+        \hline
+         &
+          \textbf{Field} &
+          \textbf{Experience} &
+          \textbf{Primary Tool} &
+          \textbf{Designs} &
+          \textbf{Study 1} &
+          \textbf{Study 2} \\ \hline
+        \textbf{P1} &
+          Academia &
+          Design, Release, Assembly, Functional Check,   Rework &
+          EAGLE &
+          Mixed Signal, Embedded Systems, Wearables, Typically small, two-layer boards &
+          X &
+          X \\ \hline
+        \textbf{P2} &
+          Industry &
+          Design, Release, Engineering validation, Mass production, Field failure analysis &
+          Cadence OrCAD/Allegro/PCB, Zuken CADSTAR &
+          Mixed signal and high speed development boards (large   format, thousands of components, 14 layer), form factor for wearable devices (12 layer) &
+          X &
+          X \\ \hline
+        \textbf{P3} &
+          Academia &
+          Design, Release, Functional check &
+          EasyEDA &
+          Antenna Patterning &
+          X &
+           \\ \hline
+        \textbf{P4} &
+          Academia &
+          Design, Release, Assembly, Functional check &
+          Altium &
+          High wattage power circuits &
+          X &
+           \\ \hline
+        \textbf{P5} &
+          Industry, Hobby &
+          Design, Release, Engineering validation, Mass production &
+          Cadence Allegro/PCB &
+          LED display, GPS radio module, Charging and battery protection circuits, FPC &
+          X &
+          X \\ \hline
+        \textbf{P6} &
+          Industry &
+          Design, Release, Engineering validation, Mass production &
+          Cadence Allegro/PCB, Altium &
+          Mixed signal, Actuator drivers, High-voltage designs, FPGA boards, form factor for wearables (4 layer), FPC &
+          X &
+          X \\ \hline
+        \textbf{P7} &
+          Industry &
+          Design, Release, Assembly, Engineering validation, Mass production, Field failure analysis &
+          Cadence Allegro/PCB, KiCAD &
+          Small form factor for wearables (12 layer), large form factor boards for gaming console (12 layer), FPC, RFPC &
+          X &
+          X \\ \hline
+        \textbf{P8} &
+          Academia, Hobby &
+          Design, Release, Engineering validation &
+          Eagle &
+          High-voltage designs, Aerospace, Power electronics &
+          X &
+          X \\ \hline
+        \end{tabularx}
+    }
+    \label{tab:participants}
+\end{table*}
+
+ We conducted remote semi-structured interviews with the participants. Each of the interviews lasted for about 1 hour and consisted of 3 main parts:
+\begin {enumerate}
+\item We asked the participants about their current debugging flow, strategies, common pain-points, and needs.
+\item We solicited feedback on initial speculative design concepts that we described using sketches and hypothetical use-cases. Participant were also invited to share any functionality or interactions they were missing in the currently existing tools.
+\item We asked them whether collaboration was important in their day-to-day work. When relevant, we specifically asked about how the information is transferred when more than one person is involved in the workflow.
+\end {enumerate}
+%We conducted remote, semi-structured interviews with the participants. Each interview lasted approximately one hour. We asked them to describe their debugging workflow, tool chain, strategies, common pain-points, and needs.
+We supplemented the interview data with our own professional experience debugging PCB in both industry and academic institutions.
+We analyzed their responses via thematic analysis \cite{Braun2006UsingPsychology}, first transcribing the interviews, then coding recurring themes, and finally noting outliers from the norm.
+
+
+%do not include what's below
+% \subsection{Qualitative data analysis}
+% To analyze data from interviews, we used thematic analysis \cite{Braun2006UsingPsychology}. After transcribing interviews, we coded important parts of it. Then we grouped codes into categories which informed main topics of the study.
+
+\subsection{Findings}
+\label{subsec:PrestudyFindings}
+From our participants' responses in the interviews, we extracted four sub-tasks that constitute a framework for localizing errors during debugging:
+\begin{enumerate}
+
+\item Perform a visual inspection, measure output one sub-section at a time, and compare to expected values
+\item Identify an anomalous measurement and hypothesize fault causes, such as defects in design or processing
+\item Examine potentially contributing elements and make localized measurements to test hypotheses
+\item Compare real measurements to expected values derived from schematics, layouts and datasheets
+%\item If appropriate rework elements (components, connections, FW, etc.) to match intended function
+\end{enumerate}
+
+Most of our participants alluded to the challenges of context switching and information logging while debugging a PCB.
+% In the debugging process, the challenges of context switching and information logging were shared by most participants.
+They raised concerns about referencing a large set of information sources during debugging~(on their computer monitor or sometimes printed paper: schematics, layouts, datasheets, bills of materials, emails; on their workbench: instrument measurements, PCBs) and the frequency with which they moved between these items:
+% Because they reference a diverse set of information sources (datasheets, schematics, layout, instrument measurements, PCB, BOM, emails, etc.), the participants expressed they moved between these items with frequency between once a minute and multiple times a minute:
+\textit{``Very often, maybe multiple times per minute''}~(P1, Quote \sharcHere{q:context_switch1}).
+%\stepcounter{sharc}
+%~\sharcHere{q:context_switch1}).
+\textit{``I would say almost constantly until I get to fab C or D''}~(P2, \sharcHere{q:context_switch2}).
+\textit{``I would say at least multiple times a minute I'd switch back and forth.''}~(P7,~\sharcHere{q:context_switch3}).
+\textit{``Gotta go back and forth and each time you go back and forth you add more information to your schematic, and eventually find a value that doesn't line up... Probably five or six times a minute''}~(P8,~\sharcHere{q:context_switch4}).
+
+Participants stated the information they cross-referenced most often in this process included component reference designators~(toward the task of component localization), component values, pin or net locations (for the purpose of determining where to probe), net connectivity, measured values from instruments, IC pin assignments, and IC orientations.
+
+The challenge of component localization was not shared by one participant who pointed out that, in doing the end-to-end PCB design process, she was able to memorize all of the components of the design.
+In addition, due to the high voltage nature of her work, her circuits generally included fewer but larger components than the other participants typically worked with, allowing her to include reference information on the silkscreen of her fabricated PCB.
+% Because she was worked with a high voltage research design with lower components counts and larger components, she noted that she was able to include referential silkscreen on her fabricated PCB.  
+\textit{``I made the PCB. I verified that my design works in a PCM simulation; I mean I never had a situation where I couldn't find my component [from memory]''}~(P4,~\sharcHere{q:no_context_switch1}). Another participant also expressed a similar sentiment \textit{``I have it memorized''}~(P5,~\sharcHere{q:no_context_switch2}).
+Both noted that confirming orientation and pin assignments, as well as localizing small components on complex boards still pose a challenge for localization.
+%“So I know inside and out, I have it memorized, I got every part” -P5
+%that being said, some users did not share this fact but did not share the experience as a pain point, citing (1) the component count on their board was low enough that they had the board me 
+Participants expressed interest in having component, pin, or net metadata within their view of their board, but looked to avoid interference: \textit{``Yeah, that would be really helpful as long as it didn't interfere with my ability to see the PCB.''}~(P8,~\sharcHere{q:show_relevant_md1}).
+\textit{``I usually like having two scenes. Like sometimes I don't want the information... just want to know the reference designator... but then sometimes if I'm debugging, like show me that info that I need: [lists various metadata categories].''}~(P5,~\sharcHere{q:show_relevant_md2}).
+
+Finally, participants cited other explicit processes where they felt their software and design tools fell short:
+
+\textbf{Assembly:} While not all users assembled their own boards, those that did expressed frustration in matching the ordered components to the correct location and orientation on the PCB. \begin{quote}
+    ``So you have to have a separate BOM that you make yourself, like an Excel document or a Google document. I'd have that, the schematic, and I have the layout up on my laptop so I'd be switching back and forth between all of them, trying to figure out where each component went. it was not fun.''~(P7,~\sharcHere{q:assembly})
+\end{quote}
+
+\textbf{Measurement:} The need to localize probe points, trace net connections, and log measurements were shared as common pain points. \begin{quote}
+    ``It's typically just like you look down at the board you make a measurement, you know, you might have a Google Doc with your testing records in it or something that you're documenting as you go.''~(P8,~\sharcHere{q:measurement})
+\end{quote}
+
+\textbf{Bring-up:} Before green-lighting an entire production run, the bring-up process is followed after completing the first board assembly: 1.~visual inspection, 2.~confirm correct component stuffing, 3.~confirm correct pin one locations~(an indicator for verifying orientation), 4.~perform open/short test on all voltage rails, 5.~apply power with current-limited supply, 6.~check each voltage rails for correct level, 7.~perform functional sub-system checks. Some users resorted to general purpose software to prepare customized views ahead of time. \begin{quote}
+    ``What I'll do is [that] I'll have a premade PowerPoint deck, and I have everything I need with all the steps and all the images I need, tables that I can fill in. So I'll, you know, identify all the pin one locations and what's stuffed and not stuffed with the picture that I make ahead of time.''~(P7,~\sharcHere{q:bringup})
+\end{quote}
+
+\textbf{Collaboration:} A more frequent occurrence as a result of the recent COVID-19 pandemic, a handful of participants felt that working with collaborators who were less familiar with their own design, tackling a new developer kit, or approaching someone else's design posed new challenges.
+%
+\begin{quote}
+    ``I'm actually going to pass this design to this other engineer who's going to get some of those boards, who's not familiar with the design and I think for someone that's, you know, not familiar with the design [who] is trying to do like bring up, that would be extremely helpful to go or like look at a part or touch part with a stylus and have it pull its datasheet and point it to like, where it is on the layout and schematic... Yeah I think it's kind of brutal with what we do at [redacted], which is now, there'll be like a rework for [the technicians], and we'll have to like manually label. We have to take a picture of the layout, and then bring it into like some type of editing tool like PowerPoint and then like add arrows to the points that we want to probe... it's like we're passing back like a billion, like little like pictures, and you have to like talk on the phone a lot about it.''~(P5,~\sharcHere{q:collaboration})
+\end{quote}
+
+Two industry engineers shared that communicating with technical staff from the fabrication house was sometimes challenging as often these technicians who actually fabricated, reworked and tested the boards were not familiar with the design itself.
+%For those who had to debug boards with multiple groups of people, they cited checklist, sessions, and version control were the main challenges.
+In these situations, engineers usually turned to printed materials, annotated images, or emailed presentations to communicate their design intent.
+
+% Several participants also worked on the same project with a different groups of people. That created multiple pain points, especially when a person was not very familiar with the design. For example, communicating with technical staff from warehouse was sometimes challenging as usually these people who actually fabricated the boards were not familiar with the design itself. For those who had to debug boards with multiple people, checklist, sessions, and version control were the main challenges. Since there is no optimized way to do that, people mostly used things like printed materials or presentations to communicate those problems.
+
+\subsection{Design Considerations}
+\label{Design Considerations}
+
+From this first study, a few primary design considerations were motivated by the feedback shared amongst participants:
+%Our formative study led us to a few primary design considerations for the interaction techniques:
+
+% \begin{enumerate}[label=(DC\arabic{*})]
+\begin{itemize}
+    \item [DC1] \textbf{Reduce context switching and facilitate pattern matching:} 
+    Participants expressed the need to move between different representations of the schematic, layout, and board often (\sharcref{q:context_switch1}---\sharcref{q:context_switch4}, \sharcref{q:assembly}, \sharcref{q:measurement}). 
+    Component, pin, and net localization in particular was cited as tedious since going between information in the schematic and board involved pattern matching with the layout as an intermediary, particularly in dense, complex boards without silkscreen.
+    
+    \item [DC2] \textbf{Show relevant information without cluttering the view:} 
+    Participants expressed interest in having context-relevant information accessible through both the design files and also when directly interacting with the board, but were wary of excess visual clutter (\sharcref{q:show_relevant_md1}, \sharcref{q:show_relevant_md2}).
+    Some suggested making the display of information optional, such that the user could decide to turn it off. 
+    
+    \item [DC3] \textbf{Support habitual and intuitive interactions with the PCB:} While participants each followed slightly different methods of localizing issues and taking measurements, they generally followed a common approach (\sharcref{q:context_switch1}---\sharcref{q:context_switch4}, \sharcref{q:show_relevant_md1}, \sharcref{q:show_relevant_md2}).
+    % explaining that it aligned with their mental model.
+    % Augmentation should help to shortcut paths on that mental model but not interfere with it. 
+    An AR system should simplify methods of taking measurements or seeking information, but should not depart greatly from current habits or workflows.
+    
+    \item [DC4] \textbf{Facilitate collaboration:}
+    A few participants noted that finding design elements and following measurement procedures were exacerbated when working with collaborators who were less familiar with a particular design (\sharcref{q:collaboration}).
+    A solution that guides the user with relevant information can be extended to help support collaboration~(in real-time or asynchronously).
+\end{itemize}
+%\end{changed}
+
+\newcommand{\ElemLocOnPCB}{ElemLocOnPCB}%{ElemLoc:DF$\to$PCB}
+\newcommand{\MetaDataOnPCB}{MetadataOnPCB}%{Metadata:DF$\to$PCB}{MD-PCB}
+\newcommand{\ElemIdOnDesFiles}{ElemIDOnDF}%{ElemID:PCB$\to$DF}{EI-DF}
+\newcommand{\MeasOnDesFiles}{MeasOnDF}%{ElemLoc:DF$\to$PCB}{EL-PCB}{MM-DF}
+
+\section{Interaction Techniques}
+\label{sec:interactions}
+%\begin{changed}
+
+We derive four core interactions motivated by the needs finding feedback and design considerations discussed above. We then assemble these core interactions as building blocks to support the debugging workflows followed by engineers. We use the term \textit{element} here to refer the circuit elements of a component, pin, or net within the design. We use the term \textit{element identifier} to refer to the component reference designator, pin number, or net name for their respective elements.
+In this paper, we will refer to a hypothetical system
+% We refers to a system 
+that implements these proposed interactions as \textit{\ASname}. We will refer to the interview asset we produced and used for evaluation as the \textit{simulator}.
+
+\subsection{Core Interaction Techniques}
+The core interactions are categorized by direction of information flow: either from the design files (schematic and layout) toward the PCB, or from the PCB toward the design files (Fig. \ref{fig:InformationFlow}).
+%This taxonomy mirrors the categorization of the related work: experiences that allow for visualization or direct interaction/measurement.
+
+\begin{figure}
+\centering
+%\begin{minipage}{.5\textwidth}
+  %\centering
+  \includegraphics[width=.35\linewidth]{AS_figures/InformationFlow/Information-flow-scheme.jpg}
+  \captionof{figure}{Information Flow of Core Interactions}
+  \label{fig:InformationFlow}
+\end{figure}
+%\end{minipage}%
+%\begin{minipage}{.5\textwidth}
+
+\subsubsection{From Design Files to PCB}
+The two core interactions relating design files to the PCB are \textit{element localization on PCB} and \textit{metadata annotation on PCB}.
+
+\textbf{Element localization on PCB (\ElemLocOnPCB)}:
+As per DC1, 
+we found that engineers traditionally follow a two-step process to localize elements on the PCB given a target element on the schematic. First, they textually pattern-match an element identifier to the corresponding one in the layout file using the find command. Then, they spatially pattern-match the layout to the PCB to identify the corresponding PCB element.
+%A few ECAD tools, such as Altium \cite{AltiumSoftware} and KiCAD \cite{KiCadSoftware}, support the notion of \textit{cross-probing}, where, if both the schematic and layout tools are open, an element selection in one will highlight the corresponding element in the other view.
+A few ECAD tools \cite{AltiumSoftware, KiCadSoftware} support cross-probing between schematic and layout.
+Using an AR system allows us to extend this interaction to the physical PCB, such that a selection in the layout or schematic view results in an augmented highlight of the matching design element directly on the PCB.
+
+\textbf{Metadata annotation on PCB (\MetaDataOnPCB)}: During the process of debugging, engineers often query the schematic for element attributes that determine the function of the circuit, such as resistor values, IC packaging, diode reverse voltages, or inductor max currents. They keep this knowledge in short-term memory as they subsequently formulate hypotheses for a root cause or look to take their next diagnostic measurement.
+As per DC1 and DC2,
+we seek to minimize the cognitive load of keeping information in short-term memory by bringing this information to the PCB through annotating the PCB element with this element metadata in the view of the user.
+Additionally, user-inputtable text field annotations can enable users to annotate elements with freeform notes.
+
+\subsubsection{From PCB to Design Files}
+The two core interactions relating PCB to the design files are \textit{element identification within design files} and \textit{measurement annotation within design files}.
+
+\textbf{Element identification within design files (\ElemIdOnDesFiles)}: We learned that engineers follow the same two-step process as described in \ElemLocOnPCB~in reverse to identify or localize elements on the schematic given a target element on the PCB.
+Pertinent to DC1, 
+we propose enabling directly making selections on the PCB instead via an interactive probe to select, identify, and localize the same element within the schematic and layout. Probes are commonly used in PCB measurement tasks and are therefore a familiar method of direct PCB interaction.
+
+\textbf{Measurement annotation within design files (\MeasOnDesFiles)}: Finally, taking diagnostic measurements is a key part of debugging workflows. \ASname\ would support this interaction by capturing measurement data from benchtop test equipment probed on the PCB and relaying it back to the design files addressing DC1 and DC3. As a practical implementation note, nearly all benchtop test equipment break out their \verb|get| and \verb|set| functions over SCPI/VISA, a standardized measurement instrument API.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=.35\linewidth]{AS_figures/CoreInteractionDepictions/Core-interactions-depiction.jpg}
+  \captionof{figure}{Depictions of \ASname\ core interactions}
+  \label{fig:CoreInterationDepictions}
+%\end{minipage}
+\end{figure}
+
+\subsection{Interaction Technique-Supported Workflows}
+We synthesize these core interaction technique building blocks to support entire debugging workflows.
+
+\subsubsection{Diagnostic Measurement}
+Participants described the process of capturing and logging measurements as an important method to assist in deductive root cause analysis.
+Combining the \ElemIdOnDesFiles\ and \MeasOnDesFiles\ interactions enables users to take a measurement with probes (\MeasOnDesFiles), capture the location the measurement was taken (\ElemIdOnDesFiles\ pin), identify the involved nets (\ElemIdOnDesFiles\ net), and include the information on the design file view along with the captured measurement.
+%Combining the \ElemIdOnDesFiles\ interaction, specifically for purposes of pin identification and the \MeasOnDesFiles\ interaction enables users to take a measurement with probes, capture the location the measurement was taken, identify the involved nets, and include the information on the design file view along with the captured measurement.
+For example, consider a user that wishes to record measurements, and so starts a new debugging session in \ASname's design file view.
+The user may take a measurement of a voltage rail with a digital multimeter.
+From the position of the probe locations on two pins, the corresponding nets for the positive and negative probe terminals are determined via \ElemIdOnDesFiles. The measurement value is captured along with its location in the design file view via \MeasOnDesFiles.
+
+\subsubsection{Bring-up}
+When engineers first apply power to their boards, they typically follow an exacting protocol to ensure all components were assembled properly.
+By automating \ElemLocOnPCB\ interaction, all uninstalled component locations and all pin one locations (indicative of correct component orientation) can be highlighted directly on the PCB permitting rapid visual checks. Similarly, by entering a set of desired nets to test into the design file view, and optionally providing functional limits, \ASname\ can sequentially display probe points on the PCB, again via the \ElemLocOnPCB\ interaction. A user may then follow the \textit{diagnostic measurement} technique described above to sequentially capture the measurements back to the design files for comparison to set limits.
+
+\subsubsection{Visual Inspection}
+Participants described the need to sometimes query an element's metadata directly within the board view, for example, after noticing a given component's rise in temperature or in determining to which net a certain pin was connected. By combining \ElemIdOnDesFiles\ and \MetaDataOnPCB\, the user can select an element directly via probe on PCB and have the metadata annotated directly in the PCB view without having to refer to the design files.
+
+\subsubsection{Remote Collaboration}
+To facilitate remote collaboration, many participants pointed out the need to call out to specific elements on the board with a set of instructions.
+In support of DC4,
+this can be achieved by splitting \ASname's design file view and augmented PCB view across two locations.
+Synchronous collaboration can be enabled if one user (for example, the board designer) has the design file view and the other user (the remote debugger) has the PCB.
+The designer may select elements such as component or pins (probe locations) to display on the remote debugger's view of the PCB via \ElemLocOnPCB.
+The \textit{diagnostic measurement} interaction may then be used to capture the remote debugger's measurement values back to the designer's design file view.
+In an asynchronous collaboration, the designer could leverage the \MetaDataOnPCB\ interaction to tag elements in the PCB view with freeform instruction call outs. This could be helpful for communicating rework instructions or step-by-step debug procedures.
+
+\section{Study 2: User Evaluation}
+To solicit feedback on the interactions we designed, we remotely conducted another round of structured interviews using an interactive simulation. Each interview lasted approximately one and a quarter hours.
+
+\subsection{Participants and Procedure}
+For continuity, study 1 participants were re-invited to participate. Six out of the original eight participants were able to join (see Table 1). No additional participants were recruited. The study was divided into three main sections:
+
+\begin{enumerate}
+    \item Feedback on core interactions and interaction-supported workflows
+    
+    \item Feedback on variations on the attributes of core interactions 
+    
+    \item Timed element localization tasks  
+\end{enumerate}
+
+\subsubsection{Interview Assets}
+To help participants envisage and solicit feedback on our interaction concepts during the remote interviews, we produced two artifacts: a web-based, interactive PCB simulator and a set of envisioning video sketches \cite{Vertelney1989UsingInterfaces}. The simulator mirrored the workbench setup described by participants in Sec. \ref{subsec:PrestudyFindings}. It comprised of two components: (1) an in-browser, interactive schematic and layout viewer on the participant's monitor (Fig. \ref{fig:Procedure-Part1}(A)) simulating the schematic and layout viewer an engineer would have open on their computer during debugging, and (2) an in-browser, interactive top-view PCB image on the participant's own touchscreen device (Fig. \ref{fig:Procedure-Part1}(C)) simulating the PCB the engineer would have on their lab bench during debugging. In order to deliver \ASname interactions that span design files and board augmentation, the two were linked via a web socket enabling real-time interaction in the schematic and layout viewer to affect augmentations on the mobile PCB view, and vice versa. Participants could select a component, pin, or net in either the schematic, layout, or mobile PCB view (via clicking or tapping via probe) and have the corresponding elements highlighted in the other two views. Additionally users could right click on a component revealing metadata and a button to show that metadata augmented on the PCB view (Fig. \ref{fig:Procedure-Part1}(A). Presenting interactions via this simulation prototype allowed for the users to use their own devices at home and allowed us to easily modify specific attributes of the way the core interactions were presented to users (see Sec. \ref{subsec:EvalAttributes}). This web socket could also be disabled to test situations without \ASname cross-linking between design files and board (see Sec. \ref{subsec:EvalSelectProcedure}). For the evaluation, we used the schematic, layout, and PCB image of an Arduino Uno R3\footnote{https://store.arduino.cc/usa/arduino-uno-rev3}.
+
+Additionally, to further assist users in visualizing the interactions, we recorded a set of POV video walkthroughs for each interaction technique and each interaction-supported workflow. Each sketch illustrated the schematic and layout interactions in screen capture and view of a desk top PCB in a time-synced inset (ex. Fig. \ref{fig:Procedure-Part1}(D)). The PCB augmentations in the shown videos were projected via overhead projector (AAXA P7\footnote{https://www.aaxatech.com/products/p7-pico-projector.html}). A narration also helped to describe the interaction. During the interview, if the participant was unclear on the video content, the interviewer provided additional description until it was clear.
+
+\begin{figure*}%[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{AS_figures/Procedure-Part1/Figure-full-setup.jpg}
+    \caption{The web-linked simulator consists of two components: an on-monitor design files viewer and an on-device PCB view. (A) In-browser canvases contain interactive views of the schematic (left) and layout (right) of the design, just as engineers would have on their monitor during PCB debugging. Here, the user has selected capacitor C8 in the schematic (A, left), which would cause the corresponding element to highlight in both the layout (A, right) and PCB view (C). (B) A remote participant has the simulator open on their monitor and touch screen device. (C) The PCB simulator imitates a PCB a user would have on their desk. Here, a component is augmented with a box highlight and a metadata annotation. A user can use a probe to interact with the PCB simulation, which would affect the state of schematic and layout (A). (D) Freeze frame of inset from an example video description (Visual Inspection video). The video actually shown to the user contains a time-synced screen recording of design file view (A) with (D) inset picture-in-picture.}
+    \label{fig:Procedure-Part1}
+   
+\end{figure*}
+
+% \subsubsection{Interactive Prototype}
+% For the interactions testing, we've built an interactive prototype which consisted of two main parts:
+% \begin{enumerate}
+%     \item Desktop web-page that imitated layout and schematic debugging setup on the monitor
+%     \item Mobile web-page that imitated a physical PCB of Arduino Uno
+% \end{enumerate}
+% In addition to the web-prototypes, each of the participants were sent out a stylus that imitated a physical probe for interaction with the virtual PCB.
+
+\subsubsection{Part 1 Procedure}
+% Participants were shown 11 different videos sketches [ref needed] depicting the interactions and supported workflows. Each sketch illustrated the schematic and layout in screen capture and view of the PCB in a time-synced inset (Fig. \ref{fig:Procedure-Part1}). The PCB augmentations in the shown videos were projected via overhead projector (AAXA P7\footnote{https://www.aaxatech.com/products/p7-pico-projector.html}). The video both visually demonstrated the actions. The actions were also narrated by voice.
+% If the participant was unclear on the video content, additional description was provided until it was clear.
+The participant was shown each video sketch and the interactive simulator, starting with core interaction techniques and ending with interaction-technique supported workflows. Between each video sketch, the participant was then verbally asked the following questions:
+\begin{enumerate}
+    \item \textit{``Would you find this interaction to be helpful, not helpful, or have no impact on your debugging workflow?''}
+    \item \textit{``How might this interaction affect your workflow?''}
+    \item \textit{``How likely would you be to adopt this interaction on a scale from 1 (would not use) to 7 (very likely to adopt)?''}
+\end{enumerate}
+We analyzed responses via thematic analysis \cite{Braun2006UsingPsychology}, by transcribing the interviews, coding recurring themes, and noting outliers.
+
+\subsubsection{Part 2 Procedure}
+To better understand how certain design decisions align with the stated design guidelines, we asked participants to assess variations on attributes of the core interactions in five categories
+(Fig.
+\ref{fig:Procedure-Part2}):
+
+\begin{figure*}
+\centering
+    \centering
+    \includegraphics[width=0.7\linewidth]{AS_figures/Procedure-Part2/Attributes.jpg}
+    \captionof{figure}{The matrix of variations we presented to participants to elicit design feedback on attributes of the core interactions.}
+\label{fig:Procedure-Part2}
+\end{figure*}
+
+\begin{enumerate}
+    \item \textit{PCB Target Visualization:} Per DC2, how does the visual design of augmentation influence element localization in \ElemLocOnPCB? Options: (a) Box---filled in rectangle, (b) Circle---unfilled circle, (c) Crosshair---perpendicular, intersecting lines, (d) Layout inset---highlight is shown briefly, an inset segment of the layout local to the target element is projected next to the board
+    \item \textit{PCB Annotation Method:} Per DC2, what is the preferred length and where is the preferred area for on-board annotations in \MetaDataOnPCB? Options: (a) None---no annotation, (b) On-board minimal---annotation depicting only element identifier and value projected adjacent to the element (potentially overlapping the PCB), (c) Off-board minimal---only element identifier and value; projected on tabletop adjacent to the board, (d) On-board full---all element metadata fields projected adjacent to element, (e) Off-board full---all element metadata fields projected on tabletop
+    \item \textit{Design File Positioning:} Per DC1, how the positioning of design files on monitor influence element identification within design files in \ElemIdOnDesFiles? Options: (a) Side-by-side, (b) Full screen---schematic and layout each took entire screen, flipped between files, (c) Layout inset---layout local to the target element is inset on schematic view
+    \item \textit{PCB Selection Method:} Per DC3, what is the preferred method to trigger selection of PCB elements with a probe for \ElemIdOnDesFiles? Options: (a) Tap---tap top of element briefly to select, (b) Force tap---similar to BoardLab, applying force to probe tip triggers selection, (c) Button---button on barrel of probe triggers selection, (d) Foot pedal.
+    \item \textit{PCB Measurement Capture Method:} Per DC3, what is the preferred method to trigger a measurement capture on PCB with a probe for \MeasOnDesFiles? Options: (a) Tap---tap pins to capture selections, (b) Force tap---applying force to probe tips triggers capture, (c) Button---button on barrel of probes triggers capture, (d) Foot pedal, (e) Delay---stationary probes for 3 seconds triggers capture.
+\end{enumerate}
+
+% \begin{figure}
+% \centering
+% \begin{minipage}{.5\textwidth}
+%     \centering
+%     \includegraphics[width=.9\linewidth]{AS_figures/Procedure-Part4/Procedure-Part4 v2.jpg}
+%     \captionof{figure}{Participants performed the timed element localization task remotely on a PCB stand-in. (A) monitor with schematic and layout views, (B) touch screen device as interactive PCB stand-in, (C) capacitive stylus as probe stand-in.}
+%     \label{fig:Procedure-Part3}
+% \end{minipage}%
+% \begin{minipage}{.5\textwidth}
+%     \centering
+%     \includegraphics[width=.9\linewidth]{AS_figures/Procedure-Part2/Attributes v6.png}
+%     \captionof{figure}{The matrix of variations we presented to participants to elicit design feedback on attributes of the core interactions.}
+% \label{fig:Procedure-Part2}
+% \end{minipage}
+% \end{figure}
+
+Items (1), (2), and (3) were delivered via the interactive web simulator.
+%Users used their own monitor and touchscreen device with a PCB image as stand-in for a real board, where simulated augmentations could be delivered.
+Items (4) and (5) were described with the video sketches. After the demonstration, we asked participants about their general impressions, how they would rank the presented variations, during which workflow they might use it, and why.
+
+\subsubsection{Part 3 Procedure}
+\label{subsec:EvalSelectProcedure}
+Users performed two timed component selection tasks: finding components on the board given a target in the design files, and finding a component in the schematic given a target on the board. An interactive web simulator delivered the schematic and layout on their monitor, and a PCB image stand-in on their touchscreen device in an imitation workbench set up (Fig. \ref{fig:Procedure-Part1}(B)).
+A standard capacitive stylus shipped to the participants was used to select components on the PCB. For the \textit{find on PCB task}, a target component was highlighted on the schematic and layout.
+The user’s task was to select the corresponding component on the board. When \ASname\ (cross-linking between design files and board) was enabled, the target component on the board had an augmented highlight as well.
+For the \textit{find on schematic} task, a target component was highlighted on the board.
+The user’s task was to select the corresponding component on the schematic. Selection cross-linking between the layout and schematic as in KiCAD~\cite{KiCadSoftware} was enabled as baseline. When \ASname\ was enabled, the target component on the schematic and layout were highlighted.
+For each task, all six users performed twenty different component selections: ten selections with \ASname\ and ten without, with order randomized (for a total of 60 samples per condition minus omissions).
+%The order components were presented to the users were randomized.
+Users were permitted a short practice round to familiarize themselves with the selection task.
+Audio feedback indicated if a user selection was correct or not.
+Schematic and layout visualizations were kept the same between conditions.
+Timing started when the component to be found was presented to user (on the schematic and layout in the \textit{find on PCB task} and on the board in the \textit{find on schematic task}). Timing stopped when the user selected the correct corresponding component (on the board in the \textit{find on PCB task} and on the schematic in the \textit{find on schematic task}).
+If a user selected the incorrect component, the data was logged as a mistarget; if a user indicated it was due to a fault of the capacitive stylus or touchscreen, rather than a true mistarget, the datum was omitted.
+
+\subsubsection{Findings from Part 1: Feedback on Core Interactions and Interaction Supported Workflows}
+\label{subsec:EvalCoreInteractions}
+
+\begin{figure*}
+    \centering
+    \includegraphics[width=0.85\linewidth]{AS_figures/Graph-Part1/graph-part1and3-v5.png}
+    \caption{Results from Part 1 (core interaction and workflow feedback).}
+    \label{fig:Eval-Part1}
+\end{figure*}
+
+Users provided illuminating feedback on their preferences and uses of the core interactions and workflows (Fig.~\ref{fig:Eval-Part1}).
+
+Users unanimously rated EL-PCB favorably for localizing components, pins, and nets.
+% Every participant agreed that when finding components:
+\textit{``It basically saves me an extra step\ldots this allows me to go from schematic to board immediately''} (P1,~\sharcHere{q:saves_step}).
+\textit{``I have to do it pretty much manually in different pieces of software. So, this would have saved me a lot of time''} (P6,~\sharcHere{q:different_software}).
+% \textit{``There’s no reason I would look at the board file if I had this feature''} (P7).
+Specific situations in which EL-PCB would be particularly helpful included working with complicated and dense boards (P1), unfamiliar boards (P2), or boards without silkscreen (P5).
+P7 also pointed out that \textit{``trying to find specific patterns, especially with things are rotated and whatnot is very error prone''} (\sharcHere{q:patterns-rotated}) for humans, and that computationally-driven augmentation can help to disambiguate.
+%it is computationally much simpler and this technique could simplify that.
+
+
+% Users called out specific situations where this would be helpful:
+% \textit{``especially for complicated boards with a lot of different capacitors or resistors''} (P1). 
+% \textit{``Super helpful\ldots especially navigating either a new board that I'm not super familiar with or a design I haven't touched in a while''} (P2). 
+% \textit{``when the reference designator isn't on the silkscreen. Then it's like, you know, you have to like dive into the Gerber files, and then like hover over the part to get the reference designator''} (P5).
+
+% For pins, much the same feedback was shared across the board\footnote{no pun intended}: % NUUUUU losing the pun :( %NUUUUUUUUUUU
+% \textit{``it’d save me the step of referencing the datasheet''} (P1).
+% \textit{``I feel like would actually be even more useful than just finding the component, and a lot of scenarios because I'm trying to find specific patterns, especially with things are rotated and whatnot is very error prone''} (P7).
+
+P1 cited that there might be practical issues with the precision of an AR system highlighting very small details (the 500~{\textmu}m
+pitch pins of a QFN24 package), and P5 raised concerns with the potential for trust issues if the projections were inaccurate: \textit{``this would be useful but misleading, because yeah what if they got stuck with the wrong part.''} (\sharcHere{q:misleading})
+% \textit{``I can see that, for example, like the QFN24 [(an IC package with 500um pitch pins)], the pins might be way too close together to highlight a single pin''} (P1), but another pointed out
+As P7 pointed out, however, \textit{``as the pitch gets more and more fine, being able to identify the pin doesn't help quite so much, because there's not a lot you can do if it's so small that you can't probe it [anyway].''} (\sharcHere{q:not_a_lot})
+
+Nonetheless, highlighting specific pins connected to a given net was also liked, specifically to identify suitable measurement probe points for a given net:
+% \textit{``It's very helpful, especially when, like in industry boards you don't have super easy access points with all of your components so sometimes some of these nodes would fall under like an EMI shield [(metal covering over components to reduce electromagnetic interference)]''} (P2).
+\textit{``[when] looking for a component that was easy to probe without shorting anything else nearby\ldots I don't even have to worry about like looking through the package size on the schematic sheet and trying to find something that's like on the net that's going over different schematic pages. [With augmentation] I can just literally look at the board and say, `Oh, I got this big capacitor right here that has a good probing point.'''} (P6,~\sharcHere{q:big_capacitor}).
+Another user looked to use this feature to locate accessible nodes since many are obstructed by features such as shield cans or mechanical cases ``in industry boards.'' (P2,~\sharcHere{q:industry_boards}).
+% \textit{``I even today did something pretty similar\ldots I was looking for a component that was easy to probe without shorting anything else nearby\ldots Then I don't even have to worry about like looking through the package size on the schematic sheet and trying to find something that's like that on the net that's going over different schematic pages. I can just literally look at the board and say, `Oh, I got this big capacitor right here is that has a good probing point.'''} (P6).
+
+% One user (P1) interpreted localizing a net as highlighting a (potentially buried) trace, rather than connected pins, mentioning this would be applicable only in rare situations where they would need to uncover or sever a trace with a knife, and, therefore, said they were unlikely to use it often.
+
+As an interaction in and of itself, \MetaDataOnPCB\ rated poorly, with many users citing that selecting metadata on the schematic to display within the board view was redundant: 
+\textit{``If I'm already on the schematic and the information is there on the schematic it's not super helpful to display it again on the side of the board.''} (P2,~\sharcHere{q:redundant}).
+% \textit{``I would say if information if I'm already on the schematic and the information is there on the schematic it's not super helpful to display it again on the side of the board.''} (P2).
+However, when combined with EI-DF to form the Visual Inspection interaction (allowing users to trigger augmented metadata annotations directly from the board as opposed to the schematic) the interaction was universally preferable. 
+% \textit{``You touch it on the physical board and then it gives you information, that I could totally see being helpful. Because a lot of the time it's [referring to the metadata] not there [on the PCB].''} (P8).
+\textit{``I'm doing this 24/7, like which pin is which\ldots if I could do something to where I could just be looking at the board, and not have to look away, and just having it projecting on top of it. That would be -- oh my god -- I would use that like 100\% of the time.''} (P5,~\sharcHere{q:oh_my_god}).
+P2 added that \textit{``in factory environments\ldots this feature could limit the number of different screens or devices I need to carry around.''} (\sharcHere{q:carry_less})
+% P2 indicated that \textit{``in factory environments\ldots this feature could limit the number of different screens or devices I need to carry around... so if I can just have the circuit board in front of me and get that info.''}
+
+% Many users also expressed the Visual Inspection interaction as useful to assist in assembling boards.
+% Like MA-PCB, EI-DF received mixed reviews for functionality as a stand alone interaction.
+% \textit{``I think it can be helpful but less so than the other way around [EL-PCB]\ldots Normally I feel like you would know what [component] it is, if it's your design, so it'd probably be more helpful on a design you're not familiar with''} (P6).
+% It only became universally useful when combined with other interactions.
+
+Diagnostic Measurement workflow was found to be helpful in not only alleviating an individual's own mental demands but also in capturing unambiguous logs for documentation and interacting with others.
+% capturing the measurement location and logging the values themselves.
+% \textit{``As far as like actually debugging goes\ldots I definitely see it being a useful feature in terms of like recording the actual results\ldots I've had personally a whole lot of negative experiences of people measuring the wrong things and telling us that they got such and such results.''} (P8).
+% \textit{``In a case where like, Oh, I have this dead board, I don't know what what exactly is wrong with it. I can open up like a debug session you could call it. And instead of me pre-defining what rails I want to measure, if I could just go and measure rails and it could tell that like I'm measuring VSYS [system voltage rail], or 3.3[V rail], and it's just logging like a new line item every time then that would be super useful''} (P6).
+\textit{``This would be extremely helpful, because... what I've been doing up until this point is, I may like probe something and then I'll just keep in the back of my mind like okay it's this value. And then I'll just keep like three to four values in my head''} (P5,~\sharcHere{q:back_of_my_mind}).
+% \textit{``this is, yeah this is great, This would be extremely helpful, because... what I've been doing up until this point is, I may like probe something and then I'll just keep in the back of my mind like okay it's this value. And then I'll just keep like three to four values in my head''} (P5).
+\textit{``I've had personally a whole lot of negative experiences of people measuring the wrong things and telling us that they got such and such results.''} (P8,~\sharcHere{q:wrong_things}).
+
+% One user appreciated the fact that the measurement value could be projected as well next to the board: 
+% \textit{``trying to look at multimeter while you're probing small components is difficult, so just being able to see it next to your board will be helpful.''} (P7).
+
+All participants appreciated the interaction technique-supported Bring-Up workflow:
+\textit{``very helpful useful during board bring-up, we're just trying to take a basic DC measurement on multiple nodes quickly, smoke test\ldots a lot of times that's tens of nets that we're trying to measure,\ldots and if we can very quickly step through that without having to go back and forth between the board and the PC recording and Excel or whatever, would definitely save a lot of time.''} (P2,~\sharcHere{q: bring_up_basic_measurement}).
+\textit{``I could see this like cutting down board bring-up down in time by like hours.''} (P5,~\sharcHere{q:by_like_hours})
+%\textit{``This would be a huge game-changer for validation and board bring-up. I could see this like cutting down board bring-up down in time by like hours.''} (P5)
+% \textit{``super useful for board bringup or for validation testing, because if you have to develop test plans anyways, test cases. So if part of that was like I just put the test case in this format and it just has a list of rails that I need to measure and it just highlights, `oh yeah, measure this rail' and it highlights where I need to measure on the board and it's just automatically populating everything for me, like, that would be great.''} (P6).
+Some users suggested they also found it useful to define and project probe points for unstructured debugging: 
+\textit{``[I'm] interested in just the fact that it can highlight the two things I want to probe at the same time though so I know exactly where to put those probes.''} (P1,~\sharcHere{q:exactly_put_probes}).
+The explicit probe point projections inspired some users to suggest it can assist train those unfamiliar with their design.
+\textit{``If I was giving this to like a, like undergrad or like an intern or something you know, probably be pretty useful for them just to quickly catch on''} (P1,~\sharcHere{q:undergrad}).
+% \textit{``if I wanted to test like many boards like if I was doing like a, like a long run up like 10 to like 50 boards or or especially if I was giving this to like a, like undergrad or like an intern or something you know, probably be pretty useful for them just to quickly catch on''} (P1).
+\textit{``If you\ldots can turn this [probe point projection] into an automation program\ldots this would be great at a factory.''} (P5,~\sharcHere{q:automation}).
+% \textit{``If you get like 100 boards in maybe you just you want to do a quick quick run, you know? Then you can turn this into an automation program too\ldots when it comes to factory workers, you know, this would be great at a factory.''} (P5).
+
+Finally, the Remote Collaboration scenario received a varied set of rankings. One user, affected by remote work during the recent COVID-19 pandemic said,
+\textit{``I think just the ability to communicate very unambiguously; not only like what part, you know, because you could use the reference designators in like an email or a phone call or whatever to tell people what to look at, but, like, in terms of selecting actual points to measure. I think that would be super helpful. Personally, what I've had to do a lot of recently is taking pictures of the manufacturing preview, and then like drawing a circle on what we need and then sending that back and forth on Slack. And so just, you know, in the sense that, that will speed that up a lot.''} (P8,~\sharcHere{q:unambiguously}).
+% \textit{``I think the idea would help organize the process.''} (P5).
+Many users thought the interactions were useful, but were not frequently involved in collaborative debugging situations. They recognized that they may have growing utility as the pandemic continues to affect workplaces:
+\textit{``I think [these interactions] can be useful and especially I guess in a situation like we have right now where everyone's work-from-home. And if I don't want to go to a factory, and there's lab techs at the factory, and they're there trying to figure out what's wrong with the board, and they don't necessarily have the expertise about that board, I could probably walk them through it and highlight stuff\ldots I could see it useful in that kind of situation but it's more of a hypothetical because it's not something that I've really done much yet myself.''} (P6,~\sharcHere{q:hypothetical}).
+% \textit{``I haven't really had a project where I feel like remote debugging was super needed. Like oftentimes, obviously, most of the time debugging, happens in-person, even if you're having someone else help you do it. Obviously with like current scenario like I can definitely see why this could be interesting.''} (P1).
+One user also expressed that it’d be helpful to point out to their software colleagues certain buttons, switches, and plugs to interact with on their development kit, but they are not often in situations where the other user would be actively probing pads.
+
+
+\subsubsection{Findings from Part 2: Feedback on Core Interaction Attributes}
+\label{subsec:EvalAttributes}
+
+\begin{figure}
+\centering
+%\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{AS_figures/Graph-Part2/graph-part2-v3.png}
+  \captionof{figure}{Results from Part 2 where users ranked their preferred variations of core interaction attributes.}
+  \label{fig:Eval-Part2}
+%\end{minipage}%
+\end{figure}
+\begin{figure*}
+%\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{AS_figures/Graph-Part4/Graph-part4-v4.jpg}
+  \captionof{figure}{Results from Part 3 where users participated in a timed element localization task.}
+  \label{fig:Eval-Part3}
+%\end{minipage}
+\end{figure*}
+
+Users ranked target visualizations for \ElemLocOnPCB. Crosshair was the primary choice, but box was seen as nearly as good.
+\textit{``The crosshair makes it super easy to individually pick out which one is which''} (P7,~\sharcHere{q:crosshair_easy}). \textit{``box one is my favorite because it superimposes the most accurately on the part of interest''} (P5,~\sharcHere{q:box_favorite}).
+A user suggested that a crosshair transitioning to a box is good for initial targeting and reducing visual clutter.
+The circumscribed circle was missing the details of the component's contour, reducing visual precision and as a result being ranked lowest among most participants. 
+\textit{``The circle is misleading because it's like encompassing multiple parts''} (P5,~\sharcHere{q:circle_misleading}).
+Towards this end, an AR system must be precise enough to provide unambiguous augmentations on PCB elements (which can be less than millimeter square for the smallest pins).
+To help resolve ambiguous cases, a local inset of the layout was appreciated as visual confirmation, but users looked for it to be combined with an on-board visualization rather than as a standalone method.
+
+Toward annotating metadata on the board (\MetaDataOnPCB), participants generally preferred off-board annotations (indicating that on-board annotations felt cluttered), but there was disagreement on how much information to present---between our options presented, there was an even split between all metadata or none, suggesting there is likely some ideal middle ground.
+Some users indicated their preference would be to control what metadata would be presented.
+Uniquely, P7 preferred no annotations, but if choosing one, preferred to have a minimum amount of information right on the board, citing that it yields the shortest distance between the component and annotation.
+
+For identifying elements in the design files (\ElemIdOnDesFiles), we asked users their preferred design file view to better understand if having an augmented view of the board changed their current design file habits.
+All preferred to maintain a side-by-side view of the schematic and layout simultaneously, screen real estate permitting, but also looked to have a full screen options as well.
+Two participants saw value in the layout pop up:
+\textit{``I do like the spirit of the peek when you click on it, especially if you\ldots want to try and get your bearing with where the component is on the board, but I feel like if you have the crosshair you don't really need that so much''} (P7,~\sharcHere{q:spirit_peek_click}).
+On the other hand, some participants felt like the inset covered information in the schematic.
+One user indicated that the augmented board view was usable enough, it could eliminate their need to have the layout view on their screen.
+\textit{``If I was debugging, every time I needed to find a component I would use this feature, there's no reason I would look at the board file if I had this feature''} (P7,~\sharcHere{q:no_reason_to_look}).
+
+For the on-board element selection method in support of \ElemIdOnDesFiles, most of the participants indicated, if technically feasible, a simple light tap was preferred.
+\textit{``The most intuitive one of the best is just tap to select with minimal force''} (P1,~\sharcHere{q:minimal_force}).
+Multiple users worried that a force tap could damage small components, and that pressing a stylus button could cause probes to slip off small probe points.
+One participant liked the foot pedal selection the most, citing that it allows them to place probes carefully eliminating situations where components can be shorted or damaged.
+
+Amongst the methods to trigger measurement capture (\MeasOnDesFiles), delay was the almost universal preference, as it matches the natural use of a multimeter (waiting for the measurement to settle).
+% \textit{``If you could just set the probes next to each other and wait a second and then it would take a measurement\ldots that's probably best''} (P8).
+\textit{``I feel like the way just a normal multimeter works is very intuitive, you just tap on things and like sometimes it takes [after] there's a delay on the screen.''} (P1,~\sharcHere{q:normal_multimeter}). 
+% \textit{``If you don't have to do something else [beyond place and delay] to take the measurement, it's great''} (P7).
+One user (P6) ranked foot pedal at the top of the list, as they felt it was deliberate while allowing precise positioning of probes in both hands. 
+
+\subsubsection{ Findings from Part 3: Timed Element Localization Task}
+\label{subsec:EvalSelectTask}
+
+On average, users performed the \textit{find on board} task 31\% faster with \ASname\ compared to without, with a mean difference of 1135 ms across all samples (per-sample t-test, $t$(58)=4.31, $p$<.001; per-participant Wilcoxon Signed-Rank, $Z$=0, $p$=0.031).
+True mistargets fell from 16.94\% without \ASname\ to 8.47\% with \ASname.
+Users rated ease, rose from a median of 5.0 to 7.0, and confidence rose from 5.5 to 7.0, on the 7-point scale.
+\textit{``I was very confident [with \ASname] because generally I knew what I was looking for, and also the highlight was basically telling me it, I didn't need to double check it most of the time\ldots Without the highlight, I'd have to look at it, choose which one I'm pretty sure it was, double check, and then go back and click once I was confirmed what I thought was.''} (P6,~\sharcHere{q:very_confident}).
+
+In the \textit{find on schematic} task, users were, on average, 46\% faster with \ASname, with a mean difference of 2923 ms across all samples (per-sample t-test, $t$(59)=10.1, $p$<.001; per-participant Wilcoxon Signed-Rank, $Z$=0, $p$=0.031). True mistargets were 3.33\% for both conditions. Users' ease and confidence score increased to a median of 7.0 for both metrics, from 4.5 and 5.0 respectively, out of 7 points.
+\textit{``If I have to click it on the layout and have it show up on the schematic, yeah, that's helpful compared to what I have\ldots it already, you know, just saves me the step of switching windows essentially, in searching.''} (P7,~\sharcHere{q:saves_switching_windows}).
+
+We note that the selection task given may have been too easy 
+(as evidenced the by high ease score for the baseline)
+%(\textit{``brainless''}---P6)
+with a single page schematic and small, low component count board relative to what is typically found in a commercial product. % (Arduino Uno).
+A more complex design (with greater number of schematic pages and higher component count) may have yielded a starker difference between control and condition with \ASname, with the control more likely to take tens of seconds to minutes to localize a given component as per the qualitative feedback during needs finding.
+\textit{``Definitely would be significantly easier with the AR link just because we're navigating like 55 page schematics as opposed to this simple one pager here with a really simple layout, so it's much more difficult to keep your schematic and board view aligned\ldots It's a lot more like zooming on the board side, page changing on the schematic side, and then cross referencing to a real PCB.''}~(P2,~\sharcHere{q:simple_layout}).
+
+\section{Discussion}
+\label{sec:disc}
+
+%\begin{todo-env}
+Through a three-part study, we have explored the design space of using AR visualization and interaction as tools for assisting electrical engineers with their PCB debugging workflows and preliminarily evaluated a proposed set of interaction techniques.
+% We find augmented interaction to provide a promising tool to assist electrical engineers in their PCB debugging workflows with the most frequently cited reason being decreased context switching, satisfying DC1, DC2, and DC3.
+In particular, we found that four specific tasks benefited the most from our proposed interaction techniques:
+\begin{enumerate}
+\item finding components (\ElemLocOnPCB\ components) and probe points (\ElemLocOnPCB\ pins and nets) on the PCB,
+\item immediately providing element metadata at the board without referencing design files (Visual Inspection)
+\item logging of unstructured measurement queries with associated probe points (Diagnostic Measurement)
+\item unambiguous, spatially co-localized, and potentially automated probe point visualizations for directed measurement workflows (Bring-up)
+\end{enumerate}
+
+In support of DC1, participants' most cited reason for their expectation of increased efficiency was confirmed to be the reduction of context switching between files. For example, \ElemLocOnPCB removed out the need to reference layout when moving from schematic to board (\sharcref{q:saves_step}, \sharcref{q:different_software}, \sharcref{q:patterns-rotated}), Visual Inspection cut out the need to flip from board to schematic to pull metadata information (\sharcref{q:oh_my_god}), and Diagnostic Measurement and Bring-Up workflows took out the need to flip to instrument panels and logging documents (\sharcref{q: bring_up_basic_measurement}).
+
+Careful design is needed towards maintaining a fine balance between providing relevant information and avoiding a cluttered view (DC2) and warrants further study. While users generally agreed that information should be provided out of the direct line of sight to the PCB, there was disagreement on how much is helpful (see \MetaDataOnPCB\ Findings). Breaking out control to users for them to adjust based on their context may be best.
+
+The choices amongst users affirmed that supporting habitual interactions with the PCB (DC3) is an important design consideration, as evidenced by responses to the preferred PCB element selection method (simple tap, \sharcref{q:minimal_force}) and measurement capture method (delay, in line with current behavior, \sharcref{q:normal_multimeter}). Users were enthusiastic (\sharcref{q:back_of_my_mind}, \sharcref{q: bring_up_basic_measurement}, \sharcref{q:by_like_hours}) about interaction-supported workflows that directly mirrored and supported their existing practices (e.g. Diagnostic Measurement, Bring-Up).
+
+Finally, users generally were interested in how the techniques could help support collaboration (DC4), but for only one did the use case arise frequently enough to say they would adopt it (\sharcref{q:hypothetical}). However, these situations may be increasingly common with a progressively more globalized electronics manufacturing pipeline, a stay-at-home pandemic, and decreasing knowledge barriers for participation in electronics design.
+
+Feedback from participants elucidated a few practical challenges towards the construction of a future system regardless of how augmentations are delivered (head-mounted device, handheld mobile video pass-thru AR, projective AR, or other). First is the need for extremely precise and stable, board-locked visualizations. Users expected the system to be able to augment the smallest pin that can be reasonably probed, or a methodology to disambiguate imprecise visualizations. Second is the need for accuracy in board-locked visualizations. Users expressed that they would mistrust the system if it could not provide accurate overlays (\sharcref{q:misleading}). Furthermore, PCB modifications during debugging such as reworked components or breakout wires may also cause the element on the board to no longer align with the design files. A function to support deviations from the imported design files could address this. Finally, on the wish list for one participant was a system that could be easily portable to a number of environments, such as the factory (\sharcref{q:carry_less}). 
+
+\subsection{Limitations and Future Work}
+
+Due to the COVID-19 pandemic, studies were conducted remotely prohibiting the ability to collect observational data. Following the pandemic, we would look forward to observing user workflows directly in a simulated debugging task, beyond the video call with video prompts and a PCB simulator we used in this evaluation.
+We could perform the timed evaluation on a real, potentially more complex, PCB than the web simulator board which is limited to the real estate of the user's touchscreen.
+One participant did note, however, of our simulator,
+\textit{``I felt like basically your emulation setup was pretty representative of like how the tool would be in in real life \ldots it carried over pretty well.''}~(P6,~\sharcHere{q:emulation}).
+Future work could extend the timed element selection tasks in this paper toward a more general and open-ended timed debugging procedure allowing for multiple proposed interactions to be leveraged.
+The small number of participants may limit the generalizability of the findings. While we received interesting feedback from our relatively small sample size, a larger study could yield greater variety and nuance in the discussion, especially on topics where the responses were less uniform (e.g. \MetaDataOnPCB and Remote Collaboration). It would also provide larger effect sizes in the analysis of the quantitative data.
+Users cited that referencing datasheets is a common source of debugging information as well.
+Work towards parsing and linking component datasheets to be able to provide context-relevant data would further help to decrease context-switching.
+Only click- and touch-based methods of element selection and file navigation were considered for this study, but some users expressed interest in multi-modal methods combining voice or gaze.
+
+While not explicitly a debugging procedure, users frequently commented that the methods proposed in this work can help speed up and decrease errors in assembly and potentially validation, warranting more thorough investigations toward these use cases. \ASname\ may also be used to streamline assembly workflows by sequentially highlighting the locations of each component installation location via \ElemLocOnPCB, however a Bill-of-Materials (BOM) view is likely needed to help provide an ordering to the installation procedure. Engineering validation is a process in which board revisions are tested against a set of functional requirements. \ASname\ could be used to assist in preparing samples for test which can be a manual process, but as these tests often must occur on a large sample set of the population, automated test equipment is typically leveraged.
+
+Finally, we are excited for future work to incorporate these interactions and feedback into a deployable augmented reality system. The system would comprise of three parts: (1) a graphical program running on the user's computer that presents the schematic and layout, (2) an augmented reality system that can deliver augmentations on the PCB, and (3) a probe to track the user's interactions with the PCB. To be practical, the program would need to be built as an extension of an existing ECAD tool or as a separate application able to ingest and parse ECAD schematic and layout documents. For delivering board augmentations, multiple methods of delivering AR augmentations are possible: via headset (as in Hahn et al. \cite{Hahn2015AugmentedProcess}), via see-through mobile AR (as in InspectAR \cite{InspectARTools}, or via projective augmentation (as in Mascot \cite{MascotRobotas}. The board itself can be tracked via computer vision (as in InspectAR) or fixed in known location (as in Mascot). A probe to interact with the board could be tracked via magnetic tracking (as in BoardLab \cite{Goyal2013BoardLab}), computer vision, optical tracking, or mechanical linkage. To the best of our knowledge, a system tying these three components together has not yet been developed. Doing so would allow for the interactions proposed in this paper to be realized.
+
+%As these are non-debugging workflows, we did not evaluate these interactions
+    
+%\end{todo-env}
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+%\begin{todo-env}
+
+In this paper, we proposed \ASname, a set of augmented reality interaction techniques to assist electrical engineers in PCB debugging.
+We find that combining augmented visualization and augmented interaction on printed circuit boards unlocks promising avenues to alleviate the frequent context switching and spatial pattern matching exercises required by engineers' current ECAD tools.
+For experts, this can lead to more efficient debugging. In timed element selection tasks, this led to a 31\% and 46\% decrease in time to find a given component on the PCB and in the schematic respectively, with potential to decrease element localization more drastically in more complex board designs.
+For those unfamiliar with a PCB design or PCB design in general, the unambiguity of WYSIWYG augmentations on the board directly can help to make basic PCB workflows more accessible.
+While the bulk of the work done by the HCI community has focused on supporting the latter group, we hope this paper will inspire more work toward supporting hardware workflow challenges for both maker and expert populations.
+
+%\end{todo-env}
+
+%\end{changed}
+
+
+%\end{changed}
+
 % ========== Chapter 4
 
 \chapter{Building AR Debugging Workbench}
 
+
+
 % ========== Chapter 5
 
 \chapter{ClearBuds}
+
+\section{Introduction}
+
+
+
+
+\begin{figure}
+\centering
+ \includegraphics[width=0.75\linewidth]{CB_figures/flow-diagram-6.png}
+\vskip -0.1in
+\caption{{ ClearBuds Application.  Our goal is to isolate a user's voice from background noise (e.g., street sounds or other people talking) by performing source separation  using a pair of custom designed, synchronized, wireless earbuds.}}
+\label{fig:block_diagram}
+\vskip -0.15in
+\end{figure}
+
+
+% From a user experience perspective, this would allow a user to not toggle the mute button on call, even when they are not speaking.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DRAFT 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+With the rapid proliferation of wireless earbuds (100 million AirPods sold in 2020~\cite{airpodssales}), more people than ever are taking calls on-the-go.  While these systems offer unprecedented convenience, their mobility raises an important technical challenge:  environmental noise (e.g., street sounds, people talking)  can interfere and make it harder to understand the speaker.
+We therefore seek to enhance the speaker's voice and suppress background sounds using speech captured across the two earbuds. 
+
+
+Source separation of acoustic signals  is a long-standing problem where the conventional approach for decades has been to perform beamforming using multiple microphones. Signal processing-based beamformers that are computationally lightweight can encode the spatial information  but do not effectively capture acoustic cues~\cite{van1988beamforming,krim1996two,chhetri2018multichannel}.  Recent work has shown that deep neural networks can encode both spatial and acoustic information and hence can  achieve superior source separation  with gains of up to $9$~dB over signal processing baselines~\cite{subakan2021attention,luo2019conv}. However, these neural networks are computationally expensive. None of the existing binaural (i.e., using two microphones) neural networks can  meet the end-to-end latency required for telephony applications or have been evaluated with real earbud data. Commercial end-to-end systems, like  Krisp~\cite{krisp}, use neural networks on a cloud server for single-channel  speech enhancement, with implications to  cost and privacy. % or on edge devices.
+
+%\footnote{The task of enhancing the wearer's  voice is for  telephony and video conferencing applications. This is not to be confused with active noise cancellation (ANC) which cancels out  noise coming to one's ears from an external environment~\cite{mute}.}
+
+We present the first mobile system that uses neural networks to achieve real-time speech enhancement from binaural wireless earbuds.
+Our key insight is to treat wireless earbuds as a binaural microphone array,
+and exploit the specific geometry -- two well-separated microphones behind a proximal source -- to devise a specialized neural network for high quality speaker separation. In contrast to using multiple microphones on the same earbud to perform beamforming, as is common in Apple AirPods \cite{airpods} and other hearing aids, we use microphones across the left and right earbuds, increasing the distance between the two microphones and thus the spatial resolution. 
+
+
+{To realize this vision, we need to address three key technical challenges to deliver a functioning, practical system:
+\begin{enumerate}
+    \item Today's wireless earbuds only support one channel of microphone up-link to the phone. AirPods and similar devices upload microphone output from only a single earbud at a time.  To achieve binaural speaker separation, we need to design and build novel earbud hardware that can synchronously transmit audio data from both the earbuds, and maintain tight synchronization over long periods of time.
+    \item Binaural speech enhancement networks have high computational requirements, and have not been demonstrated on mobile devices with data from wireless earbuds. Reducing the network size naively often leads to unpleasant artifacts. Thus, we also need to optimize the neural networks to run in real-time on smart devices that have a limited computational capability compared to cloud GPUs. Further, we need to meet the end-to-end latency requirements for telephony applications and ensure that the resulting audio output has a high quality from a user experience perspective.
+    \item Prior binaural speech enhancement networks are trained and tested on synthetic data and have not been shown to generalize  to real data. Building an end-to-end system however requires a network that generalizes to in-the-wild use. 
+\end{enumerate}}
+    
+
+%Achieving this goal is challenging for three key reasons. First, today's earbuds are not capable of operating in this manner; AirPods and similar devices upload microphone output from only a single earbud at a time.  To achieve binaural speaker separation, we  need to design and build novel earbud hardware that can synchronously transmit audio data from both the earbuds. Second, binaural speech enhancement networks are not lightweight and have not been demonstrated with wireless earbuds. Reducing the network size naively often leads to unpleasant artifacts. Thus, we also need to optimize the neural networks to run in real-time on smart devices that have a limited computational capability compared to cloud GPUs. Further, we need to  meet the end-to-end latency requirements for telephony applications and ensure that the resulting audio output has a high quality from a user experience perspective. {Third, prior binaural  speech enhancement networks are trained and tested  on synthetic data and have not been shown to generalize well to real  data. Building an end-to-end system however requires a network that generalizes to in-the-wild real use.} 
+
+To achieve this system, we make three  technical contributions spanning earable hardware and neural networks. 
+
+
+\begin{figure}
+\vskip -0.1in
+\centering
+\includegraphics[width=0.5\linewidth]{CB_figures/clearbuds.png}
+\vskip -0.15in
+\caption{{ClearBuds hardware  inside 3D-printed enclosure and when  placed beside a quarter. }}
+\label{fig:earbuds}
+\vskip -0.15in
+\end{figure}
+
+\squishlist
+\item {\bf Synchronized  binaural earables.} We designed a binaural wireless earbud system  (Fig.~\ref{fig:earbuds}) 
+capable of streaming two time-synchronized microphone audio streams to a mobile device. This is one of the first systems of its kind, and we expect our  {open-source} earbud hardware and firmware  to be of wider interest as a research and development platform. Existing earable platforms such as eSense~\cite{esense-1}  do not support time-synchronized audio transmission from two earbuds to a mobile device. 
+We designed our DIY hardware  using open source eCAD software, outsourced fabrication and assembly ($\$2$K for 50 units), and 3D printed the  enclosures.
+
+\begin{figure}
+\vskip -0.1in
+\centering
+\includegraphics[width=0.75\linewidth]{CB_figures/side_voice_figure_v3.png}
+\vskip -0.15in
+\caption{{Background voice performance. { We use spatial cues to  separate background voices from the target speaker, even when the background voice is louder than the target voice. This is evident when the target speaker is silent  but background voice continues to talk (highlighted in orange).  Apple AirPods Pro  uses an endfire beamformer to partially suppress  background voice. The mono-channel Facebook Denoiser (Demucs) is unable to suppress the background voice. Clearbud's network  removes the background voice, approaching  ground truth. }}}%Comparing with Airpods:  \textcolor{blue}{\url{https://youtu.be/ZNhbs6lj6a0}} }}} %updated link 2022-05-25 11:48
+\label{fig:fig3}
+\vskip -0.2in
+\end{figure}
+
+
+
+\item {\bf Lightweight cascaded neural network.} We introduce a lightweight  neural network  that utilizes binaural input from wearable earbuds to isolate the target speaker. 
+To achieve real-time operation, we start with the Conv-TasNet source separation network~\cite{luo2019conv} and redesign the network to achieve a 90\% re-use of the computed network activations from the previous time step for each new audio segment (see~\ref{sec:nn}). While these optimizations make this network real-time, they also introduce artifacts in the audio output {(i.e., crackling, static). Interestingly, these artifacts have little effect on traditional metrics, like Signal-to-Distortion Ratio (SDR), but have a noticeable effect on subjective listening scores (see \ref{sec:mos}). These artifacts however are often visible in a frequency representation of the audio. } To address this, we combine our mobile temporal model with a real-time  spectrogram-based frequency masking neural network. We show that by combining the two networks and creating a lightweight cascaded  network,  we can reduce artifacts and improve the audio quality further. 
+\item {{\bf Network training for in-the-wild generalization.} 
+Training the network in a supervised way requires clean ground truth speech samples as training targets. This is difficult to obtain in fully natural settings since the ground truth speech is corrupted with background noise and voices. Training a network that generalizes to in-the-wild scenarios also requires the training data to mimic the dynamics of real speech as closely as possible. This includes reverb, voice resonance, and microphone response. Synthetically rendered spatial data is the easiest type of data to obtain, but most different from real recordings, while real speakers wearing the headset in an anechoic chamber provide the best ground-truth training targets, but are the most costly to obtain. Synthetic data can simulate various reverb and multi-path that are not captured in an anechoic chamber. {Our training methodology  uses large amounts of synthetic data simulated in software, small amounts of hardware data with  speakers embedded into a foam mannequin head and small amounts of data from human speakers wearing the earbuds in an anechoic chamber   (see~\ref{sec:datasets}) 
+to create a neural network that generalizes to  users and multi-path environments not in the training data. }}
+
+ \squishend
+
+We combine our wireless earbuds and neural network to create ClearBuds, an end-to-end system capable of (1) source separation for the intended speaker in noisy environments, (2) attenuation and/or elimination of both background noises and external human voices, and (3) real-time, on-device processing on a commodity mobile phone paired to the  two earbuds.  Our results show that:
+\squishlist
+    \item Our binaural wireless earbuds  can stream audio to a phone with a synchronization error less than 64$\mu$s and operate  continuously on a coin cell battery for 40 hours.
+    \item Our system outperforms Apple AirPods Pro by 5.23, 8.61, and 6.94~dB  for the tasks of  separating the target voice from background noise, background voices, and a combination of background noise and voices respectively.
+    \item Our network has a runtime of 21.4ms on iPhone 12, and the entire ClearBuds system operates in real-time with an end-to-end  latency of 109ms.  For telephony applications, an ear-to-mouth latency of less than 200ms is required for a good user experience \cite{g.114}.
+    \item In-the-wild evaluation with eight users in various indoor and outdoor scenarios  shows that our system  generalizes to previously unseen participants and multipath environments,  that are not in the training data.  
+    \item In a user study with 37  participants who spent over 15.4  hours and rated a total of 1041  in-the-wild  audio samples, our cascaded network achieved a higher mean opinion score and noise suppression  than both the input speech as well as a  lightweight Conv-TasNet. 
+    
+    
+%    \item Our network can run in real-time on a mobile device with a latency of 155ms on an iPhone 12
+\squishend
+
+
+
+
+We believe that this paper  bridges state-of-the-art deep  learning for blind audio source separation and in-ear mobile systems. The ability to perform background noise suppression and   speech  separation could positively   impact  millions of people who use earbuds to take calls on-the-go. By open-sourcing the hardware  and collected datasets, our work may  help kickstart future research among mobile system and machine learning researchers to design  algorithms around wireless earbud data.
+
+    
+%The link below shows a system demo:\begin{center}{\textcolor{blue}{{{\url{https://youtu.be/0Hmnc054cow}}}}}\end{center}
+    
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% RANDOM NOTES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Imagine a world a in 
+
+% They cannot do two channel because of bluetooth reasons
+
+% They are doing beamforming on one device
+
+% What is the first thing that we're doing
+
+% What's novel about the end to end system, it's real time, on the mobile device, using two mics
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DRAFT 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Background noise during phone and video calls is a persistent problem that affects people all over the world. Environmental sounds, such as street noises, machinery noises, or other people talking, can be transmitted along with the speaker, which hinders the ability to clearly communicate.
+
+% Speech enhancement is the task of isolating the speaker of interest and suppressing all unwanted background sounds. Recently, there have been many advances in machine learning that attempt to remove these artifacts from a single microphone input. Such systems do not perform well in situations where multiple human speakers are present due to the fact that a single microphone model lacks the spatial information required to isolate the intended speaker. In addition, such systems generally perform worse than those that utilize multiple microphones.  
+
+%  We are particularly motivated by the rise in multi-microphone wearable headphones in everyday settings. Examples include AirPods and PixelBuds, which have become increasingly popular in recent years. Although these devices often employ some amount of directional pickup, via beamforming or microphone design, these mechanisms offer limited attenuation of background noise compared to deep learning methods.
+ 
+%  In contrast to these approaches, we propose a neural network that utilizes binaural input from wearable headphones in order to isolate the target speaker based on both voice and spatial information. Furthermore, we design our network to run real-time on a mobile device and show low latency across a variety of devices. To achieve real-time separation, we use a Temporal Conv-Net based separation network that allows caching of intermediate outputs. When running on streaming input chunks of 50ms, we can re-use 99\% of the computed network activations from the previous time step for each new segment of audio. Experiments show that our network can outperform a number of baselines on both synthetic and real data.
+ 
+%  As a further contribution, we designed a set of wireless earbuds that maintain time synchronization between the microphones at a resolution of 32 microseconds. We built a custom wireless protocol over Bluetooth Low Energy (BLE) to enable synchronized, two-channel microphone streaming to the mobile device. To our knowledge, this is one of the first systems to be able to synchronously stream each microphone channel from each earbud to the mobile phone. This represents a step forward from single earbud beam-forming techniques, which were designed around the fact that current Bluetooth audio protocols only support one microphone channel for uplink. We expect our wireless earbuds to be of wider interest to the spatial audio community as a research and development platform.
+ 
+% %  Because the current Bluetooth hands-free profile (HFP) only supports one microphone for uplink, 
+ 
+% %  This represents a step forward from traditional single-side, on-device beam-forming techniques, and we expect our technique to be of wider interest to the spatial audio community.
+ 
+%  We combine the neural network with our headphones to create a system called ClearBuds, an end-to-end system capable of (1) source separation for the intended speaker in noisy environments, (2) attenuation and/or elimination of both background noises and external human voices, and (3) real-time processing on a pair of wireless earbuds paired with a mobile phone. 
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% RANDOM NOTES %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% For most use cases, speech enhancement systems must run in real-time on the hardware available. This hardware includes both the microphone available as well as the processing hardware. Although many previous works use a single microphone along with a GPU or a laptop CPU,
+
+
+% In contrast to traditional speech enhancement techniques, we notice that the geometry of the mouth with respect to earbuds allows us to apply an additional geometric heuristic, which then allows us to adapt source separation techniques to speech enhancement. xxxxxx
+
+% In contrast to more general purpose source separation formulations, the key insight is that for speech enhancement on wireless earbuds, the goal is to focus on the voice source  that is approximately equidistant from the two earbuds. 
+
+% To separate the wearer's voice we train a neural network to separate voice sources that are in the center of the microphone array. We use a similar technique as Cone-of-Silence, but do not need the location conditioning variables because the target speaker is always in a known position. xr
+
+% P1
+% (1) Succinctly define the problem. Need speech enhancement on earbuds. Focusing on the person who is talking.
+% (2) This is useful because people are talking while walking around (buses, streets) with wireless earbuds, existing approaches are not equipped to solve this.
+
+% P2
+% Beamforming, why they don't work. 2-3 academic citations, limited because of this reason. 
+% On the other hand neural networks have done single channel, but they are limited due to .
+% Synthetic data , non causal
+
+% P3
+% We built xxx. Key insight to make this realtime is xx. Built system which can wirelessly stream this thing and collected real data.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DRAFT 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \textcolor{red}{Shyam: This history lesson is not required.}
+%  In all aspects of our daily lives, the ability for us to hold conversations from one to another anywhere around the world has become an ability that is important in both our personal and work lives. Engineering efforts continue to push the telephony experience by improving voice quality, reducing latency, and eliminating background noise for a better experience. Finally, the advent of telephony has also contributed toward the rapid advancement of audio devices such as wireless earbuds and headsets for both improved voice quality and the ability to take calls hands-free.
+
+% % Improvements in the telephony experience also extend into the video domain. Video calls and video conferencing have been established so that we can now see each other’s faces to further improve the experience of effectiveness of our ability to communicate and collaborate with each other. In the work environment especially, video conferencing has become a necessity for employees and collaborators working from home and working remotely. Indeed, the SARS-CoV-2 (COVID-19) pandemic has only exacerbated this need, as the need for effective video conferencing software (Zoom, Microsoft Teams, Cisco Webex) has become a staple for us to remain effective while we work from home.
+
+% \textcolor{red}{In efforts to continue to improve the telephony experience, engineering innovations are made across both the hardware and software space. For example, digital MEMS microphones have long been preferred to their analog counterparts for noise immunity in wireless audio systems with high frequency radio components.} Today’s phones and wireless earbuds have also taken a step further by adding beam-forming to amplify a speaker’s voice while attenuating external background noise. While the strengths of beam-forming become stronger with distance between two microphones, companies like Apple and Google still integrate dual microphones on their wireless earbuds like AirPods and PixelBuds to gain the benefits of beam-forming microphones. While beam-forming functions well on these edge devices, its ability to attenuate non-broadband-noise fall short. Noises such as loud buses and subways, home appliances, and other background voices persist in the audio uplink during a voice call, disrupting the overall communication experience.
+
+% Recently, developments in the machine learning space have attempted to remove these extremities from a single microphone channel. These networks operate by utilizing spectrogram transformations to learn human voice priors, thus retaining human speech while eliminating other noises. While research continues in the academic space, companies like Krisp have begun to productize this technology so that people can enjoy voice and video calls with background noise removal in the uplink channel. Interest in this technology has also influenced companies like Google, as they recently introduced background noise cancellation on their video conferencing platform, Google Meet.
+
+% While Krisp and Google Meet perform well to isolate human speakers while eliminating background noise, they do not perform well in situations where multiple human speakers are present. This is primarily due to the fact that a single microphone model lacks the spatial information required to isolate the intended speaker in respect to surrounding background voices. This is a nontrivial pitfall, as the ability for these networks to remove noise and background voices in environments such as cafes, call centers, or shared work spaces become weaker.
+
+% To combat this, we introduce and propose ClearBuds, an end-to-end system capable of (1) source separation for the intended speaker in noisy environments, (2) attenuation and/or elimination of both background noises and external human voices, and (3) real-time processing on a pair of wireless earbuds paired with a mobile phone. The basis of our contributions function by integrating both the advances in the wireless earbud ecosystem along with audio source separation networks in the deep learning space. Specifically, we architect and engineer a solution which streams microphone data from both a user’s left and right ear as inputs for our source separation network. With two input channels, our network now attains the spatial information required to eliminate background voices while also isolating the intended speaker, which should be spatially equidistant between a pair of wireless earbuds.
+
+% The contributions of this approach are feasible with our end-to-end system which consists of a pair of wireless earbuds and a mobile phone. Custom firmware is embedded in each earbud which maintains time synchronization between the microphones at a resolution of 32 microseconds. Additionally, a custom wireless protocol is designed to stream the time-synced microphones in real-time to a mobile phone for processing. To our knowledge, this is the first system in which multiple wireless microphones are leveraged to expand upon commercially available background noise cancellation voice technologies (Krisp, Google Meet). Transitively, this is also the first demonstration of streaming both microphones in a pair of wireless earbuds, taking a step forward from traditional single-side, on-device beam-forming techniques. We present comparative results to show that we perform comparatively against non-causal [deep learning model] by xxx dB, while outperforming commercially available models (Krisp) by xxx dB and on-device beam-forming (AirPods) by xxx dB. 
+
+
+\section{ClearBuds Design}
+
+We first introduce our  lightweight  neural network architecture. We then describe system design  of our hardware platform and our synchronization algorithm. % to ensure time alignment between each ClearBud's microphone.
+
+
+
+\subsection{Problem Formulation}
+Suppose we have a 2 channel microphone array with one microphone on each ear of the wearer. The target voice is speaking with a signal $s_0 \in \mathbb{R}^{2 \times T}$ in the presence of some background noise $\textbf{bg}$ or other non-target speakers $s_{1..N}$. There may also be multi-path reflections and reverberations $\textbf{r}$ which we would also like to reduce, i.e., $\mathbf{x} = \sum_{i=0}^{N}\mathbf{s}_i + \mathbf{bg} + \mathbf{r}$.  Our goal is then to recover the target speaker's signal, $s_{0}$, while ignoring the background, reverbations, or other speakers. We also must do so in a real-time way, meaning that the a mixture sample $\textbf{x}_t $ received at time $t$ must be processed and outputted by the network before $t + \textbf{L}$ for some defined latency $\textbf{L}$.  We refer to the non-target speakers as "background voices". These background voices may be at any location in the scene, including very close to the target speaker and their angle  can change with time and motion.
+
+
+
+\subsection{Neural Network Architecture Motivation}\label{sec:nn}
+
+
+
+
+ %Our target network is approximately causal and runs in real-time on a mobile device.
+  {Our network needs to perform in real-time on a mobile device with minimal latency.}
+ This is challenging for several reasons. First, the processing device has a much lower compute capacity, especially compared to cloud GPUs. Additionally, the network should separate non-speech noises as well as unwanted speech. To do this, it must learn spatial cues and human voice characteristics. Finally, the resulting output should maximize the quality from a human experience perspective while minimizing any artifacts the network might introduce. 
+
+Our network, which we call \textit{ClearBuds-Net} or \textit{CB-Net}, is a cascaded model that operates in both  time  and frequency domains. The full network architecture is illustrated in Fig.~\ref{fig:network-full} and contains two main sub-components: A dual-channel time domain network called \textit{CB-Conv-TasNet}, and a frequency based network called \textit{CB-UNet}. %Next, we  describe the motivation for each component of the network.
+
+
+% \textcolor{red}{XXXThis needs to be rewritten. We need tos tart with the network architecutre and then talk about the details of each of the network and show example spectrograms to give the motivation for the frequency masking network.}
+
+
+% To address this,. Second, the compute device has a much lower memory and compute capacity, especially compared to standard GPUs. To solve this, we use depthwise separable convolutions as described in \cite{howard2017mobilenets}. We also use a temporal convolution network (TCN) that allows caching of intermediate outputs to reduce computation on new packets. Finally, 
+
+
+\subsubsection{CB-Conv-TasNet}
+The first component of separation method is a time domain network that is based on a multi-channel extension of Conv-TasNet \cite{luo2019conv}. This is a network in the waveform domain that  has a  Temporal Convolution Network (TCN) structure, lending itself to a causal implementation with intermediate layer caching \cite{paine2016fast}. We  use depthwise separable convolutions~\cite{howard2017mobilenets} to  further reduce the number of parameters and make the design real-time. We call this network CB-Conv-TasNet since it is an optimized version of the original Conv-TasNet.
+
+A key feature of the time domain approach is that it can easily capture spatial cues in the network. In our application, the desired source is always physically between  two  microphones, thus the voice signal will reach the microphones roughly at the same time. In contrast,  background or other speakers are typically not temporally aligned and will reach one microphone earlier or later. By feeding two time synchronized channels into the neural network, this spatial alignment of the sources can be learned from time differences in the signal. This is similar to a delay-and-sum beamforming effect, except the sum is replaced with a deep network. %Although a similar spatial separation approach was demonstrated in \cite{jenrungrot2020cone}, this spatial approach in the time-domain alone is not sufficient to produce quality output given the resource constraints of the computing device. NOT SURE WHAT THIS IS ADDING EXCEPT FOR HIGHLIGHT THIS PRIOR WORK.
+
+\begin{figure*}
+%\vskip -0.5in
+\centering
+\includegraphics[width=0.75\linewidth]{CB_figures/spectrogram_motivation2.png}
+\vskip -0.15in
+\caption{{The spectrograms above show the motivation behind a combined time and frequency domain method. The output of the time-domain component, CB-Conv-TasNet, contains artifacts, particularly at high frequencies. Although subtle, these artifacts are perceptible by human listeners. CB-Net is able to reduce these artifacts by using a frequency-domain network (CB-UNet) that masks unwanted frequencies.}}
+\vskip -0.2in
+\label{fig:spectrogram-motivation}
+\end{figure*}
+
+\subsubsection{CB-UNet}
+ {The output of our lightweight CB-Conv-TasNet often contains audible artifacts (i.e., crackling, static) that reduce the listening experience. Interestingly, these artifacts have little effect on traditional metrics, like Signal-to-Distortion Ratio (SDR), but have a noticeable effect on subjective listening scores (see \ref{sec:mos}). These artifacts are often visible in a frequency representation of the audio.  Fig.~\ref{fig:spectrogram-motivation} shows how  CB-Conv-TasNet alone contains noticeable artifacts when compared to the ground truth. To address this, we cascade a lightweight causal UNet \cite{ronneberger2015unet} which operates on the mel-scale spectrogram of the input audio. This network, which we call CB-UNet, produces a binary mask which is applied to the output of CB-Conv-TasNet. The combined output, shown in Fig.~\ref{fig:spectrogram-motivation} as CB-Net,  reduces these artifacts. The mean opinion scores in our evaluation  shows the strength of the cascaded CB-Net when compared to the time-domain component only.}
+
+\subsection{Neural Network Detailed Description}
+
+%Here, we describe details of our  network architecture.
+
+\subsubsection{CB-Conv-TasNet}
+The input to the network is a binaural mixture given by $\textbf{x} \in \mathbb{R}^{2 \times T}$. The first step is an encoder that transforms the mixture $\textbf{x}$ into $\mathbb{R}^{N \times T/L}$ with a 1D convolution of size $L$ and stride $L$. This is followed by a ReLU layer. The encoder's outputs are next fed into a temporal convolution network that consists of stacks of 1-D convolutions with increasing dilation factors. We use 14 convolution layers with dilation factors of 1,2,4,..,64 repeated twice, with a ReLU nonlinearity and skip connection after each convolution. The encoder output is multiplied with the output of the temporal conv-net, before being fed through a fully connected Decoder layer which transforms the output back into $\mathbb{R}^{2 \times W}$. %We describe window size  $W$ in the next sections. %\textcolor{red}{You can also refer to figure (need to insert) for a visual layout of the network.}
+
+
+
+In a real-world implementation, we do not have access to the full waveform, but only packets of data at a time. Furthermore, we must process these packets with limited access to future input samples. Given  15.625 kHz sampling rate, we choose to process packets of 350 samples at a time (22.4ms), which is our  window size $W$. We also use $2W$, or 700 samples of lookahead time (44.8ms) and 1.5s of past samples. Since we have no padding in the temporal convolution net, the network starts with this large temporal context and outputs exactly $\mathbb{R}^{1 \times W}$ samples, corresponding to the desired output for our input packet of $W$ samples. When we receive the next packet of size $W$, all intermediate activation from the encoder and temporal conv-net can be shifted over by $W / L$ samples and re-used. We chose $L = 50$, but any divisor of $W$ would work. Re-using intermediate outputs from previous packets saves over $90\%$ of the compute time for a new packet in our network. %These ideas of caching causal convolutions has been discussed in previous work such as \cite{paine2016fast}. %https://arxiv.org/pdf/1611.09482.pdf%
+
+
+\begin{figure}
+%\vskip -0.1in
+\centering
+\includegraphics[width=0.75\linewidth]{CB_figures/network-3.png}
+\vskip -0.15in
+\caption{ CB-Conv-TasNet, the time-domain component of CB-Net. Given a packet of 350 samples (22.4ms) highlighted in blue, we use 1.5s of past input and 44.8ms of future input to output the separation results. Our caching scheme works as follows: When we receive a new 350ms samples, all intermediate activations (circles in the diagram) slide to the left, and we compute only the rightmost column of outputs.}
+\label{fig:network}
+\vskip -0.3in
+\end{figure}
+
+\subsubsection{CB-UNet}
+
+The frequency domain network is a mono-channel network that outputs a binary mask for each time-frequency bin. The input $\textbf{x} \in \mathbb{R}^{1 \times T}$ is a summation of the binaural left and right channel, which is the equivalent of a broadside beamformer. We first run a STFT, which is a mel-scale fourier transform with hop size of $350$, a window size of  $1024$ including zero padding on the edges, and a $128$ bin mel-scale output. The network input is a spectrogram of $64$ time bins and $128$ frequency bins, corresponding to a receptive field of $22400$ samples, or $1.43s$. In order to maintain the causality requirement, we use the same lookahead strategy as the time-domain network where we allow $700$ samples of lookahead for a target packet of $350$ samples. The UNet architecture contains 4 downsampling and upsampling layers, starting with 64 channels and doubling the number of channels at each subsequent layer. The downsampling layers contain a depthwise separable convolution followed by a $2 \times 2$ max pooling, and the upsampling layers contain a depthwise separable convolution followed by a transposed convolution for upsampling. The output is a sigmoid function, which is then thresholded to return a binary mask in $[0, 1]^{128 \times 64}$.  When outputting a spectrogram mask on an $\mathbb{R}^{128 \times 64}$ input, we predict a mask over the entire input even though we only need the output for a specific slice of $350$ samples, or a $\mathbb{R}^{128 \times 1}$ mask. Further optimizations could be made by caching intermediate outputs or only computing the mask for the target samples. However CB-UNet's run-time  was so small compared to the rest of the network that these optimizations were not  necessary.
+
+
+\subsubsection{Combining the Outputs}
+At each time step, the output of CB-Conv-Tasnet is an audio waveform in $x \in \mathbb{R}^{1 \times 350}$, and the output of CB-UNet is a spectrogram mask in $\textbf{M} \in \mathbb{R}^{128 \times 64}$. We run the same fourier transform on the buffered conv-tasnet outputs to produce a spectrogram $\textbf{X} \in \mathbb{R}^{128 \times 64}$. Our output can then be computed by $iSTFT(\textbf{M} \otimes \textbf{X})$.
+ Our empirical results show that  this gives the best results compared to other methods such as ratio masking.
+%Previous work \cite{zhao2018sound} has shown the benefits of binary masking for spectrogram based separation, and
+
+\subsubsection{Training}
+CB-Conv-TasNet is trained with an $L1$-based loss over the waveform along with the multi-resolution spectrogram loss. Formally, provided $s_{0}$ is our target speaker and $x'$ is the output from the network, our loss is:
+\begin{equation*}
+    L(s_{0}, x') = \left\Vert s_{0} - x' \right\Vert_1 \\ + L_{sc}(s_0, x') + L_{mag}(s_0, x')
+\end{equation*}
+\begin{equation*}
+L_{sc}(s_0, x') = \frac{\left\Vert STFT(s_0) - STFT(x')\right\Vert_F}{\left\Vert STFT(s_0)\right\Vert_F}
+\end{equation*}
+\begin{equation*}
+L_{mag}(s_0, x') = \left\Vert \log(STFT(s_0) - \log(STFT(x'))  \right\Vert_1
+\end{equation*}
+STFT denotes the magnitude of the short time Fourier transform, and $F$ denotes the Frobenius norm. $L_{sc}$ and $L_{mag}$ represent  spectral convergence and magnitude losses, which  gave better results than L1 loss alone.
+
+For training CB-UNet, for each time frequency bin, the training target $\textbf{M}$ is 1 if the target voice is the dominant component, and 0 otherwise. Formally, $\textbf{M}(f, t) = [\textbf{S}_{0}(f, t) \geq \textbf{S}_{i}(f, t)], \;\; \forall i = (1..n)$. The network is then trained with the binary cross entropy of the output compared to the target mask.
+
+
+\subsubsection{Hyperparameters and Training Details}
+
+ We use a learning rate of $\SI{3e-4}{}$ along with the ADAM optimizer  \cite{kingma2014adam} for training the network. The network was trained on a single Nvidia TITAN Xp GPU. Because of the small size of the network, training could be completed within a single day and generally required $\approx$50 epochs to reach convergence.As an additional data augmentation step we make the following perturbations to the data: High-shelf and low-shelf gain of up to $\SI{2}~{dB}$ are randomly added using the \texttt{sox} library.
+
+\subsection{Synchronized wireless earbuds}
+
+\begin{figure}
+\vskip -0.1in
+\centering
+\includegraphics[width=0.75\linewidth]{CB_figures/ClearBud-Block-Diagram.png}
+\caption{Hardware Block Diagram. Each ClearBud integrates a PDM microphone, accelerometer, flash, and coin cell battery. Buttons and LEDs are used for interfacing with the device, and a USB port is used for programming and debug.}
+\vskip -0.2in
+\label{fig:block-diagram}
+\end{figure}
+
+\label{sec:system}
+ We seek to capture speech from the target speaker's mouth which sits on the sagittal plane roughly  equidistant to the ears. Given an ear-to-ear spacing of 17.5cm, to effectively isolate this central plane we require a distance precision on the order of a few centimeters.
+An interaural time difference of 100$\mu$s  would correspond to source maximally 3.43 cm off this central plane, therefore we target a synchronization accuracy under 100$\mu$s.
+
+
+\begin{figure*}
+\vskip -0.1in
+\centering
+\includegraphics[width=0.85\linewidth]{CB_figures/mic-pipeline-2.png}
+\vskip -0.1in
+\caption{Time Sync Design. The primary ClearBud broadcasts a sync clock over the air. The secondary ClearBud then uses the sync clock to rate encode, by increasing or decreasing the size of its local PCM buffer.}% Both ClearBuds then decimate these buffers down by a factor of 2, and fill up a ring buffer.} %Finally, each BLE packet gets prepended with a sequence number and then gets transmitted to a host device. }
+\label{fig:sync}
+\vskip -0.15in
+\end{figure*}
+
+
+\subsubsection{Hardware}  Our  custom hardware design contains  a %support for up to two 
+pulse-density modulated (PDM) microphone (Invensense ICS-41350) and a Bluetooth Low Energy (BLE) microcontroller (Nordic nRF52840).\footnote{For future research applications, an ultra low-power accelerometer (Bosch BMA400), a 1Gbit NAND flash for local data collection (Winbond W25N01GVZEIG), and support for speaker and an additional microphone are included.} The system is powered off of a CR2032 coin cell battery and programmed via SWD over a Micro-USB connector.  Each ClearBud has an integrated PDM microphone set to a clock frequency of 2MHz. With an internal PDM decimation ratio of 64, this provides us a sampling frequency of 31.25kHz. As most HD voice applications and wideband codecs are limited to 16kHz~\cite{voicecodecs}, we decimate further in firmware by a factor of 2, giving us a final sampling frequency of 15.625kHz.
+
+Two 16-bit 180 sample size Pulse-Code Modulation (PCM) buffers are round-robined: one is filled with incoming PCM data while the other is processed. The DMA is responsible for both clocking in the PDM data and converting it into PCM. One buffer is always connected to the DMA, while the other is freed for processing for the rest of the data pipeline. When the buffer connected to the DMA fills, the buffers switch roles and we begin processing data on the newly freed buffer, and connect the other buffer back to the DMA. With this design we always have a continuous PCM stream to operate on.
+Both ClearBuds transmit the PCM microphone data to a mobile phone for input into our neural network. To maximize throughput, we use the highest Bluetooth rate and packet sizes supported by iOS, which is 2Mbps and 182 bytes, respectively. We design a lightweight wireless protocol where the first 2 bytes represent a monotonically-increasing sequence number, while the other 180 bytes are reserved for the 16-bit PCM audio samples. The sequence number is used on the  phone so that we can zero-pad PCM data in the occasional event that a packet is dropped either over-the-air or by the radio hardware. This zero-padding keeps the left and right microphone data aligned on the host side in areas of poor radio performance or interference in the environment.
+
+%\subsubsection{Fabrication} 
+The hardware schematic and layout for ClearBuds was designed using the open source eCAD tool KiCad. A 2-layer flexible printed circuit was  fabricated and assembled by PCBWay. The 3D printed enclosures were designed using AutoDesk Fusion 360 and printed with a Phrozen Sonic Mini   using  a liquid resin fabrication process.   The MEMS microphone sits behind the lid on the earbud's outer surface.
+A single button on the enclosure  provides access to turn on and off the earbuds.
+
+% The sequence number is used on the mobile phone so that we can zero-pad PCM data in the occasional event that a packet is dropped either over-the-air or at the radio hardware layer. This zero-padding keeps the left and right microphone streams aligned on the host side in areas of poor radio performance or interference. However, this is not sufficient to maintain synchronization within 100$\mu$s. We must also account for clock drift between our earbuds. MK: This sounds worse, as if this is the foundation for the sync and clock drift is the secondary feature.
+
+
+
+
+
+%%Our system architecture revolves around the design of two microphones placed in each user's ear. We choose this design for two reasons. First, it allows us to leverage the spatial data of our desired voice being centered between the mics, while background noise has a higher likelihood of arriving off-center. Second, this configuration allows us to be directly applicable to devices in the hearable sector.
+
+%One hurdle that needs to be overcome, is synchronizing the audio input from both wireless microphones so that our network can properly leverage the TDOA between the audio streams.
+
+%  https://devzone.nordicsemi.com/nordic/short-range-guides/b/bluetooth-low-energy/posts/wireless-timer-synchronization-among-nrf5-devices
+
+
+\subsubsection{Microphone synchronization} Three components are necessary for maintaining microphone synchronization: (1) As each of our earbuds has its own local clock source, we need to establish a common clock between them so that they have the same reference of time, (2) a synchronized startup so each earbud starts recording from their respective microphone at the exact same time, and (3) a rate encoding scheme to control the earbud's sampling rate to match each other. 
+
+In our system, each earbud has its own respective 32MHz clock source with a total +/- 20ppm frequency tolerance budget. So, in the worst case scenario, the earbuds will have 2.4 milliseconds of drift each minute. We  use the  Nordic's TimeSlot API \cite{timeslot}, which grants us access to the underlying radio hardware in between Bluetooth transmissions. This provides us a transport to transmit and receive accurate time sync beacons \cite{wireless-timesync}. Each ClearBud keeps a free-running 16MHz hardware timer with a max value of 800,000, overflowing and wrapping around at a rate of about 20~Hz. One ClearBud is assigned as the timing master while the other ClearBud will synchronize its free-running timer to the master's.  The primary ClearBud (timing master) transmits time sync packets at a rate of 200~Hz. These packets contain the value of the free-running timer at the time of the radio packet transmission. When the secondary ClearBud receives this packet, it can then add or subtract an offset to its own free-running timer for a common clock. %This allows ClearBuds to maintain an accurate common clock. 
+
+Once each ClearBud is connected to the mobile phone, the phone sends a \verb|START| command to both ClearBuds over BLE. Each ClearBud contains firmware which arms a programmable peripheral interconnect (PPI) to launch the PDM bus once the 16MHz free-running timer wraps around at 800,000. By using this method, we bypass the CPU and trigger a synchronized startup entirely at the hardware layer. One caveat is that the mobile phone could write to one ClearBud right \textit{before} its clock wraps around at 800,000, and the other ClearBud right \textit{after} it wraps around at 800,000. With a clock that wraps around at 20Hz, this would trigger a mismatched startup and cause an alignment error of 50ms. To correct for this, each ClearBud reports its common clock timer value to the phone once it has received the \verb|START| command. The phone can then remove the first 781 audio samples (781 samples / 15.625kHz = 50ms) if one ClearBud started streaming 50ms before the other.
+
+The final component to keeping the audio streams aligned is to create a rate encoding scheme between the ClearBuds. With the time sync beacons from the primary ClearBud, the other ClearBud now has both its local clock and the common clock (primary ClearBud's local clock). With these two clocks, the secondary ClearBud can identify how much faster or slower its PDM clock is running in relation to the primary ClearBud. We note that with a 2MHz PDM clock and a PDM decimation ratio of 64, each audio sample occupies 32~us. The non-primary ClearBud can then add or remove a sample to its PDM buffer every time the difference between the clocks exceeds a multiple of 32~us. By doing this, the secondary ClearBud ensures that its PDM buffer starts filling up at the exact same time as the primary ClearBud's PDM buffer, with a tolerance of 32 us. 
+% \subsubsection{Hardware evaluation} \textcolor{red}{This should go to the evaluation. Have to talk about this...} In order to validate our synchronization firmware, we place both ClearBuds roughly equidistant from a speaker. A click tone is played every 15 seconds for 5 minutes, and recorded on both ClearBuds with time sync disabled and enabled. We calculate the sample error on each recorded click.
+% %, and convert it into time error with a sampling rate of 15.625kHz.
+% Figure ~\ref{fig:sync} shows the synchronization validation results across this experiment. We can see that with time sync enabled, the sample error never exceeds 1 sample at 15,625 kHz, or 64 $\mu$s.
+
+% Finally we evaluate the power consumption of the ClearBuds hardware. We measure current consumption by powering our system through its Micro-USB port with a power supply, which goes through the same power path as our coin cell battery. We set our power supply voltage to 3V and set a maximum current output of 300mA, to reflect the internal 10 ohm resistor of a CR2032 battery. While streaming microphone data, we measure current consumed to be between 5-6mA. With the CR2032's nominal capacity of 210mAh, this translates to 35-42 hours of streaming  operation.
+
+%\begin{figure}
+%\vskip -0.1in
+%\centering
+%\includegraphics[width=1\linewidth]{CB_figures/mic-pipeline.png}
+%\caption{\small{Microphone Data Pipeline}}
+%\label{fig:mic_pipeline}
+%\end{figure}
+
+%[SHOW TIME SYNC PLOT]
+
+%Two plots: Sine wave with time sync ON and sine wave with time sync OFF
+%How to best represent drift on a graph? (5, 10, 15, 30, 60min?)
+
+\section{Training methodology} \label{sec:datasets}
+%Designing a network that generalizes to in-the-wild settings requires carefully choosing the training methodology.  Training the network requires clean ground truth speech samples as supervised learning targets, which is difficult to achieve in in-the-wild settings since the groundtruth speech is corrupted with background noise and voices. Therefore, our data collection is based on the mix-and-separate framework \cite{zhao2018sound}, where clean speech and noise samples are recorded separately and combined randomly to form noisy mixtures. %The network then learns to predict the clean speech given the noisy mixture.  Here, we describe how  clean ground truth samples and noisy mixtures are generated to train the network. The network is jointly trained on all these  datasets.
+
+Training the network in a supervised way requires clean ground truth speech samples as training targets. This is difficult to obtain in fully natural settings since the ground truth speech is corrupted with background noise and voices. Training a network that generalizes to in-the-wild scenarios also requires the training data to mimic the dynamics of real speech as closely as possible. This includes reverb, voice resonance, and microphone response. Synthetically rendered spatial data is the easiest type of data to obtain, but most different from real recordings, while real speakers wearing the headset in an anechoic chamber provide the best ground-truth training targets, but are the most costly to obtain. Synthetic data can simulate various reverb and multipath that are not captured in an anechoic chamber. We adopt a hybrid training methodology where we first train on a large amount of synthetic data and fine-tune on real data recorded with our hardware. Our training method is based on the commonly used mix-and-separate framework \cite{zhao2018sound}, where clean speech and noise samples are recorded separately and combined randomly to form noisy mixtures. Our  results  show that our network trained this way generalizes to naturally recorded noisy data in  real-world environments.
+
+{\bf Synthetic data.}  This type of data is the easiest to obtain, since a wide variety of voice types and physical setups can be generated instantly. Many machine learning baselines, e.g., \cite{luo2020endtoend, jenrungrot2020cone, tzirakis2021multichannel}, only train and evaluate on synthetic data generated in this manner. To generate the synthetic dataset, we create multi-speaker recordings in simulated environments with reverb and background noises. All voices come from the VCTK dataset \cite{vctk} (110 unique speakers with over 44 hours), and background sounds come from the WHAM! dataset \cite{wham}, with 58 hours of recordings from a variety of noise environments such as a restaurant,  crowd,  and music.
+
+To synthesize a single example, we create a 3 second mixture as follows: two virtual microphones are placed 17.5~cm apart, which is the average distance between human ears \cite{RISOUD2018259}. The target speaker's voice is placed  at the center between the two virtual microphones, and a second voice is placed randomly between $1$ and $5$ meters away and at a random angle. A randomly chosen background noise is also placed in the scene. We then simulate room impulse responses (RIRs) for a randomly sized room using the image source method implemented in the pyroomacoustics library \cite{allen1979image, scheibler2018pyroomacoustics}. The room is rectangular with sides randomly chosen between 5 and 20 meters, and the RT60 values are randomly chosen between 0 and 1 second. All signals are convolved with the RIR and rendered to the two channel microphone array. The volumes of the background are randomly chosen so that the input signal-to-distortion ratio is roughly between -5 and 5 dB. For training, we use 10,000 mixtures generated in this manner.
+% \textcolor{red}{XXXTHE ABOVE IS NOT A COMPLETE DISCRIPTION OF WHAT WAS DONE AND CANNOT BE USED TO REPLICATE. HERE IS AN EXAMPLE. To gather a large amount of training data, we use software to simulate random reverberate noisy rooms using the image source model~\cite{scheibler2018pyroomacoustics}. The rooms are simulated using absorption rates of real materials and a maximum RT60 of 500~ms. By default, we use a virtual 6-mic circular array with a radius of 5~cm. The distance between the virtual speakers and the microphone array is at least 0.8~m, and the direction of arrival differences of the speakers are at least $10^{\circ}$. The input direction is modeled as the groundtruth plus a random error less than $5^\circ$ simulating the gaze tracking measurement error \cite{sipatchin2020accuracy}.  We place virtual speakers at random locations within the room playing random speech utterances from the VCTK dataset~\cite{veaux2017cstr}, meanwhile simulating diffused noise from the MS-SNSD dataset~\cite{reddy2019scalable} and WHAM! dataset~\cite{wichern2019wham}. The combined speech power to noise ratio is randomized between $[5, 25]$~dB. 10\%, 40\%, 40\%, 10\% of the generated clips consists of 1-4 speakers, respectively, and we apply random gain within $[-5, 0]$~dB to each speaker. We guarantee that there exists speech utterance overlap for 2-4 speaker scenarios. We render the synthetic audio and generate 4s clips. We generate a total of 8000 clips as training set, 400 clips as validation set, and 200 clips as test set. No speech clips or noise has appeared in more than one of these three sets. }
+
+{\bf Hardware data. } While a large amount of synthetic data can be easily rendered to train the network, it does not contain characteristics such as the microphone response of physical hardware and imperfections in the time-of-arrival. To address this, we also train on a set of recorded voice samples from our earbuds. We set up a foam mannequin head with an  artificial mouth speaker (Sony SBS-XB12) that plays VCTK samples as the spoken ground truth. For background voice recordings, the speaker is placed in varying locations within a one meter radius of the foam head. Physically recorded background noise is provided by binaural version of the WHAM! dataset \cite{wham}, which was recorded in real environments using a binaural mannequin like ours. We record 2 hours each of clean speech, and background voices. 2000 random mixtures are then created for training.
+
+{\bf Human data.} The spoken hardware data above still does not contain natural voice resonance since it is played out of an electronic speaker. Furthermore, the background sounds recorded by a mannequin wearing earbuds still misses some of the physical filtering of the human body. To better capture desired output of real scenarios, we collect a ground-truth speech dataset in an anechoic chamber with human speakers (5 male, 4 female) and a noise dataset in real environments with human listeners. For the voice data, each human speaker wore our ClearBuds prototypes, and uttered 15 minutes of text from Project Gutenberg in the anechoic chamber. The purpose of this anechoic data is to provide clean training targets for the network, modelling the resonance of human speakers wearing our hardware.
+For the real world  noise dataset, individuals wore ClearBuds and recorded various noisy scenarios such as washing dishes, loud indoor/outdoor restaurants, and busy traffic intersections. 2000  random mixtures of clean voice and recorded noise were generated for this dataset. 
+
+Our network is jointly trained using all these  datasets. Note that  testing and evaluation is  done  {\it outside} the anechoic chamber. 
+
+% Finally, we collect an evaluation set with 2 human speakers (1 male, 1 female) in 2 noisy environments, both unseen and untrained on our network.  We also  provide  supplementary videos of the system being used in the wild in unseen locations and speakers.
+
+%  When training, we randomly drop out the background noises and voices. In particular, each training example contains the target speaker all the time, and the background noise and background voice each with $70\%$ probability. This helps the network generalize to different background noise scenarios, including scenarios with no background noise or background voice. 
+
+
+\begin{figure}
+\vskip -0.1in
+\centering
+\includegraphics[width=0.65\linewidth]{CB_figures/AirPods_study_graph.png}
+\vskip -0.2in
+\caption{Comparison with AirPods Pro. Reporting the output SI-SDR (note: not SI-SDR increase). ClearBuds exceeds in three conditions: target voice plus background noise (BG), target voice plus background voice (BV), target voice plus background voice and noise.} % Data was collected with a mannequin head with artificial mouth and array of background monitor speakers.}
+\vskip -0.15in
+\label{fig:airpods}
+\end{figure}
+
+\section{Experiments and Results}
+%We show several evaluations to demonstrate the strength of our method. First, we conduct a user study using completely in-the-wild recordings of a speaker in a noisy environment. Then we compare against AirPods using a repeatable audio setup that is run with both ClearBuds and with AirPods. To evaluate against baseline methods, we use quantitative metrics on the test set of the synthetic data and hardware data described in section \ref{sec:datasets}. Finally, we conduct several ablation studies with the synthetic dataset to show how various factors influence our speech enhancement quality. The system latency on a variety of mobile devices is also reported.
+
+We first compare our end-to-end system performance against a commercial  wireless earbud system. We then present in-the-wild evaluation of our system. Next, we compare numerical results against various speech enhancement baselines. Finally, we present system-level evaluations. Our work is approved by the IRB.
+%To compare our model's performance against that of other networks, we perform simulated experiments on synthetically rendered data as well as data collected from our ClearBuds hardware.
+% To quantitatively compare our model's performance against that of other networks, we perform simulated experiments on rendered data.
+% We then , we also collect data in a repeatable acoustic environment through our ClearBuds hardware.
+% Next, we collect a variety of in-the-wild data and demonstrate the advantage of our hybrid network by running a \textcolor{red}{37 participant} user study and reporting mean opinion scores.
+% We conduct several studies evaluating the effect reverberation, speaker angle, and ear distance.
+% \textcolor{red}{Finally, we report measure and report system factors including synchronization, latency, and power consumption.}
+\subsection{Comparison with  Beamforming Earbuds} \label{sec:endtoend}
+
+ We  evaluate our end-to-end system against the Apple AirPods Pro headset connected to a  iPhone 12 Pro in a repeatable physical set up. In our evaluation, as is typical, there is  no overlap between training and test datasets. 
+
+
+% %Loudness of target voice was about -22 dB as measured in recorded samples via ClearBud.
+
+% During recording, qualitatively, it sounded like somebody talking loudly the room.
+% %Loudness of ambient noise ranged between -38 and -22 dB.
+% In input recorded samples, ambient noise SNR ranged between 0 dB and 16 dB with respect to target voice.
+% Qualitatively, it sounded like a loud bar or a dense gathering.
+%Loudness of side voice ranged -34 dB and -28 dB, 
+% Side voice SNR ranged between 6 dB and 12 dB, qualitatively sounding like somebody speaking a meter or two away.
+
+% \begin{table*}
+%     %\vspace{-5mm}
+% 	\centering
+% 	\label{tab:real}
+% 	\caption{Comparison against AirPods Pro. Numbers reported are the output SI-SDR (note: not SI-SDRi).}
+% 	\small
+% 	\begin{tabular}{c|ccc}
+% 		\toprule
+% 		& \multicolumn{3}{c}{Real Environment} \\  
+% 		\midrule
+% 		End-to-End System & {Target Voice + BG} & {Target Voice + BV} & {Target + BV + BG} \\
+% 		\noalign{\vskip 1mm} 
+% 		\hline
+% 		\noalign{\vskip 1mm} 
+% 		\textbf{ClearBuds}  & 15.40 & 19.09 & 15.21 \\
+% 		Apple AirPods Pro & 10.17 & 10.48 & 8.27 \\
+% 		\bottomrule
+% 	\end{tabular}
+% 	\label{fig:airpods}
+% 	\vspace{-0.15in}
+% \end{table*}
+
+
+
+
+% Since Apple AirPods Pro do not zero pad dropped packets, misalignment can occur between test condition recording and reference recording over time, making it challenging to calculate SDR across all one hundred VCTK utterances at once. To overcome this, we align individual one second chunks and take the logarithmic mean across 250 chunks.
+
+
+% \begin{figure*}
+% \centering     
+% \subfigure[]{\label{}\includegraphics[width=0.5\textwidth]{CB_figures/MOS_study_results_v3.png}}\hfill
+% \subfigure[]{\label{}\includegraphics[width=0.2\textwidth]{CB_figures/user-study-indoors-anon.jpg}}\hfill
+% \subfigure[]{\label{}\includegraphics[width=0.2\textwidth]{CB_figures/user-study-outdoors-2-anon.JPG}}
+
+% \subfigure[]{\label{}\includegraphics[width=0.2\textwidth]{CB_figures/user-study-outdoor-3.jpg}}\hfill
+% \subfigure[]{\label{}\includegraphics[width=0.2\textwidth]{CB_figures/placeholder.jpg}}\hfill
+% \vskip -0.15in
+% \caption{(a) Mean opinion score study results. Noise suppression indicates perceived quality of background noise reduction (higher is less intrusive). MOS indicates overall perceived quality (higher is preferred). Error bars are 95\% CI. (b,c) Example scenarios (cafe, street) of where user study samples were collected. User study samples were collected across 10 users and 4 environments, all unseen in our training dataset.}
+% \label{fig:mos-study-results}
+% \vskip -0.2in
+% \end{figure*}
+
+\begin{figure*}
+\centering  
+%\begin{tabular}[c]{ccc}
+%\multirow{2}{*}[14pt]{
+%\subfigure[]{\label{}\includegraphics[width=0.5\textwidth]{CB_figures/MOS_study_results_v3.png}}}&
+\subfigure[]{\label{}\includegraphics[width=0.24\textwidth]{CB_figures/user-study-indoors.jpg}} \hfill
+\subfigure[]{\label{}\includegraphics[width=0.24\textwidth]{CB_figures/user-study-outdoors-2.JPG}} \hfill
+\subfigure[]{\label{}\includegraphics[width=0.24\textwidth]{CB_figures/user-study-outdoor-3.jpg}} \hfill
+\subfigure[]{\label{}\includegraphics[width=0.24\textwidth]{CB_figures/user-study-indoor-env3.jpg}}\\
+%\end{tabular}
+\vskip -0.15in
+\caption{{In-the-wild experiments in various  scenarios (crowded cafe, busy intersection, outdoor plaza, classroom)}  were conducted across 8 users and indoor and oudoor  environments, all unseen in our training dataset.}
+\label{fig:picsenv}
+\vskip -0.2in
+\end{figure*}
+
+
+
+
+{\bf Procedure.} We use the popular metric \textit{scale-invariant signal-to-distortion ratio} (SI-SDR)~\cite{sdr}. While SI-SDR provides a repeatable metric used in the acoustic community, it requires a clean, sample-aligned ground truth (target voice) as the basis for evaluation. Therefore, we create a repeatable soundscape for our test setup where a sample-aligned ground truth can be obtained.
+A foam mannequin head with a speaker (Sony SBS-XB12) inserted into its artificial mouth uttered one hundred VCTK samples with identities and samples unseen in the training set. The mannequin wore ClearBuds and AirPods Pro in subsequent experiments, and the outputs of the two systems could be directly compared.
+Ambient environmental sound (from WHAM! dataset) was played via four monitors (PreSonus Eris E3.5) positioned to fill 3 meter by 4 meter room, and background voice (also VCTK) was played from a monitor positioned 0.4 meters from head on the right. 
+ %To create a repeatable soundscape for each test condition,
+All speakers were driven through a common USB interface (PreSonus 1810c) ensuring the same time-alignment and loudness between the two  test conditions.
+Since Apple AirPods Pro beamforming cannot be toggled on and off, we cannot calculate an SI-SDR increase (SI-SDRi), and therefore report output SI-SDR.
+To establish the ground truth voice against which to calculate SI-SDR, we record clean target voice through each headset.
+Ambient noise SNR ranged between 0dB and 16dB with respect to target voice. Qualitatively, this sounded like a second person speaking loudly in a noisy bar or cafe. Finally, background voice SNR ranged between 6dB and 12dB, qualitatively sounding like a person speaking from a meter or two away.
+
+
+{\bf Results.}  We report output SI-SDR from the two systems in Fig.~\ref{fig:airpods}. To calculate output SI-SDR, we align individual one second chunks and take the logarithmic mean across 250 chunks. We find that ClearBuds achieves  higher output SI-SDR across all test conditions when  compared to the beamforming utilized by the Apple AirPods Pro. For a qualitative comparison of AirPods Pro versus ClearBuds performance with human speakers, see video: \textcolor{blue}{{{\url{https://clearbuds.cs.washington.edu/videos/airpods_comparison.mp4}}}}. %updated 2022-05-25
+
+\subsection{In-the-Wild Evaluation}\label{sec:mos} 
+
+We perform in-the-wild evaluation   in  indoor and outdoor scenarios as well as users not in the training data.
+The procedure and results are described in the following sections.
+% As described in section \ref{sec:nn}, in our hybrid network we apply an additional learned, low-cost spectrogram mask to clean unpleasant artifacts that surfaced when resource-constraining the Conv-TasNet architecture.
+% As seen in Table \ref{table:results}, this change is not well characterized by SI-SDRi or PESQ metric as the SI-SDRi and PESQ of our CB-Conv-TasNet model did not differ from those of our hybridized, CB-Net architecture. So, we conducted a subjective listening test to comparing these conditions.
+
+
+\begin{figure}
+%\vskip -0.1in
+\centering
+\includegraphics[width=0.65\linewidth]{CB_figures/MOS_study_results_v3.png}
+\vskip -0.15in
+\caption{In-the-wild study results. Noise suppression indicates perceived quality of background noise reduction (higher is less intrusive). Overall MOS indicates overall perceived quality. Error bars are 95\% CI.} % Data was collected with a mannequin head with artificial mouth and array of background monitor speakers.}
+\vskip -0.2in
+\label{fig:mos}
+\end{figure}
+
+
+
+{\bf In-the-wild experiments.} Eight individuals (four male, four female, mean age 25) with a variety of accents wore a pair of ClearBuds and read excerpts from Project Gutenberg~\cite{gutenberg}  while in four noisy environments: a coffee shop, a noisy intersection, an outdoor plaza, and a classroom (see Fig.~\ref{fig:picsenv}). The environments featured ringing phones, cross-talk from other people, ambient music, a crying baby, opening/closing doors, driving vehicles, and street noise, amongst other common sounds. These experiments  were uncontrolled in that the background voices and noise were naturally occurring sounds that are  typical to these real-world scenarios and were mobile.
+
+
+{\bf Evaluation procedure.} In-the-wild evaluation precludes access to clean, sample-aligned truth to compute SI-SDR. Instead, the common (and expensive)  procedure is to perform a user study and compute the mean opinion score. Since this is a time-consuming process, prior works on binaural networks, e.g.,  \cite{luo2020endtoend, binaural_osu, jenrungrot2020cone}, avoid in-the-wild evaluation.  Since our goal is to design and evaluate an in-ear system in real scenarios, we recruit thirty-seven participants (11 female, 26 male, mean age 29)  for a user study. Each participant listened to between 6 and 11 in-the-wild audio samples (avg. 9.38 samples, each between 10--60 seconds). Each speech sample was processed and presented three ways: (1) the original input, (2) CB-Conv-TasNet, and (3) CB-Net, yielding a total of 37$\times$9.38$\times$3 $=$ 1,041 rating samples.
+%Order of presentation was counter-balanced.
+
+Participants were encouraged to use audio equipment they would typically use for a call. Fourteen used earbuds, thirteen used computer speakers, seven used headphones, and three used phone speakers. The study took about 25 minutes per participant. As is typical with noise suppression systems, participants were asked to give ratings in two categories: the intrusiveness of the noise and overall quality (mean opinion score - MOS):
+
+\begin{small}
+\begin{enumerate}
+    \item \textbf{Noise suppression: }\textit{How INTRUSIVE/NOTICEABLE were the BACKGROUND sounds? 1 - Very intrusive, 2 - Somewhat intrusive, 3 - Noticeable, but not intrusive, 4 - Slightly noticeable, 5 - Not noticeable}
+    \item \textbf{Overall MOS: }\textit{If this were a phone call with another person, How was your OVERALL experience? 1 - Bad, 2 - Poor, 3 - Fair, 4 - Good, 5 - Excellent}  
+\end{enumerate}
+\end{small}
+
+\begin{figure}
+\centering  
+\subfigure[]{\label{}\includegraphics[width=0.23\textwidth]{CB_figures/street1.png}} %\hfill
+\subfigure[]{\label{}\includegraphics[width=0.23\textwidth]{CB_figures/street2.png}}\\
+%\end{tabular}
+\vskip -0.15in
+\caption{Mobility of speaker and noise sources in-the-wild. Red box highlights a moving truck on the road while ClearBuds user is walking.  Video: \linebreak \textcolor{blue}{\url{https://youtu.be/HYu0ybjcQPA?t=127}}}
+\label{fig:mobility}
+\vskip -0.2in
+\end{figure}
+
+
+{\bf Results.} Fig.~\ref{fig:mos} shows the noise intrusiveness and MOS values for the original microphone, CB-Conv-TasNet, and CB-Net.
+As expected, applying CB-Conv-TasNet to the original audio helped suppress noise dramatically, increasing opinion score from 2.02 (slight better than \textit{2 - Somewhat intrusive}) to 3.28 (between \textit{3 - Noticeable, but not intrusive} and \textit{4 - Slightly noticeable}) (p<0.01).
+The light-touch, spectrogram-masking clean up method featured in CB-Net increased noise suppression opinion score significantly (p<0.001) to  3.77, indicating the method did indeed further suppress perceptually annoying noise artifacts.
+Importantly, this step also increased overall MOS. While users only slightly preferred (p<0.05) CB-Conv-TasNet (2.67) to the original input (2.49) due to artifacts introduced, they more significantly (p<0.001) preferred our  CB-Net (3.10), an increase of 0.61 opinion score points from the input.
+For context, in the  flagship ICASSP 2021 Deep Suppression Noise Challenge \cite{icaasp_dns}, with state-of-the-art, real-time algorithms run on a quad-core desktop CPU, the winning submission increased MOS by 0.57~\cite{icaasp_dns_results} from input.
+
+
+
+\begin{table*}
+    \label{tab:sdr-results}
+    %\vspace{-5mm}
+	\centering
+	\caption{ Benchmarking our neural network. We show results for a target voice speaking in three noise scenarios: (1) Background noise (BG), (2) Background voice (BV), and (3) Background noise and background voice (BG and BV).  CB-Conv-TasNet performs slightly better on  synthetic data, but as shown in Fig.~\ref{fig:mos}, does not generalize  as well to  in-the-wild  scenarios. This demonstrates the importance of evaluating  networks on real in-the-wild hardware data.}
+	%\small
+    \resizebox{1\textwidth}{!}{%
+    	\begin{tabular}{c|ccc|ccc}
+    		\toprule
+    		& \multicolumn{3}{c}{SI-SDR increase (SI-SDRi)} & \multicolumn{3}{c}{Output PESQ} \\  
+    		\noalign{\vskip 0.3mm}    
+    % 		\toprule
+    		\midrule
+    		\noalign{\vskip 0.1mm}    
+    		Method & \shortstack{Target with\\ BG} & \shortstack{Target with\\ BV} & \shortstack{Target with\\ BV + BG} & \shortstack{Target with\\ BG} & \shortstack{Target with\\ BV} & \shortstack{Target with\\ BV + BG} \\
+    		\noalign{\vskip 1mm}    
+    		\hline
+    		\noalign{\vskip 1mm}    
+    		\textbf{CB-Net} & 10.41 & 10.56 & 9.35 & 2.08 & 2.68 & 1.81 \\
+    		CB-Conv-TasNet   & 11.19 & 11.01& 9.68 & 2.24 & 2.58 & 1.91 \\
+    		CB-Conv-TasNet Single Mic & 6.15 & 0.13 & 2.34 & 1.82 & 1.84 & 1.53 \\
+     		CB-UNet & 3.21 & 0.78 & 1.82 & 1.60 & 2.10 & 1.50 \\
+     		{DTLN ~\cite{DTLN}} & 7.02 & 0.06 & 2.13 & 2.08 & 1.95 & 1.67 \\
+    		Causal Demucs ~\cite{demucsreal} & 6.62 & -0.03 & 2.11 & 1.80 & 1.88 & 1.43 \\
+    		Ideal Ratio Mask (IRM, oracle) & 11.41 & 11.53 & 12.04 & 2.53 & 3.00 & 2.44 \\
+    		Ideal Binary Mask (IBM, oracle) & 9.97 & 11.05 & 10.85 & 2.30 & 2.90 & 2.21 \\
+    %		Delay-and-Sum Beamforming & 1.97 & 0.89 & 1.32 & 1.67 & 2.02 & 1.56 \\
+    		\bottomrule
+    	\end{tabular}
+    }
+	\label{table:results}
+\end{table*}
+
+
+\begin{figure*}
+\centering  
+\vskip -0.15in %%% not \center
+\subfigure[]{\label{fig:angle}\includegraphics[width=0.3\textwidth]{CB_figures/angle-graph.png}}\hfill
+\subfigure[]{\label{fig:reverb}\includegraphics[width=0.3\textwidth]{CB_figures/reverb-graph.png}}\hfill
+\subfigure[]{\label{fig:head-width}\includegraphics[width=0.3\textwidth]{CB_figures/ear-distance-graph.png}}
+\vskip -0.15in
+\caption{(a) Performance against angle of background voice in presence of significant multipath.  (b) Performance against amount of reverberation in an indoor room. RT60 (in seconds) measures how long sound takes to decay by 60 dB in a space with a diffuse soundfield. (c) Performance as distance between ears increases.}
+\label{fig:ml-performance}
+\vskip -0.2in
+\end{figure*}
+
+
+Note that in our in-the-wild experiments, the background noise and voices were not static. The speakers themselves can  also be  mobile (see Fig.~\ref{fig:mobility}). Our network was able to adaptively remove the background noise and achieve speech enhancement with  mobility. 
+
+
+\subsection{Benchmarking our Neural Network}
+The conventional evaluation in the machine learning and acoustic community is to evaluate models and techniques on synthetic data against baselines. For completeness, we compare our method against a variety of speech enhancement baselines using the synthetic dataset. For evaluation, an additional 1000 mixtures of 3 seconds each were generated such that there was no overlapping identities or samples between the train and test splits.
+
+
+{\bf Evaluation Procedure.} For  comparisons to other baseline methods, we use the popular 
+%the popular metrics \textit{scale-invariant signal-to-distortion ratio} (
+SI-SDR  and {PESQ} metrics.
+Unlike the AirPods experiment, where the original noisy mixture could not be recorded since AirPods beamforming cannot be toggled off, here we compute SI-SDR of the ground truth relative to both the input noisy mixture and then to the network output. When reporting the increase from the input SI-SDR to output SI-SDR, we use the  SI-SDR improvement (SI-SDRi).
+%Unlike the AirPods experiment, where the noisy mixture could not be recorded, the SI-SDR of the ground truth here is computed relative to the noisy mixture and then to the network output. When reporting the increase from the input to output SI-SDR, we use the  SI-SDR improvement (SI-SDRi).
+
+For a deep learning baseline in the waveform domain, we choose the causal Demucs model~\cite{demucsreal}. This is a single channel method which was recently shown to outperform many other deep learning baselines and runs real-time on a laptop CPU. We also compare with Dual-signal Transformation LSTM Network (DTLN) ~\cite{DTLN}. This method also runs on a laptop or mobile phone in real-time. To compare with spectrogram based methods, we use the oracle baselines, ideal ratio mask (IRM) and ideal binary mask (IBM) \cite{sigsep, wang2005ideal}, that use the ground truth voice to calculate the best possible result that can be obtained by masking a noisy spectrogram. 
+
+As an ablation study, we report results with each individual component of the network,  \textit{CB-Conv-TasNet} and \textit{CB-UNet}. We also show results when the multi-channel part of our network, \textit{CB-Conv-TasNet}, only has access to one microphone, labeled as \textit{CB-Conv-TasNet Single Mic}. This explicitly shows the advantage of using two microphones.  There are only a few deep learning methods that tackle binaural speech separation for mobile processing, and the most relevant ones, such as \cite{binaural_osu} and \cite{han2020realtime}, do not have publicly available code to test against.
+
+
+
+{\bf Results.} As shown in Table \ref{table:results}, our binaural method is comparable to the best possible results that can be obtained by a spectrogram masking method (IBM, IRM). We also show an improvement over waveform based deep learning methods that only use a single microphone input. In particular, the improvement is greatest when there are two speakers present (Target Voice + Background Voice). This is because single channel methods can only rely on voice characteristics, whereas our network also uses spatial cues to separate the speaker of interest. Although \textit{CB-Net} shows similar or worse performance to \textit{CB-Conv-TasNet}, subjective evaluation on in-the-wild hardware data shows that \textit{CB-Net} is far superior to human listeners (see~\ref{sec:mos}).
+
+Examples of the synthetic dataset, outputs from all the methods and  qualitative comparisons against Krisp \cite{krisp}, a commercial noise suppression system, can be found linked from our project website: 
+\textcolor{blue}{{{\url{https://clearbuds.cs.washington.edu}}}}.
+%\textcolor{blue}{{{\url{https://bit.ly/3yJ6DwJ}}}}
+
+%Further, to demonstrate our hybridized network's subjective background reduction and speech quality aspects, we run a  user study to compare the noise and speech performance amongst our mobile-deployed network architectures.
+
+
+
+\subsubsection{Additional neural network  evaluations} We numerically evaluate various aspects of the design by changing the angle of background voice,  reverberance in the  environment, and microphone separation.
+
+{\bf Angle of background voice.} The ability of our network to separate the target voice from a background voice is based on utilizing the time difference of arrival to the binaural microphones. Because we only have two microphones, this ability is limited when the background voice is in the front-back plane of the speaker. In this case, the background voice will arrive at each microphone simultaneously, and there will be no spatial cues to separate the two voices.  To illustrate this effect, we graph the separation performance as a function of the angle of the background voice in Fig.~\ref{fig:angle}. 
+
+
+{\bf Multipath and reverberant environments.} While our in-the-wild experiments show the performance  in various indoor and outdoor environments, we benchmark our system  in different  reverberant conditions, including those more reverberant than seen during training. Synthetically generated mixtures are generated using the pyroomacoustics library  with the RT60 value randomly chosen between 0 and 4s. We generate 200 examples and plot the SI-SDRi compared to the RT60 in Fig.~\ref{fig:reverb}. Our method shows only a slight decrease in performance as the reverberation of the environment increases. Because the target speaker is physically close to the microphone array, our setup is generally less affected by reverberations than other kinds of source separation problems where the target speaker may be further away.
+
+\begin{figure}
+\centering     %%% not \center
+\subfigure{\label{fig:sync-a}\includegraphics[width=0.36\textwidth]{CB_figures/sync.png}}%\vskip -0.12in
+\subfigure{\label{fig:sync-b}\includegraphics[width=0.36\textwidth]{CB_figures/time-sync-cdf.png}}
+\vskip -0.15in
+\caption{Time Synchronization Validation.  Without time synchronization (red), microphone samples drift apart and lose alignment at about 128$\mu$s/min.} %Also shows  CDF across three experiments of 5 minutes each. }
+\label{fig:sync}
+\vskip -0.2in
+\end{figure}
+
+{\bf Separation between microphones.} Our in-the-wild evaluation across 8 participants showed  generalization across facial features. Here, we  benchmark our method  to different head sizes where the distance between the microphones may be different. We generate 200 synthetic samples, where the distance between the microphones is randomly chosen between 10 and 25~cm. Because the target speaker is in the middle of the microphone array, the target signal will arrive at both mics simultaneously regardless of the microphone distance.  Fig.~\ref{fig:head-width} show little change in performance even with microphone distances greatly different than used during training.
+
+
+
+
+\subsection{System   Evaluation}
+%We evaluate various system parameters like synchronization, latency and power consumption. 
+{\bf Synchronization.}  In order to evaluate this, we place both ClearBuds roughly equidistant from a speaker. A {click tone} is played every 15 seconds for 5 minutes, and recorded on both ClearBuds with time sync disabled and enabled. We calculate the sample error on each recorded click offline and convert it into time error with a sampling rate of 15.625kHz.
+Fig.~\ref{fig:sync}(a) shows the synchronization  results across a five minute interval. With time sync enabled, the sample error never exceeds 1 sample at 15,625 kHz, or 64 $\mu$s. Fig.~\ref{fig:sync}(b) also shows the CDF of the timing error across  experiments of 5 minutes each conducted with other Bluetooth devices in the environment,  with and without time synchronization.  
+
+
+{\bf Run-time and end-to-end latency.} Mouth-to-ear delay is defined as the time it takes from speech to exit the speaker's mouth and reach the listener's ear on the other end of the call. The International Telecommunication Union Telecommunication Standardization Sector (ITU-T) G.114 recommendation regarding mouth-to-ear delay indicates that most users are ``very satisfied'' as long as the latency does not exceed 200~ms \cite{g.114}. In our end-to-end system, we targeted a one-way latency of 100~ms prior to uplink, leaving up to 100~ms of network delay to move an IP packet from the source to the destination.
+
+With a 180-sample PCM buffer being filled at 31.25 kHz, there is a 5.76~ms delay prior to the samples reaching BLE stack. Once these samples reach the radio hardware, there is a worst-case additional latency of 7.5~ms as defined by the minimum BLE connection interval supported by Bluetooth 5.0 \cite{bt5}. At the time of writing, the latest iOS supports a minimum BLE connection interval of 15~ms. After the samples reach the mobile phone, we wait for 67.2~ms to receive enough samples to run a forward pass of our network. Our network has a run-time of 21.4~ms on an iPhone 12 Pro (see Table~\ref{tab:latency}). The number of FLOPs is  computed over each packet of 350 samples. Together, we have a  latency of 109~ms, leaving 91 ms for  one-way network delay  (RTT=182ms).
+
+
+
+{\bf Power analysis.} {CB-Net uses   an order of magnitude lower FLOPs per second compared to Conv-TasNet on the smartphone, significantly reducing the computational and corresponding power consumption. } We also  measure  the power consumption of the ClearBuds hardware. We measure current consumption by powering our system through its Micro-USB port with a DC power supply set to 3V, which goes through the same power path as our coin cell battery.
+%We set our power supply voltage to 3V and set a maximum current output of 300mA, to reflect the internal 10 ohm resistance of a CR2032 battery.
+While continuously wirelessly streaming microphone data, we measure average current consumed to be 5~mA. With the CR2032's nominal capacity of 210~mAh, this translates to approximately 42 hours of operation. Table \ref{tab:hardware-power-consumption} shows a breakdown by component of the system's power consumption. The accelerometer (BMA400) and flash (W25N01GVZEIG) are omitted as they are power gated during  streaming. 
+
+%; mobile GPS usage reduces the battery-life by couple of hours
+
+%\textcolor{red}{We also  ran our network on an  iPhone 12 Pro continuously after disabling all other applications except for Bluetooth and found that it took XXX hours to drain the battery on the phone starting at full charge.}
+
+
+\begin{table}
+	\centering
+	\small
+	\caption{ Neural network run time on smartphones }
+	\begin{tabular}{ccccc}
+		\toprule
+		Device &  Conv-TasNet & CB-Conv-TasNet & \textbf{CB-Net} \\
+		\noalign{\vskip 0.5mm} 
+		\hline
+		\noalign{\vskip 1mm} 
+		iPhone 12 Pro & 155.5ms & 17.5ms & 21.4ms \\
+		iPhone 11 & 165.4ms & 18.6ms & 22.7ms \\
+		iPhone XS & 241.5ms & 27.2ms &  33.0ms \\
+		\hline
+		\noalign{\vskip 1mm} 
+		FLOPs/packet & 1078M & 97M & 131M \\
+% 		iPhone 12 Pro & 155.5ms & 17.5ms & 3.9ms & 21.4ms \\
+% 		iPhone 11 & 165.4ms & 18.6ms & 4.1ms & 22.7ms \\
+% 		iPhone XS & 241.5 & 27.2ms & 5.8ms &  33.0ms \\
+		\bottomrule
+	\end{tabular}
+	\vskip -0.1in
+	\label{tab:latency}
+	%\vspace{-8mm}
+	%\vskip -0.1in
+\end{table}
+
+\section{Limitations \& Future work}
+% While ClearBuds presents state-of-the-art speaker separation in noisy environments, there are a few limitations to note for future work. 
+The first limitation is that the user must be wearing both wireless earbuds to benefit from our binaural noise suppression network. Second, with only two microphones, there is an opportunity for background voices to remain in the uplink channel if the voice is within a few degrees of the target speaker's sagittal plane (see Fig.~\ref{fig:angle}). The underlying assumption of our network is that the mouth is in the middle of the user's ears, though as seen in Fig. \ref{fig:head-width} and our in-the-wild evaluation, some variance is permissible.
+
+While we minimize the power consumption of the ClearBud hardware, we shift the processing and therefore power consumption to the more powerful mobile phone.  Performing network computation on the mobile phone over a cloud GPU is an enhancement in terms of user privacy and security so that sensitive voice data is not transmitted to the cloud.   While mobile chips are becoming more power efficient, an alternative design to explore is to run our neural network  on a plugged-in edge device (e.g., router),  minimizing computation while achieving similar latency.
+
+
+{Future work could integrate two microphones in each earbud, so that each earbud could beamform toward the user's mouth prior to processing in the neural network. We also had to develop a custom wireless audio protocol to stream two microphones to a single phone. While this prevents this architecture from being deployed on today's commodity wireless earbuds, adoption may be imminent as Bluetooth 5.2 shows promise with the introduction of Multi-Stream Audio and Audio Broadcast \cite{le-audio-faqs}.}
+
+
+{ Our network could also be deployed on other multi-microphone mobile or resource-constrained edge systems such as smart watches, augmented reality glasses, or smart speakers to allow for enhanced voice control or telephony in noisy environments. The hardware and firmware for Clearbuds could be leverage to produce wireless, synchronized microphone arrays for telephony, acoustic activity recognition or for swarm robot localization and control.} 
+
+%But,  running the network on the GPU of the mobile phone comes at the cost of its  battery life.
+
+\section{Conclusion}
+Real-time speech enhancement has been an open research challenge for multiple decades. The recent proliferation of wireless earbuds and  neural network architectures provides an opportunity to build  systems that bridge neural networks and wireless earbuds to create new capabilities. Here, we present ClearBuds, the first deep learning based system to achieve real-time speech enhancement with binaural wireless earbuds. At its core is a new open-source wireless earbud design capable of operating as a synchronized binaural microphone array and a lightweight cascaded neural network. In-the-wild  experiments show that ClearBuds can achieve background noise suppression, background speech removal, and speaker separation using wireless earbuds. 
+
+% Cite: https://www.twilio.com/blog/understanding-latency
+% Cite: https://www.silabs.com/community/wireless/bluetooth/knowledge-base.entry.html/2015/08/06/audio_latency_withb-7BGG
+
+
+% https://towardsdatascience.com/real-time-noise-suppression-using-deep-learning-38719819e051
+
+
+ 
+ 
+ 
 
 % ========== Chapter 6
 
@@ -516,37 +1920,57 @@ Starting with the smartphone, we increasingly interact with our computing device
 %Thumb-to-index finger microgestures offer an ergonomic, subtle, and always-available method of providing gestural input.
 Despite their subtlety, to operate the UIs associated with these devices, the fidelity of interaction afforded by microgestures should match the traditional display and touchscreen affordances on these devices including scrolling/panning in both dimensions, gestures like swipes, and buttons.
 
-We propose OptoAcoustic Ring, a low-profile ring device that uses a miniature sparse, time-of-flight sensor or optical flow sensor and a skin-contact microphone to enable an interactive area on the tip of the index finger. These modalities to be inherently complementary with the time-of-flight allows for finger localization in $x$ and $y$ while the contact microphone can be processed to provide touchdown and swipe events.  
+We propose OptoAcoustic Ring, a low-profile ring device that uses a miniature sparse, time-of-flight sensor or optical flow sensor and a skin-contact microphone to enable an interactive area on the tip of the index finger. These modalities to be inherently complementary with the optical sensor allowing for finger localization in $x$ and $y$ while the contact microphone can be processed to provide touchdown and swipe events.  
 
 In OptoAcoustic Ring we aim to offer a set of unique features that surpass previous systems in terms of practicality. 
-First, with OptoAcoustic Ring we aim to enable a variety of  thumb-to-index-finger microgestures. While previous ring-based system detect unistroke gestures such as swipes and circles, our look to make a system that  enables continuous 1D input in \textit{both} $x$ and $y$ dimensions as well as buttons.
-Second, we hope to implement each of these microgesture interactions  in a user-independent manner ensuring the device can be worn and used without calibration.
+First, with OptoAcoustic Ring we aim to enable a variety of  thumb-to-index-finger microgestures. While previous ring-based systems can detect unistroke gestures such as swipes and circles, our look to make a system that  enables continuous 1D input in \textit{both} $x$ and $y$ dimensions as well as buttons.
+Second, we hope to implement each of these microgesture interactions in a user-independent manner ensuring the device can be worn and used without calibration.
 %In addition to the interaction being unobtrusive, the sensing methodology must  unobstrusive.
 Third, we will design OptoAcoustic Ring to sit at the base of the finger similar to conventional jewellery. This positioning allows OptoAcoustic Ring's sensing stack to maintain a low profile unlike other optical-based systems where the optical sensor protrudes from the device to maintain line-of-sight  [cite] or capacitive methods which require obtrusive instrumentation of the fingertip [bleh].
 Together these features can help to enable OptoAcoustic Ring to function in an in-context manner to control a pair of smartglasses.
 
 To date, we have built a number of hardware prototypes using  miniature time-of-flight sensors. These sensors are a just several millimeters in each dimension, and provide 1-by-1 up to 8-by-8 pixels of depth data via direct ToF sensing.
-After prototyping various configurations of one to four sensors and of different types, we have arrived at a hardware configuration of a single ST VL53L7CX sitting at a 15-degree agree angle at the palm side of the base of the index finger. The angle is slight enough that the sensor remains relatively low-profile. We read a 90deg, 4-by-4 depth image of the shaft of the thumb from the perspective of the index finger at 30 Hz. Because of the depth image's low resolution, the sensor is inherently privacy preserving. However, this also makes it challenging to recover precisely what sensor is seeing, since there are no defining edges to distinguish. Therefore, we employ heuristics across the entire image to predict the x and y positions of the thumb tip on the first fingerpad of the index. First the depth data is inverted in direction and rescaled via a normal curve. This is so that we can easily threshold both far away pixels and noisy pixels together (after inversion and rescaling both tend to be close to zero) and also to provide additional resolution in the range of values associated with the finger depth. X is calculated by a mean of the rescaled values. Y is calculated by taking the weighted linear regression across all points. 
+After prototyping various configurations of one to four sensors with differing resolutions, we have arrived at a hardware configuration of a single ST VL53L7CX sitting at a 15-degree agree angle at the palm side of the base of the index finger. The angle is slight enough that the sensor remains relatively low-profile. We read a 90deg, 4-by-4 depth image of the shaft of the thumb from the perspective of the index finger at 30 Hz. Because of the depth image's low resolution, the sensor is inherently privacy preserving. However, this also makes it challenging to recover precisely what sensor is seeing, since there are no defining edges to distinguish. Therefore, we employ heuristics across the entire image to predict the \textit{x} and \textit{y} positions of the thumb tip on the first fingerpad of the index. First the depth data is inverted in direction and rescaled via a normal curve. This is so that we can easily threshold both far away pixels and noisy pixels together (after inversion and rescaling both tend to be close to zero) and also to provide additional resolution in the range of values associated with the finger depth. \textit{X} is calculated by a mean of the rescaled values. \textit{Y} is calculated by taking the weighted linear regression across all points. 
 
-On the bio-acoustic sensing side, we aim to produce a classifier or heuristic that we can use to detect if the fingers are rubbing or tapping. We can use this to then accumulate gesture data from ToF 
+On the bio-acoustic sensing side, we aim to produce a classifier or heuristic that we can use to detect if the fingers are rubbing or tapping. We can use this to then accumulate gesture data from ToF during these events and trigger the appropriate interaction. The sound of the interaction itself may also contain information about the gesture. In this case we will need to design a multi-modal model structure to ingest both acoustic and ToF data streams.
 
-We started prototyping with an IMU, however was unable to get good differentiation results using an ML classifier between typing, using the phone, rubbing hands, null, clapping, and our activity of interest -- rubbing fingertips. We think this is becuase we lack distinguishing information avialbe int he higher frequnecies. Instead, we are now using a much higher bandwidth contact microphone. We are still in the process of testing this sensor to understand whether it will give us better results.
+We started prototyping with an IMU, however was unable to get good differentiation results using an ML classifier between typing, using the phone, rubbing hands, null, clapping, and our activity of interest -- rubbing fingertips. We think this is becuase we lack distinguishing information avialbe int he higher frequnecies, above 1 kHz. Instead, we are now using a much higher bandwidth contact microphone. We are still in the process of testing this sensor to understand whether it will give us better results but on the outset the spectrogram looks to carry much more information. We expect this classifier to be our main gating algorithm for triggering gestures even in active scenarios where the user is doing something else.
 
 A limitation of our approach are the selected optical sensor is approximately 200--300 mW in continuous ranging mode, which is not very low power. However the sensor is designed to achieve  3.5m of ranging, so the transmit power is much greater than our required use case where the subject is 80 times closer. For the same target illuminance, the illumination power increases with the square of the distance. A customized sensor could allow for lower power without significant modification. Additionally the sensor could be turned on opportunistically when the bio-acoustic sensor sensor above a certain power threshold. Because we do not make strong use of the absolute position data returned the the ToF sensor, we will also consider optical flow sensors which can be used in extremely low power methods to detect whether the finger is approaching the sensor, moving away, moving up or down with respect to the sensor.
 
 An additional limitation is that our prototype system thus far is a tethered  device. While we make effort to reduce the size of the sensing system itself to something that is low-profile, we are not attempting to miniaturize the signal processing electronics and will leave that to future work. 
 
-We are currently . A risk to our project is 22
+We hope to target interactions that can be used to navigate a grid based 2D UI similar to what we see on a smartwatch or existing smartglasses. Our targeted gesture set would include  a set of no-calibration absolute buttons -- one at the fingertip, perhaps one in the middle of the fingerpad, and one near the first finger crease. We will also have a discrete unistroke gesture set containing CW and CCW cirlces and swipes up, down, left, right, and if possible the diagonals. Finally, we will target continuous x and y scrolling with automatic direction detection. This requires a very low latency determination of direction so that the scroll commences with the finger motion. Early prototyping suggests that full 2D "trackpad" is difficult to achieve without calibration across users due to differing hand geometry. At the edges of the motion, the finger is only partially in FoV of the ToF sensor and this looks very different person-to-person.
 
-
-
-
-
+Finally, we will need conduct an evaluation that demonstrates the ring's ability to recover the targeted gesture set across people and scenarios. We will need to recruit users with a variety of hand shapes, colors and sizes. We will need to demonstrate the ring's ability to function and not trigger false gesture events even as the user is engaged in other activities, such as typing, using the phone, clapping, walking, and freeform movements.
 
 
 % ========== Chapter 6
 
-\chapter{Plan to Completion and Conclusion}
+\chapter{Plan to Completion}
+
+This final project is about 50\% completed. While the hardware is mostly complete and initial evaluations have been conducted, there is still work to be done:
+
+\subsubsection{May 2023:}
+Finalize \textit{x} and \textit{y} feature engineering. Finalize direction detection heuristic. IRB submitted.
+
+\subsubsection{June 2023:}
+Complete contact microphone processing and data pipeline. Collect microphone activity detection data and evaluate activity recognition performance. Consider progress and contribution to determine whether to submit in July 2023.
+
+\subsubsection{July 2023:}
+Considering progress, determine whether to run the user study and submit. If submitting, prepare example applications. If not submitted, re-assess ToF sensor selection and consider optical flow sensor. If switching sensors, finalize new hardware. Much of the same pipeline can be re-used.
+
+\subsubsection{August 2023:}
+Develop feature set with new sensor. Modify models as necessary. Re-train models.
+
+\subsubsection{September 2023:}
+Conduct user study. Submit.
+
+\subsubsection{October 2023:}
+Finalize dissertation.
+
+\subsubsection{November 2023:}
+Defend dissertation.
 
 % ========== Chapter 7
 
@@ -564,12 +1988,12 @@ Goals, design motivations
 %
 % ==========   Appendices
 %
-\appendix
-\raggedbottom\sloppy
+% \appendix
+% \raggedbottom\sloppy
  
-% ========== Appendix A
+% % ========== Appendix A
  
-\chapter{Where to find the files}
+% \chapter{Where to find the files}
  
 
 
