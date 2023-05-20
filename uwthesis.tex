@@ -75,6 +75,8 @@
  
 
 \newcommand{\ASname}{Augmented Silkscreen}
+\newcommand{\ARDWname}{ARDW}
+
 
 \newcounter{sharc}
 % \setcounter{sharc}{2} % set initial value
@@ -102,7 +104,6 @@
 \usepackage{multirow}
 \usepackage{balance}
 \usepackage{caption}
-\usepackage{subcaption}
 \usepackage{array}
 
 \DeclareCaptionFormat{custom}
@@ -153,9 +154,9 @@
 
 \setcounter{page}{-1}
 \abstract{%
-The desktop computing paradigm has revolutionized the way we live, work, and communicate, but is limited by the physical boundaries of the devices themselves. More recently, mobile computing has allowed us to take these capabilities on-the-go, but input and output mechanisms remain tied to the device surface, without interplay with the physicality of the surrounding environment. Spatial computing, however, seeks to define a new generation of computing, where users can receive digital guidance, communication, and contextual references based on -- and embedded within -- the environment around them. This means spatial computing will be used \textit{in-context}, where the users are performing another task -- one in which computing can either actively or passively provide support. This provides the new challenge in which the interaction and input of these systems must function within an ongoing situation, but also provides an opportunity where systems can leverage the spatial dimension for additional information to drive natural interaction. I approach this area on three fronts: \textit{spatial computing interaction}, \textit{spatial computing sensing}, and \textit{spatial computing control}.
+The desktop computing paradigm has revolutionized the way we live, work, and communicate, but is limited by the physical boundaries of the devices themselves. More recently, mobile computing has allowed us to take these capabilities on the go, but input and output mechanisms remain tied to the device surface, without interplay with the physicality of the surrounding environment. Spatial computing, however, seeks to define a new generation of computing, where users can receive digital guidance, communication, and contextual references based on -- and embedded within -- the environment around them. This means that spatial computing will be used \textit{in-context}, where the users are performing another task -- one in which computing can either actively or passively provide support. This provides the new challenge in which the interaction and input of these systems must function within an ongoing situation, but also provides an opportunity where systems can leverage the spatial dimension for additional information to drive natural interaction. I approach this area on three fronts: \textit{spatial computing interaction}, \textit{spatial computing sensing}, and \textit{spatial computing control}.
 
-From the perspective of spatial computing interaction, we investigate how electrical engineers can benefit from spatial augmentations while debugging printed circuit boards and develop an AR workbench that supports them as they work. For spatial computing sensing, we design earbuds that filter out the unwanted commotion in the users’ noisy environment by leveraging the spatial information of interfering audio sources. Finally, for spatial computing control, we propose a thumb-to-index finger microgesture interface which can allow for control of an augmented reality headset while maintaining the subtlety and precision needed for on-the-go, public scenarios.
+From the perspective of spatial computing interaction, we investigate how electrical engineers can benefit from spatial augmentations while debugging printed circuit boards and develop an AR workbench that supports them as they work. For spatial computing sensing, we design earbuds that filter out the unwanted commotion in the users’ noisy environment by leveraging the spatial information of interfering audio sources. Finally, for spatial computing control, we propose a thumb-to-index finger microgesture interface, which can allow for control of an augmented reality headset while maintaining the subtlety and precision needed for on-the-go public scenarios.
 }
  
 %
@@ -214,7 +215,7 @@ From the perspective of spatial computing interaction, we investigate how electr
 % \item[rule] a straight printed line; e.g., \hrulefill.
 % \item[serif] the decoration at the ends of letter strokes.
 % \item[table] information placed in a columnar arrangement.
-% \item[thesis] either a master's thesis or a doctoral dissertation.
+% \item[thesis] either a host's thesis or a doctoral dissertation.
 % This document also refers to itself as a thesis, although it
 % really is not one.
  
@@ -254,18 +255,21 @@ From the perspective of spatial computing interaction, we investigate how electr
 
 %\section{Spatial Computing}
  
-%Computing as we know it today is a physically confined experience, most commonly expressed as a box on one's desk or a slab within one's pocket. Interaction with these devices is tied to the device themselves without reference to the user’s environment. The spatial computing paradigm seeks to enable input and output that move beyond the borders of the physical device, sensing and/or augmenting aspects of the surrounding physical world. Rather than demanding the users entire time and attention, this allows users to interact and perform tasks in the world, opening the door to computing acting as Weiser envisioned it: "a helpful, invisible servant".
+%Computing as we know it today is a physically confined experience, most commonly expressed as a box on one's desk or a slab within one's pocket. 
+%Interaction with these devices is tied to the device itself without reference to the user’s environment. The spatial computing paradigm seeks to enable input and output to move beyond the boundaries of the physical device, sensing and/or augmenting aspects of the surrounding physical world. Rather than demanding the users entire time and attention, this allows users to interact and perform tasks in the world, opening the door to computing acting as Weiser envisioned it: "a helpful, invisible servant".
 
-Traditionally, computing has been associated with a confined experience, where users interact with devices that are stationary on a desk or handheld in their pockets. Interaction with these devices is tied to the device themselves without reference to the user’s environment. In this conventional setup, the focus is solely on the device itself, demanding the user's full attention. The spatial computing paradigm seeks to enable input and output that moves beyond the borders of the physical device, sensing and/or augmenting aspects of the surrounding physical world. Rather than demanding the users entire focus, this allows users to interact and perform tasks in the world with computing acting as a seamlessly integrated and helpful assistant, as Weiser once envisioned it.
+Personal computing revolutionized our productivity and play, bringing instant access to information, communication, and digital creation into our homes and offices. Mobile phones unplugged the computer and put it in our pockets and purses allowing us to take it into the world. Despite that, much of the interaction remains tied to the device itself without reference to the user’s surrounding environment. In these conventional setups, the focus is solely on the devices themselves, pulling users into their virtual worlds and out of the users' own surrounding ones. The spatial computing paradigm seeks to enable input and output to move beyond the boundaries of the physical device, sensing and augmenting aspects of the surrounding physical world. Rather than demanding users' entire time and attention, this allows them to interact and perform tasks in the world, opening the door to computing acting as Weiser envisioned it: "a helpful, invisible servant".
+
+%Traditionally, computing has been associated with a confined experience, where users interact with devices that are stationary on a desk or handheld in their pockets. Interaction with these devices is tied to the device themselves without reference to the user’s environment. In this conventional setup, the focus is solely on the device itself, demanding the user's full attention. The spatial computing paradigm seeks to enable input and output that moves beyond the borders of the physical device, sensing and/or augmenting aspects of the surrounding physical world. Rather than demanding the users entire focus, this allows users to interact and perform tasks in the world with computing acting as a seamlessly integrated and helpful assistant, as Weiser once envisioned it.
 
 %\section{Spatial Computing}
 
-In this proposal I adopt Greenwold’s original definition of \textit{spatial computing} as ``human interaction with a machine in which the machine retains and manipulates referents to real objects and spaces.'' (This definition also subsumes the more recent uses of spatial computing in marketing material as anything to do with AR/VR/MR.) This aspect of being rooted in the real-world lends spatial computing toward tasks that occur beyond the office desk. For example, the second-generation of Microsoft HoloLens and Magic Leap augmented reality (AR) devices were largely marketed toward industrial applications such as manufacturing line guidance, surgical operations or in-field visualizations. These types of tasks require spatial computing technologies to work in a given \textit{context}, honoring the user’s current workflow or situation. 
+In this proposal, I adopt Greenwold's original definition of \textit{spatial computing} as ``human interaction with a machine in which the machine retains and manipulates referents to real objects and spaces.'' (This definition also subsumes the more recent uses of spatial computing in marketing material as anything to do with AR/VR/MR.) This aspect of being rooted in the real-world lends spatial computing toward tasks that occur beyond the office desk. For example, the second-generation of Microsoft HoloLens and Magic Leap augmented reality (AR) devices were largely marketed toward industrial applications such as manufacturing line guidance, surgical operations or in-field visualizations. These types of tasks require spatial computing technologies to work in a given \textit{context}, honoring the user’s current workflow or situation. 
  
  
 %\section{In-Context Computing}
  
-Dey and Abowd use \textit{context} to refer to “any information that can be used to characterize the situation of an entity. An entity is a person, place, or object that is considered relevant to the interaction between a user and an application, including the user and applications themselves.” While this definition is typically leveraged for defining \textit{context-aware} computing -- applications that are actively responsive to changes in context -- in this proposal I instead focus in on what I call \textit{in-context} computing. In-context computing is used to assist the user in an application that exists beyond the computer itself, such as while they performing another task or in a particular environment. For example, in-context computing could be an in-flight computer display meant to relay information to a pilot while flying or a conversational voice assistant for navigational queries as the user is walking. This would be held in contrast to word processing on a laptop computer or a mobile game on a smartphone where the application and user task are one and the same, and the application has no relation to the user’s situation or environment. In-context computing can offer assistive extensions of the human’s capability to allow for multi-tasking or greater efficiency in the task at hand. 
+Dey and Abowd use \textit{context} to refer to ``any information that can be used to characterize the situation of an entity. An entity is a person, place, or object that is considered relevant to the interaction between a user and an application, including the user and applications themselves.'' Although this definition is typically leveraged for defining \textit{context-aware} computing -- applications that are actively responsive to changes in context -- in this proposal I instead focus in on what I call \textit{in-context} computing. In-context computing is used to assist the user in an application that exists beyond the computer itself, such as while they're performing another task or in a particular environment. For example, in-context computing could be an in-flight computer display meant to relay information to a pilot while flying or a conversational voice assistant for navigational queries as the user is walking. This would be held in contrast to word processing on a laptop computer or a mobile game on a smartphone, where the application and user task are one and the same, and the application has no relation to the user’s situation or environment. In-context computing can offer assistive extensions of the human’s capability to allow for multitasking or greater efficiency in the task at hand. 
  
  
 %\section{Putting It Together}
@@ -273,41 +277,45 @@ Dey and Abowd use \textit{context} to refer to “any information that can be us
  
 As they are both tied to the environment and task-at-hand, spatial and in-context computing are two sides of the same coin. \textbf{I posit that by implicitly leveraging the \textit{spatial} context of a user’s environment, technologies can better serve users as they operate within a situation, for example, while participating in another task or operating while mobile.} Through system building, I explore design constraints and considerations that follow from making spatial computing operate within a given situation, environment, or task. For instance, the latency, precision of interaction, form factor, robustness, power, social acceptability, comfort, and intrusiveness are a handful of key constraints that arise when designing an in-context computing system. For a holistic perspective, I approach this topic from three angles: \textit{spatial computing interaction}, \textit{spatial computing sensing}, and \textit{spatial computing control}.
 
-\subsubsection{Spatial computing interaction:} Beginning with spatial computing interaction, the focus is on co-designing spatial input and output mechanisms that align with the user's workflow, enabling seamless support within their work context. Specifically, in Augmented Reality Debugging Workbench (Chapter 3 and 4), we ask: can augmented reality assist electrical engineers in their printed circuit board debugging workflows and how can it best support them? (\textbf{RQ1}) To answer this question, we design and develop an augmented reality workbench for electrical engineers. To facilitate in-context computing, we co-design the interactions around their existing workflows leveraging their workbench surface as a spatial canvas for projection and input.
+\subsubsection{Spatial computing interaction:} Beginning with spatial computing interaction, the focus is on co-designing spatial input and output mechanisms that align with the user's workflow, enabling seamless support within their work context. Specifically, in Augmented Reality Debugging Workbench (Chapter 3 and 4), we ask: can augmented reality assist electrical engineers in their printed circuit board debugging workflows, and how can it best support them? (\textbf{RQ1}) To answer this question, we design and develop an augmented reality workbench for electrical engineers. To facilitate in-context computing, we co-design the interactions around their existing workflows leveraging their workbench surface as a spatial canvas for projection and input.
 
-\subsubsection{Spatial computing sensing:} Moving on to spatial computing sensing, the emphasis lies in understanding and utilizing the spatial characteristics of a given situation to enhance computing performance. Specifically, I focus on spatial audio capture sensing in noisy, real-world environments. In ClearBuds (Chapter 4), we ask: How we can leverage spatial information, in addition to frequency information, about competing environmental sound sources to remove them and allow for clear calls? (\textbf{RQ2}). We develop a pair of wireless earbuds that uses multiple, time-synchronized audio channels and a time-domain network to utilize the spatial distribution of the target speech source and interfering noise sources for speech enhancement.
+\subsubsection{Spatial computing sensing:} Moving on to spatial computing sensing, the emphasis lies in understanding and utilizing the spatial characteristics of a given situation to enhance computing performance. Specifically, I focus on spatial audio capture sensing in noisy, real-world environments. In ClearBuds (Chapter 4), we ask: How can we leverage spatial information, in addition to frequency information, about competing environmental sound sources to remove them and allow for clear calls? (\textbf{RQ2}). We develop a pair of wireless earbuds that uses multiple time-synchronized audio channels and a time-domain network to utilize the spatial distribution of the target speech source and interfering noise sources for speech enhancement.
 
-\subsubsection{Spatial computing control (proposed):} Lastly, attention is given to the control of future spatial computing devices, particularly in mobile scenarios. A challenge lies in designing input modalities for smartglasses that are ergonomic, socially acceptable, and precise, without relying on an external surface. In ToFRing and Placeholder (Chapter 5), we propose to develop two systems to investigate: how can thumb-to-finger microgesture inputs be sensed from a wearable ring and wristband respectively? (\textbf{RQ3}) In ToF Ring, we plan to develop a system that can gather thumb-to-index swipe and thumb motion information in two axes using miniaturized time-of-flight and bio-acoustic sensors. In Placeholder, we plan to leverage electrical sensing to be able to sense thumb-to-index gestures from a wrist-based system, allowing for users who prefer bracelets or watches to similarly be able to control smartglasses. In both systems, the design constraints applied by on-the-go usage influences the interactions and form factors we can consider.
+\subsubsection{Spatial computing control (proposed):} Lastly, attention is given to the control of future spatial computing devices, particularly in mobile scenarios. A challenge lies in designing input modalities for smartglasses that are ergonomic, socially acceptable, and precise, without relying on an external surface. In OptoAcoustic Ring (Chapter 5), we propose to develop a system to investigate: how can thumb-to-finger microgestures inputs be sensed from a wearable ring with minimal or no per-session or per-user calibration? (\textbf{RQ3}) In OptoAcoustic Ring, we plan to develop a system that can gather thumb-to-index swipe and thumb motion information in two axes using miniaturized optical and bio-acoustic sensors. We apply certain design constraints necessitated by on-the-go use, including a low-profile sensor position and real-time operation. 
+%In Placeholder, we plan to leverage electrical sensing to be able to sense thumb-to-index gestures from a wrist-based system, allowing users who prefer bracelets or watches to similarly be able to control smartglasses. In both systems, the design constraints applied by on-the-go usage influence the interactions and form factors that we can consider.
 
 % ========== Chapter 2
  
 \chapter{Related Work}
 \label{sec:related}
 
-In this section, we review related work for each of the areas of focus: spatial computing interaction (section \ref{sec: Spatial Computing Interaction: Augmented Task Guidance}, sensing, and control. We contextualize the work within the general thesis and then narrow to the specific contributions of the individual works that realize that hypothesis.
+In this section, we review related work for each of the areas of focus: spatial computing interaction (section \ref{sec: Spatial Computing Interaction: Augmented Task Guidance}), sensing (section \ref{sec: Spatial Computing Sensing: Spatial Audio Capture}), and control (section \ref{sec: Spatial Computing Control: Microgesture Interaction}). We contextualize the work within the general thesis and then narrow to the specific contributions of the individual works that realize the hypothesis.
 
 \section{Spatial Computing Interaction: Augmented Task Guidance}
 \label{sec: Spatial Computing Interaction: Augmented Task Guidance}
 
-\subsection{Augmenting Reality}
+\subsection{Augmented Reality for Industrial Tasks}
 \label{subsec: Augmented Reality}
 
-Our own senses are mediated by space -- how we see, how we hear, and how we touch. Through our development, we generate natural intuitions about our body's relation to space [Piaget, J. (1954)]. Therefore tapping into these natural faculties can better lend itself to what Weiser envisioned of computing as "an extension of our unconscious." 
+Our own senses are mediated by space -- how we see, how we hear, and how we touch. Through our development, we generate natural intuitions about our body's relation to space \cite{Piaget1954-wp}. Kirsh put forth the idea that the strategies employed to navigate our physical space play a crucial role in structuring our cognitive processes and actions \cite{Kirsh1995-rg}. Augmented reality (AR) capitalizes on spatial cognition and memory by establishing a meaningful association between information and physical objects/locations in the real world \cite{Biocca2003-pk}. Therefore, tapping into these natural faculties can better lend itself to Weiser's vision of computing as “an extension of our unconscious” \cite{Weiser1996-zr}.
 %\subsection{Augmented Visualization and Interaction for Spatially-Associated Information Access}
 %\label{subsec: Augmented Visualization and Interaction for Spatially-Associated Information Access}
-Augmented reality (AR) has long been seen as a paradigm that can decrease the barrier between virtual and physical information transfer [cite Grasping Reality Through Illusion- Interactive Graphics Serving Science, Annotating the real world with knowledge-based graphics on a see-through head-mounted display.].
+Augmented reality (AR) has long been seen as a paradigm that can decrease the barrier between virtual and physical information transfer \cite{Brooks1988-ug}.
 % above is the big claim about AR, below is breaking that claim down
 This transfer process can consist of two components: the presentation of the information to the user, generally in the form of visualizations; and the ability for the user to interact with the visualization, perhaps enabling the user to query for additional information.
 % give examples of the first part of the claim
 Prior work has shown that AR systems presenting spatially-tracked information, even with no interaction component, can be effective not only in reducing error rate and mental effort across industrial tasks.
-Feiner et al.’s seminal KARMA system \cite{Feiner1993Knowledge-basedReality} sought to provide augmented instruction in support of complex 3D tasks, for example guiding the user through laser printer maintenance with overlaid leader lines, callouts and arrows bound to different components of the machine. 
-TODO such as order picking \cite{Schwerdtfeger2008SupportingReality} and object assembly \cite{Caudell1992AugmentedProcesses, Tang2003ComparativeAssembly}.
+In 1992, Caudell and Mizell at Boeing built the “HUDset” \cite{Caudell1992AugmentedProcesses} as a demonstration toward four applications: building a wiring harness, plugging into a wiring connector, laying up composite cloth, and visualizing part disassembly. The system used a magnetic tracking system and an opaque, 7-degree field of view, monocular eyepiece. While the system relied on the user to fuse left and right eye images, had limited FoV, and suffered from significant lag, it was a bellwether for what could be possible with augmented reality (a term they coined along the way).
+Feiner et al.’s seminal KARMA system \cite{Feiner1993Knowledge-basedReality} similarly sought to provide augmented instruction in support of complex 3D tasks, for example, to guide the user through the maintenance of the laser printer with overlaid leader lines, callouts, and arrows bound to different components of the machine. 
+%In industrial tasks, augmented reality has been studied as a method to decrease error rate and cognitive load.
+Schwerdtfeger and Klinker \cite{Schwerdtfeger2008SupportingReality} investigated the use of AR for order picking, designing a flight tunnel visualization to guide users to grab the part from the correct bin, and resulting in zero errors during all 1512 picks. 
+Tang et al. \cite{Tang2003ComparativeAssembly} compared the effectiveness of different instructional media in an assembly task, comparing print media, head-up instructions, and spatially-locked AR instructions. The AR system displayed task information as 3D objects in the user's field of view, aligning them with the workspace. The results revealed an 82\% reduction in the error rate when overlaying 3D instructions on actual work pieces, particularly in minimizing cumulative errors. Additionally, the AR condition showed a decrease in mental effort, suggesting the potential of AR to alleviate cognitive demands on the user while in context.
 % then give examples of making them interactive
-Extending AR experiences to enable interaction makes them even more powerful.
+Extending AR experiences to include interaction makes them even more powerful.
 Such interactions might enable actions such as the selection of elements in the physical world to be used as part of a virtual tool operation.
-Digitaldesk \cite{Wellner1993InteractingDigitaldesk} demonstrated such interactions with examples such as allowing the user to move a number from a physical price list into a virtual calculator.
+For example, Digitaldesk \cite{Wellner1993InteractingDigitaldesk} demonstrated such interactions with examples such as allowing the user to move a number from a physical price list into a virtual calculator.
 % we work on both of these aspects of AR and we will talk about how previous people have used both of these aspects of AR wrt PCBs
-In this first section on spatial computing interaction, our work continues the line of research into helpful augmented reality in industrial contexts. We explore the design space of both of AR visualization and AR interaction, to understand how they might enhance electrical engineers' workflow with PCBs. We observe that their workflow requires frequent context switching between various virtual design files and spatial navigation on their physical design. We take a slight detour from spatial computing technologies to examine their current tools.
+In this first section on spatial computing interaction, our work continues the line of research into helpful augmented reality in industrial contexts. We explore the design space of both AR visualization and AR interaction, to understand how they might enhance electrical engineers' workflow with PCBs. We observe that their workflow requires frequent context switching between various virtual design files and spatial navigation on their physical design. Now, we take a slight detour from spatial computing technologies to examine their current tools.
 % In the following section, we discuss how prior work has used these aspects of AR toward working with PCBs.
 
 
@@ -430,11 +438,11 @@ Our work studies whether the interactions afforded by such a stylus would be hel
 
 \subsection{Sensing Space and Distance}
 
-Historically, systems have used a wide variety of sensing methodologies to understand space. Radar, sonar, and, more recently, GPS were all initially developed for wartime applications with battlefield-scale positioning. Within the room-scale, Sutherland's pioneering augmented reality system explored the use of multi-frequency continuous-wave ultrasound, though the first system relied on a set of taut lines on reels sensed by positional encoders. The calculated device pose was used to update the see-through graphics in real-time. Modern AR and VR head-mounted devices utilize a passive method of 6DOF positioning, derived from simultaneous localization and mapping (SLAM) robotics. Images from multiple on-headset cameras are processed to generate a 3D visual map of world keypoints. Intermediate positions are calculated by integration of a calibrated inertial measurement unit (IMU) and are fused with vision via an Extended Kalman Filter. This technique has been key to allow for these HMDs to be mobile and used in-the-field without need for external tracking hardware. For dense mapping of the geometry of surrounding environment, a number of headsets employ a time-of-flight depth camera which can be leveraged for semantic understanding of the surrounding geometry, accurate interactive plane detection, and hand tracking. %do i need to add polhemus?
+Historically, systems have used a wide variety of sensing methodologies to understand space. Radar, sonar, and, more recently, GPS were all initially developed for wartime applications with battlefield-scale positioning. Within the room-scale, Sutherland's pioneering augmented reality system explored the use of multifrequency continuous-wave ultrasound, though the first system relied on a set of taut lines on reels sensed by positional encoders \cite{10.1145/280811.281016}. The calculated device pose was used to update the see-through graphics in real-time. Modern AR and VR head-mounted devices utilize a passive method of 6DOF positioning, derived from simultaneous localization and mapping (SLAM) robotics \cite{KleinPTAM}. Images from multiple on-headset cameras are processed to generate a 3D visual map of world keypoints. Intermediate positions are calculated by integration of a calibrated inertial measurement unit (IMU) and are fused with vision via an Extended Kalman Filter. This technique has been key to allow for these HMDs to be mobile and used in-the-field without need for external tracking hardware. For dense mapping of the geometry of the surrounding environment, a number of headsets \cite{microsoft, magicleap, varjo} employ a time-of-flight depth camera which can be leveraged for semantic understanding of the surrounding geometry, accurate interactive plane detection, and hand tracking. %do i need to add polhemus?
 
-With the exception of SLAM, each of these systems utilize precise timings of reflected or transmitted waves with a known velocity to calculate distance. This same technique is utilized in the audio domain to localize sound sources. Our ears are separated by a known baseline. Audio arriving to our ears from an off-center source arrive at slightly different times resulting in an interaural time difference (ITD) given the speed of sound [lord rayleigh duplex theory]. This phenomenon, along with interaural level differences (ILD) and frequency modulations resulting from the head-related transfer function, are the primary cues that allow humans and other animals to precisely localize sound sources.
+With the exception of SLAM, each of these systems utilize precise timings of reflected or transmitted waves with a known velocity to calculate distance. This same technique is utilized in the audio domain to localize sound sources. Our ears are separated by a known baseline. Audio arriving to our ears from an off-center source arrive at slightly different times resulting in an interaural time difference (ITD) given the speed of sound \cite{macpherson2002listener}. This phenomenon along with interaural level differences (ILD) and frequency modulations resulting from the head-related transfer function are the primary cues that allow humans and other animals to precisely localize sound sources.
 
-In noisy environments, like when on a busy street, multiple competing sound sources layer on top one another creating a noisy mixture. Dubbed the cocktail party effect, our brain's ability to focus auditory attention on a given sound source while filtering out other stimulus has been studied since at least the early 1950s. Interaural time differences [cite binaural unmasking] as well as the audio frequency content both play a part in source separation. Here we focus on a producing a system that can utilize both cues together to enhance a user's voice from amongst a noisy background. We apply this technique specifically to a set of wireless earbuds. Because of their portability, these systems are often used to take calls in noisy, dynamic environments. Real-time speech enhancement is a long standing problem in the signal processing and machine learning communities.  While recent advances in the machine learning community have shown promising results, none of them have been demonstrated on wireless earbuds. Further, the vast majority cannot run on mobile devices and meet these real-time constraints. As a result, endfire beamforming configurations remain popular on most consumer mobile phones and earbuds \cite{samsungglobalnewsroom_2014, airpods, sennheiser_2020, beamforming-app-note}. Below, we briefly discuss beamforming, single channel speech enhancement networks, and binaural networks. By creating a wireless acoustic  network between two earbuds and a novel light-weight hybrid  time-domain and spectrogram-based  neural network, we show for the first time that real-time two-channel neural networks can outperform  current real-time speech enhancement approaches for wireless earbuds.
+In noisy environments, such as on a busy street, multiple competing sound sources layer on top one another, creating a noisy mixture. Dubbed the cocktail party effect, our brain's ability to focus auditory attention on a given sound source while filtering out other stimulus has been studied since at least the early 1950s \cite{pollack1957cocktail}. Interaural time differences as well as the audio frequency content both play a role in source separation \cite{Hirsh_binaural}. Here we focus on a producing a system that can utilize both cues together to enhance a user's voice from amongst a noisy background. We apply this technique specifically to a set of wireless earbuds. Because of their portability, these systems are often used to take calls in noisy, dynamic environments. Real-time speech enhancement is a long-standing problem in the signal processing and machine learning communities.  While recent advances in the machine learning community have shown promising results, none of them have been demonstrated on wireless earbuds. Furthermore, the vast majority cannot run on mobile devices and meet these real-time constraints. As a result, endfire beamforming configurations remain popular on most consumer mobile phones and earbuds \cite{samsungglobalnewsroom_2014, airpods, sennheiser_2020, beamforming-app-note}. Below, we briefly discuss beamforming, single channel speech enhancement networks, and binaural networks. By creating a wireless acoustic  network between two earbuds and a novel light-weight hybrid  time-domain and spectrogram-based  neural network, we show for the first time that real-time two-channel neural networks can outperform  current real-time speech enhancement approaches for wireless earbuds.
 
 \subsection{Spatial Audio Capture}
 
@@ -454,7 +462,7 @@ In noisy environments, like when on a busy street, multiple competing sound sour
 
 %\vskip 0.05in\noindent{\bf Single-channel speech enhancement.} 
 \subsubsection{Single-channel speech enhancement}
-Recent deep learning techniques have led to significant progress in single channel speech enhancement methods. These models typically operate on spectrograms to separate the human voice from background noise \cite{realtimenoise, Mohammadiha_2013, online_nonnegative, nikzad2020deep, choi2019phaseaware, lstm_speechenhancement, fu2019metricgan, TFMasking}. However, recent trends have opted to operate directly on the time domain signals \cite{luo2019conv, germain2018speech, pascual2017segan, demucsreal, macartney2018improved}, yielding performance improvements over spectrogram approaches. Commercially available noise suppression software like Krisp \cite{krisp} and Google Meet \cite{googlemeet} have successfully deployed single-channel models in real-time and are available for use on mobile phones and desktop computers, processing is performed on the cloud. However, single-channel models can not effectively capture the spatial information and hence fail to isolate the intended speaker when there are multiple speakers present.
+Recent deep learning techniques have led to significant progress in single-channel speech enhancement methods. These models typically operate on spectrograms to separate the human voice from background noise \cite{realtimenoise, Mohammadiha_2013, online_nonnegative, nikzad2020deep, choi2019phaseaware, lstm_speechenhancement, fu2019metricgan, TFMasking}. However, recent trends have opted to operate directly on time domain signals \cite{luo2019conv, germain2018speech, pascual2017segan, demucsreal, macartney2018improved}, yielding performance improvements over spectrogram approaches. Commercially available noise suppression software such as Krisp \cite{krisp} and Google Meet \cite{googlemeet} have successfully deployed single-channel models in real-time and are available for use on mobile phones and desktop computers, processing is performed on the cloud. However, single-channel models can not effectively capture the spatial information and hence fail to isolate the intended speaker when there are multiple speakers present.
 
 % --> some recent work on increasing performance to real-time applications
 % Real Time Speech Enhancement in the Waveform Domain
@@ -462,7 +470,7 @@ Recent deep learning techniques have led to significant progress in single chann
 
 \subsubsection{Multi-channel source separation and speech enhancement}
 %\subsection{Multi-channel source separation and speech enhancement}
-Multi-channel methods have been shown to perform better than their single-channel source separation counterparts \cite{yoshioka2018multi, chen2018multi, zhang2017deep, gu2020enhancing, tzirakis2021multichannel, jenrungrot2020cone}. Binaural methods have also been used for source separation \cite{binaural1, han2020realtime, li2011two, reindl2010speech} and localization \cite{van2008binaural, lyon1983computational, kock1950binaural}. Our method improves on existing binaural methods by combining time-domain neural network with spectrogram-based frequency masking networks as well as optimizing them to enable   real-time processing on a phone. Recent works~\cite{binaural_osu, dual_phone} use multiple microphones on a smartphone for  speech-enhancement however neither of them demonstrates real-time performance of a smartphone. In contrast, we demonstrate the first system that achieves real-time speech enhancement using microphones on the two wireless earbuds. Further, as the distance between the earbuds is larger than the distance between microphones on a typical mobile phone, we can  attain a better baseline than a mobile phone implementation, while also retaining the ability to speak hands-free.
+Multi-channel methods have been shown to perform better than their single-channel source separation counterparts \cite{yoshioka2018multi, chen2018multi, zhang2017deep, gu2020enhancing, tzirakis2021multichannel, jenrungrot2020cone}. Binaural methods have also been used for source separation \cite{binaural1, han2020realtime, li2011two, reindl2010speech} and localization \cite{van2008binaural, lyon1983computational, kock1950binaural}. Our method improves existing binaural methods by combining a time-domain neural network with spectrogram-based frequency masking networks and optimizing them to enable real-time processing on a phone. Recent works~\cite{binaural_osu, dual_phone} use multiple microphones on a smartphone for  speech-enhancement however neither of them demonstrates real-time performance of a smartphone. In contrast, we demonstrate the first system that achieves real-time speech enhancement using microphones on the two wireless earbuds. Furthermore, since the distance between the earbuds is larger than the distance between microphones on a typical mobile phone, we can attain a better baseline than a mobile phone implementation while also retaining the ability to speak hands-free.
 
 % \subsubsection{Earable computing and platforms}
 % There has been recent interest in earable computing and sensing~\cite{oesense21,esense-1,esense-2,plat-1,romit-1}. Earable platforms such as eSense~\cite{esense-1,esense-2} have enabled research in enabling various sensing applications using earable devices. eSense however does not support time-synchronized audio transmission from two earbuds to a mobile device. This is a critical requirement for achieving  speech enhancement using the  microphones on the two wireless earbuds.  OpenMHA~\cite{open-1,open-2} is a open signal processing {\it software} platform for hearing aid research. In contrast, we create wireless earbud hardware, which will be open-sourced at publication and can support synchronize wireless transmission from the two earbuds to achieve speech enhancement. 
@@ -486,14 +494,14 @@ Multi-channel methods have been shown to perform better than their single-channe
 
 \section{Spatial Computing Control: Microgesture Interaction}
 
-As screens have shrunk from desktop computer to mobile phone to smartwatch, the friction to accessing screen content has decreased, but the throughput of delivered content has suffered. To overcome these limitations, there has a huge amount of investment towards consolidation of display and sensing into a head-mounted device (HMD) that can deliver information across the user's field-of-view (FOV)%anywhere.
-A variety of flavors of HMD have been developed to tackle both sides of the spectrum -- to decrease information friction as well as to deliver greater immersion and throughput.
+As screens have shrunk from desktop computer to mobile phone to smartwatch, the friction to accessing screen content has decreased, but the throughput of delivered content has also suffered. To overcome these limitations, there has a huge amount of investment towards consolidation of display and sensing hardware into a head-mounted device (HMD) that can deliver information across the user's field-of-view (FOV)%anywhere.
+A variety of flavors of HMD have been developed to tackle both sides of the spectrum -- to decrease information friction and to deliver greater immersion and throughput \cite{milgram1994taxonomy}.
 %Barring engineering limitations, an HMD allows the display space to one day be infinitely large as the user's field of view.
-Smartglasses can operate as a head-up display for timely and spatially relevant digital content. Higher-end mixed reality devices can maintain spatial coherence of the augmentations during movement, providing the illusion of world-locked content. Virtual reality devices can provide a sense immersion that transports the user to a new environment.
+Smartglasses can operate as a head-up display for timely and spatially relevant digital content. Higher-end mixed reality devices can maintain spatial coherence of the augmentations during movement, providing the illusion of world-locked content. Virtual reality devices can provide a sense of immersion that transports the user to a new environment.
 
-To be able to control these immersive devices, 6DOF controllers are typically employed. These controllers use outside-in or inside-out camera-based tracking. Outside-in methods involve a set of cameras on the headset tracking a constellation of infrared LEDs on the controller. Two limitations are that the controllers must be within the headset camera's FoV and have a ring of LEDs positioned in a way that the constellation is not obstructed. Inside-out tracking leverages multiple cameras within the controller with the same SLAM algorithm discussed in the previous section. With the additional compute and cameras this technique tends to be higher power and require a few seconds upon start up for map relocalization. The controllers offer compelling experiences for high-fidelity, immersive gaming, where low-latency hand positioning and the gamepad controls can provide precise manipulation and action interactions. However, as we think toward in-context spatial computing where users are performing another task like maintenance, surgery, or typing, it is essential to keep the hands unencumbered.
+To be able to control these immersive devices, 6DOF controllers are typically employed. These controllers use camera-based tracking in two flavors: outside-in or inside-out tracking. Outside-in methods involve a set of cameras on the headset tracking a constellation of infrared LEDs on the controller. Two limitations are that the controllers must be within the headset camera's FoV and have a ring of LEDs positioned in a way that the constellation is not obstructed. Inside-out tracking leverages multiple cameras within the controller with the same SLAM algorithm discussed in the previous section. With the additional compute and cameras, this technique tends to be higher power and require a few seconds upon start up for map relocalization \cite{jiang2022slam}. The controllers offer compelling experiences for high-fidelity, immersive gaming, where low-latency hand positioning and the gamepad controls can provide precise manipulation and action interactions. However, as we think toward in-context spatial computing where users are performing another task like maintenance, surgery, or typing, it is essential to keep the hands unencumbered.
 
-Indeed, augmented and mixed reality devices also offer articulated hand tracking using computer vision on depth camera or stereo camera data \cite{microsoft, MetaStore, TrackingUltraleap}. This allows for direct manipulation of buttons and content similar to the [egocentric?, ergotic?] interaction techniques studied with data gloves in the early day of VR [A hand gesture interface device zimmerman]. While hand tracking now does not require donning a glove, it does require the user to keep their hands within the field-of-view of the camera. Therefore, this method of control, as well as those involve keeping a controller within camera FoV, suffer from ``gorilla arm syndrome.'' As we consider augmented reality that will be used in more public settings such as smartglasses, large motions can draw unwanted attention to the user posing social acceptability challenges, such in meetings, walking down the street, or on a subway [Usable gestures for mobile interfaces: evaluating social acceptability]. Furthermore, the privacy implication of having an always-on, on-headset cameras will also need to be evaluated in public and private scenarios. These challenges motivate two aspects required for public in-context spatial computing: (1) the need for the interaction to be suitably discreet, accessible, and quick enough for on-the-go use and (2) the need for such interactions to be sensed without line of sight from a headset. This has motivated explorations of microgestures from body-worn sensing platforms.   %Smartglasses systems also need to be lighter and lower-power and camera-based solutions can take hundreds of milliwatts for both sensing and processing.
+Indeed, augmented and mixed reality devices also offer articulated hand tracking using computer vision on depth camera or stereo camera data \cite{microsoft, MetaStore, TrackingUltraleap}. This allows for direct manipulation of virtual buttons and content, similar to the interaction techniques studied with data gloves in the early day of VR \cite{zimmerman1986hand}. While hand tracking now does not require donning a glove, it does require the user to keep their hands within the field-of-view of the camera. Therefore, this method of control, as well as those involve keeping a controller within camera FoV, suffer from ``gorilla arm syndrome'' \cite{boring2009scroll}. As we consider augmented reality that will be used in more public settings such as smartglasses, large motions can draw unwanted attention to the user posing social acceptability challenges, such in meetings, walking down the street, or on a subway \cite{rico2010usable}. Furthermore, the privacy implication of having an always-on, on-headset cameras will also need to be evaluated in public and private scenarios. These challenges motivate two aspects required for public in-context spatial computing: (1) the need for the interaction to be suitably discreet, accessible, and quick enough for on-the-go use and (2) the need for such interactions to be sensed without line of sight from a headset. This has motivated explorations of microgestures from body-worn sensing platforms.   %Smartglasses systems also need to be lighter and lower-power and camera-based solutions can take hundreds of milliwatts for both sensing and processing.
 
 % Direct manipulation
 % Indirect manipulation (ray casting etc.)
@@ -502,20 +510,22 @@ Indeed, augmented and mixed reality devices also offer articulated hand tracking
 
 \subsection{Microgestures in Context}
 
-Ashbrook defines microinteractions as device interaction under four seconds, citing Oulasvirta's investigation into user attention during mobile situations. While engaging in activities like navigation, eating and conversing, participants shifted their attention for four to eight seconds to the device before returning to the primary task. This means the friction to providing input while mobile must be even less, prompting Ashbrook to explore touch gestures and bezel manipulation on wristband-based devices. Similarly, many systems have explored sensors mounted on the wrist, hand, and/or fingers to sense the more subtle motion of these appendages without limitations on headset field of view. These systems span a wide range of modalities: {optical (\cite{Chatterjee2016TouchPoint:Device}, \cite{Kim2012Digits}, \cite{GestureWristRekimotoTODO get this},
+Ashbrook \cite{ashbrook2010enabling} defines microinteractions as device interaction under four seconds, citing Oulasvirta's investigation into user attention during mobile situations \cite{oulasvirta2005interaction}. While engaging in activities like navigation, eating and conversing, participants shifted their attention for four to eight seconds to the device before returning to the primary task. This means the friction to providing input while mobile must be even less, prompting Ashbrook to explore touch gestures and bezel manipulation on wristband-based devices \cite{ashbrook2008investigation, ashbrook2011nenya}. Similarly, many systems have explored sensors mounted on the wrist, hand, and/or fingers to sense the more subtle motion of these appendages without limitations on headset field of view. These systems span a wide range of modalities: {optical (\cite{Chatterjee2016TouchPoint:Device}, \cite{Kim2012Digits}, \cite{rekimoto2001gesturewrist},
 \cite{McIntosh2017SensIR:Reflection}, \cite{Chan2015Cyclopsring:Ring},  \cite{loclair2010pinchwatch}), (\cite{Gong2017Pyro:Sensing}, \cite{thermalring}), bio-acoustic (\cite{10.1145/506443.506566}, \cite{sot}, \cite{fingerping}), 
-ultrasonic (\cite{Iravantchi2019BeamBand:Beamforming}, \cite{Zhang2017SoundTrak}), mechanical (\cite{Takada2019AFiber}, \cite{Lin2015BackHand:Hand}, \cite{10.5555/3298830.3298870}), electromyography (\cite{saponas enabling always avialabe input with mci}),
+ultrasonic (\cite{Iravantchi2019BeamBand:Beamforming}, \cite{Zhang2017SoundTrak}), mechanical (\cite{Takada2019AFiber}, \cite{Lin2015BackHand:Hand}, \cite{10.5555/3298830.3298870}), electromyography (\cite{saponas2009enabling}),
 and inertial (\cite{Guy}, \cite{Meier2021TaplD:Sensing}, \cite{Fukumoto1994FingeRing:Interface}, \cite{Liang2021DualRing}).}
 The capability of these devices ranges from detecting pinches to recognizing discrete gesture sets to driving full kinematic models of the hand. A shared design goal of each of these systems is to keep the hand itself unencumbered allowing for the user's primary task to be minimally affected, so called free-hand or device-free gesture systems.
 
 \subsection{Thumb-to-Index Microgestures}
 
-Amongst these systems, we focus in on devices that enable single-handed, thumb-to-index microgestures.  Neurophysiological findings indicate that fingers have some of the largest representations in both the somatosenosry and motor cortexes as function of their size. The fingertips feature both a high spatial resolution of tactile sensing as well as highly dexterous control. Zhai demonstrated that leveraging small muscle groups like fingers demonstrated manipulation performance that exceeds input relying just on wrist, arm, and shoulder [influence of sucle group on perofrmanf oc mulitple degree of feedom input]. Amongst the fingers, user elicitation studies prompting users to suggest hand gestures for common digital functions resulted in most gestures being executed between the thumb and index fingers [chan user elicitation]. This tracks with  anatomical analyses indicating the greatest dexterity is between these two fingers [Taxonomy of microinteractions: defining microgestures based on ergonomic and scenario-dependent requirements][Coordinationofthumbjointsduringopposition][Functional workspace for precision manipulation between thumb and fingers in normal hands]. Similary, DigitSpace compared comfort for thumb gestures across different fingerpad areas and found the tip of the index fingerpad to be the highest rated for both taps and swipe gestures. The propriocepiton between thumb and index finger allowed for a better understanding of the moment of touchdown betwwen the two fingers, enabling higher time doamin accuracy in selection that controller or non-pinch microgestures [Finger Contact in Gesture Interaction Improves Time-domain Input Accuracy in HMD-based Augmented Reality]. These aspects lend thumb-to-index microgestures well to smartglass control where the goal is for a subtle and precise input. Smartglasses differ from other mixed reality headsets, such as Microsoft HoloLens, Magic Leap One, or Meta Quest Pro, in that they are used for daily wear and generally only feature 2D user interfaces for features like notifications and navigation via a monocular display [north][tcl?][oppo?]. Therefore, the input solution must also be similarly appropriate for daily wear and be able to navigate a 2D UI even while on-the-go. In this project, we therefore set a few design goals for a realized system: (1) a sensing suite that is appropriately miniature enough for daily wear, (2) enables ergonomic thumb-to-index microgestures interaction in two dimensions, and (3) robust enough to work across situations and people with no or minimal calibration. 
+Amongst these systems, we focus in on devices that enable single-handed, thumb-to-index microgestures.  The fingertips feature both a high spatial resolution of tactile sensing and highly dexterous control. Neurophysiological findings indicate that fingers have some of the largest representations in both the somatosensory and motor cortices as function of their size \cite{schott1993penfield}.  Zhai et al. demonstrated that leveraging small muscle groups like fingers demonstrated manipulation performance that exceeds input relying just on wrist, arm, and shoulder \cite{zhai1996influence}. Amongst the fingers, user elicitation studies prompting users to suggest hand gestures for common digital functions resulted in most gestures being executed between the thumb and index fingers \cite{chan2016user}. This tracks with  anatomical analyses indicating the greatest dexterity is between these two fingers \cite{wolf2011taxonomy,li2007coordination, kuo2009functional}. Similarly, DigitSpace compared comfort for thumb gestures across different fingerpad areas and found the tip of the index fingerpad to be the highest rated for both taps and swipe gestures \cite{huang2016digitspace}. Oh et al. found  that the proprioception between thumb and index finger allowed for a better understanding of the moment of touchdown between the two fingers, enabling higher time domain accuracy in selection than controller or non-pinch microgestures \cite{oh2020finger}. These aspects lend thumb-to-index microgestures well to smartglass control where the goal is for a subtle and precise input. Smartglasses differ from other mixed reality headsets, such as Microsoft HoloLens \cite{microsoft}, Magic Leap One \cite{magicleap}, or Meta Quest Pro \cite{metaquestpro}, in that they are used for daily wear and generally only feature 2D user interfaces for features like notifications and navigation via a monocular display \cite{Carman2019-north, vuzix, nreal}. Therefore, the input solution must also be similarly appropriate for daily wear and be able to navigate a 2D UI even while on-the-go. In this project, we therefore set a few design goals for a realized system: (1) a sensing suite that is appropriately miniature enough for daily wear, (2) enables ergonomic thumb-to-index microgestures interaction in two dimensions, and (3) robust enough to work across situations and people with no or minimal calibration. 
 
 
 \subsection{Microgesture Wristbands and Rings}
 
-A number of wearables have been design to gather microgesture input. Using a ring with a capactive touchpad, Boldu et al ran a user study that compared swipes and taps on a ring to interaction on a wristband touchscreen while participants ran, finding users perceived thumb-to-index microgestures to be less complex, easier to use, and less cumbersome [Thumb-In-Motion:]. 
+A number of wearables have been design to gather microgesture input. Using a ring with a capactive touchpad, Boldu et al. ran a user study that compared swipes and taps on the ring to interaction on a wristband touchscreen while participants ran, finding users perceived thumb-to-index microgestures to be less complex, easier to use, and less cumbersome \cite{BolduThumbInMotion}. 
+
+However, these systems require users to bend their thumb proximally to contact the ring surface . Gesutres in this region are not as comfortable and preferred as at the tip of the index finger \cite{huang2016digitspace}
 
 FingerPad used magnets on the thumb and a Hall sensor grid on the back of the index finger to realize a touchpad on the index surface. However this system requires two components and instruments the fingernail, which is not socially acceptable. 
 
@@ -542,6 +552,9 @@ FingerPad used magnets on the thumb and a Hall sensor grid on the back of the in
 % ========== Chapter 3
  
 \chapter{Designing AR Debugging Workbench}
+
+In this chapter, we interview electrical engineers, investigating how spatial computing can support their PCB debugging workflow. To guide our interviews we develop and leverage a mock interactive interface called \ASname. These design learnings are then applied to the final system we build, \ARDWname, which is described in Chapter 4. This chapter was published in ACM DIS 2021 \cite{Chatterjee2021AugmentedBoards}. 
+
 
 \section{Introduction}
 
@@ -1064,7 +1077,7 @@ One user also expressed that it’d be helpful to point out to their software co
 \centering
 %\begin{minipage}{.5\textwidth}
   \centering
-  \includegraphics[width=.9\linewidth]{AS_figures/Graph-Part2/graph-part2-v3.png}
+  \includegraphics[width=.45\linewidth]{AS_figures/Graph-Part2/graph-part2-v3.png}
   \captionof{figure}{Results from Part 2 where users ranked their preferred variations of core interaction attributes.}
   \label{fig:Eval-Part2}
 %\end{minipage}%
@@ -1193,16 +1206,676 @@ While the bulk of the work done by the HCI community has focused on supporting t
 
 \chapter{Building AR Debugging Workbench}
 
+In this chapter, we apply the design principles extracted in the previous chapter to build a prototype spatial computing system for PCB debugging. We call our system \ARDWname: Augmented Reality Debugging Workbench. This chapter was published at ACM UIST 2022 \cite{10.1145/3526113.3545684}. An illustrative video can be found at: \url{https://youtu.be/RbENbf5WIfc}.
+
+\section{Introduction}
+\label{sec:intro}
+
+
+As mentioned before, the increasing ubiquity of technology has been spurred by rapid advances in electronics manufacturing over the past few decades.
+With developments such as surface mount technology (SMT) and integrated circuit (IC) packaging, printed circuit boards (PCBs) have become increasingly dense and complex featuring tens, hundreds, or even thousands of components and double-digit layer counts.
+
+Meanwhile, the tools to support engineers in debugging faulty PCBs during the design phase remain mostly unchanged
+--- engineers probe various nodes on the PCB with test equipment while referencing the schematic and layout diagrams
+to reason about their circuit. 
+
+% During the process of debugging a new PCB design, engineers must constantly move between their schematic, layout, and physical representations in order to validate their design or understand the nature of a design failure\footnote{Some helpful technical background and terminology: The electrical engineering design process typically starts with designing a circuit to meet a set of functional requirements.
+% Using an electronic computer-aided design (ECAD) tool, the logic of the circuit is formalized via schematic capture into a \textit{schematic diagram}, which visualizes the circuit's components as symbols and the circuit's interconnections (\textit{nets}) as topological lines between the components' pins.
+% This logic is then transferred to a \textit{layout diagram}, where components and connections are placed in a physical coordinate space.
+% Finally, the design is then physically fabricated and assembled into a functional PCB, where the components are soldered onto the surface of a fiberglass board with conductive pads, vias, and traces running buried within its layers. For images, see online tutorials on Sparkfun (\url{https://learn.sparkfun.com/tutorials/pcb-basics/all}) or Adafruit (\url{https://learn.adafruit.com/making-pcbs-with-oshpark-and-eagle}).}
+% (Fig. \ref{fig:teaserfigure}).
+% Through current ECAD tools, this can be a time-consuming and error-prone process which typically involves manually following correspondences and nomenclatures
+
+% across different software applications, often using each application’s textual ``find'' command. To locate the corresponding area-of-interest on the board, the engineer must textually match the reference designator against the board’s silkscreen (if printed) or visually pattern match layout representation to the physical PCB, which can become more challenging with dense components or different orientations.
+% As a debugging procedure typically involves tens to hundreds of these correspondences, this procedure can quickly become tedious with the ever-increasing complexity of board designs only exacerbating the challenge.
+
+While the human-computer interaction (HCI) community has mainly focused on supporting makers, prototypers, hobbyists, and students with tools to help support the debugging of low-volume breadboard designs~\cite{Wu2017CurrentViz:Circuits, Strasnick2017Scanalog:Hardware, Kim2019VirtualComponent, Karchemsky2019Heimdall:Projects}, there has been less work toward supporting the workflow of circuit design and development moving towards production~\cite{Khurana2020BeyondProduction}.
+We seek to add to the small but growing area of HCI literature focusing on PCB design \cite{Strasnick2019Pinpoint, Goyal2013BoardLab, Lin2019BeyondTools}.
+Finally, an increasingly globalized supply chain, design outsourcing, and pandemic-normalized remote work have each introduced new challenges in debugging PCB designs collaboratively. 
+
+In the previous chapter, we discussed that electrical engineers are interested in augmented reality (AR) as a paradigm to help reduce the cognitive load, accelerate common tasks within debugging workflows, and enable remote collaboration~\cite{Chatterjee2021AugmentedBoards}.
+% Previous design research has shown that electrical engineers are interested in augmented reality (AR) as a paradigm to help reduce the cognitive load, accelerate common tasks within debugging workflows, and enable remote collaboration~\cite{Chatterjee2021AugmentedBoards}.
+
+
+%AR can be used to form an augmented cross-link between the physical PCB and virtual design files---allowing selection or measurements in a given space to be carried across all representations of the board.
+% \ARDWname is the first system to provide an augmented bidirectional cross-link across schematic, layout, and physical PCB.
+In this work, we build and present \ARDWname~ (Augmented Reality Debugging Workbench), an open-source, end-to-end %prototype
+system that enables cross-linking between virtual design files and the physical PCB via projected AR and tracked test probes.
+{At its core, {\ARDWname} enables \textit{augmented visualization} by facilitating for selections in the design files to be highlighted on the physical PCB, and \textit{augmented interaction} by allowing for selections and measurements on the physical PCBs to be carried to the design files.}
+{In this way, {\ARDWname} is the first system to provide an augmented \textit{bidirectional} cross-link across schematic, layout, and physical PCB.}
+We conduct a study with ten electrical engineers using the tool across a set of board navigation, bring up, and simulated debugging tasks. All participants verified that the reduced context-switching between the PCB and design files allowing for users to more efficiently localize items on the PCB and capture measurements, and making their debugging experience more seamless.
+%made their debugging experience more efficient. 
+%finding that ….
+Finally, building on the user feedback from the user study, we offer design considerations towards producing future AR systems for PCB debugging.
+
+\section{Workflow and System Features}
+\label{sec:workflow}
+\newcommand{\personname}{Kofi}
+\newcommand{\persontwoname}{Deepali}
+
+% \begin{figure*}[t]
+% \centering
+% \begin{subfigure}{.5\textwidth}
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{ARDW_figures/workflow/Workflow_01.png}
+% \end{subfigure}%
+% \begin{subfigure}{.5\textwidth}
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{ARDW_figures/workflow/Workflow_02.png}
+% \end{subfigure}
+% \begin{subfigure}{.5\textwidth}
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{ARDW_figures/workflow/Workflow_03.png}
+% \end{subfigure}%
+% \begin{subfigure}{.5\textwidth}
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{ARDW_figures/workflow/Workflow_04.png}
+% \end{subfigure}
+% \begin{subfigure}{.5\textwidth}
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{ARDW_figures/workflow/Workflow_05.png}
+% \end{subfigure}
+% \begin{subfigure}{.5\textwidth}
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{ARDW_figures/workflow/Workflow_06.png}
+% \end{subfigure}
+% \begin{subfigure}{.5\textwidth}
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{ARDW_figures/workflow/Workflow_07.png}
+% \end{subfigure}\begin{subfigure}{.5\textwidth}
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{ARDW_figures/workflow/Workflow_08.png}
+% \end{subfigure}
+% \caption[short]{A beautiful, well written caption}
+% \end{figure*}
+
+\begin{figure*}
+    \centering
+    \includegraphics[width=0.87\linewidth]{ARDW_figures/workflow/workflow-big.png}
+    \caption{(A) users can bring in their file from KiCAD using \ARDWname's import utility, (B) user manually aligns PCB to projection, (C) user leverages \ARDWname~ to highlight all pin 1s, including the pin on this IC, (D) user employs tracked probe to select components or pins by dwelling on the components, (E) by selecting in any view, such as the board, the item in the schematic and layout are both highlight, (F) when a user specifies a guided measurement in the measurement panel, the probe points are highlighted, the user can take the measurement and it is automatically captured in the measurement panel, (G) selecting an item in the schematic highlights the component on the board allowing users to find the correct item quickly, (H) users can provide guided annotations which are particularly helpful when collaborating with others remotely.}
+    \label{fig:workflow}
+    %\Description{An eight-part figure showing various features of the system. Part A shows a PCB layout editing application with an icon in the toolbar magnified. Part B shows a PCB with every pad highlighted in white. Part C shows a PCB with many pins highlighted in green and a magnified circle showing a tiny, precisely highlighted pin. Part D shows a hand using a multimeter probe to select a small component on a PCB, which is highlighted. Part E shows a PCB with a component highlighted and a schematic with the same component highlighted, with an arrow pointing between them. Part F shows a PCB with some pins highlighted in purple and others in green. The user is taking a measurement with the multimeter probes. The measurement is also recorded in the web interface, together with the measured nets. Part G shows Component R28 selected and highlighted on the PCB as the user takes a measurement on it with the multimeter probes. Part H shows the annotation "Plug 12V DC Barrel Jack" projected next to the board, while the relevant component is highlighted on the PCB and in the schematic.}
+\end{figure*}
+
+
+We introduce the features of \ARDWname~ through an an exemplary PCB development scenario. 
+%To illustrate the capabilities of \ARDWname, we provide an exemplary PCB development scenario.
+{The walk-through illustrates a few common issues electrical engineers may encounter during a typical development scenario and discusses how \ARDWname~can help to assist the electrical engineer in debugging them. Figure {\ref{fig:workflow}} and the video demo}
+({\textcolor{blue}{\url{https://youtu.be/RbENbf5WIfc}}})
+{provide images and clips to help visualize these interactions.}
+{All features discussed in this section are implemented in our system. See section {\ref{sec:implementation}} for full implementation details.}
+
+\personname~ is designing an 8-layer PCB for a microcontroller development kit in KiCAD. The design is in the early Engineering Validation Test (EVT) phase of the hardware development process, where quantities are low, between 50 and 500 units.\footnote{For more information on hardware development and release process see: \url{https://instrumental.com/resources/factory/hardware-engineers-speak-in-code-evt-dvt-pvt-decoded/}} \personname~ and his team have received the shipment of 70 assembled boards from the fabrication house. \personname~ has a \ARDWname~ system installed in his lab's workspace. \ARDWname~ generally mirrors the set up of other workbenches in the lab with a rubberized, anti-static mat on the table surface, a PC, monitor, keyboard, and mouse, and a benchtop digital multimeter; however, it also has a few additional components: a set of eight overhead-mounted tracking cameras and overhead mounted projector (see fig. \ref{fig:set_up}).
+
+\subsection{Loading Design}
+
+To start, \personname~ first exports his design from KiCAD into \ARDWname’s viewer using \ARDWname's import utility, which integrates into KiCAD as a third-party plug-in (see Fig. \ref{fig:workflow}A). The plug-in parses \verb|.svg|s plotted from KiCAD’s schematic editor as well as the netlist files produced during the PCB’s design phase. This loads the schematic sheets and the board’s front and back views into the on-screen interface of the workbench’s monitor.
+By default, the schematic and layout sit side-by-side, however if \personname’s screen real estate is at a premium, it is possible to resize views or just see a single view.
+
+By default, an outline of the board's edge cuts as well as the pads for all components are projected on the anti-static mat on the table surface via the overhead mounted projector.
+\personname~ aligns the board with the projected outline, or, if preferred, attaches stick-on tracking markers to flat areas of the PCB to permit the board to be tracked by the overhead cameras (see Fig. \ref{fig:workflow}B).
+
+\subsection{Visual Inspection}
+
+\personname~ first starts with a manufacturing check on a subset of the delivered boards. \personname~ first seeks to check that the ``Do Not Populate'' (DNP) components are correct.\footnote{also known as ``nostuff'', ``NS'', ``unstuffed'', engineers will instruct the assembly house to omit populating components to disconnect unused sub circuits or provide optionality to modify functionality without a board re-spin}
+He selects the ``DNP'' filter which highlights all components on the board that should not be installed. Typically, \personname~ would need to look between a layout diagram where DNP components are highlighted and board multiple times to ensure that each component is not installed appropriately. On smaller or more mature boards this number can be a handful of components, but on larger or early development designs this may be tens of components. With \ARDWname, \personname~ is able to immediately check the appropriate components are not installed.
+%Often, it is too time consuming to check the inverse by traditional means: that all components meant to be installed are done so. \ARDWname~ can allow for this check as well.
+
+Next, \personname~ looks to confirm the orientation of all functionally-asymmetric components such as electrolytic capacitors, diodes, and ICs, are correct. They select the “Pin 1” filter in \ARDWname~ which highlights the leading pin of each component  (see Fig. \ref{fig:workflow}C). \personname~ ensures the package’s pin 1 marking matches the highlighted pin 1.
+
+Finally, \personname~ performs a visual inspection of the board looking for board damage, anomalous component placement, cold or cracked solder joints, or other manufacturing issues. He finds a tombstoned resistor.\footnote{when a two-pin package only solders on one side causing the other terminal to float above its pad} \personname~ selects the component by placing the tip of his tracked probe on top of it and holding for half a second  (see Fig. \ref{fig:workflow}D). The component is highlighted via projected augmentation as well as in the schematic and layout views indicating selection  (see Fig. \ref{fig:workflow}E). \personname~ can immediately see in the schematic view that the resistor is in series with the enable pin of a critical IC. He can observe in the layout view that the highlighted footprint differs from other adjacent resistors of the same package which likely caused the issue. He re-solders the component by hand, and notes that this incorrect footprint will need to be rectified in the next revision. He cycles through other boards while keeping the resistor highlight on to spot-check that area on other boards, finding the same issue occurring on two other boards.
+
+Without \ARDWname, \personname~ would typically see a fault on the board, such as a tombstoned resistor, and then visually pattern match that area of the board with the layout diagram to determine the damaged component's reference designator (for example, \verb|R238|). He can then use this reference designator or cross-probing to find the corresponding component in the schematic, and determine the component's function. Often small components and dense boards do not include silkscreen with the component's reference designator. With \ARDWname, moving between the representations is accelerated.
+
+\subsection{Bring up}
+
+Next \personname~ performs a bring-up procedure for his boards. During bring-up, engineers typically step through all the major power rails on their boards, first probing for resistance (to ensure no shorts to ground). They then apply power and measure the voltage of each rail to ensure each rail are within an expected voltage bound, often recording their measurements in a prepared spreadsheet. With \ARDWname’s measurement sidebar (Fig. \ref{fig:workflow}F, right), \personname~ pre-loads a set of rails he is interested in measuring, the type of measurement, and optional test bounds. He then clicks “record.” \ARDWname~ starts with his first specified measurement---a voltage measurement between net \verb|VSYS_3V3| and \verb|GND|. The system highlights all the pin locations for the \verb|VSYS_3V3| net in green (the color of the dot tracked under the positive probe) and the pin locations for \verb|GND| in purple (the color of the dot tracked under the negative probe)  (see Fig. \ref{fig:workflow}F). \personname~ can immediately identify the most convenient location to take the measurement. \ARDWname~ is connected to his digital multimeter via the VISA API allowing the system to automatically set the instrument into voltage mode. \personname~ places his probes on the highlighted pads and holds for half a second. The system recognizes the location of the probes to match the currently-specified measurement, captures the voltage, and records it to the debug panel, highlighting if the measurement panel is outside the specified test bounds.
+%The system currently supports DMM measurements, but can be extended to other instruments and functions by using the common SCPI standard.
+The system moves to the next guided measurement panel and displays the next set of measurement pin or net locations.
+We call this mode ``guided measurement.''
+In this manner, \personname~ is able to efficiently move through the set of required measurement test cases.
+
+\subsection{Free-form debugging}
+
+After bring-up, \personname~ finds that a net, \verb|+5V|, is sitting slightly higher than its upper test bound on three of the boards he has tested. He selects one of the faulty boards, and traces the power path to localize the issue. He starts at the barrel jack input, clicking on the jack's positive pin in the schematic. This highlights the corresponding pin on the board. He chooses to record his measurements, selecting the record button in the measurement panel. He uses the system’s probe selection filter, deselecting components and nets, to filter only by pins. This way, when he takes the voltage measurement, the system records the pin name locations and associated measurement. He finds the voltage to match his expectations. He continues down the power path repeating the set of above steps, using the schematic to guide his series of measurements. Finally, he arrives at the output of the 12V-to-5V buck converter IC, noting the higher-than-expected voltage on the output despite the expected voltage on the input. After localizing the issue to the buck converter sub-circuit, he accesses the IC’s datasheet and determines the buck’s feedback network uses a resistor divider to set the output voltage. He removes power from the board, and puts the DMM into resistance mode. Selecting the resistor in the schematic highlights the component on the board  (see Fig. \ref{fig:workflow}G). He probes across the resistor and notes the top resistor in the resistor divider is 5\% lower than its nominal value listed in the schematic. He takes the same measurement across a random sample of boards finding that the faulty boards all have a similar anomaly. He realizes that he mistakenly approved a manufacturer-requested resistor substitution for a ±5\% tolerance component, whereas originally his design called for a ±1\% tolerance part. As opposed to guided measurement described in the previous section, free-form debugging allows for the engineer to perform root causing on-the-fly and for their measurements to be automatically logged.
+
+\subsection{Collaboration}
+
+To validate his hypothesis, ~\personname looks to perform a rework on ten boards and validate that the rail sits within specified test bounds. However, \personname’s rework team sits in a different office. He sends ten boards to the rework team’s office which has an \ARDWname~ system in the rework lab. Traditionally, \personname~ would take a screenshot of his layout and email an annotated image of the rework request to the rework technician, \persontwoname. With \ARDWname, \personname~ instead is able to provide a set of annotated instructions to be projected directly on the PCB  (see Fig. \ref{fig:workflow}H). Additionally, due to \ARDWname’s client-server architecture, \personname~ and \persontwoname~ can share a session, facilitating bidirectional remote collaboration in real-time. While on a call, \personname~ and \persontwoname~ launch a shared session, \personname~ highlights the mis-toleranced resistor by selecting the component on his layout, \persontwoname~ sees the corresponding component highlighted on her board. Observing the board directly, \persontwoname~ sees a tall plastic header next in the vicinity of the resistor, which impedes access with a hot air gun to replace the close-by resistor. Noting the header is non-critical, \personname~ permits the rework engineer to remove the header as necessary. This type of reasoning about the physical board can be performed quickly with a shared \ARDWname session, whereas such a realization and discussion might take multiple exchanges if sharing only 2D screenshots of the board as it typically done.
+
+\personname~ prepares a set of annotated instructions for \persontwoname~ to validate the fix, following the rework. Some instructions, like plugging in power to the DC barrel jack or toggling a specific switch on the board are associated with a component, while some instructions like specifying a guided measurement between the buck IC’s output pin and ground are associated with pin locations. As \persontwoname~ performs the rework, \ARDWname~ projects the steps sequentially on the board reducing ambiguity and the chance for error. When they perform the specified measurement, that measurement is automatically captured and can be exported to a log to share with \personname. This function helps the design electrical engineer to delegate repetitive validation procedures to others.
+
+
+% \newcounter{ARDWquoteCounter}\stepcounter{ARDWquoteCounter}
+% \newcommand{\ARDWquotelabel}{Q\arabic{ARDWquoteCounter}\stepcounter{ARDWquoteCounter}}
+
+\section{Evaluation}
+\label{sec:study}
+
+To evaluate \ARDWname, we conducted a three-part user study with 10 electrical engineers. We derive the tasks within each part from common electrical engineering debugging workflows. In each section, we introduce new features of the system to the participant. In the design of the evaluation, we seek to strike a balance between structured usability testing with guided tasks and qualitative free-form exploration, to avoid the pitfalls premature usability testing can bring\cite{Greenberg2008UsabilityTime}. For qualitative feedback,
+we analyzed their responses via thematic analysis \cite{Braun2006UsingPsychology}, first transcribing the interviews, then coding recurring themes, and finally noting outliers from the norm.
+In part 1, we examine \ARDWname's effect on navigation between the board and design files. In part 2, we collect feedback on \ARDWname's use for PCB bring-up. In part 3, we gather participant's thoughts as they use \ARDWname~ in a set of free-form debugging tasks.
+
+%We performed three focused studies to evaluate the performance and usefulness of \ARDWname. We tried to replicate the most frequent bugs during the debugging process and designed each of the studies to focus specifically on those bugs. 
+
+
+\begin{table*}
+\vspace{0.1cm}
+\caption{Recruited participant backgrounds and expertise.}
+\resizebox{1\textwidth}{!}{%
+\begin{tabular}{
+|p{0.5cm}|p{1.3cm}|p{5.3cm}|p{3.2cm}|p{5cm}| }
+\hline
+% \multicolumn{4}{ |c| }{} \\
+% \hline
+ & \textbf{Field} & \textbf{Experience} & \textbf{Primary Tool} & \textbf{Designs}\\ \hline
+\textbf{P1} & Industry & Design, Release, Functional check & Siemens PADS & Two-layer, large amplifier designs; High layer-count, high-speed PCBs such as PCIE and graphics cards \\ \hline
+\textbf{P2} & Industry, Academia & Design, Release, Assembly, Functional check& Altium Designer, Eagle & Embedded firmware/hardware\\ \hline
+\textbf{P3} & Industry & Design, Release, Functional check & Altium Designer, KiCAD & FPGA board; Embedded systems\\ \hline
+\textbf{P4} & Industry, Hobby & Design, Release, Assembly, Functional check & KiCAD & Rework technician in industry; simple 2-layer sensing designs \\ \hline
+\textbf{P5} & Academia & Design, Release, Functional check & KiCAD & Small, low power board for communication\ \\ \hline
+\textbf{P6} & Industry & Design, Release, Engineering validation, Mass production & Altium Designer, KiCAD, Nexus & Small, high frequency signal board; Complex mixed signal\\ \hline
+\textbf{P7} & Academia & Design, Release, Functional check & KiCAD & Small, single layer FPC for robotics\\ \hline
+\textbf{P8} & Industry & Design, Release, Engineering validation, Mass production & Cadence, AutoCAD & FPC (2-3 layers, mixed signal); High-layer count, HDI motherboards with SoC, UFS, DDR memory; Power design \\ \hline
+\textbf{P9} & Academia & Design, Release, Engineering validation & Altium Designer & Control board for robotic arm\\ \hline
+\textbf{P10} & Academia & Design, Release, Assembly, Functional check & AutoCAD, DXF format & Sensing board for miniature robots \\ \hline
+\end{tabular}
+}
+\label{tab:participants}
+\end{table*}
+
+
+\subsection{Participants and Procedure}
+We recruited 10 participants who hold electrical engineering roles in academic labs and/or industry. During our selection period, we confirmed that all of our participants regularly design and debug PCB designs. Participants' reported design focuses spanned from small, low power boards to FPGAs and complex mixed signal boards. A comprehensive list of their experience can be found in Table ~\ref{tab:participants}.
+Each study took between 60 and 70 minutes for a total of ~11 hours of feedback, and participants were compensated for their time.
+{Prior to the study, we ran a pilot participant to determine default settings to use such as hitbox size at appropriate study length. In the study, board tracking was not enabled.}
+
+%We conducted in-person concept evaluation and usability testing interviews. Each interview lasted approximately 1hour and consisted of 3 main parts:
+
+\subsubsection{Procedure of Task 1: Navigation}
+We first introduced participants to the system by pointing out major interface components and demonstrating selection mode using the probe. To familiarize participants with selection mode, we presented a navigation task. Electrical engineers frequently navigate between their schematic, layout, and board during a debugging task\cite{Chatterjee2021AugmentedBoards}. Mirroring the evaluation in Augmented Silkscreen\cite{Chatterjee2021AugmentedBoards}, Task 1 was split into two timed sub-tasks: (1a) Finding a component on the board given a target in the design files, and (1b) Finding a component in the design files given a target on the board.
+For Task 1a, a target component was highlighted in the design files of the Arduino Uno R3.\footnote{\url{https://store-usa.arduino.cc/products/arduino-uno-rev3}} Participants selected the corresponding component on the Arduino board with their probe to indicate they found the component. A sound signalled success or failure. Participants could re-select if their first selection was incorrect. With augmented cross-linking enabled, the target component was highlighted on the board as well. In the control, only the schematic and layout were cross-linked as in standard ECAD tools.
+For Task 1b, a target component was highlighted on the board and the participant selected the corresponding component in the schematic or layout.
+For each sub-task, participants were presented with 20 randomized component selections: 10 with augmented cross-linking, and 10 without augmented cross-linking.
+%Users selected 10 random components across the board in each condition.
+The order of presented conditions was counterbalanced across participants.
+The component selection filter was enabled across all tasks and conditions.
+In addition to timing the tasks, we collected qualitative feedback, first confirming whether the task featured in their own workflow and then using prompting questions such as ``Would you find \ARDWname~ to be helpful, not helpful, or have no effect on your workflow?'' and ``What aspects did you like and not like about using the system for this task?''
+%We allowed users to provide their first impressions using prompting questions like "Does this qu
+Finally, we recorded Likert scores for the question ``For this task, how useful would \ARDWname~ be in your workflow?''
+
+%For task 1a, 20 components are highlighted, one by one, on the layout and schematic views on the monitor. For 10 of these components, the projected display will highlight the component on the board, while for another 10 components, there’ll be no augmentation. For task 1b, 20 components are highlighted on the projected display. participants will have to select 10 components using the probe by interacting directly with the PCB while for the other 10 components, participants will have to use the mouse to select the corresponding components from either the schematic or layout view. Participants are given 5 practice components before the start of every 10 components they have to select. The amount of time to perform each selection is recorded.
+
+\begin{figure*}
+    \centering
+    \includegraphics[width=1\linewidth]{ARDW_figures/Study-1/task-1.pdf}
+    \caption{The timing distribution and subjective scoring for Task 1a (Find on board) and Task 1b (Find on schematic). In Task 1a, participants
+performed faster with augmentation than without, while in Task 1b, participants performed similarly in both conditions.}
+    \label{fig:Eval-Part1}
+    %\Description{A figure with four graphs in a 2x2 grid. The columns are Time Distribution, which has violin plots, and Qualitative Feedback, which has Likert visualizations. The first row is Task 1a: Find on board. The violin plot is a dual plot showing the time distributions with and without augmentation. With augmentation has a relatively normal distribution with a median around 2.75 seconds, while without augmentation has a clearly shifted distribution with a median around 3.75 seconds and a longer tail extending past 7.5 seconds. The Likert plot shows all but one user rating augmentation as more useful than without for this task (higher than 4 on the 7 point scale), with a median rating of 5.75 and four of 10 participants rating it 7 out of 7. The second row is Task 1b: Find on schematic. The violin plot again shows the time distributions with and without augmentation. This time, both distributions are relatively normal and have similar medians at approximately 2.5 seconds, but the distribution for without augmentation is wider, with more data points on both extremes. The Likert plot shows the ratings range from 3 (less useful than without augmentation) to 7 (much more useful than without augmentation), with a median of 6 and four of 10 participants rating it a 7 out of 7.}
+\end{figure*}
+
+
+\subsubsection{Procedure of Part 2: Bring Up}
+Next, to introduce participants to measurement mode,
+the search bar, and multi-page schematics,
+participants performed a board bring-up task on the Arduino Due\footnote{\url{https://store.arduino.cc/products/arduino-due}}. We loaded a set of seven voltage rail measurements into the measurement panel. Participants first stepped through the measurements without the augmented cross-linking as a basis of comparison. Then we enabled probe tracking and board augmentation in measurement mode, and participants repeated the same measurement procedure. 
+We recorded their general qualitative feedback, prompting them with the same questions as mentioned in Task 1, and then recorded Likert scores for the questions ``For this task, how easy was the procedure with and without \ARDWname?'' and ``What was your confidence in executing the task with and without \ARDWname?''
+%They typically used the search bar to identify the locaiton of the net's probe point in the  
+
+%Task 2 is a bring up task. Participants have to take 7 measurements first without using the system, and then take measurements for the same 7 measurements using the system. Data that we collected in this selection was purely qualitative. In order to keep the length of the interview under an hour, participants typically only took 3 to 4 measurements without using the system to allow them to have a basis of comparison for discussions after.
+
+\subsubsection{Procedure of Part 3: Debugging}
+Finally, we introduced the selection filter and demonstrated how to move between selection and measurement mode. Task 3 consisted of four free-form debugging tasks. We introduced errors into four different PCBs to represent a range of possible errors. For the Arduino Due, we soldered an incorrect feedback resistor in a buck network, causing the \verb|+5V| rail to sit high (a fault they discovered while performing bring-up in Task 2). For the Arduino Uno, a diode near the power input was placed in reverse polarity. For the Sparkfun RedBoard\footnote{\url{https://www.sparkfun.com/products/13975}}, a mis-sized current-limiting resistor caused the power LED to be dimmer than expected. Finally, for the Sparkfun Sound Detector\footnote{\url{https://www.sparkfun.com/products/12642}}, an incorrectly biased op-amp network resulted in a clipped audio stream (as visualized on an adjacent oscilloscope).
+Each participant debugged two of the boards with \ARDWname~ and two without augmented cross-linking with order balanced via Latin square.
+Because of the unconstrained nature of this task, we pursued a qualitative coding approach.
+We encouraged participants to think aloud~\cite{Lewis1982UsingDesign}, and then asked a set of questions covering their overall impression of the system, limitations, wish-list items, and practical considerations. 
+
+%Task 3 is a free form debugging task. There are four different PCBs — Arduino Uno, Arduino Due, SparkFun RedBoard, and SparkFun Sound Detector. Each participant is tasked to debug and find the issue of the board. They would debug two of these boards without the aid of the system, and two of these boards with the system.
+
+\subsection{Findings}
+\subsubsection{Findings for Task 1: Navigation}
+
+This initial task was the first time all participants interacted with the system.
+Participants' first impressions were that of excitement, especially after seeing the components first light up on the board in front of them.
+%quote? Wow that's cool, somehting like that
+
+The timing distribution and subjective scoring for Task 1a (\textit{Find on Board}) and Task 1b (\textit{Find in Design Files}) are presented in Figure \ref{fig:Eval-Part1}. Shapiro-Wilk tests indicated all data was not normally distributed (p<0.001), so we used the Wilcoxon signed rank test to compare timings with and without augmentation. For Task 1a, participants performed faster with augmentation (Mdn=2.742) than without augmentation (Mdn=3.730). A Wilcoxon signed rank test indicated that this difference was statistically significant (p<0.001, effect size r=1.537>0.5, large effect). For Task 1b, participants had a similar performance with augmentation (Mdn=2.436) as without augmentation (Mdn=2.790). A Wilcoxon signed rank test indicated that there was no statistically significant difference (p=0.228, effect size r=0.381>0.3, medium effect).
+
+Qualitative rating indicated generally positive sentiments about the usefulness of system in board navigation tasks with \ARDWname-enabled augmentations compared to the baseline case in both tasks. The high ratings were generally driven by \ARDWname's ability to reduce context-switching.
+%Another observation we made was that most of our participants would only look at the projected display to select items during this task.
+Nine out of 10 participants mentioned that interacting with the projected augmentation reduced their mental effort to select or locate components, with six of the 10 participants mentioning the projection made it faster to select components.
+Additionally, a few participants mentioned that \ARDWname~ reduces the chances to make mistakes. Five of our 10 participants mentioned that \ARDWname's cross-linking functionality reduced the need to divide attention across multiple representations or tools. ``It highlights things [that I’m looking for] and I know where to go, so it really reduces the amount of time that I need to go back and forth, and dealing with a 3rd item [the mouse]''~(P2,~\sharcHere{q:third_item}). ``Like, it would be nice to never have to pull up a board [layout] file, and then only click on a schematic and then, bam!, it shows me where it is on the board. You could eliminate half of the screen. That would be great''~(P8,~\sharcHere{q:eliminate}).
+
+Participants generally felt that the larger and denser the board, the more useful the cross-navigation representation would be. 
+``This would be really helpful, I can see that for larger boards this is more helpful, and for smaller boards with smaller components it is extremely helpful. I have had cases with 0603 resistors, and in those cases, it would really help me to find those components''~(P2,~\sharcHere{q:0603}). For larger, distinctive components the benefit of augmentation is less realized. ``I’ll use it all the time for smaller components, but for larger components, by eyes is faster''~(P1,~\sharcHere{q:eyes}).
+
+All participants picked up the probe selection mechanism quickly in the practice rounds for Task 1. 
+However, in observing the selection behaviors of our participants, we noticed a split between participants touching down on the component versus hovering a few millimeters above components to select. While for some, contact with the component confirmed they were selecting an item, others found it could sometimes slightly shift the board resulting in augmentation misalignment.
+%This first task was the first time that all participants interacted with our custom system, as such many of them had familiarize themselves with the system. Through observation, we noticed that selection of components using the probe were done either at a distance or touch the component itself.
+%A few participants expressed concern about how they were probing the PCB.
+For example, one participant mentioned ``[from] my understanding you kind of want to not necessarily tip off the thing [and shift the board], but you want [the projected dot visible under the probe tip] to be on component... you don't really have to touch it, right?''~(P4,~\sharcHere{q:hover}).
+%"Like innately, oh, my selection process would be to actually tap the component selected. Yeah. Whereas in this case, even if you hover over it, it selects it. Yep. So I think that's kind of just an adjustment.”
+The board shifting from the augmented projection was the main source frustration expressed by nearly all participants.
+This caused their selection to be less precise, slowing their ability to get into the component's hitbox with the probe and decreasing their confidence in the system.
+``The only pain in the butt is just applying pressure to the board, the board rocks, so you're naturally going to get misaligned''~(P8,~\sharcHere{q:boardrocks}).
+``Due to the not perfect alignment... I'm definitely towards less confident [because] I have to have the same double check as without augmentation''~(P2,~\sharcHere{q:doublecheck}).
+This was most evident for participant P3. A tracking camera had been bumped prior to their study, resulting in poor alignment between the probe's reported and actual position. The probe tracking's imprecision made tasks extremely tedious, causing frequent mis-selections (resulting in the lowest data point in both qualitative rating scales).
+
+On the other hand, a number of participants appreciated the directness of interaction afforded by selecting with the probe.
+``I can go there [tap on the component] directly and get the link to the data sheet''~(P2,~\sharcHere{q:tapsheet}).
+% “I think it's helpful. If i could designated a part and can highlight it on the projection. Its on the schematic but its hard to see. Ability to quickly “what is that” and i can get it on a monitor right infront of me is cool”
+% “I definitely like the backwards from board into schematic better, because then if I'm looking something where the heck is this, and then I just [find] it right there. And that's really useful.”
+% Super helpful, if it highlights [the component] directly [and] quicker, i can look at the data sheet quicker”
+
+
+
+%This ability to make direct selections on the projected display was well-received by participants. 9 out of 10 participants mentioned that interacting with the projected augmentation reduced their effort to select or locate components. 6 of the 10 participants said the projection made it faster to select components. While projection is preferred to be sharp and precise, participants already appreciated that the highlights guided them to the general vicinity of the component they are looking for. This already saves them time and energy. Additionally, a few participants mentioned that this project reduces the chances to make mistakes. 
+
+%However, a few of our participants experienced some frustrations with the projection and/or accidentally shifted the PCB during the task. We found that the alignment of the PCB with the projection is directly related to the ability to use the system, which is directly related to their level of confidence. Generally, participants want to make sure that the projection is aligned to the PCB because misalignment directly impacts their ability to use the system. There’s no clear consensus when participants are asked to describe their set up. It is split between tracking the PCB or mounting the PCB in place. There were also counterarguments against both of them. One participant mentioned that the PCB would still move on its edges when probed, if its not flat. Another participant mentioned that it’ll require more steps to flip the PCB if it is mounted in place.
+
+
+%%------
+%“But yeah, definitely concerned with resolution, because I think most of the most of the stuff that we do is either just denser or smaller.”
+% “This last one was so small it highlighted both of them”
+% “I think that's the only thing is like, so these two components here, yep. They were very close. So it'll be hard to distinguish which one?”
+% “I think I would use it depending on the complexity of the PCB I'm looking at, okay, for example, like, especially, like, I'd say this one is like, the more on the like, yeah, like, there's, you're definitely gonna need more. For example, like in the thing I designed, like, there's a lot less stuff on the way. And so like, I think it's a lot less useful when I can just notice it. Whereas for this one, like, when I look at this, it's a little overwhelming, right? So like tracking is a lot harder. So but so the more complex the PCB, the more useful this becomes. And so I think there's definitely like a level to which once it reaches that level, I'd want to have this”
+% “But yeah, definitely concerned with resolution, because I think most of the most of the stuff that we do is either just denser or smaller.”
+% “This is great for these like larger components, but anything fine pitch, it seems like it could be a little bit concerning because even like when I tried to highlight the one pin…it was like a little bit hard to differentiate that from others and especially like a little bit of wobble and it's a pin off.”
+
+\subsubsection{Findings for Task 2: Bring Up}
+
+\begin{figure*}
+    \centering
+    \includegraphics[width=.95\linewidth]{ARDW_figures/Study-2/task-2.pdf}
+    \caption{Participant rating from task 2 for ease and confidence.}
+    \label{fig:Eval-Part2}
+    %\Description{Two Likert rating plots. The first plot is titled Ease, with a 7-point scale from Very Difficult to Very Easy. With augmentation, the median rating is 6 out of 7, with four out of 10 participants rating ease 7 out of 7 and only one below neutral. Without augmentation, the median rating is 3.5 out of 7 and only two participants above neutral. The second plot is titled Confidence, with a 7-point scale from Not Confident to Very Confident. With augmentation, the median rating is 6 out of 7, with three participants rating it 7 out of 7 and only one participant below neutral. Without augmentation, the median rating is 4.33 out of 7 and the ratings are roughly evenly distributed between 2 and 6.}
+\end{figure*}
+
+Many of the same findings that we learned from Task 1 (Navigation) held true for this bring-up task as well.
+
+In the bring-up scenario, the benefit of reduced context switching was even more noticeable. In the condition without augmentation, participants would typically have to reference the list of required measurements at least once and the design files at least twice for every single measurement to find appropriate probe points for their positive and negative probes. When a probe point proved too small or difficult to access, this back-and-forth multiplied as participants returned to the design files to identify another suitable point. With augmentation, participants' area of interaction consistently remained on the board. While we did not explicitly record times for the task, as we asked participants to think aloud, they agreed that they were much faster with the augmented measurement. 
+%typically users took a several minutes to complete a three or four bring-up measurements without augmentation
+%(often cut short from completing entire measurement list to keep the interview within an hour)
+%and less than two minutes complete all seven measurements with augmentation.
+Participants generally found augmentation to make bring-up easier and were more confident in performing bring-up (see Fig. \ref{fig:Eval-Part2}). 
+% Do we got a quote here??
+``[It's] much better with the AR assistant because one, it highlights where the net is with the color code, you don’t need to find net then pin, and two, voltages are automatically loaded into the spread sheet''~(P1,~\sharcHere{q:muchbetterar}).
+
+%There is a general concern with how the get the PCB and the projections aligned because misalignment affects the confidence and time spent on the task.
+However, all participants were again challenged by imprecision in probing due to movement of the PCB, exacerbated by three factors: participants used both the positive and negative probes to take measurements, applying force ensure good contact; the board was connected to power via its DC barrel jack and the wire could tug on the board; and the pins on the Arduino Due were a relatively smaller target than the components on the simpler Arduino Uno.
+
+%In this task, the board was connected to a barrel jack for power. This additional wire caused the PCB to move pretty often during the bring up procedures and more than half the participants expressed frustrations over the difficult to keep the items aligned (because it directly affects their ability to take the measurements they want). 
+
+The smaller augmentation targets also created additional challenges on the precision of the projected highlight as well. Four out of 10 participants also mentioned that the highlight was not precise enough and that the highlights on multiple adjacent fine pitch pins blurred together, therefore reducing their confidence of what to probe for the corresponding measurement.
+``But yeah, definitely concerned with resolution, because I think most of the stuff that we do is either just denser or smaller''~(P8,~\sharcHere{q:concerned_resolution}).
+``This last one was so small it highlighted both of them''~(P4,~\sharcHere{q:smallboth}).
+One participant mentioned that they would still prefer using a system that is slightly mis-calibrated over having to constantly switch between using probes and mouse. ``The augmentation made it easier to probe, [but] when you are probing it, it does shift away. And [the projection] doesn't move with it. That's kind of annoying, but that's still better than having to remove your hands from the probe to find it. So I think it is better in terms of efficiency''~(P5,~\sharcHere{q:removeyourhands}).
+Additionally, because of the number of targets highlighted in the bring up task, especially with all the pins associated with the \verb|GND| net, four participants indicated the board was overpopulated with highlights, making the probe points more difficult to discern because of the relative brightness and busyness of the projections.
+``It's mostly just because there's so many things being highlighted. Versus [when] I'm just trying to look for a component, it's just highlighting one thing... dealing with smaller things it gets a little busy''~(P2,~\sharcHere{q:somanythings}).
+``It messes with how I see it''~(P9,~\sharcHere{q:messesit}).
+These participants indicated that they would like the option to turn off the \verb|GND| highlight since they would often solder a separate lead or have a dedicated test point.
+Following the study, we added a toggle to turn off the highlight for \verb|GND|.
+
+%Six of our 10 participants all agreed that this augmentation still reduced the overall effort required to find components. 2 of them pointed out that this will be especially helpful if someone is seeing the board for the first time, while 1 participant mentioned that it’ll reduce the chance for making an error. However, consensus for usefulness on the augmentations projected directly on the PCB are mixed for the bring up task. Contrary to the positive feedback from the participants for Task 1 (Navigation), 4 participants mentioned that the board was overpopulated with highlights, which becomes a distraction. Furthermore, two participants mentioned that they usually keep one probe on the GND throughout the bring up task, and therefore highlighting more GND pins is a distraction.
+
+While most participants indicated that this feature would be useful in their own workflow, it is also worth noting that four of the 10 participants mentioned that this bring-up feature (and more generally the pre-specified measurement feature) is not useful because they do not perform bring-up tasks in a fixed sequence, instead performing their net selection on-the-fly. The split in opinion was divided by complexity of the design they usually worked with: these participants generally focused on miniature low-net count designs, while two other participants who work in industry on more complex designs acknowledged the benefits of having the measurements automatically recorded.
+
+%However, one of them mentioned that technicians in his company go through this flow and 3 of the 10 participants mentioned that they do bring up tasks in sequence as part of their work flow. Two other participants acknowledged the benefits of having measurements automatically recorded.
+
+\subsubsection{Findings for Task 3: Free Form Debugging}
+The process of debugging again required the participants to cross-reference between the layout/schematic and the PCB. We observed that the findings from the two previous tasks are a common thread through Task 3 as well. 
+Notably, the benefits of \ARDWname~ in highlighting when locating the components were again resonated from all 10 participants in this task. Of which, five of them mentioned that it reduced the amount of effort required. For the Sound Detector board, the power cord caused the typical orientaiton of the board on the table to rotated from that of the layout. Three participants specifically mentioned that the augmentation was particularly helpful in this case. ``Augmentation [was] helpful...like a split second improvement because [the layout view] is flipped from the way this [sound detector] is wired up. Like I had to do a little bit of mental gymnastics... especially because, again, it's a board without silkscreen labels, so yeah, the augmentation helped for that''~(P6,~\sharcHere{q:orientation}). ``Here's a much more compelling case because it's not laid out in the right direction, so I'm doing these transformations in my head to be like, which side of it is that on?  And the [augmentation] would answer that immediately for me without any room for error, so that's cool''~(P3,~\sharcHere{q:transformations}).
+
+
+The movement of the PCB which resulted in imprecision in probing was again echoed by almost all participants.
+Some of participants taped down the PCBs on to the mat, which resulted in a smoother experience: ``If there was maybe, along with the augmentation setup, some kind of way to stick the board to one spot, that would be more practical''~(P7,~\sharcHere{q:stickonespot}).
+
+
+ 
+% Furthermore, through observation, we noticed that without \ARDWname, participants are constantly divided between the monitor, projected display and the digital multimeter. %Again, in task 3, the concerns around the calibration of the system and the movement of the PCB, which affects alignment was expressed by at least 4 of our 10 participants.
+
+Participants’ level of expertise and field of work influenced their perspective on how useful this system is for them. Most participants agreed that the feature to locate components using the augmented projection is helpful, especially for larger and/or denser boards with smaller components. However, participants' definition of what is a dense or large board depended on their current level of experience. It was generally agreed that this system is most particularly useful when they are interacting with new PCBs. ``It makes it so effortless... it's not like it takes that much effort to find something, but it reduces it to like, absolute zero. ''~(P9,~\sharcHere{q:finding}). ``This is definitely a good tool for if you're debugging a PCB you're not familiar with''~(P6,~\sharcHere{q:new}).
+
+%All our 10 participants gave feedback that the highlighting of components provided by the augmentation was beneficial when locating components. Of which, 5 of them specifically mentioning that it reduced the amount of effort required. 3 participants specifically mentioned that the augmentation was particularly helpful because the orientation of the PCB and the layout/schematic were different. P06 said “ [the] augmentation [was] helpful...like a split second improvement because [the layout view] is flipped from the way this [sound detector] is wired up. Like I had to do a little bit of mental gymnastics like okay, this is this and this especially because, again, it's a board without silkscreen labels so yeah, the organization helped for that.” P03 also shared similar sentiments — “here's a much more compelling case because it's not laid out in the right direction. So I'm doing these like transformations in my head to be like, is that which side of it is that on?  And the light would cancel that immediately for me about any room for error so that's cool.”
+
+%Three of our 10 participants mentioned that they wanted the system to do more for them. P2, P3, and P4 suggested for the projection to be even more specific, and highlight which side of the component (e.g. diode) to probe using the corresponding color probe. P2 and P5 felt that the system can project traces so that they can more easily probe components along that trace to debug the issue at hand. ``Let's say you find something wrong. Then you can be like, test this now. And then if it generates [a list] — where do you want to start? And how far do you want to go? I want to start here taking and then generate stuff listed in here''~(P5,~\sharcHere{q:specific}).
+
+We noticed that only a small amount of participants used the disambiguation menu during their debugging process. Initially, participants would use the menu to differentiate between pins and components, but as the debugging process continued, the participants primarily used the selection filter.
+
+
+
+% %Additionally, expanding on the above related works and our own engineering background, we offered a few speculative concepts of the potential solutions that would be integrated into a debugging process.
+
+% %OLD STUFF BELOW HERE
+% \begin{placeholder}
+%  We conducted remote semi-structured interviews with the participants. Each of the interviews lasted for about 1 hour and consisted of 3 main parts:
+% \begin {enumerate}
+% \item We asked the participants about their current debugging flow, strategies, common pain-points, and needs.
+% \item We solicited feedback on initial speculative design concepts that we described using sketches and hypothetical use-cases. Participant were also invited to share any functionality or interactions they were missing in the currently existing tools.
+% \item We asked them whether collaboration was important in their day-to-day work. When relevant, we specifically asked about how the information is transferred when more than one person is involved in the workflow.
+% \end {enumerate}
+% %We conducted remote, semi-structured interviews with the participants. Each interview lasted approximately one hour. We asked them to describe their debugging workflow, tool chain, strategies, common pain-points, and needs.
+% We supplemented the interview data with our own professional experience debugging PCB in both industry and academic institutions.
+% We analyzed their responses via thematic analysis \cite{Braun2006UsingPsychology}, first transcribing the interviews, then coding recurring themes, and finally noting outliers from the norm.
+
+
+% %do not include what's below
+% % \subsection{Qualitative data analysis}
+% % To analyze data from interviews, we used thematic analysis \cite{Braun2006UsingPsychology}. After transcribing interviews, we coded important parts of it. Then we grouped codes into categories which informed main topics of the study.
+
+
+% \subsection{Findings}
+% \label{subsec:PrestudyFindings}
+% From our participants' responses in the interviews, we extracted four sub-tasks that constitute a framework for localizing errors during debugging:
+% \begin{enumerate}
+
+% \item Perform a visual inspection, measure output one sub-section at a time, and compare to expected values
+% \item Identify an anomalous measurement and hypothesize fault causes, such as defects in design or processing
+% \item Examine potentially contributing elements and make localized measurements to test hypotheses
+% \item Compare real measurements to expected values derived from schematics, layouts and datasheets
+% %\item If appropriate rework elements (components, connections, FW, etc.) to match intended function
+% \end{enumerate}
+
+% Most of our participants alluded to the challenges of context switching and information logging while debugging a PCB.
+% % In the debugging process, the challenges of context switching and information logging were shared by most participants.
+% They raised concerns about referencing a large set of information sources during debugging~(on their computer monitor or sometimes printed paper: schematics, layouts, datasheets, bills of materials, emails; on their workbench: instrument measurements, PCBs) and the frequency with which they moved between these items:
+% % Because they reference a diverse set of information sources (datasheets, schematics, layout, instrument measurements, PCB, BOM, emails, etc.), the participants expressed they moved between these items with frequency between once a minute and multiple times a minute:
+% \textit{``Very often, maybe multiple times per minute''}~(P1, Quote \sharcHere{q:context_switch1}).
+% %\stepcounter{sharc}
+% %~\sharcHere{q:context_switch1}).
+% \textit{``I would say almost constantly until I get to fab C or D''}~(P2, \sharcHere{q:context_switch2}).
+% \textit{``I would say at least multiple times a minute I'd switch back and forth.''}~(P7,~\sharcHere{q:context_switch3}).
+% \textit{``Gotta go back and forth and each time you go back and forth you add more information to your schematic, and eventually find a value that doesn't line up... Probably five or six times a minute''}~(P8,~\sharcHere{q:context_switch4}).
+
+% Participants stated the information they cross-referenced most often in this process included component reference designators~(toward the task of component localization), component values, pin or net locations (for the purpose of determining where to probe), net connectivity, measured values from instruments, IC pin assignments, and IC orientations.
+
+% The challenge of component localization was not shared by one participant who pointed out that, in doing the end-to-end PCB design process, she was able to memorize all of the components of the design.
+% In addition, due to the high voltage nature of her work, her circuits generally included fewer but larger components than the other participants typically worked with, allowing her to include reference information on the silkscreen of her fabricated PCB.
+% % Because she was worked with a high voltage research design with lower components counts and larger components, she noted that she was able to include referential silkscreen on her fabricated PCB.  
+% \textit{``I made the PCB. I verified that my design works in a PCM simulation; I mean I never had a situation where I couldn't find my component [from memory]''}~(P4,~\sharcHere{q:no_context_switch1}). Another participant also expressed a similar sentiment \textit{``I have it memorized''}~(P5,~\sharcHere{q:no_context_switch2}).
+% Both noted that confirming orientation and pin assignments, as well as localizing small components on complex boards still pose a challenge for localization.
+% %“So I know inside and out, I have it memorized, I got every part” -P5
+% %that being said, some users did not share this fact but did not share the experience as a pain point, citing (1) the component count on their board was low enough that they had the board me 
+% Participants expressed interest in having component, pin, or net metadata within their view of their board, but looked to avoid interference: \textit{``Yeah, that would be really helpful as long as it didn't interfere with my ability to see the PCB.''}~(P8,~\sharcHere{q:show_relevant_md1}).
+% \textit{``I usually like having two scenes. Like sometimes I don't want the information... just want to know the reference designator... but then sometimes if I'm debugging, like show me that info that I need: [lists various metadata categories].''}~(P5,~\sharcHere{q:show_relevant_md2}).
+
+% Finally, participants cited other explicit processes where they felt their software and design tools fell short:
+
+% \textbf{Assembly:} While not all users assembled their own boards, those that did expressed frustration in matching the ordered components to the correct location and orientation on the PCB. \begin{quote}
+%     ``So you have to have a separate BOM that you make yourself, like an Excel document or a Google document. I'd have that, the schematic, and I have the layout up on my laptop so I'd be switching back and forth between all of them, trying to figure out where each component went. it was not fun.''~(P7,~\sharcHere{q:assembly})
+% \end{quote}
+
+% \textbf{Measurement:} The need to localize probe points, trace net connections, and log measurements were shared as common pain points. \begin{quote}
+%     ``It's typically just like you look down at the board you make a measurement, you know, you might have a Google Doc with your testing records in it or something that you're documenting as you go.''~(P8,~\sharcHere{q:measurement})
+% \end{quote}
+
+% \textbf{Bring-up:} Before green-lighting an entire production run, the bring-up process is followed after completing the first board assembly: 1.~visual inspection, 2.~confirm correct component stuffing, 3.~confirm correct pin one locations~(an indicator for verifying orientation), 4.~perform open/short test on all voltage rails, 5.~apply power with current-limited supply, 6.~check each voltage rails for correct level, 7.~perform functional sub-system checks. Some users resorted to general purpose software to prepare customized views ahead of time. \begin{quote}
+%     ``What I'll do is [that] I'll have a premade PowerPoint deck, and I have everything I need with all the steps and all the images I need, tables that I can fill in. So I'll, you know, identify all the pin one locations and what's stuffed and not stuffed with the picture that I make ahead of time.''~(P7,~\sharcHere{q:bringup})
+% \end{quote}
+
+% \textbf{Collaboration:} A more frequent occurrence as a result of the recent COVID-19 pandemic, a handful of participants felt that working with collaborators who were less familiar with their own design, tackling a new developer kit, or approaching someone else's design posed new challenges.
+% %
+% \begin{quote}
+%     ``I'm actually going to pass this design to this other engineer who's going to get some of those boards, who's not familiar with the design and I think for someone that's, you know, not familiar with the design [who] is trying to do like bring up, that would be extremely helpful to go or like look at a part or touch part with a stylus and have it pull its datasheet and point it to like, where it is on the layout and schematic... Yeah I think it's kind of brutal with what we do at [redacted], which is now, there'll be like a rework for [the technicians], and we'll have to like manually label. We have to take a picture of the layout, and then bring it into like some type of editing tool like PowerPoint and then like add arrows to the points that we want to probe... it's like we're passing back like a billion, like little like pictures, and you have to like talk on the phone a lot about it.''~(P5,~\sharcHere{q:collaboration})
+% \end{quote}
+
+% Two industry engineers shared that communicating with technical staff from the fabrication house was sometimes challenging as often these technicians who actually fabricated, reworked and tested the boards were not familiar with the design itself.
+% %For those who had to debug boards with multiple groups of people, they cited checklist, sessions, and version control were the main challenges.
+% In these situations, engineers usually turned to printed materials, annotated images, or emailed presentations to communicate their design intent.
+
+% % Several participants also worked on the same project with a different groups of people. That created multiple pain points, especially when a person was not very familiar with the design. For example, communicating with technical staff from warehouse was sometimes challenging as usually these people who actually fabricated the boards were not familiar with the design itself. For those who had to debug boards with multiple people, checklist, sessions, and version control were the main challenges. Since there is no optimized way to do that, people mostly used things like printed materials or presentations to communicate those problems.
+
+% \subsection{Design Considerations}
+% \label{Design Considerations}
+
+% From this first study, a few primary design considerations were motivated by the feedback shared amongst participants:
+% %Our formative study led us to a few primary design considerations for the interaction techniques:
+
+% % \begin{enumerate}[label=(DC\arabic{*})]
+% \begin{itemize}
+%     \item [DC1] \textbf{Reduce context switching and facilitate pattern matching:} 
+%     Participants expressed the need to move between different representations of the schematic, layout, and board often (\sharcref{q:context_switch1}---\sharcref{q:context_switch4}, \sharcref{q:assembly}, \sharcref{q:measurement}). 
+%     Component, pin, and net localization in particular was cited as tedious since going between information in the schematic and board involved pattern matching with the layout as an intermediary, particularly in dense, complex boards without silkscreen.
+    
+%     \item [DC2] \textbf{Show relevant information without cluttering the view:} 
+%     Participants expressed interest in having context-relevant information accessible through both the design files and also when directly interacting with the board, but were wary of excess visual clutter (\sharcref{q:show_relevant_md1}, \sharcref{q:show_relevant_md2}).
+%     Some suggested making the display of information optional, such that the user could decide to turn it off. 
+    
+%     \item [DC3] \textbf{Support habitual and intuitive interactions with the PCB:} While participants each followed slightly different methods of localizing issues and taking measurements, they generally followed a common approach (\sharcref{q:context_switch1}---\sharcref{q:context_switch4}, \sharcref{q:show_relevant_md1}, \sharcref{q:show_relevant_md2}).
+%     % explaining that it aligned with their mental model.
+%     % Augmentation should help to shortcut paths on that mental model but not interfere with it. 
+%     An AR system should simplify methods of taking measurements or seeking information, but should not depart greatly from current habits or workflows.
+    
+%     \item [DC4] \textbf{Facilitate collaboration:}
+%     A few participants noted that finding design elements and following measurement procedures were exacerbated when working with collaborators who were less familiar with a particular design (\sharcref{q:collaboration}).
+%     A solution that guides the user with relevant information can be extended to help support collaboration~(in real-time or asynchronously).
+% \end{itemize}
+% %\end{changed}
+% \end{placeholder}
+
+\section{Discussion}
+\label{sec:disc}
+
+
+Through our evaluation, we found common themes around the strengths and limitations of our system, which we summarize in Table~\ref{tab:strength_challenge}. Through our feedback session, we extract design considerations for future systems where we emphasize them in \textbf{bold} throughout the rest of this section.
+%In the rest of this section, we elaborate on the strength of \ARDWname~ and then talk about the limitations and future work.  
+% % Please add the following required packages to your document preamble:
+% % \usepackage{graphicx}
+% \begin{table}[]
+% \centering
+% \resizebox{0.5\textwidth}{!}{%
+% \begin{tabular}{l|l}
+% Strengths                       & Challenges                                        \\ \hline
+% Reduced context switching       & Imprecision of augmented highlights at fine scale \\
+% Directness of probe interaction & Imprecision of probe localization at fine scale   \\
+% Screen Interface Usability      &                                                   \\
+%                                 &                                                  
+% \end{tabular}%
+% }
+% \caption{The high-level strengths and challenges of our system}
+% \label{tab:strength_challenge}
+% \end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[]
+\centering
+\resizebox{0.5\textwidth}{!}{%
+\begin{tabular}{p{0.25\textwidth}|p{0.25\textwidth}}
+\textbf{Strengths}& \textbf{Limitations}\\ \hline
+\noindent{\begin{itemize}[leftmargin=0.3cm]
+    \item Reduced context switching
+    \item Directness of probe interaction
+    \item Screen Interface Usability
+\end{itemize}}       &
+\noindent{\begin{itemize}[leftmargin=0.3cm]
+    \item Imprecision of augmented highlights at fine scale
+    \item Imprecision of probe localization at fine scale
+\end{itemize}} \\
+\end{tabular}%
+}
+\caption{The high-level strengths and limitations of \ARDWname}
+\label{tab:strength_challenge}
+\end{table}
+
+\subsection{Strengths of \ARDWname}
+\label{sec: strengths}
+
+\subsubsection{Reduced context-switching}
+
+Across all tasks, participants noted that \textbf{reducing context-switching, specifically the need to look between design files and the board, made their debugging experience easier, faster, and more confident}. Despite the imprecision of the system at small scales (see next section for further discussion), the benefit of augmentations for the most part outweighed the challenges. Participants consistently rated the augmentation more highly than without augmentation in navigation and measurement tasks, with one commenting that the ability of the system to ``get them in the general vicinity''~(P9,~\sharcHere{d:generalvicinity}) was already of some help.
+
+Interestingly, even if the system did not make participants faster in certain tasks (e.g. Task 1b), participants felt that the system made them more efficient. We believe this is because of the lower cognitive load the system fostered even for simple tasks. As P9 put it, ``I think that it would be easier for augmentation because like, for example, when I was looking for this right here... it just feels like I'm using no brain power at all... It's like the difference between zero [effort] and like point one [effort]. But like those point ones add up over the course of hours. So I can see it being really, really useful for a long term thing.'' 
+
+Finally, using \ARDWname~ gave participants greater confidence when identifying components and probe points or when approaching a new board. P10, who mentioned that “ease wise, and confidence... I think both are directly correlated”, gave a Likert score of 7 for both the questions on ease and confidence when using \ARDWname~ in Task 2: Bring Up.
+
+Four out of 10 participants sought to further reduce context switching by integrating the system with automated hypothesis generation and guidance. ``I almost wanted it to tell you what pin it is for me [instead of having to] look up and [specify] which pin on my program'' ~(P8,~\sharcHere{q:more_stuff_1}). ``If [the system] can say hey, check this out, it's lower than it's supposed to be, that would be helpful, kind of warns you. Or you could go for the diode and [it might say], hey, is your [diode in] reverse? So that'd be helpful... helps you check against the schematic''~(P4,~\sharcHere{q:more_stuff_2}).
+{Taking this thread further, future work could allow for {\ARDWname} to assist in physical computing environments that consist of both code and embedded hardware portions. As users step through code, sub-circuits related to that code could be augmented directly on the board. Paired with the ability to code step, this could make a compelling way to more directly pinpoint errors that cross code and hardware.}
+
+
+\subsubsection{Directness of Probe Interaction}
+
+Participants appreciated the use of a probe as interactive tool, commenting that the directness of interaction on the board made for a more seamless navigation experience across representations.
+``It'd be really useful to just like, instead of looking back and forth trying to find a component, it'd be really easy to just click on it and it highlights [on the schematic] so I don't have to search in the schematic because... often I use schematics way bigger than [Arduino Uno] and [it's] really time consuming''~(P4,~\sharcHere{q:backandforth}).
+``I definitely like the backwards from board into schematic better, because then if I'm looking something where the heck is this, and then I just [find] it right there. And that's really useful''~(P6,~\sharcHere{q:wheretheheck}).
+
+Some suggested building out the augmented interface to allow for greater interactivity on the anti-static mat itself.
+\textbf{The user’s attention should generally remain at the point of interest, in this case the mat where the PCB is placed.}
+%This is also ``another reason to get rid of silkscreen''~(P3,~\sharcHere{q:getridof}).
+Through observation, users’ attention typically jumps between the schematic or layout view, the PCB, the digital multi-meter, and the  measurement panel. By making use of the real estate that the mat has, more relevant information can be provided to the user, without them having to take their attention away from the PCB. P5 said: ``My top dislike is having my attention in two different places. Or if the tension is split, like fifty-fifty and there's more movement.'' One participant expressed the desire for measurement information to be shown right next to the PCB. Another participant expressed that they would love to have an API to generate interactive graphics directly on the mat itself, so they could quickly change test modes by simply tapping on the mat. Future work could explore making the mat surface a more interactive element of the system. 
+
+\subsubsection{Screen Interface}
+
+Apart from the augmented cross-probing, a few participants commented that they appreciated the utility of screen interface alone. They indicated that the cleanliness and smoothness of the interface (which is comparatively lightweight to the busyness of a typical ECAD tool) enabled a better experience. They also indicated that the interface encouraged them to cross-probe between schematic and layout, which was helpful for debugging, something that traditional ECAD programs do not directly emphasize.
+
+\subsection{Limitations of \ARDWname~ and Future Work}
+\label{sec:limitations}
+
+\subsubsection{Precision and Clarity of Projected Augmentations}
+
+While users expressed that the greatest benefit for such a system would be for large densely-packed boards, dense boards created the greatest challenge to augment precisely. \textbf{While some users appreciate augmentations that can direct to a general target area, greater precision in augmentation would unlock finer targets further reducing context switching.}
+While the highlights generally worked well for larger components and targets (0603 packages and up), smaller targets such as 0201 package components or dense IC pins proved challenging to highlight effectively due to imprecision of the highlight. While the projected pixel size is approximately 0.25 mm by 0.25 mm across the 43 cm by 27 cm area, the ability of our relatively budget projector's optics to resolve those pixels was limited. Furthermore, users did not benefit from the large projected area as they debugging happened within one location in the mat. Future systems would benefit from concentrating resolution in a tighter space and from better-resolving projection optics to maintain sharpness. Future work could benefit from a focus-free projector such as a laser scanning projector which could help to maintain sharpness across the component z-heights.
+{This could also allow for in-focus augmentation even if the board is held in mid-air.}
+
+While most augmentations were easily visible especially for larger components or diffusive IC packages, some highly specular components, like polished metal housings or glossy soldermask, resulted in changing augmentation clarity from different viewpoints.
+Additionally, the system is extremely sensitive to perturbations. A combination of the workbench being on wheels and the weighty projector being mounted on a cantilevered arm causes the projected augmentations to wobble a couple millimeters when the table is bumped. This made using the system a more delicate procedure. For future systems, ensuring rigidity of the projector mounting structure or high speed correction of projection would make the augmentation alignment more tolerant to vibration.
+
+To our surprise, only three participants brought up blocking the projection as they looked to take a measurement. Generally, users approached probe targets from an angle to avoid occlusions. However, when the probe point required a vertical approach, participants expressed reservations:
+``Sometimes, like, you got to really come in... basically vertically and the way this is working from above kind of restricts that motion''~(P6,~\sharcHere{q:reservations}).
+The fact that the board sat between the user and the projector's throw axis helped avoid occlusion to some extent since the light came from an angle beyond where the user's body typically was rather than directly straight down on the board.
+However this introduced a new issue, where taller components' projections were translated because the projection arrived off-axis. In future systems, this could be remediated by performing distortion correction relying on a 3-D model of the PCB or depth map to apply the correct shift for tall components.
+
+% The appearance of the augmentation 
+
+
+% z-height issues
+
+% issues with shaking
+
+% importance of exact scale/alignment
+
+% resolution and brightness
+
+% reflectively of the board
+
+% choosing colors appropriate for color of board
+
+% discuss how people thought the different types of augmentation
+
+% blocking the projections
+%     suprisingly low occurance
+%     “A little bit of my reservations. I don't think I can do like sometimes like you got to really come in vertically. I don't think this would necessarily work. I found myself having to allow the light to be visible if [I’m] trying to really get in like to find that component to come and basically vertically and the way this is working from above kind of restricts that motion.”
+
+\subsubsection{Precision of Probe Tracking}
+
+Another major challenge for the usage of the system is the precision of the tracked probes in relation to the board. We find that \textbf{good alignment and calibration of tracked probes is crucial for users to want to use the system.}
+In a number of instances, especially for smaller targets users would need to hunt for the hitbox or use probe cursor dot to adjust the position of the probe to achieve their desired selection. There were two sources of imprecision: (1) the physical board moved in relation to the virtual board due to bumping the board, and (2) the inherent system inaccuracy of the probe point due to mis-calibration of the tracking or the transform between projection and tracking.
+
+To address these challenges, participants suggested a few methods. The simplest was to fix the board in place with an adjustable vice or putting the board on standoffs (some participants naturally did this by taping down the sound detector board in Task 3).
+Future work should explore this avenue as a low-hanging fruit to alleviate probing issues.  
+
+Another method would be to continually track and update the board position.
+{We implemented continuous board tracking by applying retroreflective stickers to the board surface. Translational augmentation registration accuracy (combining board tracking accuracy and projection accuracy) is ±0.4mm MAE as implemented. At this accuracy, qualitatively, 0402 pads and 0201 packages are accurate, with 0201 pads and dense IC pins (e.g. on QFN packages) being close but imperfect (e.g. see 1:15 of demo video). For the user study, board tracking was not enabled as our pilot participants probed the board such that it did not tend to move (applying little lateral force on the PCB with friction from ESD mat). This turned out to be the exception amongst participants in the user study. We brought back two participants for an informal, post-hoc survey to compare their experience with board tracking enabled. Both participants provided strongly positive feedback indicating that it allowed for both more precise selections but also a more ergonomic and comfortable debugging experience, but confirmed it fell short of selecting the smallest targets such as IC pins.}
+``So overall I definitely feel this is a lot more helpful, just because I trust here what it generate more than I trust myself when lining it up.''~(P2,~\sharcHere{q:reservations})
+Future work could look into having the board sit on a tray with markers or placing the board markers on a crown connected to the board.
+
+We found that users generally did not engage with the projected disambiguation menu list because of the additional friction in brought in trying to select a targets in a dense area. The list contained a set of textual names, but would be likely more effective with a spatial selection scheme to avoid the users from having to think about the type of element they're looking to select. ``Instead of just giving me the net names of the two pads, show me an enlarged display of the region under the probe and let me select the pad more visually. Having net names on this is still nice though'' ~(P8,~\sharcHere{q:disambiguation_menu_1}). That being said, it is likely that better precision that can do away with the disambiguation menu entirely would be ideal.
+
+\subsubsection{Other considerations}
+
+\textbf{A lightweight set up process is required for electrical engineers to choose to employ this system over their current workflow.} The value the system brings during work must significantly exceed the effort to set it up. Regardless of whether the participant works at a fixed workbench or needs the system to be portable, minimum set up effort is required for users to choose to use \ARDWname. These factors include the physical set up, software set up (calibration of the projector, probes, and tracking cameras), and setting up the design files. ``If it could be movable from bench to bench...without much tweaking, that would make it way more practical and usable. Because I think anytime I have to grab something and be like, oh man, I've got to calibrate this thing, it just hinders me wanting to use it at all''~(P8,~\sharcHere{q:portable}).
+
+{System cost is 33,390 USD, mainly driven by motion capture rig price (Optitrack cameras and equipment: 32k USD, projector: 700 USD, monitor: 300 USD, probes: 40 USD, desk: 200 USD, cage: 150 USD).}
+From a cost viewpoint, participants agreed that the system should not significantly exceed the price of other professional-grade test bench equipment such as bench top DMMs and oscilloscopes (~2.5k USD to 35k USD).
+Shedding the motion capture system for a cheaper RGB camera solution can help to make the system more practical. We are particularly encouraged by the recent work in PCB component segmentation via deep learning \cite{Pasunuri2022ASegmentation}, and works exploring precise probe tracking with RGB cameras \cite{WuDodecaPen:Stylus}.
+% We are encourage by new work focussed on probe tacking . 
+% And board tracking ...
+
+Lastly, while we did not get to test the remote collaboration capability due to the long study length, participant gave feedback that the the system would be beneficial for remote collaboration, especially with  people who are new to the board or for non-electrical engineers who have to perform basic debugging. ``We have engineers [in another office] but none of them are electrical engineers... but they deal with hardware. So they'll get a board, they'll boot it up, do some stuff and find out, stop working. But that's the time where I need to help them debug over the phone. And they don't have the technical know how to read a schematic where this would be wildly beneficial, if someone could just show them like where it was on this board. So I don't have to pull up the assembly drawing myself or go through that process''~(P8,~\sharcHere{q:collaboration}).
+
+    
+\subsubsection{Study Limitations}    
+
+Participants generally agreed that the tasks provided within the study were realistic and representative of the items they address in their own work. However, for users who focused on smaller, simpler boards, they found that bring-up task to be less applicable to their own workflow. For Task 3 (Debugging), we used the same tasks across all users. Therefore, the difficulty of a given task differed  based on the participant's own experience and concentration area. For this task, we collected only qualitative feedback due to unconstrained nature, but it would have been interesting to collect qualitative rating scores to (1) understand the difference in perceived benefit across differing experience levels and (2) quantify the magnitude of perceived benefit against the other tasks which were more directed. Finally, because of the length of the study, participants did not directly engage in a collaboration task. Future work should explore this area further.
+
+% \subsection{Design Recommendations / Considerations}
+% \begin{itemize}
+%     \item [DC1] \textbf{A lightweight set up process is required for electrical engineers to voluntarily choose employ the use of this system over their current workflow.} The effort to set up the system short be proportionate and relative to the amount of them they’ll be using the system for. P09 said “the effort that it would take to set it up just to find something real quick probably wouldn't be worth it in like the circumstances, for example, if I just want to like [solder] something, [since] I'll just take a couple extra seconds to look at it. But when you're debugging, I think this becomes really useful. Because when you're debugging, you're kind of just sitting there checking what you thought was obvious is actually the way it should be and that can become like mind numbing.”
+    
+%     \item [DC1] \textbf{The user’s attention should be captured at the point of interest most of the time, in this case, it’ll be the mat where the PCB is placed.} This is also “another reason to get rid of silk screen”, as mentioned by P03. Through observation, participants’ attention typically jumps between the schematic or layout view, the PCB, the digital multi-meter, and the measurement measurement panel. By making use of the real estate that the mat has, more relevant information can be provided to the user, without them having to remove attention from the PCB. P05 said: “My top dislike is having my attention in two different places. Or if the tension is split, like fifty-fifty and there's more movement. ”
+
+%     \item [DC1] \textbf{Probes should be users’ primary and only tool for interaction with the system, in order to use it effectively.} Participants who use have to split their attention between the the probes and mouse will default to using the mouse for the selection of components through the schematic or layout view on the monitor. Direct selection is also preferred by participants.  P04 said “it'd be really useful to, instead of like looking back and forth, trying to find a component, it'd be really easy to just like, click on it. And it highlights [on the projection]. So I don't have to search schematics because... more often I use schematics way bigger than [Arduino Uno]. And really time consuming.” P06 said “I definitely like the backwards from board into schematic better, because then if I'm looking something where the heck is this, and then I just [find] it right there. And that's really useful.”
+
+%     \item [DC1] \textbf{Good alignment and calibration is crucial for users to continue using the system.} Movement of the PCB has also be factored into this consideration. P08 said “The only pain in the butt is, you know, just applying pressure to the board. The board rocks. Yep. So you're naturally going to get misaligned. So that's kind of not so hot. Oh, this would be great for just like, Yeah, bring up especially if you have people that aren't particularly skilled.” P02 mentioned that there’s trade off between the benefits of using the system. “A limitation is definitely not just the perfect alignment. Usually there's always some error. I just think it's always a trade off between to what extent that these errors are causing too many issues, causing distractions, it's no longer beneficial. I think just locating, like issues like that really helped. I guess, disregarding those issues, everything else is great to use.”
+
+% \end{itemize}
+
+
+
+% %\begin{todo-env}
+% \begin{placeholder}
+% Through a three-part study, we have explored the design space of using AR visualization and interaction as tools for assisting electrical engineers with their PCB debugging workflows and preliminarily evaluated a proposed set of interaction techniques.
+% % We find augmented interaction to provide a promising tool to assist electrical engineers in their PCB debugging workflows with the most frequently cited reason being decreased context switching, satisfying DC1, DC2, and DC3.
+% In particular, we found that four specific tasks benefited the most from our proposed interaction techniques:
+% \begin{enumerate}
+% \item finding components (\ElemLocOnPCB\ components) and probe points (\ElemLocOnPCB\ pins and nets) on the PCB,
+% \item immediately providing element metadata at the board without referencing design files (Visual Inspection)
+% \item logging of unstructured measurement queries with associated probe points (Diagnostic Measurement)
+% \item unambiguous, spatially co-localized, and potentially automated probe point visualizations for directed measurement workflows (Bring-up)
+% \end{enumerate}
+
+% In support of DC1, participants' most cited reason for their expectation of increased efficiency was confirmed to be the reduction of context switching between files. For example, \ElemLocOnPCB removed out the need to reference layout when moving from schematic to board (\sharcref{q:saves_step}, \sharcref{q:different_software}, \sharcref{q:patterns-rotated}), Visual Inspection cut out the need to flip from board to schematic to pull metadata information (\sharcref{q:oh_my_god}), and Diagnostic Measurement and Bring-Up workflows took out the need to flip to instrument panels and logging documents (\sharcref{q: bring_up_basic_measurement}).
+
+% Careful design is needed towards maintaining a fine balance between providing relevant information and avoiding a cluttered view (DC2) and warrants further study. While users generally agreed that information should be provided out of the direct line of sight to the PCB, there was disagreement on how much is helpful (see \MetaDataOnPCB\ Findings). Breaking out control to users for them to adjust based on their context may be best.
+
+% The choices amongst users affirmed that supporting habitual interactions with the PCB (DC3) is an important design consideration, as evidenced by responses to the preferred PCB element selection method (simple tap, \sharcref{q:minimal_force}) and measurement capture method (delay, in line with current behavior, \sharcref{q:normal_multimeter}). Users were enthusiastic (\sharcref{q:back_of_my_mind}, \sharcref{q: bring_up_basic_measurement}, \sharcref{q:by_like_hours}) about interaction-supported workflows that directly mirrored and supported their existing practices (e.g. Diagnostic Measurement, Bring-Up).
+
+% Finally, users generally were interested in how the techniques could help support collaboration (DC4), but for only one did the use case arise frequently enough to say they would adopt it (\sharcref{q:hypothetical}). However, these situations may be increasingly common with a progressively more globalized electronics manufacturing pipeline, a stay-at-home pandemic, and decreasing knowledge barriers for participation in electronics design.
+
+% Feedback from participants elucidated a few practical challenges towards the construction of a future system regardless of how augmentations are delivered (head-mounted device, handheld mobile video pass-thru AR, projective AR, or other). First is the need for extremely precise and stable, board-locked visualizations. Users expected the system to be able to augment the smallest pin that can be reasonably probed, or a methodology to disambiguate imprecise visualizations. Second is the need for accuracy in board-locked visualizations. Users expressed that they would mistrust the system if it could not provide accurate overlays (\sharcref{q:misleading}). Furthermore, PCB modifications during debugging such as reworked components or breakout wires may also cause the element on the board to no longer align with the design files. A function to support deviations from the imported design files could address this. Finally, on the wish list for one participant was a system that could be easily portable to a number of environments, such as the factory (\sharcref{q:carry_less}). 
+
+% \subsection{Limitations and Future Work}
+
+% Due to the COVID-19 pandemic, studies were conducted remotely prohibiting the ability to collect observational data. Following the pandemic, we would look forward to observing user workflows directly in a simulated debugging task, beyond the video call with video prompts and a PCB simulator we used in this evaluation.
+% We could perform the timed evaluation on a real, potentially more complex, PCB than the web simulator board which is limited to the real estate of the user's touchscreen.
+% One participant did note, however, of our simulator,
+% \textit{``I felt like basically your emulation setup was pretty representative of like how the tool would be in in real life \ldots it carried over pretty well.''}~(P6,~\sharcHere{q:emulation}).
+% Future work could extend the timed element selection tasks in this paper toward a more general and open-ended timed debugging procedure allowing for multiple proposed interactions to be leveraged.
+% The small number of participants may limit the generalizability of the findings. While we received interesting feedback from our relatively small sample size, a larger study could yield greater variety and nuance in the discussion, especially on topics where the responses were less uniform (e.g. \MetaDataOnPCB and Remote Collaboration). It would also provide larger effect sizes in the analysis of the quantitative data.
+% Users cited that referencing datasheets is a common source of debugging information as well.
+% Work towards parsing and linking component datasheets to be able to provide context-relevant data would further help to decrease context-switching.
+% Only click- and touch-based methods of element selection and file navigation were considered for this study, but some users expressed interest in multi-modal methods combining voice or gaze.
+
+% While not explicitly a debugging procedure, users frequently commented that the methods proposed in this work can help speed up and decrease errors in assembly and potentially validation, warranting more thorough investigations toward these use cases. \ARDWname\ may also be used to streamline assembly workflows by sequentially highlighting the locations of each component installation location via \ElemLocOnPCB, however a Bill-of-Materials (BOM) view is likely needed to help provide an ordering to the installation procedure. Engineering validation is a process in which board revisions are tested against a set of functional requirements. \ARDWname\ could be used to assist in preparing samples for test which can be a manual process, but as these tests often must occur on a large sample set of the population, automated test equipment is typically leveraged.
+
+% Finally, we are excited for future work to incorporate these interactions and feedback into a deployable augmented reality system. The system would comprise of three parts: (1) a graphical program running on the user's computer that presents the schematic and layout, (2) an augmented reality system that can deliver augmentations on the PCB, and (3) a probe to track the user's interactions with the PCB. To be practical, the program would need to be built as an extension of an existing ECAD tool or as a separate application able to ingest and parse ECAD schematic and layout documents. For delivering board augmentations, multiple methods of delivering AR augmentations are possible: via headset (as in Hahn et al. \cite{Hahn2015AugmentedProcess}), via see-through mobile AR (as in InspectAR \cite{InspectARTools}, or via projective augmentation (as in Mascot \cite{MascotRobotas}. The board itself can be tracked via computer vision (as in InspectAR) or fixed in known location (as in Mascot). A probe to interact with the board could be tracked via magnetic tracking (as in BoardLab \cite{Goyal2013BoardLab}), computer vision, optical tracking, or mechanical linkage. To the best of our knowledge, a system tying these three components together has not yet been developed. Doing so would allow for the interactions proposed in this paper to be realized.
+
+% %As these are non-debugging workflows, we did not evaluate these interactions
+    
+% %\end{todo-env}
+% \end{placeholder}
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+
+In this chapter, we build and test \ARDWname, a workbench that leverages projected augmented reality and tracked probes to assist electrical engineers in debugging PCBs. By enabling the ability to select and highlight elements across the schematic, layout, and physical board, \ARDWname~ reduces context-switching between board representations, allowing for users to more efficiently localize items on the PCB and capture measurements. Users appreciated the directness of interaction afforded the tracked selection and measurement probes and the performance of our in-browser application. We provide design considerations and recommend paths of inquiry for future systems, including  techniques to minimize imprecision of augmentation and to explore remote collaboration scenarios.
+
+Users are excited to see further development in this area. When we mentioned compensation logistics after our study, a number of participants expressed that they signed up for the study just because it ``sounded cool'', with one participant exclaiming ``man, I wish to have something like this in my workplace to be honest!''
+By sharing our findings and open sourcing our code, we hope this work inspires further research into tools to support hobbyists and industry professionals alike.
+
+
 
 
 % ========== Chapter 5
 
 \chapter{ClearBuds}
 
+This chapter describes our wireless earbud system, ClearBuds, that uses both spatial and acoustic cues to perform real-time speech enhancement. This technique enables users to be able to take calls on-the-go even in very noisy environments. This chapter was published at ACM MobiSys 2022 \cite{10.1145/3498361.3538933}. An illustrative video figure can be accessed here: \url{https://youtu.be/AVtFa0dN4mQ}.
+
 \section{Introduction}
-
-
-
 
 \begin{figure}
 \centering
@@ -1294,11 +1967,11 @@ We combine our wireless earbuds and neural network to create ClearBuds, an end-t
 
 
 
-We believe that this paper  bridges state-of-the-art deep  learning for blind audio source separation and in-ear mobile systems. The ability to perform background noise suppression and   speech  separation could positively   impact  millions of people who use earbuds to take calls on-the-go. By open-sourcing the hardware  and collected datasets, our work may  help kickstart future research among mobile system and machine learning researchers to design  algorithms around wireless earbud data.
+We believe that this work bridges state-of-the-art deep  learning for blind audio source separation and in-ear mobile systems. The ability to perform background noise suppression and   speech  separation could positively   impact  millions of people who use earbuds to take calls on-the-go. By open-sourcing the hardware  and collected datasets, our work may  help kickstart future research among mobile system and machine learning researchers to design  algorithms around wireless earbud data.
 
     
 %The link below shows a system demo:\begin{center}{\textcolor{blue}{{{\url{https://youtu.be/0Hmnc054cow}}}}}\end{center}
-    
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% RANDOM NOTES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1530,7 +2203,7 @@ A single button on the enclosure  provides access to turn on and off the earbuds
 
 \subsubsection{Microphone synchronization} Three components are necessary for maintaining microphone synchronization: (1) As each of our earbuds has its own local clock source, we need to establish a common clock between them so that they have the same reference of time, (2) a synchronized startup so each earbud starts recording from their respective microphone at the exact same time, and (3) a rate encoding scheme to control the earbud's sampling rate to match each other. 
 
-In our system, each earbud has its own respective 32MHz clock source with a total +/- 20ppm frequency tolerance budget. So, in the worst case scenario, the earbuds will have 2.4 milliseconds of drift each minute. We  use the  Nordic's TimeSlot API \cite{timeslot}, which grants us access to the underlying radio hardware in between Bluetooth transmissions. This provides us a transport to transmit and receive accurate time sync beacons \cite{wireless-timesync}. Each ClearBud keeps a free-running 16MHz hardware timer with a max value of 800,000, overflowing and wrapping around at a rate of about 20~Hz. One ClearBud is assigned as the timing master while the other ClearBud will synchronize its free-running timer to the master's.  The primary ClearBud (timing master) transmits time sync packets at a rate of 200~Hz. These packets contain the value of the free-running timer at the time of the radio packet transmission. When the secondary ClearBud receives this packet, it can then add or subtract an offset to its own free-running timer for a common clock. %This allows ClearBuds to maintain an accurate common clock. 
+In our system, each earbud has its own respective 32MHz clock source with a total +/- 20ppm frequency tolerance budget. So, in the worst case scenario, the earbuds will have 2.4 milliseconds of drift each minute. We  use the  Nordic's TimeSlot API \cite{timeslot}, which grants us access to the underlying radio hardware in between Bluetooth transmissions. This provides us a transport to transmit and receive accurate time sync beacons \cite{wireless-timesync}. Each ClearBud keeps a free-running 16MHz hardware timer with a max value of 800,000, overflowing and wrapping around at a rate of about 20~Hz. One ClearBud is assigned as the timing host, while the other ClearBud will synchronize its free-running timer to the host's.  The primary ClearBud (timing host) transmits time sync packets at a rate of 200~Hz. These packets contain the value of the free-running timer at the time of the radio packet transmission. When the secondary ClearBud receives this packet, it can then add or subtract an offset to its own free-running timer for a common clock. %This allows ClearBuds to maintain an accurate common clock. 
 
 Once each ClearBud is connected to the mobile phone, the phone sends a \verb|START| command to both ClearBuds over BLE. Each ClearBud contains firmware which arms a programmable peripheral interconnect (PPI) to launch the PDM bus once the 16MHz free-running timer wraps around at 800,000. By using this method, we bypass the CPU and trigger a synchronized startup entirely at the hardware layer. One caveat is that the mobile phone could write to one ClearBud right \textit{before} its clock wraps around at 800,000, and the other ClearBud right \textit{after} it wraps around at 800,000. With a clock that wraps around at 20Hz, this would trigger a mismatched startup and cause an alignment error of 50ms. To correct for this, each ClearBud reports its common clock timer value to the phone once it has received the \verb|START| command. The phone can then remove the first 781 audio samples (781 samples / 15.625kHz = 50ms) if one ClearBud started streaming 50ms before the other.
 
@@ -1561,7 +2234,7 @@ Training the network in a supervised way requires clean ground truth speech samp
 
 {\bf Synthetic data.}  This type of data is the easiest to obtain, since a wide variety of voice types and physical setups can be generated instantly. Many machine learning baselines, e.g., \cite{luo2020endtoend, jenrungrot2020cone, tzirakis2021multichannel}, only train and evaluate on synthetic data generated in this manner. To generate the synthetic dataset, we create multi-speaker recordings in simulated environments with reverb and background noises. All voices come from the VCTK dataset \cite{vctk} (110 unique speakers with over 44 hours), and background sounds come from the WHAM! dataset \cite{wham}, with 58 hours of recordings from a variety of noise environments such as a restaurant,  crowd,  and music.
 
-To synthesize a single example, we create a 3 second mixture as follows: two virtual microphones are placed 17.5~cm apart, which is the average distance between human ears \cite{RISOUD2018259}. The target speaker's voice is placed  at the center between the two virtual microphones, and a second voice is placed randomly between $1$ and $5$ meters away and at a random angle. A randomly chosen background noise is also placed in the scene. We then simulate room impulse responses (RIRs) for a randomly sized room using the image source method implemented in the pyroomacoustics library \cite{allen1979image, scheibler2018pyroomacoustics}. The room is rectangular with sides randomly chosen between 5 and 20 meters, and the RT60 values are randomly chosen between 0 and 1 second. All signals are convolved with the RIR and rendered to the two channel microphone array. The volumes of the background are randomly chosen so that the input signal-to-distortion ratio is roughly between -5 and 5 dB. For training, we use 10,000 mixtures generated in this manner.
+To synthesize a single example, we create a 3-second mixture as follows: two virtual microphones are placed 17.5~cm apart, which is the average distance between human ears \cite{RISOUD2018259}. The target speaker's voice is placed  at the center between the two virtual microphones, and a second voice is placed randomly between $1$ and $5$ meters away and at a random angle. A randomly chosen background noise is also placed in the scene. We then simulate room impulse responses (RIRs) for a randomly sized room using the image source method implemented in the pyroomacoustics library \cite{allen1979image, scheibler2018pyroomacoustics}. The room is rectangular with sides randomly chosen between 5 and 20 meters, and the RT60 values are randomly chosen between 0 and 1 second. All signals are convolved with the RIR and rendered to the two channel microphone array. The volumes of the background are randomly chosen so that the input signal-to-distortion ratio is roughly between -5 and 5 dB. For training, we use 10,000 mixtures generated in this manner.
 % \textcolor{red}{XXXTHE ABOVE IS NOT A COMPLETE DISCRIPTION OF WHAT WAS DONE AND CANNOT BE USED TO REPLICATE. HERE IS AN EXAMPLE. To gather a large amount of training data, we use software to simulate random reverberate noisy rooms using the image source model~\cite{scheibler2018pyroomacoustics}. The rooms are simulated using absorption rates of real materials and a maximum RT60 of 500~ms. By default, we use a virtual 6-mic circular array with a radius of 5~cm. The distance between the virtual speakers and the microphone array is at least 0.8~m, and the direction of arrival differences of the speakers are at least $10^{\circ}$. The input direction is modeled as the groundtruth plus a random error less than $5^\circ$ simulating the gaze tracking measurement error \cite{sipatchin2020accuracy}.  We place virtual speakers at random locations within the room playing random speech utterances from the VCTK dataset~\cite{veaux2017cstr}, meanwhile simulating diffused noise from the MS-SNSD dataset~\cite{reddy2019scalable} and WHAM! dataset~\cite{wichern2019wham}. The combined speech power to noise ratio is randomized between $[5, 25]$~dB. 10\%, 40\%, 40\%, 10\% of the generated clips consists of 1-4 speakers, respectively, and we apply random gain within $[-5, 0]$~dB to each speaker. We guarantee that there exists speech utterance overlap for 2-4 speaker scenarios. We render the synthetic audio and generate 4s clips. We generate a total of 8000 clips as training set, 400 clips as validation set, and 200 clips as test set. No speech clips or noise has appeared in more than one of these three sets. }
 
 {\bf Hardware data. } While a large amount of synthetic data can be easily rendered to train the network, it does not contain characteristics such as the microphone response of physical hardware and imperfections in the time-of-arrival. To address this, we also train on a set of recorded voice samples from our earbuds. We set up a foam mannequin head with an  artificial mouth speaker (Sony SBS-XB12) that plays VCTK samples as the spoken ground truth. For background voice recordings, the speaker is placed in varying locations within a one meter radius of the foam head. Physically recorded background noise is provided by binaural version of the WHAM! dataset \cite{wham}, which was recorded in real environments using a binaural mannequin like ours. We record 2 hours each of clean speech, and background voices. 2000 random mixtures are then created for training.
@@ -1831,7 +2504,7 @@ Examples of the synthetic dataset, outputs from all the methods and  qualitative
 \vskip -0.2in
 \end{figure}
 
-{\bf Separation between microphones.} Our in-the-wild evaluation across 8 participants showed  generalization across facial features. Here, we  benchmark our method  to different head sizes where the distance between the microphones may be different. We generate 200 synthetic samples, where the distance between the microphones is randomly chosen between 10 and 25~cm. Because the target speaker is in the middle of the microphone array, the target signal will arrive at both mics simultaneously regardless of the microphone distance.  Fig.~\ref{fig:head-width} show little change in performance even with microphone distances greatly different than used during training.
+{\bf Separation between microphones.} Our in-the-wild evaluation across 8 participants showed  generalization across facial features. Here, we  benchmark our method  to different head sizes where the distance between the microphones may be different. We generate 200 synthetic samples, where the distance between the microphones is randomly chosen between 10 and 25~cm. Because the target speaker is in the middle of the microphone array, the target signal will arrive at both mics simultaneously, regardless of the microphone distance.  Fig.~\ref{fig:head-width} show little change in performance even with microphone distances greatly different than used during training.
 
 
 
@@ -1839,7 +2512,7 @@ Examples of the synthetic dataset, outputs from all the methods and  qualitative
 \subsection{System   Evaluation}
 %We evaluate various system parameters like synchronization, latency and power consumption. 
 {\bf Synchronization.}  In order to evaluate this, we place both ClearBuds roughly equidistant from a speaker. A {click tone} is played every 15 seconds for 5 minutes, and recorded on both ClearBuds with time sync disabled and enabled. We calculate the sample error on each recorded click offline and convert it into time error with a sampling rate of 15.625kHz.
-Fig.~\ref{fig:sync}(a) shows the synchronization  results across a five minute interval. With time sync enabled, the sample error never exceeds 1 sample at 15,625 kHz, or 64 $\mu$s. Fig.~\ref{fig:sync}(b) also shows the CDF of the timing error across  experiments of 5 minutes each conducted with other Bluetooth devices in the environment,  with and without time synchronization.  
+Fig.~\ref{fig:sync}(a) shows the synchronization  results across a five-minute interval. With time sync enabled, the sample error never exceeds 1 sample at 15,625 kHz, or 64 $\mu$s. Fig.~\ref{fig:sync}(b) also shows the CDF of the timing error across  experiments of 5 minutes each conducted with other Bluetooth devices in the environment,  with and without time synchronization.  
 
 
 {\bf Run-time and end-to-end latency.} Mouth-to-ear delay is defined as the time it takes from speech to exit the speaker's mouth and reach the listener's ear on the other end of the call. The International Telecommunication Union Telecommunication Standardization Sector (ITU-T) G.114 recommendation regarding mouth-to-ear delay indicates that most users are ``very satisfied'' as long as the latency does not exceed 200~ms \cite{g.114}. In our end-to-end system, we targeted a one-way latency of 100~ms prior to uplink, leaving up to 100~ms of network delay to move an IP packet from the source to the destination.
@@ -1894,7 +2567,7 @@ While we minimize the power consumption of the ClearBud hardware, we shift the p
 {Future work could integrate two microphones in each earbud, so that each earbud could beamform toward the user's mouth prior to processing in the neural network. We also had to develop a custom wireless audio protocol to stream two microphones to a single phone. While this prevents this architecture from being deployed on today's commodity wireless earbuds, adoption may be imminent as Bluetooth 5.2 shows promise with the introduction of Multi-Stream Audio and Audio Broadcast \cite{le-audio-faqs}.}
 
 
-{ Our network could also be deployed on other multi-microphone mobile or resource-constrained edge systems such as smart watches, augmented reality glasses, or smart speakers to allow for enhanced voice control or telephony in noisy environments. The hardware and firmware for Clearbuds could be leverage to produce wireless, synchronized microphone arrays for telephony, acoustic activity recognition or for swarm robot localization and control.} 
+{Our network could also be deployed on other multi-microphone mobile or resource-constrained edge systems such as smartwatches, augmented reality glasses, or smart speakers to allow for enhanced voice control or telephony in noisy environments. The hardware and firmware for Clearbuds could be leverage to produce wireless, synchronized microphone arrays for telephony, acoustic activity recognition or for swarm robot localization and control.} 
 
 %But,  running the network on the GPU of the mobile phone comes at the cost of its  battery life.
 
@@ -1916,40 +2589,38 @@ Real-time speech enhancement has been an open research challenge for multiple de
 
 \chapter{[Proposed] OptoAcoustic Ring}
 
-Starting with the smartphone, we increasingly interact with our computing devices on-the-go, a trend that shall continue as wearables including earbuds, smartwatches and smartglasses become more sophisticated and more integrated with our daily lives. Microgestures, or subtle motions of the fingertips, have been proposed as a compelling method of controlling these devices due to their low fatigue, high precision, social discreetness, and constant availability [cite].
+Since the rise of the smartphone, we increasingly interact with our computing devices on-the-go, a trend that will continue as wearables including earbuds, smartwatches and especially smartglasses become more sophisticated and more integrated with our daily lives. Microgestures, or subtle motions of the fingertips, have been proposed as a compelling method of controlling these devices due to their low fatigue, high precision, social discreetness, and constant availability \cite{ashbrook2010enabling}.
 %Thumb-to-index finger microgestures offer an ergonomic, subtle, and always-available method of providing gestural input.
 Despite their subtlety, to operate the UIs associated with these devices, the fidelity of interaction afforded by microgestures should match the traditional display and touchscreen affordances on these devices including scrolling/panning in both dimensions, gestures like swipes, and buttons.
 
-We propose OptoAcoustic Ring, a low-profile ring device that uses a miniature sparse, time-of-flight sensor or optical flow sensor and a skin-contact microphone to enable an interactive area on the tip of the index finger. These modalities to be inherently complementary with the optical sensor allowing for finger localization in $x$ and $y$ while the contact microphone can be processed to provide touchdown and swipe events.  
+We propose OptoAcoustic Ring, a low-profile ring device that uses a miniature sparse, time-of-flight sensor or optical flow sensor and a skin-contact microphone to enable an interactive area on the tip of the index finger. We choose these modalities as they are inherently complementary with the optical sensor allowing for finger localization in $x$ and $y$ while the contact microphone can be processed to provide touchdown and swipe events.  
 
-In OptoAcoustic Ring we aim to offer a set of unique features that surpass previous systems in terms of practicality. 
-First, with OptoAcoustic Ring we aim to enable a variety of  thumb-to-index-finger microgestures. While previous ring-based systems can detect unistroke gestures such as swipes and circles, our look to make a system that  enables continuous 1D input in \textit{both} $x$ and $y$ dimensions as well as buttons.
-Second, we hope to implement each of these microgesture interactions in a user-independent manner ensuring the device can be worn and used without calibration.
+In OptoAcoustic Ring, we aim to offer a set of unique features that surpass previous systems in terms of practicality. 
+First, we aim to enable a variety of  thumb-to-index-finger microgestures. While previous ring-based systems can detect unistroke gestures such as swipes and circles, we look to design a system that also enables continuous 1D input in \textit{both} $x$ and $y$ dimensions as well as buttons.
+Second, we hope to implement each of these microgesture interactions in a user-independent manner, ensuring the device can be worn and used without calibration.
 %In addition to the interaction being unobtrusive, the sensing methodology must  unobstrusive.
-Third, we will design OptoAcoustic Ring to sit at the base of the finger similar to conventional jewellery. This positioning allows OptoAcoustic Ring's sensing stack to maintain a low profile unlike other optical-based systems where the optical sensor protrudes from the device to maintain line-of-sight  [cite] or capacitive methods which require obtrusive instrumentation of the fingertip [bleh].
-Together these features can help to enable OptoAcoustic Ring to function in an in-context manner to control a pair of smartglasses.
+Third, we will design OptoAcoustic Ring to sit at the base of the finger similar to conventional jewelry. This positioning allows OptoAcoustic Ring's sensing stack to maintain a low profile, unlike other optical-based systems where the optical sensor protrudes from the device to maintain line-of-sight  [TODO cite] or capacitive methods which require obtrusive instrumentation of the fingertip [TODO cite].
+Together, these features can help to enable OptoAcoustic Ring to function in an in-context manner to control a pair of smartglasses.
 
 To date, we have built a number of hardware prototypes using  miniature time-of-flight sensors. These sensors are a just several millimeters in each dimension, and provide 1-by-1 up to 8-by-8 pixels of depth data via direct ToF sensing.
-After prototyping various configurations of one to four sensors with differing resolutions, we have arrived at a hardware configuration of a single ST VL53L7CX sitting at a 15-degree agree angle at the palm side of the base of the index finger. The angle is slight enough that the sensor remains relatively low-profile. We read a 90deg, 4-by-4 depth image of the shaft of the thumb from the perspective of the index finger at 30 Hz. Because of the depth image's low resolution, the sensor is inherently privacy preserving. However, this also makes it challenging to recover precisely what sensor is seeing, since there are no defining edges to distinguish. Therefore, we employ heuristics across the entire image to predict the \textit{x} and \textit{y} positions of the thumb tip on the first fingerpad of the index. First the depth data is inverted in direction and rescaled via a normal curve. This is so that we can easily threshold both far away pixels and noisy pixels together (after inversion and rescaling both tend to be close to zero) and also to provide additional resolution in the range of values associated with the finger depth. \textit{X} is calculated by a mean of the rescaled values. \textit{Y} is calculated by taking the weighted linear regression across all points. 
+After prototyping approximately fifteen configurations of one to four sensors with differing resolutions, we have arrived at a hardware configuration of a single ST VL53L7CX \cite{VL53L7CX} sitting at a 15-degree agree angle at the palm side of the base of the index finger. The angle is slight enough that the sensor remains relatively low-profile. We read a 90 degree, 4-by-4 depth image of the shaft of the thumb from the perspective of the index finger at 30 Hz. Because of the depth image's low resolution, the sensor is inherently privacy preserving. However, this also makes it challenging to recover precisely what the sensor is seeing, since there are no defining edges to distinguish. Therefore, we employ heuristics across the entire image to predict the \textit{x} and \textit{y} positions of the thumb tip on the distal pad of the index finger. First, the depth data is inverted in direction and rescaled via a normal curve. This is so that we can easily threshold both far away pixels and noisy pixels together (after inversion and rescaling both tend to be close to zero) and also to provide additional resolution in the range of values associated with the finger depth. \textit{X} is calculated by a mean of the rescaled values. \textit{Y} is calculated by taking the weighted linear regression across all points. 
 
-On the bio-acoustic sensing side, we aim to produce a classifier or heuristic that we can use to detect if the fingers are rubbing or tapping. We can use this to then accumulate gesture data from ToF during these events and trigger the appropriate interaction. The sound of the interaction itself may also contain information about the gesture. In this case we will need to design a multi-modal model structure to ingest both acoustic and ToF data streams.
+On the bio-acoustic sensing side, we aim to produce an ML classifier or heuristic that we can use to detect if the fingers are rubbing or tapping. We can gate accumulation of gesture data from the optical sensor during these events and trigger the appropriate interaction. The sound of the interaction itself may also contain useful information for gesture classification. In this case, we will need to design and train a multi-modal model structure to ingest both acoustic and ToF data streams. We started prototyping with an IMU, however were unable to get good differentiation results using an ML classifier between typing, using the phone, rubbing hands, null, clapping, and our activity of interest -- rubbing fingertips. We think this is because we lack distinguishing information available in the higher frequencies, above 1 kHz. Instead, we are now using a much higher bandwidth contact microphone (Knowles BU-21771-000 \cite{knowles}). We are still in the process of testing this sensor to understand whether it will give us better results, but on the outset the spectrogram looks to carry much more discriminating information. We expect this classifier to act as our main gating algorithm for triggering gestures, even in active scenarios where the user is engaged in something else.
 
-We started prototyping with an IMU, however was unable to get good differentiation results using an ML classifier between typing, using the phone, rubbing hands, null, clapping, and our activity of interest -- rubbing fingertips. We think this is becuase we lack distinguishing information avialbe int he higher frequnecies, above 1 kHz. Instead, we are now using a much higher bandwidth contact microphone. We are still in the process of testing this sensor to understand whether it will give us better results but on the outset the spectrogram looks to carry much more information. We expect this classifier to be our main gating algorithm for triggering gestures even in active scenarios where the user is doing something else.
+A limitation of our approach is that the selected optical sensor is approximately 200--300 mW in continuous ranging mode, which is not very low power. However, the sensor is designed to achieve 3.5 m of ranging, so the transmit power is much greater than our required use case where the subject is 80 times closer. For the same target illuminance, the illumination power increases with the square of the distance. A customized sensor could allow for lower power without significant modification. Additionally, the sensor could be turned on opportunistically when the bio-acoustic sensor is above a certain power threshold. Because we do not make strong use of the absolute position data returned by the ToF sensor, we are also considering much lower power optical flow sensors which can be used to detect whether the finger is approaching the sensor, moving away, moving up or down with respect to the sensor.
 
-A limitation of our approach are the selected optical sensor is approximately 200--300 mW in continuous ranging mode, which is not very low power. However the sensor is designed to achieve  3.5m of ranging, so the transmit power is much greater than our required use case where the subject is 80 times closer. For the same target illuminance, the illumination power increases with the square of the distance. A customized sensor could allow for lower power without significant modification. Additionally the sensor could be turned on opportunistically when the bio-acoustic sensor sensor above a certain power threshold. Because we do not make strong use of the absolute position data returned the the ToF sensor, we will also consider optical flow sensors which can be used in extremely low power methods to detect whether the finger is approaching the sensor, moving away, moving up or down with respect to the sensor.
+An additional limitation is that our prototype system thus far is a tethered device. While we make an effort to reduce the size of the sensing system itself to something that is low-profile, we will not attempt to miniaturize the signal processing electronics and will leave that to future work. 
 
-An additional limitation is that our prototype system thus far is a tethered  device. While we make effort to reduce the size of the sensing system itself to something that is low-profile, we are not attempting to miniaturize the signal processing electronics and will leave that to future work. 
+We hope to target interactions that can be used to navigate a grid based 2D UI, similar to what we see on smartwatches or existing smartglasses. Our targeted gesture set would include  a set of no-calibration absolute buttons -- one at the fingertip, perhaps one in the middle of the fingerpad, and one nearest the distal-medial finger crease. We will also target a discrete unistroke gesture set containing CW and CCW circles and swipes up, down, left, right, and if possible the diagonals. Finally, we will look to enable continuous \textit{x} and \textit{y} scrolling with automatic direction detection. This requires a very low latency determination of direction so that the scroll commences with the finger motion. Early prototyping suggests that a full 2D “trackpad” is difficult to achieve across users without calibration due to differing hand geometry and positioning when worn. At the edges of the motion, the finger is only partially in the field of view of the ToF sensor, and this looks very different person-to-person.
 
-We hope to target interactions that can be used to navigate a grid based 2D UI similar to what we see on a smartwatch or existing smartglasses. Our targeted gesture set would include  a set of no-calibration absolute buttons -- one at the fingertip, perhaps one in the middle of the fingerpad, and one near the first finger crease. We will also have a discrete unistroke gesture set containing CW and CCW cirlces and swipes up, down, left, right, and if possible the diagonals. Finally, we will target continuous x and y scrolling with automatic direction detection. This requires a very low latency determination of direction so that the scroll commences with the finger motion. Early prototyping suggests that full 2D "trackpad" is difficult to achieve without calibration across users due to differing hand geometry. At the edges of the motion, the finger is only partially in FoV of the ToF sensor and this looks very different person-to-person.
-
-Finally, we will need conduct an evaluation that demonstrates the ring's ability to recover the targeted gesture set across people and scenarios. We will need to recruit users with a variety of hand shapes, colors and sizes. We will need to demonstrate the ring's ability to function and not trigger false gesture events even as the user is engaged in other activities, such as typing, using the phone, clapping, walking, and freeform movements.
+Finally, we will need to conduct an evaluation that demonstrates the ring's ability to recover the targeted gesture set across people and scenarios. We will need to recruit users with a variety of hand shapes, colors, and sizes. We will need to demonstrate the ring's ability to function and not trigger false gesture events even as the user is engaged in other activities, such as typing, using the phone, clapping, walking, and free-form movements.
 
 
 % ========== Chapter 6
 
 \chapter{Plan to Completion}
 
-This final project is about 50\% completed. While the hardware is mostly complete and initial evaluations have been conducted, there is still work to be done:
+This final project is about 50\% complete. While the hardware is mostly complete and initial evaluations have been conducted, there is still work to be done:
 
 % \subsubsection{May 2023:}
 % Finalize \textit{x} and \textit{y} feature engineering. Finalize direction detection heuristic. IRB submitted.
@@ -1976,7 +2647,7 @@ This final project is about 50\% completed. While the hardware is mostly complet
 \vspace{2em}
 \begin{tabular}{@{}lp{0.7\linewidth}@{}}
 \textbf{May 2023} & Finalize \textit{x} and \textit{y} feature engineering. Finalize direction detection heuristic. IRB submitted. \\
-\textbf{June 2023} & Complete contact microphone processing and data pipeline. Collect microphone activity detection data and evaluate activity recognition performance. Consider progress and contribution to determine whether to submit in July 2023. \\
+\textbf{June 2023} & Complete contact microphone processing and data pipeline. Collect microphone activity recognition data and evaluate activity recognition performance. Consider progress and contribution to determine whether to submit in July 2023. \\
 \textbf{July 2023} & Considering progress, determine whether to run the user study and submit. If submitting, prepare example applications. If not submitted, re-assess ToF sensor selection and consider optical flow sensor. If switching sensors, finalize new hardware. Much of the same pipeline can be re-used. \\
 \textbf{August 2023} & Develop feature set with new sensor. Modify models as necessary. Re-train models. \\
 \textbf{September 2023} & Conduct user study. Submit. \\
@@ -1990,7 +2661,12 @@ This final project is about 50\% completed. While the hardware is mostly complet
 
 \chapter{Conclusion}
 
-Goals, design motivations
+
+My thesis proposes that \textit{by implicitly leveraging the spatial context of a user’s environment, technologies can better serve users as they operate within a situation, for example, while participating in another task (Chapter 3 and 4) or operating while mobile (Chapter 5 and 6)}. In Chapters 3 and 4, we investigate \textit{spatial computing interaction} through building a system to support electrical engineers in debugging PCBs. For this task-oriented system, we find that spatial computing can provide value by reducing context-switching and spatial pattern matching within the user's traditional workflows, but that it must also exhibit stability and precision of the smallest salient element for the full value to be realized. In Chapter 5, we investigate \textit{spatial computing sensing} by building a set of spatial audio capture earbuds. We develop a novel pipeline that leverages both spatial and acoustic information for real-time, mobile speech enhancement. This demonstrates the utility of a system that can fuse spatial context with other types of context to outperform traditional systems that use just spatial information (beamforming) or just acoustic information (mono-channel learning techniques) alone. We specifically discuss challenges in deploying in-context, including developing custom hardware, making our model perform in real-time, and training with real data.
+Finally, in anticipation of the rise of smartglasses, in Chapter 6, we propose a system that can provide a method of \textit{spatial computing control} appropriate for on-the-go contexts. We will focus on fusing optical and acoustically sensed data. Key contributions of our system will be to: (1) enable one-dimensional continuous control in both vertical and horizontal directions along with unistroke gestures and buttons, (2) operate with no calibration and (3) sit in a low-profile location and the base of the index finger. This project will yield design and engineering learnings for hardware and machine learning engineers developing wearable input devices, as well as interaction and user interface designers are they develop the end-to-end smartglass experience.
+Beyond my dissertation, I hope to continue this final research thread to build practical and lightweight systems for mobile spatial computing input. I look toward developing novel hardware and machine learning systems to understand additional modalities like eye and head gaze tracking, face and hand tracking, speech and language processing, and world and scene understanding. I hope to be able to combine these multiple streams to better realize implicit user \textit{intention} beyond just explicit input. Doing so could decrease the attentional burden of our devices and allow our them to one day act as an “extension of our unconscious” \cite{Weiser1996-zr}.
+Spatial computing technologies are quickly becoming increasingly prevalent in our daily lives through the commercialization of technologies like smartphone AR, industrial AR, spatial audio earbuds, smart home sensors and smart speakers. As designers and engineers develop these systems, we have a unique opportunity to design and build these interfaces to help users to be more productive in their tasks and foster greater engagement with the real world.
+
 
 %\printendnotes
 %
